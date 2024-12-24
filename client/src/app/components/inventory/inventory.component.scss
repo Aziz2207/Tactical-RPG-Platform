@@ -1,0 +1,83 @@
+#myDialog {
+    position: fixed;
+    bottom: 200px;
+    height: 50vh;
+    width: 45vw;
+    display: flex;
+
+    flex-direction: column;
+    background-image: url('../../../assets/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    overflow: hidden;
+    border: none;
+    padding: 10px;
+    color: #fafafa;
+    font-family: monospace;
+    font-size: larger;
+    margin: 20px;
+}
+
+.txt {
+    text-align: center;
+    padding: 20px;
+    height: 12vh;
+}
+
+.pop {
+    display: flex;
+    place-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 4px;
+    height: 12vw;
+}
+
+.item {
+    display: flex;
+    flex-direction: column; /* Ensure each item is displayed in a column */
+    align-items: center; /* Align content within each item */
+    justify-content: center; /* Center the content vertically */
+    border-radius: 4px;
+    width: 12vw;
+
+    width: 100%;
+}
+
+.item-image {
+    width: 10vw;
+    height: 10vw;
+    margin-bottom: 10px; /* Add margin to separate the image from the button */
+}
+
+.btn {
+    background-color: #4c4b4b;
+    border-radius: 4px;
+    color: #fafafa;
+    font-family: monospace;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.item-box {
+    height: 6vh;
+    width: 6vh;
+    border: 2px dashed #f8f4f4;
+    background-color: rgba(54, 74, 112, 0.769);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    height: 6vh;
+    width: 6vh;
+    object-fit: cover;
+}

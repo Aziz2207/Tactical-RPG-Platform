@@ -1,0 +1,246 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('../../../assets/fond.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.elem {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 5px;
+}
+.me {
+    display: flex;
+    flex-direction: row;
+    height: 35vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.gameStatus {
+    height: 30vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.playersArea {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 15vw;
+    z-index: 6;
+}
+.players {
+    height: 30vh;
+    width: 8vw;
+    margin-bottom: 5px;
+
+    overflow: visible;
+}
+
+.board {
+    width: 70vw;
+    height: 90vh;
+    padding-left: 0vw;
+    padding-right: 0vw;
+    box-sizing: border-box;
+    z-index: 5;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inventory {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin: 15px;
+    height: 7vh;
+    width: 45vw;
+    bottom: 2vh;
+    gap: 10px;
+    background-position: center;
+    background-color: rgba(54, 74, 112, 0.831);
+    border-radius: 4px;
+    border-color: #ffffff;
+}
+
+.item-box {
+    height: 6vh;
+    width: 6vh;
+    border: 2px dashed #f8f4f4;
+    background-color: rgba(54, 74, 112, 0.769);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status {
+    padding: 15px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 18vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 6;
+}
+
+.txt,
+.txtTour,
+.actBtn,
+.actBtnDes,
+.passBtn,
+.passBtnDes,
+.quitBtn {
+    color: #ffffff;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.txtTour {
+    background-color: #ce4e45;
+    padding: 5%;
+    border-radius: 4px;
+}
+.txtTitle {
+    z-index: 2;
+    color: #ffffff;
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.gameStatus,
+.counter,
+.passBtn .quitBtn,
+.passBtnDes,
+.actBtnDes,
+.actBtn {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.tourBtn {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.passBtn:disabled {
+    background-color: #c0b6b3;
+}
+.passBtn {
+    background-color: #e48d61;
+}
+
+.quitBtn {
+    margin-bottom: 10px;
+    background-color: #ce4e45;
+}
+.actBtn {
+    background-color: #42913d;
+}
+
+.passBtn:hover,
+.quitBtn:hover {
+    background-color: #ca622e;
+    transform: scale(1.1);
+}
+.actBtn:hover {
+    background-color: #2b6e26;
+    transform: scale(1.1);
+}
+
+.actBtn:disabled {
+    background-color: #c0b6b3;
+}
+
+.passBtn,
+.passBtnDes,
+.actBtnDes,
+.counter,
+.quitBtn,
+.actBtn {
+    border: none;
+    height: 8vh;
+    width: 100%;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 5px 5px 0px #fbfbfb;
+}
+
+.clavardage {
+    position: relative;
+    width: 15vw;
+    height: 80vh;
+}
+
+.playerStatus {
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.avatar {
+    overflow: visible;
+    position: relative;
+    height: 15vh;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameStatus,
+.me {
+    background-color: rgb(54, 74, 112);
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 0px #ffffff;
+    border-radius: 4px;
+}
+
+.counter {
+    background-color: #ce4e45;
+    display: flex;
+    box-shadow: 5px 5px 0px #b67671;
+    position: relative;
+}
+
+.hp {
+    color: #ce4e45;
+}
+
+.speed {
+    color: rgb(228, 208, 52);
+}
+
+::ng-deep .quit-dialog-container {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+::ng-deep .game-info-dialog-container {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+::ng-deep .turn-dialog-container {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+::ng-deep .winner-dialog-container {
+    border-radius: 30px;
+    overflow: hidden;
+}

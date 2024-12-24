@@ -1,0 +1,54 @@
+.add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff6d; 
+    border-radius: 15%; 
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.add-button p {
+    color: #183153;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.add-button:hover {
+    transform: scale(1.1); 
+    background-color: #ffd501; 
+}
+
+.add-button:hover p {
+    color: #183153;
+}
+
+::ng-deep .add-dialog-container {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.add-button::after {
+    content: "Nouveau jeu";
+    position: absolute;
+    bottom: -25px; 
+    left: 50%;
+    transform: translateX(-50%) scale(0); 
+    color: #ffd501;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap; 
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; 
+    z-index: 10; 
+}
+
+.add-button:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}

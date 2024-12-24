@@ -1,0 +1,25 @@
+<ul class="player-list">
+    @for(player of servicePlayers; track player){
+    <div class="player">
+        <li [ngClass]="{ yourTurn: gameService.gameState.activePlayer?.userName === player.userName }">
+            <div class="player-container" [ngClass]="{ host: player.isHost }">
+                <img
+                    [ngClass]="{ dead: isPlayerDeleted(player) }"
+                    [src]="'assets/characters/waitingRoom/' + player.characterType + '.png'"
+                    alt="Player Image"
+                    class="player-image"
+                />
+            </div>
+            @if (player.isHost) {
+            <span class="host-label">HOST</span>
+            } @if (player.hasFlag) {
+            <span class="flag-label">FLAG</span>
+            }
+            <div class="player-name">{{ player.userName }}</div>
+            @for(p of players;track p){ @if(p.userName === player.userName){
+            <span class="nb-wins"><span class="material-icons"> emoji_events </span>{{ p.nbWins }}</span>
+            } }
+        </li>
+    </div>
+    }
+</ul>

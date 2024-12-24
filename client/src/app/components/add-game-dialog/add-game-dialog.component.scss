@@ -1,0 +1,43 @@
+.title {
+    font-size: 35px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.size-button,
+.mode-button {
+    margin: 10px;
+    padding: 20px;
+    background: #ffffff7a;
+    color: #11264c;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+.size-button:hover,
+.mode-button:hover {
+    background: #ffd13cc4;
+    transform: scale(1.1);
+}
+
+.size-button.active,
+.mode-button.active {
+    background: #ffd13cd1;
+    border: 2px solid #f8db00d8;
+    box-shadow: 0 0 10px rgba(255, 210, 60, 0.8);
+    transform: scale(1.1);
+}
+
+.section {
+    color: white;
+    font-style: normal;
+}

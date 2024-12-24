@@ -1,0 +1,16 @@
+<div class="app-header">
+    <a routerLink="/" class="app-logo" (dragstart)="preventDrag($event)">
+        <img src="assets/logoAmp.png" alt="logo" />
+    </a>
+    <div class="btn-container">
+        <button class="header-btn" (click)="openJoinGameDialog()" routerLinkActive="active">
+            <span>Rejoindre</span>
+        </button>
+        <button class="header-btn" routerLink="/start" routerLinkActive="active">
+            <span>Créer</span>
+        </button>
+        <button class="header-btn" routerLink="/admin" routerLinkActive="active">
+            <span>Admin</span>
+        </button>
+    </div>
+</div>

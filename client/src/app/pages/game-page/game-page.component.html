@@ -1,0 +1,86 @@
+@if(gameState) { @if(combatService.combat) {
+<app-combat class="combat-component"></app-combat>
+}
+<div class="container">
+    <div class="elem">
+        <div class="playersArea">
+            <div class="players"><app-player-list-game></app-player-list-game></div>
+            <app-game-box class="clavardage"></app-game-box>
+        </div>
+        <div class="board">
+            <app-game></app-game>
+
+            <div class="inventory"><app-inventory></app-inventory></div>
+        </div>
+
+        <div class="status">
+            <div class="gameStatus">
+                <p class="txt"><span class="material-icons"> map </span> {{ size }}x{{ size }}</p>
+                <p class="txt">Nombre de joueurs : {{ nbPlayers }}</p>
+                @if(gameState.activePlayer) {
+                <p class="txt">Joueur Actif : {{ gameState.activePlayer.userName }}</p>
+                } @else {
+                <p class="txt">Aucun Joueur Actif</p>
+                } @if(gameState.yourTurn) {
+                <p class="txtTour">TON TOUR</p>
+                } @else if(gameState.nextPlayer) {
+                <p class="txtTour">Prochain tour : {{ gameState.nextPlayer.userName }}</p>
+                } @else {
+                <p class="txtTour">Attente</p>
+                }
+
+                <!-- Debug Mode Display -->
+                <div class="debugMode">
+                    <p class="txt">
+                        Mode Debug:
+                        <span [class]="gameState.debugMode() ? 'enabled' : 'disabled'">{{ gameState.debugMode() ? 'Activé' : 'Désactivé' }}</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="me">
+                <div class="playerStatus">
+                    <p class="txtTitle">{{ gameState.player.userName }}</p>
+                    <p class="hp">
+                        @for(i of [].constructor(gameState.player.attributes.lifePoints); let idx = $index; track idx) {
+                        <span class="material-icons"> favorite </span>
+                        }
+                    </p>
+                    <p class="speed">
+                        @if(gameState.activePlayer && gameState.activePlayer.userName === gameState.player.userName) { @for(i of
+                        [].constructor(gameState.activePlayer.attributes.currentSpeed); let idx = $index; track idx) {
+                        <span class="material-icons"> bolt </span>
+                        } } @else { @for(i of [].constructor(gameState.player.attributes.speedPoints); let idx = $index; track idx) {
+                        <span class="material-icons"> bolt </span>
+                        } }
+                    </p>
+
+                    <p class="txt">
+                        Attaque: {{ gameState.player.attributes.offensePoints }} +
+                        {{ gameState.player.attributes.diceChoice === 'attack' ? 'D6' : 'D4' }}
+                    </p>
+                    <p class="txt">
+                        DÃ©fense: {{ gameState.player.attributes.defensePoints }} +
+                        {{ gameState.player.attributes.diceChoice === 'defense' ? 'D6' : 'D4' }}
+                    </p>
+                    <p class="txt">Actions : {{ gameState.player.attributes.actionLeft }}</p>
+                </div>
+                <img [src]="'./assets/characters/charactersImg/' + gameState.player.characterType + '.png'" alt="" class="avatar" />
+            </div>
+
+            <div class="tourBtn">
+                <div class="counter">
+                    <p class="txt">{{ gameState.time }}</p>
+                </div>
+
+                <button class="passBtn" (click)="passTurn()" [disabled]="!gameState.yourTurn">
+                    <span class="material-icons"> keyboard_double_arrow_right </span>
+                </button>
+                <button class="actBtn" (click)="toggleActionMode()" [disabled]="!gameState.yourTurn">Action</button>
+            </div>
+
+            <button class="quitBtn" (click)="quitGame()"><span class="material-icons"> logout </span></button>
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,74 @@
+[
+    {
+        "type": "MECANIQUE",
+        "image": "./assets/characters/charactersImg/MECANIQUE.png",
+        "icon": "./assets/characters/charactersIcn/MECANIQUE.jpg",
+        "description": "Ce génie fais peur... Ne vous aventurez jamais ici"
+    },
+    {
+        "type": "ELECTRIQUE",
+        "image": "./assets/characters/charactersImg/ELECTRIQUE.png",
+        "icon": "./assets/characters/charactersIcn/ELECTRIQUE.jpg",
+        "description": "Ils touchent a tout mais a rien"
+    },
+    {
+        "type": "BIOMEDICAL",
+        "image": "./assets/characters/charactersImg/BIOMEDICAL.png",
+        "icon": "./assets/characters/charactersIcn/BIOMEDICAL.jpg",
+        "description": "Medecins sans frontieres"
+    },
+    {
+        "type": "MINES",
+        "image": "./assets/characters/charactersImg/MINES.png",
+        "icon": "./assets/characters/charactersIcn/MINES.jpg",
+        "description": "Riches mais pas de vie"
+    },
+    {
+        "type": "INFORMATIQUE",
+        "image": "./assets/characters/charactersImg/INFORMATIQUE.png",
+        "icon": "./assets/characters/charactersIcn/INFORMATIQUE.jpg",
+        "description": "Leurs seul flex c'est de dire qu'ils sont meilleur que génie log"
+    },
+    {
+        "type": "LOGICIEL",
+        "image": "./assets/characters/charactersImg/LOGICIEL.png",
+        "icon": "./assets/characters/charactersIcn/LOGICIEL.jpg",
+        "description": "Génie supreme de Poly ca sert a rien de jouer il gagne"
+    },
+    {
+        "type": "GEOLOGIQUE",
+        "image": "./assets/characters/charactersImg/GEOLOGIQUE.png",
+        "icon": "./assets/characters/charactersIcn/GEOLOGIQUE.jpg",
+        "description": "Génie oublié... Il existait deja ?"
+    },
+    {
+        "type": "PHYSIQUE",
+        "image": "./assets/characters/charactersImg/PHYSIQUE.png",
+        "icon": "./assets/characters/charactersIcn/PHYSIQUE.jpg",
+        "description": "Please pas de bombe atomique le jeu disparait"
+    },
+    {
+        "type": "AEROSPATIAL",
+        "image": "./assets/characters/charactersImg/AEROSPATIAL.png",
+        "icon": "./assets/characters/charactersIcn/AEROSPATIAL.jpg",
+        "description": "Astronauuuuteeee wouhou"
+    },
+    {
+        "type": "CIVIL",
+        "image": "./assets/characters/charactersImg/CIVIL.png",
+        "icon": "./assets/characters/charactersIcn/CIVIL.jpg",
+        "description": "Génie chapeau jaune, sexy"
+    },
+    {
+        "type": "INDUSTRIEL",
+        "image": "./assets/characters/charactersImg/INDUSTRIEL.png",
+        "icon": "./assets/characters/charactersIcn/INDUSTRIEL.jpg",
+        "description": "Imported from HECus"
+    },
+    {
+        "type": "CHIMIQUE",
+        "image": "./assets/characters/charactersImg/CHIMIQUE.png",
+        "icon": "./assets/characters/charactersIcn/CHIMIQUE.jpg",
+        "description": "BOOORINGGG"
+    }
+]

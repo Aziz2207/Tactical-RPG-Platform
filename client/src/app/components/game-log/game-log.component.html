@@ -1,0 +1,13 @@
+<div class="game-log">
+    <button (click)="toggleFilter()">
+        {{ showOnlyInvolved ? 'Show All Messages' : 'Show My Messages' }}
+    </button>
+    <div class="log-messages">
+        @for(message of filteredMessages; track message){
+            <div class="log-message">
+                <span class="timestamp">{{ message.time }}</span>
+                <span class="content">{{ message.content }}</span>
+            </div>
+        }
+    </div>
+</div>

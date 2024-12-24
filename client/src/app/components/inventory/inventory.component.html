@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="item-box">
+        @if(gameState.player.inventory[0]){
+        <img [src]="gameState.player.inventory[0].imgSrc" class="item" />
+        }
+    </div>
+    <div class="item-box">
+        @if( gameState.player.inventory[1]){
+        <img [src]="gameState.player.inventory[1].imgSrc" class="item" />
+        }
+    </div>
+</div>
+@if(isVisible){
+<div id="myDialog">
+    <div class="txt">Choisisse l'item que vous voule jetter</div>
+    <div class="pop">
+        @for( item of gameService.tempInventory(); track item){
+        <div class="item">
+            <div class="item-image">
+                <img [src]="item.imgSrc" alt="{{ item.itemType }}" class="item-image" />
+            </div>
+            <button (click)="rejectItem(item)" class="btn">{{ item.itemType }}</button>
+        </div>
+        }
+    </div>
+</div>
+}

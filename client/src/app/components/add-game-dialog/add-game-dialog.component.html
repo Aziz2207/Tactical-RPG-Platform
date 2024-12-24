@@ -1,0 +1,45 @@
+<div class="dialog-container">
+    <p class="title">Fournissez les informations du jeu :</p>
+    <div>
+        <form [formGroup]="adminForm">
+            <div class="form-group">
+                <label for="size" class="section">Taille de la grille :</label>
+                <div class="button-group">
+                    <button type="button" class="size-button" [class.active]="adminForm.get('size')?.value === '10'" (click)="setSize('10')">
+                        Petite (10x10)
+                    </button>
+                    <button type="button" class="size-button" [class.active]="adminForm.get('size')?.value === '15'" (click)="setSize('15')">
+                        Moyenne (15x15)
+                    </button>
+                    <button type="button" class="size-button" [class.active]="adminForm.get('size')?.value === '20'" (click)="setSize('20')">
+                        Grande (20x20)
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mode" class="section">Mode de jeu :</label>
+                <div class="button-group">
+                    <button
+                        type="button"
+                        class="mode-button"
+                        [class.active]="adminForm.get('mode')?.value === 'Classique'"
+                        (click)="setMode('Classique')"
+                    >
+                        Classique
+                    </button>
+                    <button type="button" class="mode-button" [class.active]="adminForm.get('mode')?.value === 'CTF'" (click)="setMode('CTF')">
+                        CTF
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="dialog-buttons">
+        <button class="left-button" (click)="onNoClick()">
+            <span>Annuler</span>
+        </button>
+        <button class="right-button" (click)="onNextClick()" cdkFocusInitial>
+            <span>Suivant</span>
+        </button>
+    </div>
+</div>

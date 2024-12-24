@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="page-container background-image">
+    <div class="game-list-container">
+        <div class="head-page">
+            <div class="title-string">Choisissez un jeu</div>
+            <div class="buttons">
+                <app-admin-button class="add-game-btn"></app-admin-button>
+                <app-import-button class="import-btn" (importEvent)="onImportGame($event)"></app-import-button>
+            </div>
+        </div>
+        <app-admin-game-selection-list class="game-list"></app-admin-game-selection-list>
+    </div>
+    <app-admin-game class="game-display"></app-admin-game>
+</div>

@@ -1,0 +1,115 @@
+.end-game-stats {
+    background: linear-gradient(120deg, #0b1e33, #1e3b5a);
+    color: #ffd700;
+    font-family: 'Orbitron', sans-serif;
+    border: 3px solid #ffd700;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    gap: 10px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.stats-chat {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #ffd700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+button {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    background: #ffd700;
+    color: #11264c;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.player-stats {
+    margin-bottom: 20px;
+}
+.player-stats, .global-stats {
+    background: rgba(17, 38, 76, 0.8);
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    flex: 2;
+}
+
+.player-stats table, .global-stats p {
+    width: 100%;
+    color: #fff;
+    text-align: left;
+    margin: 10px 0;
+    border-collapse: collapse;
+}
+
+table {
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+}
+
+thead th {
+    background: #ffd700;
+    color: #11264c;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #11264c;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+thead th:hover {
+    background: #ffde7b;
+}
+
+tbody td {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffd700;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ffd700;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.global-stats p {
+    margin: 10px 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.global-stats strong {
+    color: #ffd700;
+}
+
+.app-chat {
+    display: flex;
+    flex: 1;
+    width: 30%;
+    padding: 15px;
+    background: rgba(11, 30, 51, 0.9);
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    height: 90vh;
+}

@@ -1,0 +1,25 @@
+<div class="chat-container">
+    <div class="chat-header">
+      <h3>Clavardage</h3>
+    </div>
+    <div class="messages-container" #messagesContainer>
+        @for(message of messages; track message){
+          <div class="message" [ngClass]="getMessageClass(message)">
+            <span class="message-info">[{{ message.time }}] {{ message.user }} </span>
+            <span class="message-text">{{ message.text }}</span>
+          </div>
+      }
+      
+    </div>
+    <div class="input-container">
+      <input
+        type="text"
+        [(ngModel)]="newMessage"
+        (keyup.enter)="addMessage()"
+        maxLength="200"
+        placeholder="Écrivez votre message..."
+      />
+      <div class="char-count">{{ newMessage.length }}/200</div>
+      <button (click)="addMessage()" class="fa fa-paper-plane "></button>
+    </div>
+</div>

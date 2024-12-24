@@ -1,0 +1,25 @@
+<div class="selected-character">
+    <div class="character-infos">
+        <div class="app-input">
+            <input [(ngModel)]="userName" required="required" type="text" [maxLength]="maxName" />
+            <span>Nom du personnage</span>
+        </div>
+        @if(selectedCharacter) {
+        <div class="character-type">{{ selectedCharacter.type }}</div>
+        <div class="character-desc">{{ selectedCharacter.description }}</div>
+        }
+    </div>
+    <div class="character-img">
+        <img src="{{ selectedCharacter?.image}}" draggable="false" />
+    </div>
+    <div class="character-props">
+        @if (cantJoinMessage) {
+        <div class="cant-join-message">{{ cantJoinMessage }}</div>
+        }
+        <!-- <button (click)="joinGame()" class="start-game-btn">
+            <span>Rejoindre</span>
+        </button> -->
+        <app-button [text]="'Rejoindre'" class="start-game-btn" (click)="joinGame()"></app-button>
+        <app-attribute-display (validAttributs)="validAttributesChanged($event)" (playerAttributes)="setAttributes($event)"> </app-attribute-display>
+    </div>
+</div>

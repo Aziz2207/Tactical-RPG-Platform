@@ -1,0 +1,51 @@
+<div class="end-game-stats">
+    <div class="stats-chat">
+        <app-chat class="app-chat"></app-chat>
+        <div class="stats">
+            <h1>Statistiques de fin de partie</h1>
+            <section class="player-stats">
+                <h2>Statistiques des joueurs</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th (click)="sortTable('username')">Joueur</th>
+                            <th (click)="sortTable('combats')">Combats</th>
+                            <th (click)="sortTable('escapes')">Évasions</th>
+                            <th (click)="sortTable('victories')">Victoires</th>
+                            <th (click)="sortTable('defeats')">Défaites</th>
+                            <th (click)="sortTable('healthLost')">Santé perdue</th>
+                            <th (click)="sortTable('healthInflicted')">Santé infligée</th>
+                            <th (click)="sortTable('itemsCollected')">Objets collectés</th>
+                            <th (click)="sortTable('tilesVisited')">Tuiles visitées (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @for(player of sortedPlayerStats; track player){ <tr>
+                            <td>{{ player.username }}</td>
+                            <td>{{ player.combats }}</td>
+                            <td>{{ player.escapes }}</td>
+                            <td>{{ player.victories }}</td>
+                            <td>{{ player.defeats }}</td>
+                            <td>{{ player.healthLost }}</td>
+                            <td>{{ player.healthInflicted }}</td>
+                            <td>{{ player.itemsCollected }}</td>
+                            <td>{{ player.percentageTilesVisited }}</td>
+                        </tr>}
+                    </tbody>
+                </table>
+            </section>
+        
+            <section class="global-stats">
+                <h2>Statistiques globales</h2>
+               @if(globalStats && globalStats.gameDuration) {<p><strong>Durée de la partie :</strong> {{ formatDuration(globalStats.gameDuration) }}</p>}
+                @if(globalStats && globalStats.totalTurns){<p><strong>Nombre total de tours :</strong> {{ globalStats.totalTurns }}</p>}
+                @if(globalStats && globalStats.percentageTilesVisited){<p><strong>% Tuiles visitées :</strong> {{ globalStats.percentageTilesVisited }}%</p>}
+                @if(globalStats && globalStats.percentageDoorsToggled){<p><strong>% Portes manipulées :</strong> {{ globalStats.percentageDoorsToggled }}%</p>}
+            @if(globalStats && globalStats.totalTurns && isCTFMode){<p><strong>Joueurs ayant détenu le drapeau :</strong> {{ globalStats.totalFlagHoldersCount }}</p>}
+            </section>
+        </div>
+    </div>
+    <button (click)="returnToHome()">
+        <span>Retour à l'accueil</span>
+    </button>
+</div>

@@ -1,0 +1,71 @@
+<div class="attributes-container">
+    <div class="attributes-header">Personnalisez vos attributs</div>
+    <ul class="attributes-list">
+        <li class="attribute">
+            <div class="info-icon-container">
+                <span class="info-icon" (mouseover)="showTooltip('speed')" (mouseout)="hideTooltip()">i</span>
+                @if(tooltipVisible === 'speed') {
+                    <div class="tooltip">
+                        Détermine l'ordre des tours et vos points de mouvements par tour
+                    </div>
+                }
+            </div>
+            <span class="attribute-name">Rapidité</span>
+            <div class="progress-bar-container">
+                <div class="progress-bar" [style.width]="(attributes.speedPoints / 6) * 100 + '%'">
+                    <span class="progress-value">{{ attributes.speedPoints }}</span>
+                </div>
+            </div>
+            <button class="attribute-btn" (click)="addBonus(true, false)"  [class.active]="activeBonusButton === 'speed'" >+2</button>
+        </li>
+        <li class="attribute">
+            <div class="info-icon-container">
+                <span class="info-icon" (mouseover)="showTooltip('life')" (mouseout)="hideTooltip()">i</span>
+                @if(tooltipVisible === 'life') {
+                    <div class="tooltip">
+                        Détermine votre nombre de points de vie
+                    </div>
+                }
+            </div>
+            <span class="attribute-name">Vie</span>
+            <div class="progress-bar-container">
+                <div class="progress-bar" [style.width]="(attributes.lifePoints / 6) * 100 + '%'">
+                    <span class="progress-value">{{ attributes.lifePoints }}</span>
+                </div>
+            </div>
+            <button class="attribute-btn" (click)="addBonus(false, true)" [class.active]="activeBonusButton === 'life'" >+2</button>
+        </li>
+        <li class="attribute">
+            <div class="info-icon-container">
+                <span class="info-icon" (mouseover)="showTooltip('attack')" (mouseout)="hideTooltip()">i</span>
+                @if(tooltipVisible === 'attack') {
+                    <div class="tooltip">
+                        Force avec laquelle vous attaquer un adversaire
+                    </div>
+                }
+            </div>
+            <span class="attribute-name">Attaque</span>
+            <div class="dice-attributes">
+                <div>4 +</div>
+                <img class="dice-img" src="assets/dice/{{ attributes.diceChoice === 'attack' ? 'dice-6.png' : 'dice-4.png' }}"/>
+            </div>
+            <button class="attribute-btn" (click)="chooseDice('attack')" [class.active]="activeDiceButton === 'attack'" >D6</button>
+        </li>
+        <li class="attribute">
+            <div class="info-icon-container">
+                <span class="info-icon" (mouseover)="showTooltip('defense')" (mouseout)="hideTooltip()">i</span>
+                @if(tooltipVisible === 'defense') {
+                    <div class="tooltip">
+                        Force avec laquelle vous bloquez une attaque
+                    </div>
+                }
+            </div>
+            <span class="attribute-name">Défense</span>
+            <div class="dice-attributes">
+                <div>4 +</div>
+                <img class="dice-img" src="assets/dice/{{ attributes.diceChoice === 'defense' ? 'dice-6.png' : 'dice-4.png' }}"/>
+            </div>
+            <button class="attribute-btn" (click)="chooseDice('defense')" [class.active]="activeDiceButton === 'defense'" >D6</button>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,18 @@
+<div class="grid-container" (contextmenu)="$event.preventDefault()">
+    @for(row of grid; track row; let y = $index) { @for(tile of row; track tile; let x = $index) {
+    <div class="grid-cell" (dragover)="onDragOver($event)" (drop)="onDrop($event, x, y)" (mousemove)="mouseDrag($event, x, y)">
+        @if(tile.item){
+        <img
+            [src]="tile.item.imgSrc"
+            alt="Tile Item"
+            class="item"
+            (mousedown)="itemClickHandler($event, x, y)"
+            (dragstart)="dragItemStart($event, tile.item.id, x, y)"
+            draggable="true"
+        />
+        <span class="description-item">{{ tile.item.description }}</span>
+        }
+        <img [src]="tile.imageSrc" (mousedown)="mouseHit($event, x, y)" class="tile" draggable="false" />
+    </div>
+    } }
+</div>

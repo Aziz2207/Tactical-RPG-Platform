@@ -1,0 +1,136 @@
+<div class="combat-component" [ngStyle]="{'background-image': isSecretClicked ? 'url(./assets/secretImg.webp)' : 'none'}">
+    <button class="secret-btn" (click)="onSecretButtonClick()">Ne pas cliquer</button>
+    @if(combatService.combat && combatService.player1 && combatService.player2) {
+    <div class="combat-header">
+        <div class="combat-player-header">
+            <img class="player-icon" [src]="'assets/characters/waitingRoom/' + combatService.player1.characterType + '.png'" alt="Player Image" />
+            <div class="player-info">
+                <div class="player-username">{{ combatService.player1.userName }}</div>
+                <div class="progress-bars">
+                    <div class="progress-bar hp">
+                        <div
+                            class="bar"
+                            [style.width.%]="(combatService.player1.attributes.currentHP / combatService.player1.attributes.lifePoints) * 100"
+                        ></div>
+                    </div>
+                    <div class="attributes">
+                        <div class="attribute">
+                            Attaque : {{ combatService.player1.attributes.offensePoints }}
+                            @if (isOnIce(combatService.player1)) {
+                                <span class="ice-minus">-2</span>
+                            }
+                        </div>
+                        <div class="attribute">
+                            Deffense : {{ combatService.player1.attributes.defensePoints }}
+                            @if (isOnIce(combatService.player1)) {
+                                <span class="ice-minus">-2</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="escape-bar-container">
+                        Evasions :
+                        <div
+                            class="escape-bar"
+                            [class.empty]="getRunAttempts(combatService.player1) >= 1"
+                        ></div>
+                        <div
+                            class="escape-bar"
+                            [class.empty]="getRunAttempts(combatService.player1) >= 2"
+                        ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if(isPlayerInCombat()) {
+        <div class="clock-container">
+            <img src="assets/chronometer.png" alt="Chronometer" class="clock-img" />
+            <span class="clock-number"> {{ combatService.combatTimer }} </span>
+        </div>
+        }
+        <div class="combat-player-header reverse">
+            <div class="player-info">
+                <div class="player-username">{{ combatService.player2.userName }}</div>
+                <div class="progress-bars">
+                    <div class="progress-bar hp">
+                        <div
+                            class="bar"
+                            [style.width.%]="(combatService.player2.attributes.currentHP / combatService.player2.attributes.lifePoints) * 100"
+                        ></div>
+                    </div>
+                    <div class="attributes">
+                        <div class="attribute">
+                            Attaque : {{ combatService.player2.attributes.offensePoints }}
+                            @if (isOnIce(combatService.player1)) {
+                                <span class="ice-minus">-2</span>
+                            }
+                        </div>
+                        <div class="attribute">
+                            Deffense : {{ combatService.player2.attributes.defensePoints }}
+                            @if (isOnIce(combatService.player1)) {
+                                <span class="ice-minus">-2</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="escape-bar-container">
+                        Evasions : 
+                        <div
+                            class="escape-bar"
+                            [class.empty]="getRunAttempts(combatService.player2) >= 1"
+                        ></div>
+                        <div
+                            class="escape-bar"
+                            [class.empty]="getRunAttempts(combatService.player2) >= 2"
+                        ></div>
+                    </div>
+                </div>
+            </div>
+            <img class="player-icon" [src]="'assets/characters/waitingRoom/' + combatService.player2.characterType + '.png'" alt="Player Image" />
+        </div>
+    </div>
+
+    <div class="combat-players-actions">
+        <div class="player-display" [attr.data-socket-id]="combatService.player1.socketId">
+            <img class="player-img" [src]="'assets/characters/charactersImg/' + combatService.player1.characterType + '.png'" alt="Player Image" />
+        </div>
+        <div class="combat-action-banner">
+            <p class="combat-action-text">{{ combatMessage }}</p>
+        </div>
+        <div class="player-display" [attr.data-socket-id]="combatService.player2.socketId">
+            <img class="player-img" [src]="'assets/characters/charactersImg/' + combatService.player2.characterType + '.png'" alt="Player Image" />
+        </div>
+    </div>
+
+    <div class="combat-actions">
+        @if(combatService.currentlyAttacking) {
+        <button class="combat-btn attack-btn" (click)="combatMove('attack')">
+            <img src="assets/attackBtn.png" alt="Attack Button" />
+        </button>
+
+        } @if(combatService.attackRollObject && combatService.defenseRollObject) {
+        <div class="combat-roll">
+            <div class="dice-container">
+                @if (combatService.attackRollObject) {
+                <app-dice class="dice" [roleResult]="combatService.attackRollObject.currentRoll"></app-dice>
+                }
+                <p class="roll-display">
+                    Attaque: {{ combatService.combat.attacker.player.attributes.offensePoints + combatService.attackRollObject.currentRoll }}
+                </p>
+            </div>
+            <div class="dice-container">
+                @if (combatService.defenseRollObject) {
+                <app-dice class="dice" [roleResult]="combatService.defenseRollObject.currentRoll"></app-dice>
+                }
+                <p class="roll-display">
+                    Defense: {{ combatService.combat.defender.player.attributes.defensePoints + combatService.defenseRollObject.currentRoll }}
+                </p>
+            </div>
+        </div>
+
+        } @if(combatService.currentlyAttacking) {
+        <button class="combat-btn run-btn" [disabled]="!canRun()" (click)="combatMove('run')">
+            <img src="assets/runAwayBtn.png" alt="Run away Button" />
+        </button>
+        }
+    </div>
+    }
+</div>

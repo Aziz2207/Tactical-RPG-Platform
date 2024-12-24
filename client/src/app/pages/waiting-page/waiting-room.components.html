@@ -1,0 +1,52 @@
+<app-header></app-header>
+<div class="waiting-container background-image">
+    <div class="buttons">
+        <button class="quit-game-btn" (click)="quitGame()">Quitter la partie</button>
+        @if (isCurrentUserHost) {
+        <button class="start-game-btn" (click)="startGame()" [disabled]="!isStartGameValid()" [ngClass]="{'disabled-btn': !room?.isLocked}">
+            Jouer
+        </button>
+        }
+    </div>
+    <div class="head">
+        <img src="./assets/logoSimple.png" class="logo" />
+        <div class="waiting-room-infos">
+            <div class="waiting-room-title">SALLE D'ATTENTE</div>
+            <div class="loader">
+                <div class="waiting-room-text">En attente des joueurs</div>
+                <app-waiting-room-loader></app-waiting-room-loader>
+            </div>
+        </div>
+    </div>
+
+    <div class="code-container">
+        <div class="code-text">Code de la partie :</div>
+        <div class="code">{{ accessCode }}</div>
+    </div>
+    <div class="main-container">
+        <app-chat class="chat"></app-chat>
+        <div class="players-control">
+            <app-player-list [players]="players" [isCurrentUserHost]="isCurrentUserHost"></app-player-list>
+            @if (isCurrentUserHost) {
+            <app-virtual-player-button class="virtual-player-btn" [isRoomFull]="isRoomFull()"></app-virtual-player-button>
+            }
+        </div>
+        <div *ngIf="isCurrentUserHost" class="lock-container">
+            <input
+                type="checkbox"
+                id="toggleLock"
+                class="lock-checkbox"
+                [checked]="!room?.isLocked"
+                (change)="toggleRoomLock()"
+                [disabled]="isRoomFull()"
+            />
+            <label for="toggleLock" class="lock-label">
+                @if (room?.isLocked) {
+                <span>Verrouillé</span>
+                } @if (!room?.isLocked) {
+                <span>Déverrouillé</span>
+                }
+            </label>
+        </div>
+    </div>
+</div>

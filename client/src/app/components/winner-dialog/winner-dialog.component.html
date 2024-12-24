@@ -1,0 +1,10 @@
+<div class="dialog-container">
+    <p>
+        {{ 'Le joueur ' + data.winner.userName + ' a gagné la partie !' }}
+    </p>
+    <div class="dialog-buttons">
+        <button class="left-button" (click)="goToStats()" cdkFocusInitial>
+            <span>Voir vos performances</span>
+        </button>
+    </div>
+</div>

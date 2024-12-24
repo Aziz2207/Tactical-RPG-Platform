@@ -1,0 +1,94 @@
+<app-header (mouseup)="endDrag()" (mouseleave)="endDrag()"></app-header>
+<div class="container" (mouseup)="endDrag()">
+    <!--Game Description-->
+    <div class="describe-items">
+        <div class="game-name app-input">
+            <input
+                type="text"
+                [(ngModel)]="this.mapEditerService.gameName"
+                id="game-name"
+                [placeholder]="maxName + ' caractères maximum'"
+                [maxlength]="maxName"
+            />
+            <span for="game-name">Nom du Jeu</span>
+        </div>
+        <div class="description">
+            <label for="game-description">Description</label>
+            <textarea
+                type="text"
+                class="game-description"
+                [(ngModel)]="this.mapEditerService.gameDescription"
+                [placeholder]="maxDescription + ' caractères maximum'"
+                [maxlength]="maxDescription"
+                style="resize: vertical"
+                required
+            >
+            </textarea>
+        </div>
+    </div>
+
+    <!--Game Board-->
+    <div class="board" (contextmenu)="$event.preventDefault()">
+        <label>Tableau de Jeu</label>
+        <app-grid #grid></app-grid>
+    </div>
+
+    <!--Game Tools -->
+    <div class="tools">
+        <!--Tiles-->
+        <div class="tile-box">
+            <label>Tuiles Disponibles</label>
+            <div class="tile-tool">
+                <div class="tile">
+                    <img
+                        src="assets/door.jpeg"
+                        (click)="switchTile(tileEnum.ClosedDoor)"
+                        [class.selected]="this.mapEditerService.getSelectedTile() === tileEnum.ClosedDoor"
+                        draggable="false"
+                    />
+                    <span class="description-tile">Depose cette porte et clique dessus pour l'ouvrir!</span>
+                </div>
+
+                <div class="tile">
+                    <img
+                        src="assets/rock.jpeg"
+                        (click)="switchTile(tileEnum.Rock)"
+                        [class.selected]="this.mapEditerService.getSelectedTile() === tileEnum.Rock"
+                        draggable="false"
+                    />
+                    <span class="description-tile">Met un mur. Le personnage ne pourra pas le traverser!</span>
+                </div>
+
+                <div class="tile">
+                    <img
+                        src="assets/water.jpeg"
+                        (click)="switchTile(tileEnum.Water)"
+                        [class.selected]="this.mapEditerService.getSelectedTile() === tileEnum.Water"
+                        draggable="false"
+                    />
+                    <span class="description-tile">Ajoute un peu d'eau pour ralentir les mouvement</span>
+                </div>
+
+                <div class="tile">
+                    <img
+                        src="assets/ice.jpeg"
+                        (click)="switchTile(tileEnum.Ice)"
+                        [class.selected]="this.mapEditerService.getSelectedTile() === tileEnum.Ice"
+                        draggable="false"
+                    />
+                    <span class="description-tile">Met de la glace sur ton chemin et tu iras plus vite. </span>
+                </div>
+            </div>
+        </div>
+
+        <!--Items-->
+        <div class="item-box">
+            <label>Objets Disponibles</label>
+            <app-items-list class="items"></app-items-list>
+        </div>
+        <div class="edit-buttons">
+            <app-button [text]="'Réinitialiser'" class="edit-btn" (click)="resetGame()"></app-button>
+            <app-button [text]="'Sauvegarder'" class="edit-btn" (click)="saveGame()"></app-button>
+        </div>
+    </div>
+</div>

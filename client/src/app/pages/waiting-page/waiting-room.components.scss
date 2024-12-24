@@ -1,0 +1,224 @@
+.waiting-container {
+    height: 100vh;
+    overflow: hidden;
+    padding: 1% 3% 3% 3%;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.logo {
+    justify-content: center;
+    width: 10%;
+}
+
+.waiting-room-title {
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+.waiting-room-text {
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.buttons {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.start-game-btn {
+    border-radius: 5px;
+    background-color: #b3d4fccc;
+    color: white;
+    font-size: 15px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.393);
+    cursor: pointer;
+    border: none;
+    padding: 2vh 4vw;
+    width: 15vw;
+}
+
+.start-game-btn:hover {
+    background-color: #629de4cc;
+}
+
+.disabled-btn {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+.start-game-btn:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+.quit-game-btn {
+    border-radius: 5px;
+    background: #ef0505d0;
+    color: white;
+    font-size: 15px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.393);
+    cursor: pointer;
+    border: none;
+    padding: 2vh 4vw;
+    width: 15vw;
+}
+
+.quit-game-btn:hover {
+    background: #a80707d0;
+    color: white;
+}
+
+.loader {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.code-container {
+    position: absolute;
+    top: 20%;
+    right: 3%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.code-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+.code {
+    background-color: #b3d4fccc;
+    color: rgb(7, 20, 83);
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.player-list {
+    display: flex;
+    width: 60%;
+}
+
+.chat {
+    padding: 20px;
+    height: 60vh;
+}
+
+.lock-container {
+    position: absolute;
+    width: 18%;
+    bottom: 5%;
+    left: 55%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: line;
+    justify-content: left;
+    align-items: center;
+    gap: 8px;
+}
+
+.lock-checkbox {
+    --toggle-size: 18px;
+    appearance: none;
+    width: 6em;
+    height: 3.5em;
+    background: #a80707;
+    background-size: 205%;
+    background-position: 0;
+    transition: 0.4s;
+    border-radius: 99em;
+    position: relative;
+    cursor: pointer;
+}
+
+.lock-checkbox::before {
+    content: '';
+    width: 2.5em;
+    height: 2.5em;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.lock-checkbox:checked::before {
+    left: calc(100% - 2.5em - 0.5em);
+    background-color: #ffffffd0;
+}
+
+.lock-checkbox:checked {
+    background-position: 100%;
+    background: #4caf50;
+}
+
+.lock-label {
+    margin-top: 12px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.lock-label span {
+    vertical-align: middle;
+}
+
+.lock-checkbox:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+.lock-label:disabled {
+    color: #a9a9a9;
+}
+
+.players-control {
+  display: flex;
+  flex-direction: row;
+}
+
+.virtual-player-btn {
+  display: flex;
+  padding-top: 18vh;
+}
+
+
+::ng-deep .quit-dialog-container {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+::ng-deep .info-dialog-container {
+    border-radius: 30px;
+    overflow: hidden;
+}

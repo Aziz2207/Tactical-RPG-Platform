@@ -1,0 +1,15 @@
+<div class="character-choice">
+    @for(character of characterList; track character.type) {
+        <img 
+            [src]="character.icon" 
+            draggable="false" 
+            (click)="selectCharacter(character.type)" 
+            alt="characterImg" 
+            class="character-icn" 
+            [ngClass]="{
+                'active': selectedCharacter?.type === character.type,
+                'taken': isCharacterTaken(character.type)
+            }" 
+        >
+    }
+</div>

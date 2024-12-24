@@ -1,0 +1,62 @@
+.page-container {
+    padding: 0px 40px 40px 40px;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.game-list-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 30px;
+}
+
+.game-list {
+    height: 65vh;
+}
+
+.buttons {
+    position: absolute;
+    top: 12%;
+    left: 33%;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+}
+
+.title-string {
+    color: #ffffff;
+    font-size: 55px;
+    font-weight: 600;
+    text-shadow: 4px 4px 7px #fbc7387c;
+}
+
+.add-game-btn {
+    margin: 15px 10px 10px 30px;
+}
+
+.import-btn {
+    margin: 15px 10px 10px 30px;
+}
+
+.items-container {
+    padding: 0px 0px 0px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-display {
+    display: flex;
+    width: 50%;
+}
+
+::ng-deep .import-dialog-container {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+::ng-deep .import-error-dialog-container {
+    border-radius: 30px;
+    overflow: hidden;
+}

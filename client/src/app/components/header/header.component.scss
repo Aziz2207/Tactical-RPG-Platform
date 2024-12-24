@@ -1,0 +1,73 @@
+.app-header {
+    background-color: #456a92;
+    padding: 5px 50px 0px 50px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.app-logo img {
+    width: 130px;
+    display: block;
+    cursor: pointer;
+}
+
+.appLogo {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.header-btn {
+    position: relative;
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.header-btn span {
+    position: relative;
+    font-family: 'Electrolize', sans-serif;
+    text-shadow: 2px 2px 10px #0f2d4d;
+    font-size: 20px;
+    z-index: 2;
+}
+
+.header-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #183d64;
+    transform-origin: bottom right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-btn:hover::before {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+.header-btn.active::before {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+::ng-deep .join-dialog-container {
+    border-radius: 30px;
+    overflow: hidden;
+}

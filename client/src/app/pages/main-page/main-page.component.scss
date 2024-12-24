@@ -1,0 +1,208 @@
+::ng-deep .join-dialog-container {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #183d64;
+    background-image: url('../../../assets/dessinFond.jpg');
+    background-size: cover; /* Ensures the image fits within the container */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    background-position: center;
+    overflow: hidden;
+}
+
+/* Menu Bar */
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 42px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #456a9200;
+    //box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 8px 10px;
+    color: #65492b;
+    z-index: 5;
+}
+
+/*Menu text */
+.menu p {
+    margin-left: 10px;
+    background-color: #3e3431;
+    border-radius: 10px;
+    border: none;
+    display: inline-block;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 16px 31px;
+}
+
+/* Button styles */
+.opButton,
+.opButtonBig {
+    //border: 2px solid #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: monospace;
+    font-weight: bold;
+    z-index: 3;
+    padding-bottom: 30px;
+    transition: 0.1 ease-out;
+}
+
+.opButton {
+    font-size: 17px;
+    padding: 25px 45px;
+    margin: 20px;
+    margin-bottom: 70px;
+}
+
+.opButtonBig {
+    font-size: 17px;
+    padding: 35px 65px;
+    margin: 20px;
+    margin-bottom: 70px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-out;
+}
+
+button,
+button::after {
+    padding: 16px 20px;
+    font-size: 18px;
+    background: linear-gradient(45deg, transparent 5%, #d7a80f 5%);
+    color: #05114b;
+    letter-spacing: 3px;
+    line-height: 1;
+    box-shadow: 6px 0px 0px #ffffff;
+    outline: transparent;
+    position: relative;
+}
+
+.gameOption {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center; 
+    z-index: 3;
+    position: absolute;
+    bottom: 0vh;
+    width: 100vw;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+    z-index: 4;
+}
+
+#logo1 {
+    width: 310px;
+    height: 310px;
+    z-index: 3;
+    position: relative;
+}
+
+#logo2 {
+    margin-top: 100px;
+    width: 55px;
+    height: 55px;
+    z-index: 3;
+    position: relative;
+    animation: orbit infinite ease-in-out 7s;
+}
+
+@keyframes orbit {
+    0% {
+        left: 0%;
+        z-index: 1;
+        scale: 0.7;
+        transform: translate(0%, -50%);
+    }
+    25% {
+        scale: 0.3;
+        transform: translate(-100%, -50%);
+    }
+    50% {
+        left: 30%;
+        z-index: 1;
+    }
+    50.001% {
+        z-index: 4;
+    }
+    75% {
+        scale: 1;
+    }
+    100% {
+        left: 0%;
+        transform: translate(0%, -50%);
+        z-index: 4;
+        scale: 0.72;
+    }
+}
+
+/* SVG layout */
+svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Wave animation */
+svg path {
+    animation: pathAnim 7s linear infinite;
+}
+svg path:nth-child(2) {
+    animation-delay: 2s;
+}
+svg path:nth-child(3) {
+    animation-delay: 4s;
+}
+
+@keyframes pathAnim {
+    0% {
+        d: path('M0, 200 C300, 120, 520, 200, 820, 180 C1120, 160, 1420, 190, 1320, 200 L1320 400 L0 400');
+    }
+    20% {
+        d: path('M0, 200 C280, 140, 500, 200, 800, 170 C1100, 130, 1380, 150, 1320, 180 L1320 400 L0 400');
+    }
+    40% {
+        d: path('M0, 220 C300, 150, 520, 160, 820, 170 C1120, 200, 1400, 180, 1320, 170 L1320 400 L0 400');
+    }
+    60% {
+        d: path('M0, 180 C280, 130, 480, 190, 780, 200 C1080, 170, 1380, 150, 1320, 170 L1320 400 L0 400');
+    }
+    80% {
+        d: path('M0, 170 C300, 160, 500, 150, 800, 180 C1100, 200, 1400, 170, 1320, 150 L1320 400 L0 400');
+    }
+    100% {
+        d: path('M0, 200 C300, 120, 520, 200, 820, 180 C1120, 160, 1420, 190, 1320, 200 L1320 400 L0 400');
+    }
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg) translate(-16px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translate(-16px) rotate(-360deg);
+    }
+}

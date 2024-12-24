@@ -1,0 +1,49 @@
+.cant-join-message {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 10px auto;
+    position: relative;
+    top: 0;
+    z-index: 10;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 30px;
+    font-family: 'Cinzel', serif; /* Police RPG */
+    color: #ffd700;
+    background: #0000004c;
+    border: 3px solid #ffd700; /* Bordure dorée */
+    border-radius: 10px;
+    text-align: center;
+    outline: none;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input::placeholder {
+    color: rgba(243, 219, 6, 0.42);
+    font-style: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2px;
+}
+
+input:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+}

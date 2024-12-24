@@ -1,0 +1,33 @@
+<ul class="player-list">
+    <li *ngFor="let player of players" [ngClass]="{ 'host-player': player.isHost }">
+        <div class="player-label">
+            @if (player.isHost) {
+                <span>Hôte</span>
+            }
+            @else if (player.isVirtual) {
+                <span>Bot</span>
+            }
+            @else {
+                <span>Invité</span>
+            }
+        </div>
+        @if(player.userName) {
+            <div class="player-container">
+                <img [src]="'assets/characters/waitingRoom/' + player.characterType + '.png'" alt="Player Image" class="player-image" />
+                @if (!player.isHost && isCurrentUserHost) {
+                    <button (click)="removePlayer(player.socketId)" class="remove-player-btn">✖</button>
+                }
+            </div>
+            <span class="player-name">{{ player.userName }}</span>
+        }
+        @else {
+            <div class="player-container">
+                <img [src]="'assets/characters/waitingRoom/UNKNOWN.png'" alt="Player Image" class="player-image" />
+                @if (!player.isHost && isCurrentUserHost) {
+                    <button (click)="removePlayer(player.socketId)" class="remove-player-btn">✖</button>
+                }
+            </div>
+            <span class="player-name">En attente...</span>
+        }
+    </li>
+</ul>

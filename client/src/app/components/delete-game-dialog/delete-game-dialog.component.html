@@ -1,0 +1,11 @@
+<div class="dialog-container">
+    <p>Etes-vous sures de vouloir supprimer le jeu?</p>
+    <div class="dialog-buttons">
+        <button (click)="onNoClick()" class="left-button">
+            <span>Annuler</span>
+        </button>
+        <button [mat-dialog-close]="true" cdkFocusInitial class="right-button">
+            <span>Supprimer</span>
+        </button>
+    </div>
+</div>

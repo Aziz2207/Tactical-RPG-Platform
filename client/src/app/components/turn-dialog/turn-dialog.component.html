@@ -1,0 +1,11 @@
+<div class="dialog-container">
+    <p class="game-dialog">C'est le tour de {{ data.playerName }}</p>
+    <img [src]="'assets/characters/waitingRoom/' + data.type + '.png'" alt="Player Image" class="player-image" />
+    <div class="progress-bar-container">
+        <div
+            class="progress-bar"
+            [style.width.%]="progress"
+            [style.background-color]="progressColor"
+        ></div>
+    </div>
+</div>

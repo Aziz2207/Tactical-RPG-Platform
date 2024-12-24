@@ -1,0 +1,15 @@
+<div class="game-list"> 
+        @for(game of gameList; track game._id){ 
+            @if(game.isVisible) {
+                <app-game-item 
+                    [game]="game" 
+                    [selected]="selectedGame?._id === game._id"
+                    (click)="selectGame(game._id)" 
+                    class="game">
+                </app-game-item>
+            }
+        }     
+    <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</div>

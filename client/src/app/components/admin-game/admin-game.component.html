@@ -1,0 +1,41 @@
+@if(currentGame){
+<div class="game-desc">
+    <div class="selected-game-title">{{ currentGame.title }}</div>
+    <div class="mode-img-container">
+        @if(currentGame && currentGame.map.mode === modeEnum.CTF) {
+        <img src="assets\CTFGame_icn.png" alt="" class="selected-game-mode" draggable="false" />
+        } @else {
+        <img src="assets\classicGame_icn.png" alt="" class="selected-game-mode" draggable="false" />
+        }
+        <div class="image-container">
+            <img [src]="currentGame.prevImg" alt="map-img" class="selected-game-img" />
+            <div class="overlay">
+                <div class="game-description">{{ currentGame.description }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="selected-game-desc">
+        <div class="size">{{ currentGame.size }} x {{ currentGame.size }}</div>
+        <div class="last-mod">Last Mod : {{ currentGame.lastMod }}</div>
+    </div>
+    <div class="button-container">
+        <button class="visibility-button" (click)="toggleVisibilityHandler()">
+            @if(currentGame.isVisible) {
+            <i class="fa-solid fa-eye" style="color: #000000"></i>
+            } @if (!currentGame.isVisible) {
+            <i class="fa-solid fa-eye-slash" style="color: #000000"></i>
+            }
+        </button>
+        <button class="edit-button" routerLink="/edit" (click)="saveInfoGame()">
+            <i class="fa-solid fa-pen-to-square" style="color: #000000"></i>
+        </button>
+        <button class="delete-button" (click)="openDialog()">
+            <i class="fa-solid fa-trash" style="color: #000000"></i>
+        </button>
+        <button class="export-button" (click)="exportGame()">
+            <i class="fa-solid fa-download" style="color: #000000"></i>
+        </button>
+    </div>
+</div>
+}

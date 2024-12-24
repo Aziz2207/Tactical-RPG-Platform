@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="header">
+        <button (click)="switchWindow('journal')" [class.active]="activeWindow === 'journal'">Journal</button>
+        <button (click)="switchWindow('messages')" [class.active]="activeWindow === 'messages'">Messages</button>
+    </div>
+
+    <div class="content">
+        @if (activeWindow === 'journal') {
+            <app-game-log class="game-log"></app-game-log>
+        } @if (activeWindow === 'messages') {
+            <app-chat class="chat-box"></app-chat>
+        }
+    </div>
+</div>

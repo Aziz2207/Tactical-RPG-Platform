@@ -1,0 +1,34 @@
+@if(gameService.gameState.map){
+<div class="grid-container">
+    @for(row of gameService.gameState.map._tiles; track row; let y = $index) { @for(tile of row; track tile; let x = $index) {
+    <div
+        (click)="onLeftClick(tile, { x, y })"
+        (contextmenu)="onRightClick($event, x, y)"
+        [ngClass]="{
+            'available-tile': gameService.gameState.yourTurn && (isActionTile(tile, x, y) || isMovementTile(x, y))
+        }"
+        class="grid-cell"
+        (mouseover)="fastestPath(x, y)"
+        (mouseleave)="clearPath()"
+    >
+        @if(tile.item){
+        <img [src]="tile.item.imgSrc" alt="Tile Item" class="item" draggable="false" />
+        } @if(tile.player){
+        <img
+            (click)="onLeftClick(tile, { x, y })"
+            [src]="'./assets/characters/charactersImg/' + tile.player.characterType + '.png'"
+            class="player-item"
+        />
+        }
+
+        <img [src]="tile.imageSrc" class="tile" draggable="false" [class.highlight-path]="isInPath(x, y)" />
+        @if(isInPath(x, y)) {
+        <img [src]="'./assets/pathImg.png'" class="path-img" />
+        }
+    </div>
+    }}
+</div>
+<div class="pop-up" [hidden]="!isRightClicked" [ngStyle]="{ top: popupCoordY + 'px', left: popupCoordX + 'px' }">
+    {{ popupText }}
+</div>
+}

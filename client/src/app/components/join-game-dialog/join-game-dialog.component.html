@@ -1,0 +1,21 @@
+<div class="dialog-container">
+    <p>Entrez un code d'acces</p>
+    <div>
+        <form [formGroup]="joinForm">
+            <div class="form-group">
+                <input formControlName="code" id="code" (keyup.enter)="onNextClick()" placeholder="x x x x" maxlength="4" />
+            </div>
+        </form>
+        @if (errorMessage) {
+        <div class="cant-join-message">{{ errorMessage }}</div>
+        }
+    </div>
+    <div class="dialog-buttons">
+        <button (click)="onNoClick()" class="left-button">
+            <span>Annuler</span>
+        </button>
+        <button (click)="onNextClick()" cdkFocusInitial class="right-button">
+            <span>Rejoindre</span>
+        </button>
+    </div>
+</div>

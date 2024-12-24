@@ -1,0 +1,155 @@
+.game-desc {
+    float: right;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.737) 0%, rgba(0, 0, 0, 0.427) 59%, rgba(0, 0, 0, 0.221) 100%);
+    clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.selected-game-title {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-shadow: 6px 6px 0 black;
+}
+
+.image-container {
+    position: relative;
+    width: 50%; 
+    margin: 0 auto; 
+}
+
+.mode-img-container {
+    position: relative;
+    display: inline-block;
+}
+
+.selected-game-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.game-description {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    display: none; 
+}
+
+.image-container:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.731);
+}
+
+.image-container:hover .game-description {
+    display: block; 
+}
+
+.selected-game-mode {
+    position: relative;
+    top: 5%;
+    right: -23%;
+    width: 20%; 
+    height: auto;
+    z-index: 2;
+}
+
+.selected-game-desc {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+}
+
+.mode {
+    font-size: 35px;
+}
+
+.size {
+   font-size: 25px;
+}
+
+.last-mod {
+    font-size: 18px
+}
+
+.start-game-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background: #183153;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.393);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    margin: 10px auto;
+    padding: 0px 30px 0px 30px;;
+}
+
+.start-game-btn::after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    background: #ffd401;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+}
+  
+.start-game-btn:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+}
+
+.start-game-btn span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 18px 25px;
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+}
+  
+.start-game-btn:hover span {
+    color: #183153;
+    font-weight: 700;
+    animation: scaleUp 0.3s ease-in-out;
+}
+  
+@keyframes scaleUp {
+0% {
+    transform: scale(1);
+}
+
+50% {
+    transform: scale(0.95);
+}
+
+100% {
+    transform: scale(1);
+}
+}

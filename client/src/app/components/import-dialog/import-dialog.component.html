@@ -1,0 +1,22 @@
+<div class="dialog-container">
+    <p>Le nom de jeu déjà utilisé</p>
+    <div>
+        <form [formGroup]="renameForm">
+            <div class="form-group">
+                <label for="newTitle">Nouveau nom de jeu :</label>
+                <input formControlName="newTitle" id="newTitle" (keyup.enter)="onConfirm()" />
+            </div>
+        </form>
+        @if (errorMessage) {
+        <div class="cant-join-message">{{ errorMessage }}</div>
+        }
+    </div>
+    <div class="dialog-buttons">
+        <button (click)="onCancel()" class="left-button">
+            <span>Annuler</span>
+        </button>
+        <button (click)="onConfirm()" cdkFocusInitial class="right-button">
+            <span>Confirmer</span>
+        </button>
+    </div>
+</div>

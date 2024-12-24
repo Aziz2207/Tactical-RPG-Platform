@@ -1,0 +1,13 @@
+<div class="item-tool">
+    @for (entry of itemArray; track entry; let index = $index) {
+    <div class="item">
+        @if(itemCountObj[entry].count === 0){
+        <img [src]="itemCountObj[entry].items[0].imgSrc" alt="{{ entry }}" [draggable]="false" (dragstart)="onDragStart($event, entry)" class="img" />
+        } @else{
+        <img [src]="itemCountObj[entry].items[0].imgSrc" alt="{{ entry }}" [draggable]="true" (dragstart)="onDragStart($event, entry)" class="img" />
+        }
+        <span class="item-count">{{ itemCountObj[entry].count }}</span>
+        <span class="description-item">{{ itemCountObj[entry].items[0].description }}</span>
+    </div>
+    }
+</div>
