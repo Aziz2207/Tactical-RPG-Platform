@@ -111,7 +111,7 @@ It is not intended for production deployment or commercial use.
 
 ## 👤 Author
 
-Developed by ****  
+Developed by **Aziz Hidri**  
 Software Engineering Student  
 Academic Team Project (LOG3900)
 .
