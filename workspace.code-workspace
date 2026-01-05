@@ -1,0 +1,19 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+         {
+            "path": "./client-leger"
+        },
+        {
+            "path": "./client"
+        },
+        {
+            "path": "./server"
+        },
+        {
+            "path": "./common"
+        }
+    ]
+}

@@ -1,0 +1,155 @@
+#dialog-box {
+    background: var(--dark-gradient);
+    color: var(--main-text-color);
+}
+
+.messages-container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+#title {
+    font-family: papyrus;
+    font-weight: 900;
+    text-align: center;
+    color: var(--inverted-text-color);
+    height: 1%;
+    font-size: 20px;
+    background: var(--primary-gradient);
+    margin-top: -1%;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.button {
+    font-weight: 900;
+    font-family: "Papyrus";
+    background-color: var(--primary);
+}
+
+.button:hover {
+    color: var(--main-text-color);
+    background-color: var(--primary-dark);
+}
+
+.messages-container {
+    margin-top: 3%;
+}
+
+.input-container {
+    text-align: center;
+}
+
+#dialog-input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid var(--primary-dark);
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--main-text-color);
+    font-size: 16px;
+    font-family: "Papyrus", sans-serif;
+    font-weight: 700;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#dialog-input:focus {
+    outline: none;
+    border-color: var(--primary-text);
+    box-shadow: 0 0 10px var(--primary-box-shadow);
+    background: var(--primary-dark);
+}
+
+#dialog-input::placeholder {
+    color: var(--very-dark);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.swap-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pickedup-item {
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+}
+
+.pickedup-item-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inventory-item-container {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 6rem;
+    width: 20rem;
+    background: var(--secondary-fade);
+}
+
+.inventory-item {
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    border: 0.1rem solid var(--secondary-dark);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: var(--primary-box-shadow);
+        cursor: pointer;
+    }
+}
+
+.inventory-object {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.winner-image-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.winner-image {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 5rem;
+    border: 0.2rem solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.decoration {
+    height: 15rem;
+}

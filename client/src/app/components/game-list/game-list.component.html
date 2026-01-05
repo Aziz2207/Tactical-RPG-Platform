@@ -1,0 +1,149 @@
+<div class="game-list">
+  @if(isLoading){
+  <div class="loading">
+    <p>Chargement des cartes...</p>
+  </div>
+  } @else { @for (game of games; track game._id) {
+  <div
+    [ngClass]="{ game: true, selected: game.isSelected }"
+    (click)="selectGame(game)"
+    class="game-card"
+  >
+    <!-- Image Section -->
+    <div class="game-image-container">
+      <div class="tooltip">
+        <div class="tooltiptext">{{ game.description }}</div>
+        <img class="game-image" src="{{ game.image }}" alt="game-image" />
+      </div>
+
+      <!-- Visibility Badge Overlay -->
+      <div class="visibility-badge" title="{{ game.state | translate }}">
+        @if(game.state === gameState.Public){
+        <lucide-icon [name]="Globe"></lucide-icon>
+        } @else if(game.state === gameState.Shared){
+        <lucide-icon [name]="Link"></lucide-icon>
+        } @else {
+        <lucide-icon [name]="Lock"></lucide-icon>
+        }
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="game-content">
+      <div class="game-header">
+        <h3 class="game-name">{{ game.name }}</h3>
+      </div>
+
+      <p class="creator-name">
+        {{ "GAME.CREATED_BY" | translate }} {{ game.creatorUsername }}
+      </p>
+
+      <!-- Game Metadata -->
+      <div class="game-metadata">
+        <span class="metadata-item">
+          <lucide-icon [name]="Grid3x3" class="metadata-icon"></lucide-icon>
+          {{ game.dimension }} × {{ game.dimension }}
+        </span>
+        <span class="metadata-item">
+          <lucide-icon
+            *ngIf="game.mode === gameMode.Classic"
+            [name]="Sword"
+            class="metadata-icon"
+          ></lucide-icon>
+          <lucide-icon
+            *ngIf="game.mode === gameMode.CaptureTheFlag"
+            [name]="Flag"
+            class="metadata-icon"
+          ></lucide-icon>
+          {{ game.mode | translate }}
+        </span>
+        <span class="metadata-item">
+          <lucide-icon [name]="Calendar" class="metadata-icon"></lucide-icon>
+          {{ getTrimedDate(game) }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    @if(usingPage === "administration-page"){
+    <div class="action-buttons" (click)="$event.stopPropagation()">
+      @if(accountDetails.uid === game.creatorId) {
+      <div class="settings-container">
+        <button
+          title="visibility"
+          class="action-btn settings-btn"
+          [matMenuTriggerFor]="visibilityMenu"
+          (click)="$event.stopPropagation()"
+        >
+          <lucide-icon [name]="Settings"></lucide-icon>
+        </button>
+
+        <mat-menu #visibilityMenu="matMenu" class="menu">
+          <button
+            mat-menu-item
+            [class.active]="game.state === gameState.Public"
+            (click)="changeGameState($event, game, gameState.Public)"
+          >
+            <lucide-icon [name]="Globe"></lucide-icon>
+            {{ gameState.Public | translate }}
+            @if(game.state === gameState.Public){
+            <lucide-icon [name]="Check" class="check-icon"></lucide-icon>
+            }
+          </button>
+
+          <button
+            mat-menu-item
+            [class.active]="game.state === gameState.Shared"
+            (click)="changeGameState($event, game, gameState.Shared)"
+          >
+            <lucide-icon [name]="Link"></lucide-icon>
+            {{ gameState.Shared | translate }}
+            @if(game.state === gameState.Shared){
+            <lucide-icon [name]="Check" class="check-icon"></lucide-icon>
+            }
+          </button>
+
+          <button
+            mat-menu-item
+            [class.active]="game.state === gameState.Private"
+            (click)="changeGameState($event, game, gameState.Private)"
+          >
+            <lucide-icon [name]="Lock"></lucide-icon>
+            {{ gameState.Private | translate }}
+            @if(game.state === gameState.Private){
+            <lucide-icon [name]="Check" class="check-icon"></lucide-icon>
+            }
+          </button>
+        </mat-menu>
+      </div>
+      } @if(accountDetails.uid === game.creatorId || game.state ===
+      gameState.Public) {
+      <button
+        class="action-btn edit-btn"
+        (click)="editGame(game)"
+        title="Edit game"
+      >
+        <lucide-icon [name]="Pencil"></lucide-icon>
+      </button>
+
+      <button
+        class="action-btn delete-btn"
+        (click)="deleteGame(game)"
+        title="Delete game"
+      >
+        <lucide-icon [name]="Trash2"></lucide-icon>
+      </button>
+      } @if(game.state === gameState.Public) {
+      <button
+        class="action-btn duplicate-btn"
+        (click)="duplicateGame(game)"
+        title="Duplicate game"
+      >
+        <lucide-icon [name]="CopyPlus"></lucide-icon>
+      </button>
+      }
+    </div>
+    }
+  </div>
+  }}
+</div>

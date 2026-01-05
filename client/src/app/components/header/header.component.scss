@@ -1,0 +1,274 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    background: none;
+    font-family: "papyrus";
+    height: 10vh;
+    width: 95%;
+    overflow: hidden;
+    container-type: inline-size;
+    .left-section {
+        display: flex;
+        align-items: center;
+        justify-content: start !important;
+    }
+
+    .logo {
+        height: 60px;
+        margin-right: 15px;
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: "Papyrus";
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: var(--main-text-color);
+        letter-spacing: 1px;
+        flex: 1;
+    }
+
+    @container (max-width: 1200px) {
+        .title {
+            font-size: 1.5rem;
+        }
+    }
+
+    .right-section,
+    .left-section {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        border-radius: 50%;
+        border-width: 10px;
+        border-color: var(--main-text-color);
+        width: 16rem;
+        .btn {
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition:
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+            font-family: "papyrus";
+            text-align: left;
+            color: var(--main-text-color);
+
+            position: relative;
+            display: inline-block;
+            z-index: 4999;
+            transition: all 0.3s ease;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transition: background-color 0.1s ease;
+                z-index: 4999;
+            }
+
+            &:hover::after {
+                background: linear-gradient(
+                    to right,
+                    rgba(255, 242, 176, 0.9),
+                    rgba(255, 242, 176, 0.7),
+                    rgba(0, 0, 0, 0)
+                );
+                border-radius: 5px;
+            }
+
+            &:hover {
+                color: var(--inverted-text-color);
+            }
+        }
+
+        &:hover {
+            border-color: gold;
+        }
+
+        .avatar {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            padding: 0;
+            font-weight: bold;
+        }
+    }
+}
+
+.menu-trigger {
+    margin-top: 0.75rem;
+}
+
+.logout-button {
+    font-family: "Papyrus";
+    color: var(--main-text-color);
+    border-radius: 100rem;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    width: 3.5rem;
+    background-color: var(--secondary-very-dark);
+    border-radius: 3rem;
+    color: var(--main-text-color);
+
+    &:hover {
+        background-color: var(--secondary-dark);
+    }
+
+    mat-icon {
+        color: var(--main-text-color);
+    }
+
+    &:hover {
+        background: var(--basic-gradient);
+    }
+}
+
+.username {
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem !important;
+    padding: 0;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 0.9rem;
+    color: var(--main-text-color);
+    gap: 1rem;
+    margin-left: 1rem;
+}
+
+.sidebar-button {
+    position: fixed;
+    bottom: 1rem;
+    background-color: var(--secondary-very-dark);
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    color: var(--main-text-color);
+
+    &:hover {
+        background-color: var(--secondary-dark);
+    }
+}
+
+.chat-button {
+    right: 2rem;
+}
+
+.friends-button {
+    right: 7rem;
+}
+
+.top-right-icons {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.3rem;
+}
+
+.store-icon,
+.settings-icon,
+.logout-icon {
+    align-items: center;
+    justify-content: center;
+    color: var(--main-text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0.8rem 0.1rem;
+    border-radius: 3rem;
+    background-color: var(--secondary-very-dark);
+    &:hover {
+        background-color: var(--secondary-dark);
+    }
+}
+
+.balance {
+    font-size: 1.25rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 5rem;
+    margin-right: 0rem;
+    padding: 0.5rem 1rem 0.2rem;
+    color: var(--inverted-text-color);
+    border-radius: 3rem;
+    background-color: var(--primary);
+}
+
+.header {
+    transition: margin-right 0.3s ease;
+    margin-right: 0;
+}
+
+:host-context(body.friends-open) .header {
+    margin-right: 20rem;
+}
+
+:host-context(body.chat-open) .header {
+    margin-right: 25rem;
+}
+
+:host-context(body.both-open) .header {
+    margin-right: 45rem;
+}
+
+.top-right-icons {
+    transition: right 0.3s ease;
+}
+
+:host-context(body.friends-open) .top-right-icons {
+    right: calc(1rem + 20rem);
+}
+
+:host-context(body.chat-open) .top-right-icons {
+    right: calc(1rem + 25rem);
+}
+
+:host-context(body.both-open) .top-right-icons {
+    right: calc(1rem + 45rem);
+}
+
+.sidebar-button {
+    transition: right 0.3s ease;
+}
+
+:host-context(body.friends-open) .chat-button {
+    right: calc(2rem + 20rem);
+}
+
+:host-context(body.friends-open) .friends-button {
+    right: calc(7rem + 20rem);
+}
+
+:host-context(body.chat-open) .chat-button {
+    right: calc(2rem + 25rem);
+}
+
+:host-context(body.chat-open) .friends-button {
+    right: calc(7rem + 25rem);
+}
+
+:host-context(body.both-open) .chat-button {
+    right: calc(2rem + 45rem);
+}
+
+:host-context(body.both-open) .friends-button {
+    right: calc(7rem + 45rem);
+}

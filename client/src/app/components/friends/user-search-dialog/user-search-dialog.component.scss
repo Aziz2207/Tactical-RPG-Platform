@@ -1,0 +1,61 @@
+.search-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+input {
+    background: none;
+    color: var(--main-text-color);
+    border: 0.08rem solid var(--primary-dark);
+    border-radius: 10rem;
+    height: 2rem;
+    width: 50%;
+    padding: 0 2rem;
+    margin: 0;
+    font-family: Papyrus;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 3rem;
+    color: var(--main-text-color);
+}
+
+.user-list-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    margin-top: 1rem;
+    padding-right: 0.5rem;
+}
+
+/* optional: hide horizontal scroll */
+.user-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.user-list-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-dark);
+    border-radius: 4px;
+}
+
+.user-list-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.no-friend-requests-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-text-color);
+    font-size: 3rem;
+    margin-left: 2rem;
+    margin-top: 15rem;
+}

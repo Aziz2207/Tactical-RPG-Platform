@@ -1,0 +1,19 @@
+.dialog-box {
+    background: var(--dark-gradient);
+    color: var(--main-text-color);
+}
+
+#dialog-title {
+    font-family: papyrus;
+    font-weight: 900;
+    text-align: center;
+    color: var(--inverted-text-color);
+    height: 1%;
+    font-size: 20px;
+    background: var(--primary-gradient);
+    margin-top: -1%;
+}
+
+.dialog-message {
+    margin-top: 3%;
+}

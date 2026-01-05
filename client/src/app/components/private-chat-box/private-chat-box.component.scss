@@ -1,0 +1,112 @@
+#chat-input {
+    flex: 1;
+    background: none;
+    color: var(--primary-light);
+    border: 0.075rem solid var(--primary-light);
+    border-radius: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    margin: 1rem 0.5rem;
+    font-family: Papyrus;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+.past-messages {
+  position: absolute;
+  bottom: 100%;
+  background: var(--chat-box-color);
+  display: block;
+  z-index: 10000;
+  width: 222%;
+  height: 84vh;
+  max-height: 84vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: normal;
+  word-break: break-word;
+  padding: 0.4rem;
+}
+
+.chat-box {
+  height: 84vh;
+  width: 80%;
+  position: relative;
+  display: inline-block;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary-dark);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 5rem;
+}
+
+
+#chat-input:hover {
+    background-color: var(--secondary-dark);
+}
+
+.input-container.logs-active {
+  width: 222%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.input-container.chat-active {
+  width: 220%;
+}
+
+
+.icon-chat:hover {
+  transform: scale(1.1);
+}
+
+.icon-logs {
+  background-image: url("../../../assets/images/icones/logs.png");
+}
+
+.icon-logs:hover {
+  transform: scale(1.1);
+}
+
+.filter-icon {
+  cursor: pointer;
+  margin-right: 0.5rem;
+  font-size: 20px;
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  background-size: cover;
+  transform: scale(0.9);
+}
+
+input::placeholder {
+    color: var(--primary-light);
+    opacity: 1;
+}
+
+.typing-indicator {
+  font-size: 0.8rem;
+  color: #ccc;
+  padding: 4px 8px 0;
+  font-style: italic;
+}
+
+.send-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 0.7rem;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+    transition: transform 0.15s ease;
+
+    &:hover {
+        transform: scale(1.15);
+    }
+}

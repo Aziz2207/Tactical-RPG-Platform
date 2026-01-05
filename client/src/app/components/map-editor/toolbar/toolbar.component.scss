@@ -1,0 +1,8 @@
+.tools-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 6vh;
+    column-gap: 4%;
+    width: 49.5%;
+    position: absolute;
+}

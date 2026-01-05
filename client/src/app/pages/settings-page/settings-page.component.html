@@ -1,0 +1,302 @@
+<div class="settings-page">
+  <app-header [title]="'SETTINGS_PAGE.TITLE' | translate"></app-header>
+  @if(isLoading){
+  <div class="fullscreen-spinner">
+    <mat-spinner diameter="60"></mat-spinner>
+  </div>
+  }
+  <div class="settings-container">
+    <div class="tabs">
+      <div
+        class="tab"
+        [class.active]="activeTab === 'visual'"
+        (click)="setActiveTab('visual')"
+      >
+        <mat-icon>palette</mat-icon>
+        <span>{{ "SETTINGS_PAGE.TABS.VISUAL" | translate }}</span>
+      </div>
+      <div
+        class="tab"
+        [class.active]="activeTab === 'account'"
+        (click)="setActiveTab('account')"
+      >
+        <lucide-icon [name]="UserPen" class="icon"></lucide-icon>
+        <span>{{ "SETTINGS_PAGE.TABS.ACCOUNT" | translate }}</span>
+      </div>
+      <div
+        class="tab"
+        [class.active]="activeTab === 'statistics'"
+        (click)="setActiveTab('statistics')"
+      >
+        <mat-icon>query_stats</mat-icon>
+        <span>{{ "SETTINGS_PAGE.TABS.STATS" | translate }}</span>
+      </div>
+    </div>
+    <main>
+      @if(activeTab === 'visual') {
+      <div class="content">
+        <div class="section">
+          <h3 class="section-title">
+            {{ "SETTINGS_PAGE.SECTIONS.LANGUAGE.TITLE" | translate }}
+          </h3>
+          <div class="language-selector">
+            <app-language-selector />
+          </div>
+        </div>
+        <div class="section">
+          <h3 class="section-title">
+            {{ "SETTINGS_PAGE.SECTIONS.BACKGROUND.TITLE" | translate }}
+          </h3>
+          <p class="section-subtitle">
+            {{ "SETTINGS_PAGE.SECTIONS.BACKGROUND.SUBTITLE" | translate }}
+          </p>
+          <div class="background-options">
+            @for(backgroundUrl of backgroundService.ownedBackgrounds(); track
+            backgroundUrl) {
+            <div
+              class="background-card"
+              [class.selected]="isBackgroundSelected(backgroundUrl)"
+              [class.clickable]="!isLoading"
+              (click)="!isLoading && selectBackground(backgroundUrl)"
+            >
+              <img
+                [src]="backgroundUrl"
+                alt="Background"
+                class="background-preview"
+              />
+            </div>
+            } @if(backgroundService.ownedBackgrounds().length === 0 &&
+            !isLoading) {
+            <div class="no-backgrounds">
+              <p>
+                {{
+                  "SETTINGS_PAGE.SECTIONS.BACKGROUND.NO_BACKGROUNDS" | translate
+                }}
+              </p>
+              <p>
+                {{
+                  "SETTINGS_PAGE.SECTIONS.BACKGROUND.VISIT_STORE" | translate
+                }}
+              </p>
+            </div>
+            }
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 class="section-title">
+            {{ "SETTINGS_PAGE.SECTIONS.THEME.TITLE" | translate }}
+          </h3>
+          <div class="theme-options">
+            @for(themeOption of ownedThemeOptions; track themeOption.value){
+            <div
+              class="theme-card"
+              [class.active]="currentTheme === themeOption.value"
+            >
+              <div
+                class="theme-preview"
+                [class]="'theme-preview ' + themeOption.colorClass"
+                [class.selected]="currentTheme === themeOption.value"
+                (click)="setTheme(themeOption.value)"
+                [attr.aria-label]="'Sélectionner le thème ' + themeOption.label"
+              >
+                <div class="middle-layer"></div>
+              </div>
+              <span class="theme-label">{{
+                themeOption.label | translate
+              }}</span>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+      } @else if(activeTab === 'account') {
+      <div class="content">
+        @if(!isEditing){
+        <div class="edit-controls">
+          <button class="edit-button" (click)="toggleEdit()">
+            {{ "SETTINGS_PAGE.EDIT_BUTTON" | translate }}
+          </button>
+        </div>
+        } @if(isEditing){
+        <div class="edit-controls save-discard">
+          <button class="save-button" (click)="saveChanges()">
+            {{ "SETTINGS_PAGE.SAVE_BUTTON" | translate }}
+          </button>
+          <button class="discard-button" (click)="discardChanges()">
+            {{ "SETTINGS_PAGE.DISCARD_BUTTON" | translate }}
+          </button>
+        </div>
+        }
+        <form
+          [formGroup]="form"
+          (ngSubmit)="saveChanges()"
+          (keydown.enter)="saveChanges()"
+        >
+          <app-avatar-selector
+            [isEditing]="isEditing"
+            selectedAvatar="{{ form.get('avatarURL')?.value }}"
+            (avatarChanged)="onAvatarSelected($event)"
+          ></app-avatar-selector>
+          <div class="section form-section">
+            <h3 class="section-title">
+              {{ "SETTINGS_PAGE.SECTIONS.ACCOUNT_INFO.TITLE" | translate }}
+            </h3>
+            <div class="form-group">
+              <label>{{
+                "SETTINGS_PAGE.SECTIONS.ACCOUNT_INFO.EMAIL" | translate
+              }}</label>
+              <input
+                type="email"
+                class="text-input"
+                placeholder="{{
+                  'SETTINGS_PAGE.SECTIONS.ACCOUNT_INFO.EMAIL_PLACEHOLDER'
+                    | translate
+                }}"
+                formControlName="email"
+                maxlength="100"
+                required
+                [readonly]="!isEditing"
+              />
+            </div>
+            @if(form.get('email')?.hasError('required')){
+            <mat-error>{{
+              "SETTINGS_PAGE.SECTIONS.ACCOUNT_INFO.EMAIL_REQUIRED" | translate
+            }}</mat-error
+            >} @if(form.get('email')?.hasError('email')){
+            <mat-error>{{
+              "SETTINGS_PAGE.SECTIONS.ACCOUNT_INFO.EMAIL_INVALID" | translate
+            }}</mat-error
+            >} @if(form.get('email')?.hasError('pattern')){
+            <mat-error>{{
+              "SETTINGS_PAGE.SECTIONS.ACCOUNT_INFO.EMAIL_NO_SPACES" | translate
+            }}</mat-error
+            >} @else {<br />}
+            <div class="form-group">
+              <label>{{
+                "SETTINGS_PAGE.SECTIONS.ACCOUNT_INFO.USERNAME" | translate
+              }}</label>
+              <input
+                class="text-input"
+                placeholder="{{
+                  'SETTINGS_PAGE.SECTIONS.ACCOUNT_INFO.USERNAME_PLACEHOLDER'
+                    | translate
+                }}"
+                formControlName="username"
+                minlength="3"
+                maxlength="20"
+                [readonly]="!isEditing"
+                required
+              />
+            </div>
+            @if(form.get('username')?.hasError('required')){
+            <mat-error>{{
+              "SETTINGS_PAGE.SECTIONS.ACCOUNT_INFO.USERNAME_REQUIRED"
+                | translate
+            }}</mat-error
+            >} @else if(form.get('username')?.hasError('minlength') &&
+            form.get('username')?.hasError('pattern')){
+            <mat-error>
+              {{
+                "SETTINGS_PAGE.SECTIONS.ACCOUNT_INFO.USERNAME_NO_SPACES_MIN"
+                  | translate
+              }} </mat-error
+            >} @else if(form.get('username')?.hasError('pattern')){
+            <mat-error>
+              {{
+                "SETTINGS_PAGE.SECTIONS.ACCOUNT_INFO.USERNAME_NO_SPACES"
+                  | translate
+              }}</mat-error
+            >} @else if(form.get('username')?.hasError('minlength')){
+            <mat-error>{{
+              "SETTINGS_PAGE.SECTIONS.ACCOUNT_INFO.USERNAME_MIN" | translate
+            }}</mat-error
+            >} @else {<br />}
+          </div>
+        </form>
+        <div class="section danger-zone">
+          <h3 class="section-title">
+            {{ "SETTINGS_PAGE.SECTIONS.DANGER_ZONE.TITLE" | translate }}
+          </h3>
+          <button class="delete-button" (click)="deleteAccount()">
+            {{
+              "SETTINGS_PAGE.SECTIONS.DANGER_ZONE.DELETE_ACCOUNT" | translate
+            }}
+          </button>
+        </div>
+      </div>
+      } @else if (activeTab === "statistics") {
+      <div class="content">
+        <div class="section">
+          <h3 class="section-title">
+            {{ "SETTINGS_PAGE.SECTIONS.STATS.TITLE" | translate }}
+          </h3>
+          @if(isLoadingStats) {
+          <div class="stats-loading">
+            <mat-spinner diameter="60"></mat-spinner>
+            <p>{{ "SETTINGS_PAGE.SECTIONS.STATS.LOADING" | translate }}</p>
+          </div>
+          } @else {
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-value">
+                {{ userStats ? userStats.numOfClassicPartiesPlayed : "N/A" }}
+              </span>
+              <lucide-icon [name]="Sword" class="icon"></lucide-icon>
+              <div class="stat-label">
+                {{ "SETTINGS_PAGE.SECTIONS.STATS.GAMES_CLASSIC" | translate }}
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">
+                {{ userStats ? userStats.numOfCTFPartiesPlayed : "N/A" }}
+              </span>
+              <lucide-icon [name]="Flag" class="icon"></lucide-icon>
+              <div class="stat-label">
+                {{ "SETTINGS_PAGE.SECTIONS.STATS.GAMES_CTF" | translate }}
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">
+                {{ userStats ? userStats.numOfPartiesWon : "N/A" }}
+              </span>
+              <lucide-icon [name]="Trophy" class="icon"></lucide-icon>
+              <div class="stat-label">
+                {{ "SETTINGS_PAGE.SECTIONS.STATS.GAMES_WON" | translate }}
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">
+                {{
+                  userStats
+                    ? formatDuration(userStats.gameDurationsForPlayer)
+                    : "N/A"
+                }}</span
+              >
+              <lucide-icon [name]="Hourglass" class="icon"></lucide-icon>
+              <div class="stat-label">
+                {{ "SETTINGS_PAGE.SECTIONS.STATS.AVG_GAME_TIME" | translate }}
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">
+                {{ userStats ? userStats.challengesCompleted : "N/A" }}
+              </span>
+              <lucide-icon [name]="Swords" class="icon"></lucide-icon>
+              <div class="stat-label">
+                {{ "SETTINGS_PAGE.SECTIONS.STATS.CHALLENGES_COMPLETED" | translate }}
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+      }
+    </main>
+  </div>
+  <div class="button-group footer">
+    <p class="button" routerLink="/">
+      {{ "SETTINGS_PAGE.FOOTER_RETURN" | translate }}
+    </p>
+  </div>
+</div>

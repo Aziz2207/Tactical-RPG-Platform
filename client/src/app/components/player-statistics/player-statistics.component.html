@@ -1,0 +1,24 @@
+<div class="player-stats" [ngClass]="{'active': player.id === getSocketId(), 'disconnected': getStatusClass() === 'disconnected'  }">   
+    <div class="decoration-bar" [ngClass]="{'self': player.id === getSocketId()}"></div>
+    <div class="player">
+        <img class="player-img" [ngClass]="getStatusClass()" [src]='player.avatar?.src' alt="player-avatar">
+        @if (isWinner()){
+            <img class="decoration" src='./assets/images/leaves/leafL_light.webp' alt="left-leaf">
+            <p class="name" [ngClass]="getStatusClass()">{{ player.name }}</p>
+            <img class="decoration" src='./assets/images/leaves/leafR_light.webp' alt="right-leaf">
+        }
+        @else {
+            <p class="name" [ngClass]="getStatusClass()">{{ player.name }}</p>
+        }
+    </div>
+    @for(stat of playerStatTypes; track stat.id){
+        <div class="stat attr-value">
+            <app-single-player-stat 
+            [selectedAttribute]="selectedAttribute"
+            [attribute]="stat.key"
+            [player]="player"
+            >
+            </app-single-player-stat>
+        </div>
+    }
+</div>

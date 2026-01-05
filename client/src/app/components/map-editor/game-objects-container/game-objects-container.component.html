@@ -1,0 +1,23 @@
+<div class="main-object-container">
+    <span class="title">{{ 'MANAGE_GAME.OBJECTS' | translate }}</span>
+    <div class="object-grid-container">
+        <div class="objects">
+            @for (item of gameObjects; track item.id;) {
+            <app-game-object
+                [id]="item.id"
+                [imageUrl]="item.image"
+                [name]="item.name"
+                [description]="item.description"
+                [count]="item.count"
+                [isDragging]="isDraggingFromContainer"
+                [descriptionPosition]="descriptionPosition"
+                draggable="true"
+                (dragstart)="onDragStart($event, item)"
+                (dragend)="onDragEnd()"
+                (drop)="onDrop($event, item.id)"
+                (dragover)="onDragOver($event)"
+            ></app-game-object>
+            }
+        </div>
+    </div>
+</div>

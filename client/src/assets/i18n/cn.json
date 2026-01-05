@@ -1,0 +1,515 @@
+{
+    "PAGE_HEADER": {
+        "CREATE_GAME": "创建游戏",
+        "MANAGE_GAME": "管理游戏",
+        "JOIN_GAME": "加入游戏"
+    },
+    "FOOTER": {
+        "TEAM": "104队",
+        "CREATE": "创建",
+        "CREATE_NEW_MAP": "创建地图",
+        "CREATE_NEW_GAME": "创建游戏",
+        "RETURN": "返回",
+        "CONFIRM": "确认",
+        "CANCEL": "取消",
+        "QUIT": "退出",
+        "RESET": "重置",
+        "SAVE": "保存"
+    },
+    "DIALOG": {
+        "CLOSE": "关闭",
+        "CONFIRM": "确认",
+        "CANCEL": "取消",
+        "QUIT": "退出",
+        "STAY": "留下",
+        "TITLE": {
+            "START_GAME": "开始游戏",
+            "GAME_CANCELED": "游戏已取消",
+            "QUIT_GAME": "放弃游戏",
+            "KICKED_OUT": "您已被踢出游戏",
+            "DRAW_GAME": "平局",
+            "END_TURN": "回合结束",
+            "END_GAME": "游戏结束",
+            "END_FIGHT": "战斗结束",
+            "DEFAULT_FIGHT_WIN": "弃赛",
+            "SUCCESS_EVASION": "成功逃脱",
+            "MAX_PLAYERS": "已达最大玩家数",
+            "ADD_BOT_WHEN_LOCKED": "游戏已锁定",
+            "ITEM_EXCHANGE": "交换物品",
+            "QUIT_POST_GAME_LOBBY": "返回主页",
+            "QUIT_PAGE": "退出此页面?",
+            "UNBLOCK_USER": "取消屏蔽用户"
+        },
+        "MESSAGE": {
+            "NOT_ENOUGH_PLAYERS": "至少需要{{min}}名玩家才能开始游戏",
+            "CONFIRM_START_GAME": "您确定要开始游戏吗?",
+            "ROOM_LOCKED": "必须锁定房间才能开始游戏",
+            "QUIT_GAME": "您要退出游戏吗?",
+            "KICKED_OUT": "管理员决定将您移出游戏。您将被重定向到主页。",
+            "DRAW_GAME": "所有玩家都已放弃。您将被重定向到主页。",
+            "FELL": "您在冰上滑倒了。您的回合结束。",
+            "END_FIGHT": "战斗结束。战斗胜者是{{winner}}",
+            "DEFAULT_FIGHT_WIN": "对手已放弃游戏。您默认赢得战斗。",
+            "MAX_PLAYERS": "您无法再添加更多虚拟玩家",
+            "ADD_BOT_WHEN_LOCKED": "在添加虚拟玩家之前请解锁等候室",
+            "QUIT_POST_GAME_LOBBY": "您将离开游戏结束页面",
+            "QUIT_MESSAGE_LOST_CHANGES": "所有未保存的修改将丢失,您确定要退出吗?",
+            "WINNER_ANNOUNCED": "游戏胜者是{{winner}}",
+            "CANCELED_MATCH": "游戏已取消。您将被重定向到主菜单",
+            "UNBLOCK_USER": "您要取消屏蔽 {{username}} 吗？"
+        }
+    },
+    "GAME_CREATION": {
+        "AVAILABILITY": "可用性",
+        "EVERYONE": "所有人",
+        "FRIENDS_ONLY": "仅好友",
+        "ENTRY_FEE": "入场费",
+        "SELECT_BEFORE_CREATING_GAME": "创建游戏前请先选择一个游戏",
+        "HIDDEN_GAME": "所选游戏不存在或已被隐藏"
+    },
+    "ATTRIBUTES": {
+        "HEALTH": "生命",
+        "SPEED": "速度",
+        "ATTACK": "攻击",
+        "DEFENSE": "防御",
+        "TOOLTIP": {
+            "HEALTH": "角色的生命值对应此属性。将生命或速度属性值增加+2。",
+            "SPEED": "速度点数用于确定回合顺序,也对应角色每回合的移动点数。将生命或速度属性值增加+2。",
+            "ATTACK": "攻击点数代表对对手发起攻击的力量。选择攻击或防御属性之一,以获得基于6面或4面骰子的加成。",
+            "DEFENSE": "防御点数代表抵挡对手攻击的能力。选择攻击或防御属性之一,以获得基于6面或4面骰子的加成。"
+        }
+    },
+    "MANAGE_GAME": {
+        "CHOSE_GAME_MODE": "选择游戏模式:",
+        "CHOSE_GAME_SIZE": "选择游戏大小:",
+        "SMALL_PLAYER_RANGE": "(2名玩家)",
+        "MEDIUM_PLAYER_RANGE": "(2至4名玩家)",
+        "LARGE_PLAYER_RANGE": "(2至6名玩家)",
+        "MAP_NAME": "地图名称",
+        "MAP_NAME_PLACEHOLDER": "输入您的地图名称",
+        "MAP_DESCRIPTION": "地图描述",
+        "MAP_DESCRIPTION_PLACEHOLDER": "输入您的地图描述",
+        "OBJECTS": "物品",
+        "MAP_SIZE_AND_MODE_PROMPT": "请选择游戏大小和模式",
+        "GAME_ALREADY_DELETED": "游戏已被其他用户删除"
+    },
+    "MAP_VALIDATOR": {
+        "INVALID_MAP": "地图无效",
+        "SAVE_SUCCESS": "保存成功",
+        "REDIRECT_MESSAGE": "您将被重定向到管理页面",
+        "ERROR_DUPLICATE_NAME": "已存在同名地图。",
+        "ERROR_TOO_MANY_OBJECTS": "此地图上物品过多。{{current}}个物品而非{{max}}个。",
+        "ERROR_TOO_FEW_OBJECTS": "地图上物品不足。最少需要{{min}}个,目前有{{current}}个。",
+        "ERROR_INVALID_DOOR": "至少有一扇门无效。",
+        "ERROR_INVALID_DOOR_DETAILS": "每扇门必须在一个轴上位于两面墙之间,在另一个轴上位于两个地形方块之间。",
+        "ERROR_INSUFFICIENT_TERRAIN": "至少一半的方块必须被地形方块(草地、水、冰、水)覆盖。",
+        "ERROR_INACCESSIBLE_TILES": "并非所有地形方块都可访问。",
+        "ERROR_MISSING_FLAG": "CTF模式中必须在地图上放置旗帜。",
+        "ERROR_MISSING_SPAWN_POINTS": "所有出生点都必须放置在地图上。",
+        "ERROR_INVALID_TITLE": "地图标题长度必须在3到30个字符之间,且不能仅包含空格。",
+        "ERROR_INVALID_DESCRIPTION": "地图描述长度必须在10到128个字符之间,且不能仅包含空格。"
+    },
+    "WAITING_PAGE": {
+        "START_GAME": "开始游戏",
+        "LOCK": "锁定游戏",
+        "MAX_PLAYERS_CANT_UNLOCK": "等候室已达最大玩家数。您无法解锁游戏。",
+        "ADD_BOT": "添加虚拟玩家",
+        "SCAN_TO_JOIN": "扫描加入",
+        "BOT_PROFILE_POPUP_TITLE": "选择虚拟玩家配置",
+        "BOT_PROFILES": {
+            "DEFENSIVE": {
+                "TITLE": "防御型",
+                "DESCRIPTION_1": "受伤时倾向于逃离战斗",
+                "DESCRIPTION_2": "较少参与战斗,偏好提供防御优势和最大生命值的物品"
+            },
+            "AGGRESSIVE": {
+                "TITLE": "进攻型",
+                "DESCRIPTION_1": "倾向于寻找战斗,永不尝试逃跑",
+                "DESCRIPTION_2": "偏好对抗以及提供攻击和速度优势的物品"
+            }
+        }
+    },
+    "JOIN_PAGE": {
+        "ENTER_CODE": "输入游戏代码",
+        "JOIN": "加入",
+        "SPECTATE": "旁观",
+        "ERRORS": {
+            "INVALID_FORMAT": "代码必须由4位数字组成",
+            "ROOM_NOT_FOUND": "游戏不存在",
+            "ROOM_LOCKED": "游戏已锁定",
+            "FRIENDS_ONLY_ACCESS": "此游戏仅对房主的好友开放",
+            "INSUFFICIENT_FUNDS": "资金不足,无法进入此游戏"
+        }
+    },
+    "CHAT": {
+        "TITLE": "消息",
+        "UNFILTERED_JOURNAL": "未过滤的游戏日志",
+        "FILTERED_JOURNAL": "已过滤的游戏日志"
+    },
+    "GAME": {
+        "QUIT_GAME": "放弃游戏",
+        "STOP_SPECTATING": "停止观战",
+        "SPECTATOR_MODE": "观战模式",
+        "PLAYERS": "玩家",
+        "TURN_START_WARNING": "您的回合将在以下时间开始",
+        "TURN_OF": "回合属于",
+        "TURN_WILL_START": "即将开始",
+        "IN_COMBAT": "战斗中",
+        "DEBUG_MODE": "调试模式",
+        "GRID_SIZE": "网格大小",
+        "MODE": {
+            "CLASSIC": "经典",
+            "CTF": "夺旗"
+        },
+        "MAP_NAME": "地图名称",
+        "PLAYER_COUNT": "玩家数量",
+        "ACTIONS": {
+            "DOOR": "门",
+            "ATTACK": "攻击",
+            "END_TURN": "结束回合"
+        },
+        "CHAT": "消息",
+        "INVENTORY": "背包",
+        "TIMER": "计时器",
+        "MOVEMENTS": "移动",
+        "ACTION_POINTS": "行动",
+        "SPD": "速",
+        "ATK": "攻",
+        "DEF": "防",
+        "COMBAT": {
+            "EVADE_POINTS_REMAINING": "剩余逃脱点数:",
+            "ATTACK": "攻击",
+            "EVADE": "逃脱",
+            "YOUR_TURN_START": "轮到您了",
+            "OPPONENT_TURN_START": "轮到您的对手了"
+        },
+        "VICTORIES": "胜利",
+        "DISCONNECTED": "已断开连接",
+        "LOGS": {
+            "DEBUG_START": "调试模式开始。",
+            "DEBUG_END": "调试模式结束。",
+            "START_TURN": "玩家{{playerName}}的回合开始。",
+            "GIVE_UP": "{{playerName}}已放弃游戏。",
+            "OPEN_DOOR": "{{playerName}}打开了一扇门。",
+            "CLOSE_DOOR": "{{playerName}}关闭了一扇门。",
+            "WIN_COMBAT": "{{playerName}}赢得了战斗。战斗结束!",
+            "EVADE_COMBAT_FAIL": "{{playerName}}逃脱失败。",
+            "EVADE_COMBAT_SUCCESS": "{{playerName}}成功逃脱。",
+            "NO_WINNER_COMBAT": "{{playerName}}和{{defenderName}}之间的战斗无胜者结束。",
+            "START_COMBAT": "{{playerName}}和{{defenderName}}进入战斗。",
+            "ATTACK_FAIL": "{{playerName}}攻击失败。",
+            "ATTACK_SUCCESS": "{{playerName}}攻击成功。",
+            "END_GAME": "游戏结束:{{playerNames}}",
+            "ITEM_PICKED_UP": "{{playerName}}拾取了{{itemKey}}",
+            "COMBAT_RESULT": "攻击结果:{{attack}} + {{attackDice}}(骰子) = {{attackTotal}}\n防御结果:{{defense}} + {{defenseDice}}(骰子) = {{defenseTotal}}",
+            "UNKNOWN": "未知日志消息。"
+        }
+    },
+    "CHANNELS": {
+        "TITLE": "频道",
+        "PLACEHOLDER": "全局消息",
+        "SEARCH": "搜索频道",
+        "SEARCH_2": "频道搜索",
+        "NAME_PLACEHOLDER": "频道名称"
+    },
+    "FRIENDS": {
+        "TITLE": "好友",
+        "FRIEND_REQUEST": "好友请求",
+        "SEARCH": "搜索用户",
+        "SEARCH_2": "用户搜索",
+        "NO_FRIENDS": "您没有好友",
+        "NO_FRIEND_REQUESTS": "您没有好友请求",
+        "REMOVE_FRIEND_TITLE": "删除好友",
+        "REMOVE_FRIEND_MESSAGE": "您要将{{username}}从好友列表中删除吗?",
+        "REMOVE_FRIEND_CANCEL": "取消",
+        "REMOVE_FRIEND_CONFIRM": "删除好友",
+        "BLOCK_USER_TITLE": "屏蔽用户",
+        "BLOCK_USER_MESSAGE_FRIEND": "屏蔽{{username}}?此操作也会将其从您的好友中删除。",
+        "BLOCK_USER_MESSAGE_OTHER": "屏蔽{{username}}?",
+        "BLOCK_USER_CANCEL": "取消",
+        "BLOCK_USER_CONFIRM": "屏蔽用户",
+        "USER_BLOCKED_TITLE": "用户已屏蔽",
+        "USER_BLOCKED_MESSAGE": "{{username}}已被屏蔽",
+        "FRIEND_REQUEST_SENT_TITLE": "请求已发送",
+        "FRIEND_REQUEST_SENT_MESSAGE": "您已向{{username}}发送好友请求",
+        "FRIEND_REQUEST_ACCEPTED_TITLE": "好友请求已接受",
+        "FRIEND_REQUEST_ACCEPTED_MESSAGE": "{{username}}现在是您的好友",
+        "FRIEND_REQUEST_REJECTED_TITLE": "好友请求已拒绝",
+        "FRIEND_REQUEST_REJECTED_MESSAGE": "您已拒绝{{username}}的好友请求",
+        "NOTIF_REQUEST_RECEIVED": "{{username}}向您发送了好友请求",
+        "NOTIF_REQUEST_ACCEPTED": "{{username}}已接受您的好友请求",
+        "NOTIF_REMOVED": "{{username}}将您从好友中删除",
+        "CLOSE": "关闭",
+        "BLOCKED_USERS": "已屏蔽的用户",
+        "NO_BLOCKED_USERS": "您尚未屏蔽任何用户",
+        "UNBLOCK": "取消屏蔽",
+        "BLOCK_SUCCESS": "用户已成功屏蔽",
+        "UNBLOCK_SUCCESS": "用户已成功取消屏蔽",
+        "BLOCKED_MESSAGE": "有用户屏蔽了您"
+    },
+    "USER": {
+        "LOG_OUT": "登出",
+        "LOG_OUT_MESSAGE": "您确定要登出吗?",
+        "LOG_OUT_CANCEL": "取消",
+        "LOG_OUT_CONFIRM": "登出",
+        "DELETE": "删除账户",
+        "DELETE_MESSAGE": "您确定要删除此账户吗?此操作不可逆。"
+    },
+    "SHOP_PAGE": {
+        "TITLE": "商店",
+        "AVATARS": "头像图标",
+        "BACKGROUNDS": "背景",
+        "THEMES": "视觉主题",
+        "OWNED": "已拥有",
+        "INSUFFICIENT_BALANCE": "余额不足",
+        "BUY": "购买",
+        "NO_BACKGROUNDS": "没有可用背景"
+    },
+    "SETTINGS_PAGE": {
+        "TITLE": "设置",
+        "TABS": {
+            "VISUAL": "视觉和语言",
+            "ACCOUNT": "账户设置"
+        },
+        "SECTIONS": {
+            "BACKGROUND": {
+                "TITLE": "背景",
+                "SUBTITLE": "从您拥有的背景中选择一个",
+                "NO_BACKGROUNDS": "您没有任何背景。",
+                "VISIT_STORE": "访问商店购买!"
+            },
+            "THEME": {
+                "TITLE": "主题"
+            },
+            "LANGUAGE": {
+                "TITLE": "语言"
+            },
+            "PROFILE_PICTURE": {
+                "TITLE": "头像",
+                "UPLOAD": "上传图片"
+            },
+            "ACCOUNT_INFO": {
+                "USERNAME": "用户名",
+                "USERNAME_PLACEHOLDER": "您的用户名",
+                "EMAIL": "电子邮箱",
+                "EMAIL_PLACEHOLDER": "your.email@example.com"
+            },
+            "STATS": {
+                "TITLE": "统计",
+                "GAMES_CLASSIC": "已玩游戏(经典)",
+                "GAMES_CTF": "已玩游戏(夺旗)",
+                "GAMES_WON": "胜利游戏",
+                "AVG_GAME_TIME": "平均游戏时长"
+            },
+            "DANGER_ZONE": {
+                "TITLE": "危险区域",
+                "DELETE_ACCOUNT": "删除账户"
+            }
+        },
+        "EDIT_BUTTON": "编辑资料",
+        "SAVE_BUTTON": "保存",
+        "DISCARD_BUTTON": "取消",
+        "FOOTER_RETURN": "返回"
+    },
+    "POST_GAME_LOBBY": {
+        "TITLE": "游戏结束",
+        "CTF": "夺旗",
+        "CLASSIC": "经典",
+        "REWARD": "奖励",
+        "STATS": {
+            "COMBATS": "战斗",
+            "VICTORIES": "胜/逃/败",
+            "DMG_DEALT": "造成伤害",
+            "DMG_TAKEN": "受到伤害",
+            "OBJECTS_TAKEN": "拾取物品",
+            "PCT_TILES_VISITED": "访问方块%",
+            "GAME_LENGTH": "游戏时长",
+            "TURNS": "回合数",
+            "GLOBAL_TILES_VISITED": "全局访问方块%",
+            "PCT_DOORS_INTEREACTED": "互动门%",
+            "NB_FLAG_BEARERS": "旗帜持有者"
+        }
+    },
+    "THEME": {
+        "GOLD": "金色(默认)",
+        "BLUE": "天蓝",
+        "EMERALD": "翡翠",
+        "RUBY": "红宝石",
+        "AMETHYST": "紫水晶",
+        "OBSIDIAN": "黑曜石",
+        "COPPER": "铜色",
+        "CYBERPUNK": "赛博朋克",
+        "ARCTIC": "北极",
+        "AQUA": "水蓝",
+        "MCDONALDS": "麦当劳",
+        "MAGENTA": "洋红",
+        "MY_EYES_BLEED": "我的眼睛在流血",
+        "SAPPHIRE": "蓝宝石",
+        "SAPPHIRE_CRIMSON": "深红蓝宝石",
+        "VERDANT_AMETHYST": "翠绿紫水晶",
+        "DARK_FLAT": "暗色扁平",
+        "GOLD_FLAT": "金色扁平",
+        "NAVY_FLAT": "海军蓝扁平",
+        "GREEN_FLAT": "绿色扁平",
+        "RED_FLAT": "红色扁平",
+
+        "TOTAL_DARK": "极致黑暗",
+        "SILVER": "灰色",
+        "CRIMSON": "深红",
+        "PINK": "玫瑰",
+        "GREEN_BLUE": "海王星",
+        "BLACK_ORANGE": "万圣节"
+    },
+    "BACKGROUND": {
+        "DEFAULT_ATHENA": "默认雅典娜背景",
+        "SPARTAN_WARRIOR": "斯巴达战士背景",
+        "DIONYSUS": "狄俄尼索斯背景",
+        "HADES": "哈迪斯背景",
+        "PERSEPHONE": "珀耳塞福涅背景",
+        "APOLLO": "阿波罗背景",
+        "ATHENA": "雅典娜背景",
+        "HEPHAESTUS": "赫淮斯托斯背景",
+        "HERMES": "赫尔墨斯背景",
+        "DEMETER": "德墨忒尔背景",
+        "ARTEMIS": "阿尔忒弥斯背景",
+        "POSEIDON": "波塞冬背景",
+        "HERA": "赫拉背景",
+        "ZEUS": "宙斯背景",
+        "HESTIA": "赫斯提亚背景",
+        "ARES": "阿瑞斯背景"
+    },
+    "AVATAR": {
+        "DIONYSUS": "狄俄尼索斯头像",
+        "HADES": "哈迪斯头像",
+        "PERSEPHONE": "珀耳塞福涅头像"
+    },
+    "ITEMS": {
+        "TRIDENT": {
+            "NAME": "波塞冬三叉戟",
+            "DESCRIPTION": "如果您在回合结束时还剩一个行动点,下回合获得一个,最多2个。"
+        },
+        "ARMOR": {
+            "NAME": "阿喀琉斯盔甲",
+            "DESCRIPTION": "+2攻击,如果您的攻击被格挡,受到1点伤害。"
+        },
+        "SANDAL": {
+            "NAME": "飞行凉鞋",
+            "DESCRIPTION": "速度x2,最大生命值减少1。"
+        },
+        "LIGHTNING": {
+            "NAME": "宙斯闪电",
+            "DESCRIPTION": "攻击x2,防御减少2,生命减少1。"
+        },
+        "XIPHOS": {
+            "NAME": "希腊短剑",
+            "DESCRIPTION": "如果您的生命值低于50%,对手失去1点防御,您获得2点攻击。"
+        },
+        "KUNEE": {
+            "NAME": "隐身头盔",
+            "DESCRIPTION": "允许穿过墙壁,墙壁被视为消耗1点的方块。"
+        },
+        "RANDOM": {
+            "NAME": "随机物品",
+            "DESCRIPTION": "添加一个随机物品。"
+        },
+        "SPAWN": {
+            "NAME": "出生点",
+            "DESCRIPTION": "指定玩家的出生点。"
+        },
+        "FLAG": {
+            "NAME": "旗帜",
+            "DESCRIPTION": "夺旗模式的旗帜。带着旗帜返回您的出生点即可获胜!"
+        }
+    },
+    "TILES": {
+        "WATER": {
+            "NAME": "水",
+            "DESCRIPTION": "用于放置移动消耗为2的水方块的工具。通过左键单击现有方块来放置方块。"
+        },
+        "ICE": {
+            "NAME": "冰",
+            "DESCRIPTION": "用于放置移动消耗为0的冰方块的工具。通过左键单击现有方块来放置方块。"
+        },
+        "WALL": {
+            "NAME": "墙",
+            "DESCRIPTION": "用于放置阻止穿过此类方块移动的墙方块的工具。通过左键单击现有方块来放置方块。"
+        },
+        "DOOR": {
+            "NAME": "门",
+            "DESCRIPTION": "用于放置可以打开或关闭的门的工具。通过左键单击现有方块来放置方块。如果您单击已存在的门,其状态将反转。"
+        }
+    },
+    "TILE_INFO": {
+        "GROUND": {
+            "NAME": "草地",
+            "DESC1": "游戏默认方块(地形方块)。",
+            "DESC2": "玩家和物品可以放置在上面。",
+            "DESC3": "消耗:1"
+        },
+        "ICE": {
+            "NAME": "冰",
+            "DESC1": "踩在上面的玩家有10%的几率失足跌倒,立即结束回合。",
+            "DESC2": "只要玩家在冰上,其「攻击」和「防御」属性受到2点惩罚。",
+            "DESC3": "消耗:0"
+        },
+        "WATER": {
+            "NAME": "水",
+            "DESC1": "地形方块。",
+            "DESC2": "消耗:2"
+        },
+        "WALL": {
+            "NAME": "墙",
+            "DESC1": "除非拥有特殊物品,否则无法通过的障碍物。",
+            "DESC2": "不能在上面放置任何物品。",
+            "DESC3": "不被视为地形方块。"
+        },
+        "CLOSED_DOOR": {
+            "NAME": "关闭的门",
+            "DESC1": "关闭的门必须通过「门」按钮打开才能通过。",
+            "DESC2": "否则,它像墙一样无法通过,除非拥有特殊物品。"
+        },
+        "OPEN_DOOR": {
+            "NAME": "打开的门",
+            "DESC1": "打开的门允许玩家自由通过。",
+            "DESC2": "可以通过「门」按钮重新关闭以再次阻挡通道。"
+        },
+        "COMBAT_STATS": "战斗统计",
+        "VICTORIES": "胜利:",
+        "EVADES": "逃脱:",
+        "DEFEATS": "失败:",
+        "DMG_DEALT": "造成伤害:",
+        "DMG_TAKEN": "受到伤害:"
+    },
+    "ERROR": {
+        "MISSING_ATTRIBUTES": "请选择所需的属性值",
+        "MISSING_NAME": "请输入角色名称",
+        "MISSING_AVATAR": "请选择一个头像",
+        "NAME_WITH_SPACE": "名称不能包含空格",
+        "TITLE_INVALID_LENGTH": "- 地图标题长度必须在 3 到 30 个字符之间，且不能只包含空格",
+        "NAME_ALREADY_EXISTS": "- 已存在同名的地图",
+        "INVALID_FILE": "- 文件无效",
+        "INVALID_TILES_DIMENSIONS": "- 瓦片尺寸无效",
+        "INVALID_DIMENSION": "- 地图尺寸无效",
+        "INVALID_TILE_TYPE": "- 一个或多个瓦片类型无效",
+        "INVALID_OBJECT_TYPE": "- 一个或多个对象类型无效",
+        "INVALID_NB_FLAGS": "- 地图上必须正好有一个旗帜",
+        "FILE_TOO_LARGE": "- 文件过大",
+        "INVALID_MODE": "- 游戏模式无效",
+        "INVALID_NB_PLAYERS": "- 选定地图大小的玩家数量无效",
+        "INVALID_NB_OBJECTS": "- 选定地图大小的对象数量无效"
+    },
+    "LEADERBOARDS_PAGE": {
+        "TITLE": "排行榜",
+        "TOTAL_USERS": "总用户数",
+        "LOADING": "正在加载排行榜...",
+        "USERNAME": "用户名",
+        "RANK": "排名",
+        "LIFETIME_EARNINGS": "累计收益",
+        "GAMES_PLAYED": "已玩游戏数",
+        "WINS": "胜场",
+        "WINRATE": "胜率",
+        "TOTAL_GAME_DURATION": "总游戏时长",
+        "BLOCKED_USER": "已屏蔽用户",
+        "BLOCKED_ME": "该用户已屏蔽我"
+    }
+}

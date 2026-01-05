@@ -1,0 +1,27 @@
+<div>
+    @if(userListType === UserListType.SearchResults) {
+    <div class="search-input">
+            <input 
+                type="text" 
+                placeholder="{{ 'FRIENDS.SEARCH' | translate }}" 
+                maxlength="20" 
+                minlength="1"
+                [(ngModel)]="searchTerm"
+                (input)="onSearchInput($event)"
+                (keydown)="onSearchInputKeydown($event)"
+                #searchInput
+            />
+        <lucide-icon [img]="Search" class="search-icon"></lucide-icon>
+    </div>
+    <div class="user-list-container">
+        <app-user-list [users]="displayedUsers" [userListType]="UserListType.SearchResults"></app-user-list>
+    </div>
+    } @else if(userListType === UserListType.IncomingRequests) {
+    <div class="user-list-container">
+        @if(displayedUsers.length === 0){
+            <div class="no-friend-requests-text">{{ 'FRIENDS.NO_FRIEND_REQUESTS' | translate }}</div>
+        }
+        <app-user-list [users]="displayedUsers" [userListType]="UserListType.IncomingRequests"></app-user-list>
+    </div>
+    }
+</div>

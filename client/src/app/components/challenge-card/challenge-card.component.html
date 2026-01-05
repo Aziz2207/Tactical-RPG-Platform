@@ -1,0 +1,64 @@
+<div class="challenge-card">
+    <div class="challenge-header">
+        <h3 class="challenge-title">{{ challenge.title | translate }}</h3>
+        <span class="reward-value">{{ 'CHALLENGES.REWARD' | translate }}: {{ challenge.reward }}$</span>
+        <button class="info-button" (click)="openPopup()" type="button">
+            <lucide-icon [img]="InfoIcon" [size]="18"></lucide-icon>
+        </button>
+    </div>
+
+    <div class="challenge-body">
+        <p class="challenge-description">
+            {{ challenge.description | translate: {goal: challenge.goal} }}
+        </p>
+
+        <div class="progress-section">
+            <div class="progress-text">
+                <span class="progress-label">{{ 'CHALLENGES.PROGRESS' | translate }}:</span>
+                <span class="progress-numbers"
+                    >{{ currentValue }}/{{ challenge.goal }}</span
+                >
+            </div>
+            <div class="progress-bar">
+                <div
+                    class="progress-fill"
+                    [style.width.%]="(currentValue / challenge.goal) * 100"
+                ></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if(showPopup){
+<div class="popup-overlay" (click)="closePopup()">
+    <div class="popup-content" (click)="stopPropagation($event)">
+        <div class="popup-header">
+            <h2>{{ 'CHALLENGES.ALL' | translate }}</h2>
+            <button class="close-button" (click)="closePopup()" type="button">
+                ×
+            </button>
+        </div>
+
+        <div class="popup-body">
+            <div class="challenge-list">
+                @for(challenge of allChallenges; track challenge.id){
+                <div class="challenge-item">
+                    <div class="challenge-item-header">
+                        <h4>{{ challenge.title | translate }}</h4>
+                        <span class="challenge-reward"
+                            >{{ challenge.reward }}$</span
+                        >
+                    </div>
+                    <p class="challenge-item-description">
+                        {{ challenge.description | translate: {goal: challenge.goal} }}
+                    </p>
+                    <div class="challenge-item-goal">
+                        {{ 'CHALLENGES.GOAL' | translate }}: {{ challenge.goal }}
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,10 @@
+<body class="waiting-rooms-page">
+  <div class="create-game-page">
+    <app-header [title]="'WAITING_ROOMS.PAGE_TITLE' | translate"></app-header>
+    <app-waiting-rooms-list></app-waiting-rooms-list>
+    <div class="button-group">
+      <p class="button" routerLink="/">{{ 'WAITING_ROOMS.BACK' | translate }}</p>
+      <p class="button" routerLink="/join-game">{{ 'WAITING_ROOMS.JOIN_WITH_CODE' | translate }}</p>
+    </div>
+  </div>
+</body>

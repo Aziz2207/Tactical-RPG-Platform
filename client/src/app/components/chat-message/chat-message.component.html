@@ -1,0 +1,16 @@
+<div class="chat-message">
+    <img
+        *ngIf="username"
+        class="avatar"
+        [src]="avatarSrc"
+        [alt]="username + ' avatar'"
+        (error)="handleAvatarError($event)"
+    />
+    <div class="content">
+        <div class="meta">
+            <p class="timestamp">{{ timestamp | date: 'HH:mm:ss' }}</p>
+            <p *ngIf="username" class="username">{{ username }}:</p>
+        </div>
+        <p class="message">{{ message }}</p>
+    </div>
+</div>

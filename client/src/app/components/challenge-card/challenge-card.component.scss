@@ -1,0 +1,250 @@
+.challenge-card {
+  background: var(--dark-gradient);
+  border: 2px solid var(--primary);
+  border-radius: 0.5rem;
+  padding: 0;
+  width: 18rem;
+}
+
+.challenge-header {
+  background: var(--primary);
+  padding: 0.2rem 0.5rem 0.1rem 0.5rem;
+  border-bottom: 1px solid var(--primary-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.challenge-title {
+  margin: 0;
+  color: var(--inverted-text-color);
+  font-size: 0.9rem;
+  font-weight: bold;
+  flex: 1;
+}
+
+.reward-value {
+  color: var(--inverted-text-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.info-button {
+  background: none;
+  border: none;
+  color: var(--inverted-text-color);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.challenge-body {
+  padding: 0.4rem 0.5rem;
+}
+
+.challenge-description {
+  color: var(--secondary-text);
+  margin: 0 0 0.1rem 0;
+  line-height: 1.2;
+  font-size: 0.8rem;
+}
+
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-label {
+  color: var(--primary-light);
+  font-weight: 900;
+  font-size: 0.8rem;
+}
+
+.progress-numbers {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 0.2rem;
+  background: var(--secondary-very-dark);
+  border-radius: 0.1rem;
+  overflow: hidden;
+  border: 2px solid var(--primary-very-dark);
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary-gradient);
+  border-radius: 0.3rem;
+  transition: width 0.3s ease;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0)
+    );
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+// Popup styles
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.popup-content {
+  background: var(--dark-gradient);
+  border: 2px solid var(--primary);
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 50rem;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease;
+}
+
+.popup-header {
+  background: var(--primary);
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--primary-dark);
+
+  h2 {
+    margin: 0;
+    color: var(--inverted-text-color);
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: var(--inverted-text-color);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+  line-height: 1;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.popup-body {
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.challenge-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+
+.challenge-item {
+  background: var(--secondary-very-dark);
+  border: 2px solid var(--primary-dark);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+}
+
+.challenge-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+
+  h4 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+.challenge-reward {
+  color: var(--primary-light);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.challenge-item-description {
+  color: var(--secondary-text);
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.challenge-item-goal {
+  color: var(--primary-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

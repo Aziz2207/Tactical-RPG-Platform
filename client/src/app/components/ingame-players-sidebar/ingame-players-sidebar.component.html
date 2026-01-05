@@ -1,0 +1,29 @@
+<div class="player" [ngClass]="{ active: sidebarPlayer.isActive }">
+    <div class="active-slot">
+        @if (sidebarPlayer.isActive){
+        <img class="active-arrow-img" src="./assets/images/icones/golden-arrow.png" alt="Active Slot Icon" />
+        }
+    </div>
+    <div class="avatar-img" [ngClass]="sidebarPlayer.status">
+        <img src="{{ sidebarPlayer.avatar?.src }}" alt="avatar-img" />
+    </div>
+    <div class="player-info">
+        <p class="player-name" [ngClass]="sidebarPlayer.status">{{ sidebarPlayer.name }}</p>
+        @if(sidebarPlayer.status === "disconnected"){
+        <p class="gray">{{ 'GAME.DISCONNECTED' | translate }}</p>
+        } @else {
+        <p class="status">{{ sidebarPlayer.postGameStats.victories }} {{ 'GAME.VICTORIES' | translate }}</p>
+        }
+    </div>
+    <div class="icon"  [ngClass]="sidebarPlayer.status">
+        @if(isFlagInInventory()){
+            <img src="./assets/images/icones/flag.png" alt="admin-img" />
+        } @else if(sidebarPlayer.status === "admin"){
+            <img src="./assets/images/icones/admin.png" alt="admin-img" />
+        } @else if(sidebarPlayer.status === "bot"){
+            <img src="./assets/images/icones/bot.png" alt="admin-img" />
+        } @else if(sidebarPlayer.status === "disconnected"){
+            <lucide-icon [img]="Skull"></lucide-icon>
+        }
+    </div>
+</div>

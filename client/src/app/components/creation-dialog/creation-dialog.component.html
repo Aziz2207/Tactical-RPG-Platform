@@ -1,0 +1,34 @@
+<div id="pop-up">
+    <div class="dialog-content">
+        <div class="title">{{ 'MANAGE_GAME.CHOSE_GAME_MODE' | translate }}</div>
+        <div class="game-mode-container">
+            <button class="game-mode" [class.select]="selectedMode === gameMode.Classic" (click)="selectMode(gameMode.Classic)">{{ 'GAME.MODE.CLASSIC' | translate }}</button>
+            <button class="game-mode" [class.select]="selectedMode === gameMode.CaptureTheFlag" (click)="selectMode(gameMode.CaptureTheFlag)">
+                {{ 'GAME.MODE.CTF' | translate }}
+            </button>
+        </div>
+    </div>
+    <div class="dialog-content">
+        <div class="title">{{ 'MANAGE_GAME.CHOSE_GAME_SIZE' | translate }}</div>
+        <div class="size-container">
+            <div class="game-size">
+                <button id="small-map" [class.selected]="selectedSize === mapSize.Small" (click)="selectSize(mapSize.Small)">10x10</button>
+                {{ 'MANAGE_GAME.SMALL_PLAYER_RANGE' | translate }}
+            </div>
+            <div class="game-size">
+                <button id="medium-map" [class.selected]="selectedSize === mapSize.Medium" (click)="selectSize(mapSize.Medium)">15x15</button>
+                {{ 'MANAGE_GAME.MEDIUM_PLAYER_RANGE' | translate }}
+            </div>
+            <div class="game-size">
+                <button id="large-map" [class.selected]="selectedSize === mapSize.Large" (click)="selectSize(mapSize.Large)">20x20</button>
+                {{ 'MANAGE_GAME.LARGE_PLAYER_RANGE' | translate }}
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="options">
+            <button class="option-button" mat-button (click)="close()">{{ 'FOOTER.CANCEL' | translate }}</button>
+            <button class="option-button" mat-button (click)="changePage()">{{ 'FOOTER.CREATE_NEW_MAP' | translate }}</button>
+        </div>
+    </div>
+</div>

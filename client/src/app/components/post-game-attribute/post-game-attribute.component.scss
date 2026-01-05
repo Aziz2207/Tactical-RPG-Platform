@@ -1,0 +1,56 @@
+.attribute {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7rem;
+    width: 6.9vw;
+    height: 10vh;
+    text-align: center;
+    margin: 0 1vw;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.attribute:hover {
+    transform: scale(1.05);
+}
+
+.attribute:hover .attr-txt {
+    color: var(--primary-text);
+    font-size: 0.77rem;
+}
+
+.sort-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
+
+.sort-button {
+    z-index: 10;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    margin-bottom: 10%;
+    height: 2rem;
+    width: 1.2rem;
+}
+
+.unsorted {
+    background-image: url('../../../assets/images/icones/unsorted.png');
+}
+
+.descending {
+    background-image: url('../../../assets/images/icones/descending.png');
+}
+
+.ascending {
+    background-image: url('../../../assets/images/icones/ascending.png');
+}
+
+.attr-txt  {
+    margin: 0;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}

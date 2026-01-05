@@ -1,0 +1,50 @@
+.create-game-page {
+    font-family: Papyrus;
+    color: var(--main-text-color);
+    font-weight: 900;
+}
+
+.title {
+    margin-bottom: 0;
+    font-size: 5vh;
+}
+
+.button:hover {
+    background: var(--footer-nav-button);
+    border-radius: 0.3rem;
+    color: var(--inverted-text-color);
+    cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 75%;
+    height: auto;
+    margin: 2rem auto 0;
+    container-type: inline-size;
+}
+
+.button {
+    font-size: 2rem;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 0.2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+@container (max-width: 800px) {
+  .button {
+    font-size: 1.5rem;
+  }
+}
+
+app-character-creator {
+    width: 80%;
+    height: 70%;
+}

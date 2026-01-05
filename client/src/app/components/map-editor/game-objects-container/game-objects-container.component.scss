@@ -1,0 +1,35 @@
+.main-object-container {
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 20%;
+    margin-right: 2%;
+    width: 100%;
+}
+
+.object-grid-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1vh;
+}
+
+.objects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vh;
+}
+
+.title {
+    font-family: Papyrus;
+    color: var(--main-text-color);
+    font-size: 26px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.title:hover {
+    cursor: default;
+}

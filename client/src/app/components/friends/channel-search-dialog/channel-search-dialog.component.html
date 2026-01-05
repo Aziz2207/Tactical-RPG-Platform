@@ -1,0 +1,35 @@
+<div class="dialog-container">
+  <div class="dialog-header">
+    <div class="title">{{ 'CHANNELS.SEARCH_2' | translate }}</div>
+    <button class="close-btn" (click)="closeDialog()">
+      <lucide-icon [img]="X"></lucide-icon>
+    </button>
+  </div>
+
+  <div class="dialog-body">
+    <div class="search-input">
+      <input
+        type="text"
+        placeholder="{{ 'CHANNELS.SEARCH' | translate }}"
+        maxlength="20"
+        minlength="1"
+        (input)="onSearchChange($event)"
+      />
+      <lucide-icon [img]="Search" class="search-icon"></lucide-icon>
+    </div>
+
+    <div class="channel-list">
+      @for (channel of filteredChannels; track channel.roomId) {
+        <div class="channel">
+          <span>{{ channel.name }}</span>
+          <lucide-icon
+            [img]="Plus"
+            class="icon"
+            [class.disabled]="!canJoin(channel)"
+            (click)="canJoin(channel) && joinChannel(channel)"
+          ></lucide-icon>
+        </div>
+      }
+    </div>
+  </div>
+</div>

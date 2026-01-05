@@ -1,0 +1,59 @@
+<div class="language-selector">
+  <button 
+    class="language-button" 
+    (click)="toggleDropdown()"
+    type="button"
+  >
+    <span class="language-display">
+      <span class="name">{{ this.languageService.currentLanguage?.name }}</span>
+    </span>
+    <svg 
+      class="chevron" 
+      [class.open]="isOpen"
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      <path 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        stroke-width="2" 
+        d="M19 9l-7 7-7-7"
+      />
+    </svg>
+  </button>
+
+  @if(isOpen){
+     <div class="dropdown-overlay" (click)="toggleDropdown()"></div>
+  }
+ 
+  @if(isOpen){
+
+  
+  <div class="dropdown-menu">
+     @for(lang of this.languageService.languages; track lang){
+    <button
+      class="dropdown-item"
+      [class.active]="lang.code === translateService.currentLang"
+      (click)="switchLanguage(lang.code)"
+      type="button"
+    >
+      <span class="name">{{ lang.name }}</span>
+      @if(lang.code === translateService.currentLang){
+      <svg 
+        class="checkmark"
+        fill="currentColor" 
+        viewBox="0 0 20 20"
+      >
+        <path 
+          fill-rule="evenodd" 
+          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" 
+          clip-rule="evenodd"
+        />
+      </svg>
+      }
+    </button>
+    }
+  </div>
+  }
+</div>

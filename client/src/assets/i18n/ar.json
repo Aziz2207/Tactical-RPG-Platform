@@ -1,0 +1,500 @@
+{
+    "PAGE_HEADER": {
+        "CREATE_GAME": "إنشاء لعبة",
+        "MANAGE_GAME": "إدارة الألعاب",
+        "JOIN_GAME": "الانضمام إلى لعبة"
+    },
+    "FOOTER": {
+        "TEAM": "الفريق 104",
+        "CREATE": "إنشاء",
+        "CREATE_NEW_MAP": "إنشاء خريطة",
+        "CREATE_NEW_GAME": "إنشاء لعبة",
+        "RETURN": "رجوع",
+        "CONFIRM": "تأكيد",
+        "CANCEL": "إلغاء",
+        "QUIT": "خروج",
+        "RESET": "إعادة تعيين",
+        "SAVE": "حفظ"
+    },
+    "DIALOG": {
+        "CLOSE": "إغلاق",
+        "CONFIRM": "تأكيد",
+        "CANCEL": "إلغاء",
+        "QUIT": "خروج",
+        "STAY": "البقاء",
+        "TITLE": {
+            "START_GAME": "بدء اللعبة",
+            "GAME_CANCELED": "تم إلغاء اللعبة",
+            "QUIT_GAME": "التخلي عن اللعبة",
+            "KICKED_OUT": "تم طردك من اللعبة",
+            "DRAW_GAME": "لعبة متعادلة",
+            "END_TURN": "نهاية دورك",
+            "END_GAME": "نهاية اللعبة",
+            "END_FIGHT": "نهاية القتال",
+            "DEFAULT_FIGHT_WIN": "التخلي عن اللعبة",
+            "SUCCESS_EVASION": "تهرب ناجح",
+            "MAX_PLAYERS": "تم الوصول إلى الحد الأقصى لعدد اللاعبين",
+            "ADD_BOT_WHEN_LOCKED": "اللعبة مقفلة",
+            "ITEM_EXCHANGE": "تبادل عنصر",
+            "QUIT_POST_GAME_LOBBY": "العودة إلى الصفحة الرئيسية",
+            "QUIT_PAGE": "الخروج من هذه الصفحة؟",
+            "UNBLOCK_USER": "إلغاء حظر مستخدم"
+        },
+        "MESSAGE": {
+            "NOT_ENOUGH_PLAYERS": "يلزم {{min}} لاعبين على الأقل لبدء اللعبة",
+            "CONFIRM_START_GAME": "هل أنت متأكد من أنك تريد بدء اللعبة؟",
+            "ROOM_LOCKED": "يجب قفل الغرفة لبدء اللعبة",
+            "QUIT_GAME": "هل تريد الخروج من اللعبة؟",
+            "KICKED_OUT": "قرر المسؤول إزالتك من اللعبة. سيتم إعادة توجيهك إلى الصفحة الرئيسية.",
+            "DRAW_GAME": "جميع اللاعبين تخلوا عن اللعبة. سيتم إعادة توجيهك إلى الصفحة الرئيسية.",
+            "FELL": "لقد انزلقت على الجليد. انتهت دورك.",
+            "END_FIGHT": "انتهى القتال. الفائز في القتال هو {{winner}}",
+            "DEFAULT_FIGHT_WIN": "تخلى الخصم عن اللعبة. فزت بالقتال افتراضياً.",
+            "MAX_PLAYERS": "لا يمكنك إضافة المزيد من اللاعبين الافتراضيين",
+            "ADD_BOT_WHEN_LOCKED": "قم بإلغاء قفل غرفة الانتظار قبل إضافة لاعب افتراضي",
+            "QUIT_POST_GAME_LOBBY": "ستغادر صفحة نهاية اللعبة",
+            "QUIT_MESSAGE_LOST_CHANGES": "سيتم فقدان جميع التعديلات غير المحفوظة، هل أنت متأكد من أنك تريد الخروج؟",
+            "WINNER_ANNOUNCED": "الفائز في اللعبة هو {{winner}}",
+            "CANCELED_MATCH": "تم إلغاء اللعبة. سيتم إعادة توجيهك إلى القائمة الرئيسية.",
+            "UNBLOCK_USER": "هل تريد إلغاء حظر {{username}}؟"
+        }
+    },
+    "GAME_CREATION": {
+        "AVAILABILITY": "التوفر",
+        "EVERYONE": "الجميع",
+        "FRIENDS_ONLY": "الأصدقاء فقط",
+        "ENTRY_FEE": "رسوم الدخول",
+        "SELECT_BEFORE_CREATING_GAME": "يرجى اختيار لعبة قبل إنشاء المباراة",
+        "HIDDEN_GAME": "اللعبة المحددة غير موجودة أو تم إخفاؤها"
+    },
+    "ATTRIBUTES": {
+        "HEALTH": "الصحة",
+        "SPEED": "السرعة",
+        "ATTACK": "الهجوم",
+        "DEFENSE": "الدفاع",
+        "TOOLTIP": {
+            "HEALTH": "نقاط صحة الشخصية تتوافق مع هذه السمة. قم بزيادة قيمة سمة الصحة أو السرعة بمقدار +2.",
+            "SPEED": "تُستخدم نقاط السرعة لتحديد ترتيب الأدوار وتتوافق أيضاً مع نقاط الحركة لكل دور للشخصية. قم بزيادة قيمة سمة الصحة أو السرعة بمقدار +2.",
+            "ATTACK": "تمثل نقاط الهجوم القوة التي يتم بها شن هجوم على الخصم. اختر أحد سمات الهجوم أو الدفاع للحصول على مكافأة بناءً على نرد بـ 6 أوجه أو 4 أوجه.",
+            "DEFENSE": "تمثل نقاط الدفاع القدرة على صد هجوم الخصم. اختر أحد سمات الهجوم أو الدفاع للحصول على مكافأة بناءً على نرد بـ 6 أوجه أو 4 أوجه."
+        }
+    },
+    "MANAGE_GAME": {
+        "CHOSE_GAME_MODE": "اختر وضع اللعب:",
+        "CHOSE_GAME_SIZE": "اختر حجم اللعبة:",
+        "SMALL_PLAYER_RANGE": "(لاعبان)",
+        "MEDIUM_PLAYER_RANGE": "(2 إلى 4 لاعبين)",
+        "LARGE_PLAYER_RANGE": "(2 إلى 6 لاعبين)",
+        "MAP_NAME": "اسم الخريطة",
+        "MAP_NAME_PLACEHOLDER": "أدخل اسم خريطتك",
+        "MAP_DESCRIPTION": "وصف الخريطة",
+        "MAP_DESCRIPTION_PLACEHOLDER": "أدخل وصف خريطتك",
+        "OBJECTS": "عناصر",
+        "MAP_SIZE_AND_MODE_PROMPT": "يرجى اختيار الحجم ووضع اللعب",
+        "GAME_ALREADY_DELETED": "تم حذف اللعبة بالفعل من قبل مستخدم آخر"
+    },
+    "MAP_VALIDATOR": {
+        "INVALID_MAP": "خريطة غير صالحة",
+        "SAVE_SUCCESS": "تم الحفظ بنجاح",
+        "REDIRECT_MESSAGE": "سيتم إعادة توجيهك إلى صفحة الإدارة",
+        "ERROR_DUPLICATE_NAME": "توجد خريطة بنفس الاسم بالفعل.",
+        "ERROR_TOO_MANY_OBJECTS": "هناك عناصر كثيرة جداً على هذه الخريطة. {{current}} عنصر بدلاً من {{max}}.",
+        "ERROR_TOO_FEW_OBJECTS": "لا توجد عناصر كافية على الخريطة. الحد الأدنى هو {{min}} وهناك حالياً {{current}}.",
+        "ERROR_INVALID_DOOR": "باب واحد على الأقل غير صالح.",
+        "ERROR_INVALID_DOOR_DETAILS": "يجب أن يقع كل باب بين جدارين على محور، وبين مربعين أرضيين على المحور الآخر.",
+        "ERROR_INSUFFICIENT_TERRAIN": "يجب تغطية نصف المربعات على الأقل بمربعات التضاريس (العشب، الماء، الجليد).",
+        "ERROR_INACCESSIBLE_TILES": "ليست جميع مربعات التضاريس قابلة للوصول.",
+        "ERROR_MISSING_FLAG": "يجب وضع العلم على الخريطة في وضع CTF.",
+        "ERROR_MISSING_SPAWN_POINTS": "يجب وضع جميع نقاط البداية على الخريطة.",
+        "ERROR_INVALID_TITLE": "يجب أن يكون عنوان الخريطة بطول بين 3 و 30 حرفاً ولا يحتوي على مسافات فقط.",
+        "ERROR_INVALID_DESCRIPTION": "يجب أن يكون وصف الخريطة بطول بين 10 و 128 حرفاً ولا يحتوي على مسافات فقط."
+    },
+    "WAITING_PAGE": {
+        "START_GAME": "بدء لعبة",
+        "LOCK": "قفل اللعبة",
+        "MAX_PLAYERS_CANT_UNLOCK": "وصلت غرفة الانتظار إلى الحد الأقصى لعدد اللاعبين. لا يمكنك إلغاء قفل اللعبة.",
+        "ADD_BOT": "إضافة لاعب افتراضي",
+        "SCAN_TO_JOIN": "امسح للانضمام",
+        "BOT_PROFILE_POPUP_TITLE": "اختر ملف تعريف اللاعب الافتراضي",
+        "BOT_PROFILES": {
+            "DEFENSIVE": {
+                "TITLE": "دفاعي",
+                "DESCRIPTION_1": "يميل إلى الهروب من القتال إذا كان مصاباً",
+                "DESCRIPTION_2": "يشارك بشكل أقل في المعارك ويفضل العناصر التي تعطي ميزة في الدفاع ونقاط الصحة القصوى"
+            },
+            "AGGRESSIVE": {
+                "TITLE": "هجومي",
+                "DESCRIPTION_1": "يميل إلى البحث عن المعركة ولن يحاول الهروب أبداً",
+                "DESCRIPTION_2": "يفضل المواجهات والعناصر التي تعطي ميزة في الهجوم والسرعة"
+            }
+        }
+    },
+    "JOIN_PAGE": {
+        "ENTER_CODE": "أدخل رمز اللعبة",
+        "JOIN": "انضمام",
+        "SPECTATE": "المراقبة",
+        "ERRORS": {
+            "INVALID_FORMAT": "يجب أن يتكون الرمز من 4 أرقام",
+            "ROOM_NOT_FOUND": "اللعبة غير موجودة",
+            "ROOM_LOCKED": "اللعبة مقفلة",
+            "FRIENDS_ONLY_ACCESS": "هذه اللعبة مخصصة لأصدقاء المضيف فقط",
+            "INSUFFICIENT_FUNDS": "أموال غير كافية للدخول إلى هذه اللعبة"
+        }
+    },
+    "CHAT": {
+        "TITLE": "المراسلة",
+        "UNFILTERED_JOURNAL": "سجل اللعبة بدون تصفية",
+        "FILTERED_JOURNAL": "سجل اللعبة مصفى"
+    },
+    "GAME": {
+        "QUIT_GAME": "التخلي عن اللعبة",
+        "STOP_SPECTATING": "إيقاف المراقبة",
+        "SPECTATOR_MODE": "وضع المراقب",
+        "PLAYERS": "اللاعبون",
+        "TURN_START_WARNING": "دورك يبدأ خلال",
+        "TURN_OF": "دور",
+        "TURN_WILL_START": "سيبدأ",
+        "IN_COMBAT": "في قتال",
+        "DEBUG_MODE": "وضع التصحيح",
+        "GRID_SIZE": "حجم الشبكة",
+        "MODE": {
+            "CLASSIC": "كلاسيكي",
+            "CTF": "CTF"
+        },
+        "MAP_NAME": "اسم الخريطة",
+        "PLAYER_COUNT": "عدد اللاعبين",
+        "ACTIONS": {
+            "DOOR": "باب",
+            "ATTACK": "هجوم",
+            "END_TURN": "نهاية الدور"
+        },
+        "CHAT": "المراسلة",
+        "INVENTORY": "المخزون",
+        "TIMER": "المؤقت",
+        "MOVEMENTS": "الحركات",
+        "ACTION_POINTS": "إجراء",
+        "SPD": "سرع",
+        "ATK": "هجم",
+        "DEF": "دفع",
+        "COMBAT": {
+            "EVADE_POINTS_REMAINING": "نقاط التهرب المتبقية:",
+            "ATTACK": "هجوم",
+            "EVADE": "تهرب",
+            "YOUR_TURN_START": "دورك",
+            "OPPONENT_TURN_START": "دور خصمك"
+        },
+        "VICTORIES": "انتصار(ات)",
+        "DISCONNECTED": "منفصل",
+        "LOGS": {
+            "DEBUG_START": "بدء وضع التصحيح.",
+            "DEBUG_END": "نهاية وضع التصحيح.",
+            "START_TURN": "بدء دور اللاعب {{playerName}}.",
+            "GIVE_UP": "تخلى {{playerName}} عن اللعبة.",
+            "OPEN_DOOR": "فتح {{playerName}} باباً.",
+            "CLOSE_DOOR": "أغلق {{playerName}} باباً.",
+            "WIN_COMBAT": "فاز {{playerName}} بالقتال. انتهى القتال!",
+            "EVADE_COMBAT_FAIL": "فشل {{playerName}} في التهرب.",
+            "EVADE_COMBAT_SUCCESS": "تهرب {{playerName}} بنجاح.",
+            "NO_WINNER_COMBAT": "انتهى القتال بدون فائز بين {{playerName}} و {{defenderName}}.",
+            "START_COMBAT": "دخل {{playerName}} و {{defenderName}} في قتال.",
+            "ATTACK_FAIL": "فشل {{playerName}} في هجومه.",
+            "ATTACK_SUCCESS": "نجح {{playerName}} في هجومه.",
+            "END_GAME": "نهاية اللعبة: {{playerNames}}",
+            "ITEM_PICKED_UP": "التقط {{playerName}} {{itemKey}}",
+            "COMBAT_RESULT": "نتيجة الهجوم: {{attack}} + {{attackDice}} (نرد) = {{attackTotal}}\nنتيجة الدفاع: {{defense}} + {{defenseDice}} (نرد) = {{defenseTotal}}",
+            "UNKNOWN": "رسالة سجل غير معروفة."
+        }
+    },
+    "CHANNELS": {
+        "TITLE": "القنوات",
+        "PLACEHOLDER": "المراسلة العالمية",
+        "SEARCH": "البحث عن قناة",
+        "SEARCH_2": "البحث عن قناة",
+        "NAME_PLACEHOLDER": "اسم القناة"
+    },
+    "FRIENDS": {
+        "TITLE": "الأصدقاء",
+        "FRIEND_REQUEST": "طلبات الصداقة",
+        "SEARCH": "البحث عن مستخدم",
+        "SEARCH_2": "البحث عن مستخدمين",
+        "NO_FRIENDS": "ليس لديك أصدقاء",
+        "NO_FRIEND_REQUESTS": "ليس لديك طلبات صداقة",
+        "REMOVE_FRIEND_TITLE": "إزالة صديق",
+        "REMOVE_FRIEND_MESSAGE": "هل تريد إزالة {{username}} من قائمة أصدقائك؟",
+        "REMOVE_FRIEND_CANCEL": "إلغاء",
+        "REMOVE_FRIEND_CONFIRM": "إزالة الصديق",
+        "BLOCK_USER_TITLE": "حظر مستخدم",
+        "BLOCK_USER_MESSAGE_FRIEND": "حظر {{username}}؟ سيؤدي هذا الإجراء أيضاً إلى إزالته من أصدقائك.",
+        "BLOCK_USER_MESSAGE_OTHER": "حظر {{username}}؟",
+        "BLOCK_USER_CANCEL": "إلغاء",
+        "BLOCK_USER_CONFIRM": "حظر المستخدم",
+        "USER_BLOCKED_TITLE": "تم حظر المستخدم",
+        "USER_BLOCKED_MESSAGE": "تم حظر {{username}}",
+        "FRIEND_REQUEST_SENT_TITLE": "تم إرسال الطلب",
+        "FRIEND_REQUEST_SENT_MESSAGE": "لقد أرسلت طلب صداقة إلى {{username}}",
+        "FRIEND_REQUEST_ACCEPTED_TITLE": "تم قبول طلب الصداقة",
+        "FRIEND_REQUEST_ACCEPTED_MESSAGE": "أصبح {{username}} صديقك الآن",
+        "FRIEND_REQUEST_REJECTED_TITLE": "تم رفض طلب الصداقة",
+        "FRIEND_REQUEST_REJECTED_MESSAGE": "لقد رفضت طلب الصداقة من {{username}}",
+        "NOTIF_REQUEST_RECEIVED": "أرسل لك {{username}} طلب صداقة",
+        "NOTIF_REQUEST_ACCEPTED": "قبل {{username}} طلب صداقتك",
+        "NOTIF_REMOVED": "أزالك {{username}} من أصدقائه",
+        "CLOSE": "إغلاق",
+        "BLOCKED_USERS": "المستخدمون المحظورون",
+        "NO_BLOCKED_USERS": "لم تقم بحظر أي مستخدم",
+        "UNBLOCK": "إلغاء الحظر",
+        "BLOCK_SUCCESS": "تم حظر المستخدم بنجاح",
+        "UNBLOCK_SUCCESS": "تم إلغاء حظر المستخدم بنجاح",
+        "BLOCKED_MESSAGE": "قام مستخدم بحظرك"
+    },
+    "USER": {
+        "LOG_OUT": "تسجيل الخروج",
+        "LOG_OUT_MESSAGE": "هل تريد حقاً تسجيل الخروج؟",
+        "LOG_OUT_CANCEL": "إلغاء",
+        "LOG_OUT_CONFIRM": "تسجيل الخروج",
+        "DELETE": "حذف الحساب",
+        "DELETE_MESSAGE": "هل تريد حقاً حذف هذا الحساب؟ هذا الإجراء لا رجعة فيه."
+    },
+    "SHOP_PAGE": {
+        "TITLE": "المتجر",
+        "AVATARS": "أيقونات الصورة الرمزية",
+        "BACKGROUNDS": "الخلفيات",
+        "THEMES": "المواضيع البصرية",
+        "OWNED": "مملوك",
+        "INSUFFICIENT_BALANCE": "رصيد غير كافٍ",
+        "BUY": "شراء",
+        "NO_BACKGROUNDS": "لا توجد خلفيات متاحة"
+    },
+    "SETTINGS_PAGE": {
+        "TITLE": "الإعدادات",
+        "TABS": {
+            "VISUAL": "المرئيات واللغات",
+            "ACCOUNT": "إعدادات الحساب"
+        },
+        "SECTIONS": {
+            "BACKGROUND": {
+                "TITLE": "الخلفيات",
+                "SUBTITLE": "اختر خلفية من خلفياتك المملوكة",
+                "NO_BACKGROUNDS": "لا تمتلك أي خلفيات.",
+                "VISIT_STORE": "قم بزيارة المتجر لشراء واحدة!"
+            },
+            "THEME": {
+                "TITLE": "الموضوع"
+            },
+            "LANGUAGE": {
+                "TITLE": "اللغة"
+            },
+            "PROFILE_PICTURE": {
+                "TITLE": "صورة الملف الشخصي",
+                "UPLOAD": "تحميل صورة"
+            },
+            "ACCOUNT_INFO": {
+                "USERNAME": "اسم المستخدم",
+                "USERNAME_PLACEHOLDER": "اسم المستخدم الخاص بك",
+                "EMAIL": "عنوان البريد الإلكتروني",
+                "EMAIL_PLACEHOLDER": "your.email@example.com"
+            },
+            "STATS": {
+                "TITLE": "الإحصائيات",
+                "GAMES_CLASSIC": "الألعاب التي تم لعبها (كلاسيكي)",
+                "GAMES_CTF": "الألعاب التي تم لعبها (CTF)",
+                "GAMES_WON": "الألعاب التي تم الفوز بها",
+                "AVG_GAME_TIME": "متوسط وقت اللعبة"
+            },
+            "DANGER_ZONE": {
+                "TITLE": "المنطقة الخطرة",
+                "DELETE_ACCOUNT": "حذف الحساب"
+            }
+        },
+        "EDIT_BUTTON": "تعديل الملف الشخصي",
+        "SAVE_BUTTON": "حفظ",
+        "DISCARD_BUTTON": "إلغاء",
+        "FOOTER_RETURN": "رجوع"
+    },
+    "POST_GAME_LOBBY": {
+        "TITLE": "نهاية اللعبة",
+        "CTF": "CTF",
+        "CLASSIC": "كلاسيكي",
+        "REWARD": "مكافأة",
+        "STATS": {
+            "COMBATS": "المعارك",
+            "VICTORIES": "ف/ت/خ",
+            "DMG_DEALT": "الضرر المُلحق",
+            "DMG_TAKEN": "الضرر المُتلقى",
+            "OBJECTS_TAKEN": "العناصر المُلتقطة",
+            "PCT_TILES_VISITED": "٪ المربعات المُزارة",
+            "GAME_LENGTH": "مدة اللعبة",
+            "TURNS": "عدد الأدوار",
+            "GLOBAL_TILES_VISITED": "٪ المربعات المُزارة الإجمالية",
+            "PCT_DOORS_INTEREACTED": "٪ الأبواب المُتفاعل معها",
+            "NB_FLAG_BEARERS": "حاملو الأعلام"
+        }
+    },
+    "THEME": {
+        "GOLD": "ذهبي (افتراضي)",
+        "BLUE": "أزرق سماوي",
+        "EMERALD": "زمردي",
+        "RUBY": "ياقوتي",
+        "AMETHYST": "جمشتي",
+        "OBSIDIAN": "حجر سبج",
+        "COPPER": "نحاسي",
+        "CYBERPUNK": "سايبربانك",
+        "ARCTIC": "قطبي",
+        "AQUA": "مائي",
+        "MCDONALDS": "ماكدونالدز",
+        "MAGENTA": "أرجواني",
+        "MY_EYES_BLEED": "عيوني تنزف",
+        "SAPPHIRE": "ياقوت أزرق",
+        "SAPPHIRE_CRIMSON": "ياقوت أزرق قرمزي",
+        "VERDANT_AMETHYST": "جمشت أخضر",
+        "DARK_FLAT": "مظلم مسطح",
+        "GOLD_FLAT": "ذهبي مسطح",
+        "NAVY_FLAT": "أزرق داكن مسطح",
+        "GREEN_FLAT": "أخضر مسطح",
+        "RED_FLAT": "أحمر مسطح",
+        "TOTAL_DARK": "ظلام تام",
+        "SILVER": "رمادي",
+        "CRIMSON": "قرمزي",
+        "PINK": "وردي",
+        "GREEN_BLUE": "نبتون",
+        "BLACK_ORANGE": "هالوين"
+    },
+    "BACKGROUND": {
+        "DEFAULT_ATHENA": "خلفية أثينا الافتراضية",
+        "SPARTAN_WARRIOR": "خلفية محارب سبارتي",
+        "DIONYSUS": "خلفية ديونيسوس",
+        "HADES": "خلفية هاديس",
+        "PERSEPHONE": "خلفية بيرسيفوني",
+        "APOLLO": "خلفية أبولو",
+        "ATHENA": "خلفية أثينا",
+        "HEPHAESTUS": "خلفية هيفايستوس",
+        "HERMES": "خلفية هيرميس",
+        "DEMETER": "خلفية ديميتر",
+        "ARTEMIS": "خلفية أرتميس",
+        "POSEIDON": "خلفية بوسيدون",
+        "HERA": "خلفية هيرا",
+        "ZEUS": "خلفية زيوس",
+        "HESTIA": "خلفية هيستيا",
+        "ARES": "خلفية آريس"
+    },
+    "AVATAR": {
+        "DIONYSUS": "صورة رمزية ديونيسوس",
+        "HADES": "صورة رمزية هاديس",
+        "PERSEPHONE": "صورة رمزية بيرسيفوني"
+    },
+    "ITEMS": {
+        "TRIDENT": {
+            "NAME": "رمح بوسيدون الثلاثي",
+            "DESCRIPTION": "إذا بقيت لديك نقطة إجراء واحدة في نهاية دورك، احصل على واحدة في دورك التالي، بحد أقصى 2."
+        },
+        "ARMOR": {
+            "NAME": "درع أخيل",
+            "DESCRIPTION": "+2 هجوم، إذا تم صد هجومك، تتلقى 1 ضرر."
+        },
+        "SANDAL": {
+            "NAME": "صنادل مجنحة",
+            "DESCRIPTION": "سرعة x2 ويقلل نقاط الصحة القصوى بمقدار 1."
+        },
+        "LIGHTNING": {
+            "NAME": "صاعقة زيوس",
+            "DESCRIPTION": "هجوم x2 ويقلل الدفاع بمقدار 2 والصحة بمقدار 1."
+        },
+        "XIPHOS": {
+            "NAME": "زيفوس",
+            "DESCRIPTION": "إذا كانت لديك أقل من 50٪ من نقاط الصحة، يفقد خصمك 1 من الدفاع وتكسب أنت 2 من الهجوم."
+        },
+        "KUNEE": {
+            "NAME": "كوني",
+            "DESCRIPTION": "يسمح بالمرور عبر الجدران، تعتبر كمربعات بتكلفة 1."
+        },
+        "RANDOM": {
+            "NAME": "عنصر عشوائي",
+            "DESCRIPTION": "يضيف عنصراً عشوائياً."
+        },
+        "SPAWN": {
+            "NAME": "نقطة البداية",
+            "DESCRIPTION": "يحدد نقطة بداية اللاعب."
+        },
+        "FLAG": {
+            "NAME": "العلم",
+            "DESCRIPTION": "علم وضع الاستيلاء على العلم. ارجع إلى نقطة البداية مع العلم للفوز!"
+        }
+    },
+    "TILES": {
+        "WATER": {
+            "NAME": "ماء",
+            "DESCRIPTION": "أداة لوضع مربع ماء بتكلفة حركة اثنين. ضع المربع بنقرة يسرى على مربع موجود."
+        },
+        "ICE": {
+            "NAME": "جليد",
+            "DESCRIPTION": "أداة لوضع مربع جليد بتكلفة حركة صفر. ضع المربع بنقرة يسرى على مربع موجود."
+        },
+        "WALL": {
+            "NAME": "جدار",
+            "DESCRIPTION": "أداة لوضع مربع جدار يمنع الحركة عبر هذا النوع مننقرة يسرى على مربع موجود."
+        },
+        "DOOR": {
+            "NAME": "باب",
+            "DESCRIPTION": "أداة لوضع باب يمكن فتحه أو إغلاقه. ضع المربع بنقرة يسرى على مربع موجود. إذا ضغطت على باب موجود بالفعل، سيتم عكس حالته."
+        }
+    },
+    "TILE_INFO": {
+        "GROUND": {
+            "NAME": "عشب",
+            "DESC1": "المربع الافتراضي للعبة (مربع تضاريس).",
+            "DESC2": "يمكن وضع اللاعبين والعناصر عليه.",
+            "DESC3": "التكلفة: 1"
+        },
+        "ICE": {
+            "NAME": "جليد",
+            "DESC1": "اللاعب الذي يمشي عليه لديه فرصة 10٪ لفقدان التوازن والسقوط، منهياً دوره على الفور.",
+            "DESC2": "طالما أن اللاعب على الجليد، تعاني سمات «الهجوم» و «الدفاع» من غرامة قدرها 2.",
+            "DESC3": "التكلفة: 0"
+        },
+        "WATER": {
+            "NAME": "ماء",
+            "DESC1": "مربع تضاريس.",
+            "DESC2": "التكلفة: 2"
+        },
+        "WALL": {
+            "NAME": "جدار",
+            "DESC1": "عائق لا يمكن اجتيازه ما لم تمتلك عنصراً خاصاً.",
+            "DESC2": "لا يمكن وضع أي عنصر عليه.",
+            "DESC3": "لا يعتبر مربع تضاريس."
+        },
+        "CLOSED_DOOR": {
+            "NAME": "باب مغلق",
+            "DESC1": "يجب فتح الباب المغلق عبر زر «الباب» قبل إمكانية المرور عبره.",
+            "DESC2": "وإلا، فإنه يعمل كجدار لا يمكن اجتيازه ما لم تمتلك عنصراً خاصاً."
+        },
+        "OPEN_DOOR": {
+            "NAME": "باب مفتوح",
+            "DESC1": "باب مفتوح يسمح للاعبين بالمرور بحرية.",
+            "DESC2": "يمكن إغلاقه مرة أخرى عبر زر «الباب» لحظر الممر مرة أخرى."
+        },
+        "COMBAT_STATS": "إحصائيات القتال",
+        "VICTORIES": "الانتصارات: ",
+        "EVADES": "التهربات: ",
+        "DEFEATS": "الهزائم: ",
+        "DMG_DEALT": "الضرر المُلحق: ",
+        "DMG_TAKEN": "الضرر المُتلقى: "
+    },
+    "ERROR": {
+        "MISSING_ATTRIBUTES": "يرجى اختيار قيم السمات المطلوبة",
+        "MISSING_NAME": "يرجى إدخال اسم الشخصية",
+        "MISSING_AVATAR": "يرجى اختيار صورة رمزية",
+        "NAME_WITH_SPACE": "لا يمكن أن يحتوي الاسم على مسافات",
+        "TITLE_INVALID_LENGTH": "- يجب أن يكون عنوان الخريطة بطول بين 3 و 30 حرفاً ولا يحتوي على مسافات فقط",
+        "NAME_ALREADY_EXISTS": "- توجد خريطة بنفس الاسم بالفعل",
+        "INVALID_FILE": "- الملف غير صالح",
+        "INVALID_TILES_DIMENSIONS": "- أبعاد المربعات غير صالحة",
+        "INVALID_DIMENSION": "- أبعاد الخريطة غير صالحة",
+        "INVALID_TILE_TYPE": "- نوع واحد أو أكثر من المربعات غير صالح",
+        "INVALID_OBJECT_TYPE": "- نوع واحد أو أكثر من العناصر غير صالح",
+        "INVALID_NB_FLAGS": "- يجب أن يكون هناك علم واحد بالضبط على الخريطة",
+        "FILE_TOO_LARGE": "- الملف كبير جداً",
+        "INVALID_MODE": "- وضع اللعب غير صالح",
+        "INVALID_NB_PLAYERS": "- عدد اللاعبين غير صالح لحجم الخريطة المحدد",
+        "INVALID_NB_OBJECTS": "- عدد العناصر غير صالح لحجم الخريطة المحدد"
+    }
+}

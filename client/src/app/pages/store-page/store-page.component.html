@@ -1,0 +1,153 @@
+<div class="store-page">
+    <app-header [title]="'SHOP_PAGE.TITLE' | translate"></app-header>
+    
+    <div class="store-container">
+        <div class="tabs">
+            <div
+                class="tab"
+                [class.active]="activeTab === 'avatars'"
+                (click)="setActiveTab('avatars')"
+            >
+                <span class="title-text">{{ 'SHOP_PAGE.AVATARS' | translate }}</span>
+            </div>
+            <div
+                class="tab"
+                [class.active]="activeTab === 'backgrounds'"
+                (click)="setActiveTab('backgrounds')"
+            >
+                <span class="title-text">{{ 'SHOP_PAGE.BACKGROUNDS' | translate }}</span>
+            </div>
+            <div
+                class="tab"
+                [class.active]="activeTab === 'themes'"
+                (click)="setActiveTab('themes')"
+            >
+                <span class="title-text">{{ 'SHOP_PAGE.THEMES' | translate }}</span>
+            </div>
+        </div>
+
+        <div class="store-content">
+            @if(activeTab === 'avatars') {
+                <section class="store-section">
+                    <h2 class="section-title">{{ 'SHOP_PAGE.AVATARS' | translate }}</h2>
+
+                    <div class="items-grid avatars">
+                        @for (avatar of avatarService.availableAvatars(); track avatar.id) {
+                            <div class="store-item" [class.owned]="avatar.owned">
+                                <div class="item-image-container avatar-preview">
+                                    <img [src]="avatar.src" [alt]="avatar.title" class="item-image">
+                                    @if(avatar.owned) {
+                                        <div class="owned-badge">{{ 'SHOP_PAGE.OWNED' | translate }}</div>
+                                    }
+                                </div>
+                                <div class="item-details">
+                                    <h3 class="item-title">{{ avatar.title | translate }}</h3>
+                                    <p class="item-price">{{ avatar.price }} <span class="currency">drachma</span></p>
+                                    @if(avatar.owned) {
+                                        <button class="purchase-btn owned" disabled>{{ 'SHOP_PAGE.OWNED' | translate }}</button>
+                                    } @else {
+                                        <button 
+                                            class="purchase-btn" 
+                                            (click)="purchaseAvatar(avatar)"
+                                            [disabled]="isLoading || backgroundService.balance() < avatar.price"
+                                        >
+                                            @if(backgroundService.balance() < avatar.price) {
+                                                {{ 'SHOP_PAGE.INSUFFICIENT_BALANCE' | translate }}
+                                            } @else {
+                                                {{ 'SHOP_PAGE.BUY' | translate }}
+                                            }
+                                        </button>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </section>
+            } @else if(activeTab === 'backgrounds') {
+                <section class="store-section">
+                    <h2 class="section-title">{{ 'SHOP_PAGE.BACKGROUNDS' | translate }}</h2>
+
+                    @if(backgroundService.availableBackgrounds().length === 0 && !isLoading) {
+                        <div class="no-backgrounds">
+                            <p>Aucun fond d'écran disponible</p>
+                        </div>
+                    }
+
+                    <div class="items-grid backgrounds">
+                        @for (background of backgroundService.availableBackgrounds(); track background.url) {
+                            <div class="store-item" [class.owned]="background.owned">
+                                <div class="item-image-container background-preview">
+                                    <img [src]="background.url" [alt]="background.title" class="item-image">
+                                    @if(background.owned) {
+                                        <div class="owned-badge">{{ 'SHOP_PAGE.OWNED' | translate }}</div>
+                                    }
+                                </div>
+                                <div class="item-details">
+                                    <h3 class="item-title">{{ background.title | translate }}</h3>
+                                    <p class="item-price">{{ background.price }} <span class="currency">drachma</span></p>
+                                    @if(background.owned) {
+                                        <button class="purchase-btn owned" disabled>{{ 'SHOP_PAGE.OWNED' | translate }}</button>
+                                    } @else {
+                                        <button 
+                                            class="purchase-btn" 
+                                            (click)="purchaseBackground(background)"
+                                            [disabled]="isLoading || backgroundService.balance() < background.price"
+                                        >
+                                            @if(backgroundService.balance() < background.price) {
+                                                {{ 'SHOP_PAGE.INSUFFICIENT_BALANCE' | translate }}
+                                            } @else {
+                                                {{ 'SHOP_PAGE.BUY' | translate }}
+                                            }
+                                        </button>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </section>
+            } @else if(activeTab === 'themes') {
+                <section class="store-section">
+                    <h2 class="section-title">{{ 'SHOP_PAGE.THEMES' | translate }}</h2>
+                    
+                    <div class="items-grid themes">
+                        @for (theme of themePurchaseService.availableThemes(); track theme.value) {
+                            <div class="store-item" [class.owned]="theme.owned">
+                                <div class="item-image-container theme-preview">
+                                    <div class="theme-color-display" [class]="theme.colorClass">
+                                        <div class="middle-layer"></div>
+                                    </div>
+                                    @if(theme.owned) {
+                                        <div class="owned-badge">{{ 'SHOP_PAGE.OWNED' | translate }}</div>
+                                    }
+                                </div>
+                                <div class="item-details">
+                                    <h3 class="item-title">{{ theme.label | translate }}</h3>
+                                    <p class="item-price">{{ theme.price }} <span class="currency">drachma</span></p>
+                                    @if(theme.owned) {
+                                        <button class="purchase-btn owned" disabled>{{ 'SHOP_PAGE.OWNED' | translate }}</button>
+                                    } @else {
+                                        <button 
+                                            class="purchase-btn" 
+                                            (click)="purchaseTheme(theme)"
+                                            [disabled]="isLoading || backgroundService.balance() < theme.price"
+                                        >
+                                            @if(backgroundService.balance() < theme.price) {
+                                                {{ 'SHOP_PAGE.INSUFFICIENT_BALANCE' | translate }}
+                                            } @else {
+                                                {{ 'SHOP_PAGE.BUY' | translate }}
+                                            }
+                                        </button>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </section>
+            }
+        </div>
+    </div>
+
+    <div class="button-group footer">
+        <p class="button" routerLink="/">{{'FOOTER.RETURN' | translate}}</p>
+    </div>
+</div>

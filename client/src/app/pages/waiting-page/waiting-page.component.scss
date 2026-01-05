@@ -1,0 +1,685 @@
+#waiting-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+  background: var(--background-gradient-down);
+  color: var(--main-text-color);
+}
+
+header {
+  flex: 0 0 auto;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2%;
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  font-family: papyrus;
+  font-weight: 900;
+  border-top: 2px solid var(--secondary);
+}
+
+header > * {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+footer {
+  flex: 0 0 auto;
+  min-height: 15vh;
+}
+
+#players-container {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0% 3%;
+  gap: 1.5%;
+  margin: 0;
+}
+
+app-lobby-player {
+  max-width: 17.5%;
+  margin: 0;
+}
+
+#footer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 2rem;
+}
+
+#start-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 18%;
+  align-self: center;
+}
+
+.big-button {
+  padding: 4% 10% 3% 10%;
+  margin-bottom: 2%;
+  border-radius: 3rem;
+  border: 1px solid var(--secondary);
+  color: var(--inverted-text-color);
+  background: var(--primary);
+  font-family: papyrus;
+  font-size: 1.2rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.big-button:not(:disabled):hover {
+  color: var(--main-text-color);
+  border: 1px solid var(--secondary);
+  background: var(--secondary-gradient);
+}
+
+.disabled {
+  display: none;
+  cursor: not-allowed;
+}
+
+.invisible {
+  display: none;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.add-bot-img {
+  background-image: url("../../../assets/images/icones/bot.png");
+  height: 2rem;
+  width: 2rem;
+}
+
+#quit-button:not(.big-button) {
+  color: var(--primary-text);
+  font-size: 0.8rem;
+  background: none;
+  padding: 1.5% 10%;
+  border: 2px solid var(--primary-text);
+  border-radius: 1.8rem;
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+#quit-button:not(.big-button):hover {
+  background-color: var(--secondary-very-light);
+  color: var(--inverted-text-color);
+  border: 2px solid var(--inverted-text-color);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 6rem;
+  height: 2.5rem;
+  margin-top: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--secondary-light);
+  transition: 0.4s;
+  border-radius: 2rem;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 2rem;
+  width: 2rem;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--main-text-color);
+  transition: 0.4s;
+  border-radius: 50%;
+  background-image: url("../../../assets/images/icones/unlocked.png");
+  background-size: 110%;
+  background-position: center;
+}
+
+input:checked + .slider {
+  background: var(--primary-gradient);
+}
+
+input:checked + .slider:before {
+  transform: translateX(3.5rem);
+  background-image: url("../../../assets/images/icones/locked.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.slider {
+  box-shadow: 0 0 1px #000;
+}
+.drop-in-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--secondary-light);
+  transition: 0.4s;
+  border-radius: 2rem;
+}
+
+.drop-in-slider:before {
+  position: absolute;
+  content: "";
+  height: 2rem;
+  width: 2rem;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--main-text-color);
+  transition: 0.4s;
+  border-radius: 50%;
+  background-image: url("../../../assets/images/icones/door-closed.png");
+  background-size: 110%;
+  background-position: center;
+}
+
+input:checked + .drop-in-slider {
+  background: var(--primary-gradient);
+}
+
+input:checked + .drop-in-slider:before {
+  transform: translateX(3.5rem);
+  background-image: url("../../../assets/images/icones/door-open.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.drop-in-slider {
+  box-shadow: 0 0 1px #000;
+}
+input[type="checkbox"]:disabled + .drop-in-slider {
+  cursor: default;
+}
+
+.lock-text {
+  margin-top: 0;
+}
+
+.lock-container {
+  width: 17.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: papyrus;
+  font-weight: 900;
+  margin-right: 1rem;
+}
+
+.chat-icon {
+  width: 2rem;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.chat {
+  transform: scale(0.9);
+  position: absolute;
+  left: 2%;
+  bottom: 2%;
+}
+
+app-lobby-player {
+  height: 27.5rem;
+  flex: 0 0 15.5%;
+}
+
+.switch .tooltiptext {
+  visibility: hidden;
+  width: 400%;
+  background: var(--secondary-very-light);
+  color: var(--inverted-text-color);
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  transform: translateX(-75%);
+}
+
+.switch:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.add-bot {
+  color: var(--main-text-color);
+  background-color: var(--secondary-very-light);
+  font-size: 0.8rem;
+  border-radius: 2rem;
+  width: 4rem;
+  height: 2.5rem;
+  line-height: 2rem;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: papyrus;
+  font-weight: 900;
+  cursor: pointer;
+  position: relative;
+}
+
+.add-bot:hover {
+  color: var(--main-text-color);
+  border: none;
+  background: var(--basic-gradient);
+}
+
+.disabled-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+  pointer-events: none;
+  display: none;
+}
+
+#waiting-page.disabled .disabled-overlay {
+  display: block;
+}
+
+.add-virtual-player-container {
+  position: fixed;
+  width: 60%;
+  height: 80%;
+  color: var(--main-text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10rem;
+  font-family: papyrus;
+}
+
+.bot-title {
+  flex: 0 0 7%;
+  width: 100%;
+  color: var(--primary-text);
+  font-size: 1.8rem;
+  font-family: "Franklin Gothic Medium";
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.bot-options {
+  flex: 0 0 75%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+}
+
+.bot-options > * {
+  flex: 1;
+  height: 100%;
+  width: 50%;
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.aggressive {
+  background-image: linear-gradient(
+    to top,
+    rgb(83, 42, 42),
+    rgb(57, 30, 30) 33%,
+    rgb(45, 19, 19) 67%,
+    rgb(33, 18, 18)
+  );
+}
+
+.defensive {
+  background-image: linear-gradient(
+    to top,
+    rgb(42, 51, 83),
+    rgb(30, 34, 57) 33%,
+    rgb(19, 22, 45) 67%,
+    rgb(18, 23, 33)
+  );
+}
+
+.aggressive:hover {
+  background-image: linear-gradient(
+    to top,
+    rgb(80, 18, 18),
+    rgb(91, 18, 18) 33%,
+    rgb(107, 21, 21) 67%,
+    rgb(54, 7, 7)
+  );
+}
+
+.defensive:hover {
+  background-image: linear-gradient(
+    to top,
+    rgb(21, 35, 83),
+    rgb(20, 29, 80) 33%,
+    rgb(30, 40, 120) 67%,
+    rgb(10, 26, 57)
+  );
+}
+
+.bot-options > *:hover {
+  box-shadow: 0 0 15px rgba(255, 249, 144, 0.8);
+}
+
+.profile-title {
+  color: var(--main-text-color);
+  margin-top: 2rem;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.bot-cancel {
+  background-color: darkred;
+  width: 10%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.bot-profile-img {
+  height: auto;
+  width: 67%;
+  margin-left: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-description {
+  color: var(--main-text-color);
+  font-size: 0.9rem;
+  width: 80%;
+  margin-left: 10%;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--main-text-color);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 1010;
+  transition: ease 0.2s;
+}
+
+.close-button:hover {
+  color: rgb(255, 60, 60);
+  transform: scale(1.1);
+}
+
+.elem-content {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  font-family: "Franklin Gothic Medium";
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+}
+
+.elem-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 0.5rem;
+  width: 18rem;
+}
+
+.elem-title {
+  font-size: 1rem;
+  font-family: Papyrus;
+  text-align: center;
+  margin: 0;
+}
+
+.elem-title-small {
+  font-size: 0.9rem;
+  font-family: Papyrus;
+  text-align: center;
+  margin: 0;
+}
+
+.condensed-txt {
+  font-size: 2rem;
+  letter-spacing: 0rem;
+}
+
+#game-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-left: 2%;
+  gap: 2%;
+  width: 60%;
+}
+
+.gap {
+  display: none;
+}
+
+.top-right-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  margin-right: 2%;
+}
+
+.dot-separator {
+  font-size: 1rem;
+  color: var(--primary-very-dark);
+}
+
+.locktooltiptext {
+  font-size: 0.9rem;
+  visibility: hidden;
+  opacity: 0;
+  width: 12rem;
+  background-color: var(--secondary-very-light);
+  color: var(--inverted-text-color);
+  text-align: center;
+  border-radius: 10px;
+  padding: 8px 5px;
+  position: absolute;
+  z-index: 1;
+  top: 120%;
+  left: 0%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+}
+
+.switch:hover .locktooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.add-bot:hover .locktooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.qr-button {
+  color: var(--main-text-color);
+  background-color: var(--secondary);
+  border-radius: 2rem;
+  width: 4rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.qr-button:hover {
+  color: var(--main-text-color);
+  background: var(--secondary-dark);
+}
+
+.qr-button lucide-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-button-tooltip {
+  font-size: 0.9rem;
+  visibility: hidden;
+  opacity: 0;
+  width: 12rem;
+  background-color: var(--secondary-very-light);
+  color: var(--inverted-text-color);
+  text-align: center;
+  border-radius: 10px;
+  padding: 8px 5px;
+  position: absolute;
+  z-index: 1;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+}
+
+.qr-button:hover .qr-button-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.qr-popup-container {
+  position: fixed;
+  width: 35%;
+  max-width: 500px;
+  color: var(--main-text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2rem;
+  padding: 2rem;
+  font-family: papyrus;
+}
+
+.qr-popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.qr-popup-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-text);
+  text-align: center;
+}
+
+.qr-popup-code {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+.qr-popup-code qrcode {
+  display: block;
+}
+
+.qr-popup-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--main-text-color);
+  margin-top: 1rem;
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+
+.challenge-card {
+  position: absolute;
+  bottom: 1rem;
+  right: 10rem;
+  z-index: 100;
+}

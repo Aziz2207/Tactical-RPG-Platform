@@ -1,0 +1,61 @@
+<div class="channels-container">
+  <div class="channels-header">
+    <div class="clickable-icon" (click)="startCreating()">
+      <lucide-icon [img]="Plus" class="icon"></lucide-icon>
+    </div>
+    <div class="search-channel" (click)="openChannelSearchDialog()">
+      <div class="search-channel-text">Rechercher un canal</div>
+      <lucide-icon [img]="Search" class="icon"></lucide-icon>
+    </div>
+  </div>
+
+  <div class="channels-list">
+
+    @if (creatingChannel) {
+      <div class="channel-item new-channel-block">
+        <input
+          [(ngModel)]="newChannelName"
+          placeholder="Nom du canal"
+          class="channel-name-input"
+          #channelInput
+          (keyup.enter)="confirmCreating()"
+          (keyup.escape)="cancelCreating()"
+          (input)="onInputChange()" />
+        <div class="channel-actions">
+          <div class="clickable-icon confirm-icon" (click)="confirmCreating(); $event.stopPropagation()">
+            <lucide-icon [img]="Check" class="icon"></lucide-icon>
+          </div>
+          <div class="clickable-icon cancel-icon" (click)="cancelCreating(); $event.stopPropagation()">
+            <lucide-icon [img]="X" class="icon"></lucide-icon>
+          </div>
+        </div>
+      </div>
+    }
+
+    @for (channel of channels; track channel.roomId; let i = $index) {
+      <div class="channel-item"
+          [class.selected]="selectedChannelId === channel.roomId"
+          (click)="selectChannel(channel)">
+        <div class="channel-info">
+          <span class="channel-name">{{ channel.name }}</span>
+        </div>
+        <div class="channel-actions">
+          @if (channel.roomId !== 'general') {
+            @if (canLeave(channel)) {
+              <div class="clickable-icon"
+                  (click)="leaveChannel(channel.name, $event)">
+                <lucide-icon [img]="LogOut" class="icon"></lucide-icon>
+              </div>
+            }
+            @if (canDelete(channel)) {
+              <div class="clickable-icon"
+                  (click)="deleteChannel(channel.name, $event)">
+                <lucide-icon [img]="Trash2" class="icon"></lucide-icon>
+              </div>
+            }
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>

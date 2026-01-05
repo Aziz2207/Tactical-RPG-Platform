@@ -1,0 +1,39 @@
+<div class="tile-player-info">
+    @if(gameTileInfoService.selectedPlayer) {
+        <div class="info">
+            <h2> {{ gameTileInfoService.selectedPlayer.name }}</h2>
+            <img class="big-image" [src]="gameTileInfoService.selectedPlayer.avatar?.src" alt="player image">
+            <div class="stats">
+                <ul class="stats-list">
+                    <p class="center-text">{{ 'TILE_INFO.COMBAT_STATS' | translate }} </p>
+                    <li>{{ 'TILE_INFO.VICTORIES' | translate }} {{ gameTileInfoService.selectedPlayer.postGameStats.victories }}</li>
+                    <li>{{ 'TILE_INFO.EVADES' | translate }} {{ gameTileInfoService.selectedPlayer.postGameStats.draws }}</li>
+                    <li>{{ 'TILE_INFO.DEFEATS' | translate }} {{ gameTileInfoService.selectedPlayer.postGameStats.defeats }}</li>
+                    <li>{{ 'TILE_INFO.DMG_DEALT' | translate }} {{ gameTileInfoService.selectedPlayer.postGameStats.damageDealt }}</li>
+                    <li>{{ 'TILE_INFO.DMG_TAKEN' | translate }} {{ gameTileInfoService.selectedPlayer.postGameStats.damageTaken }} </li>
+                </ul>
+            </div> 
+        </div>
+    }   
+    @else {
+        <div class="info">
+            <h4> {{ gameTileInfoService.getTile()?.name | translate }}</h4>
+            <ul>
+                @for(description of gameTileInfoService.getTile()?.descriptions; let i = $index; track description){
+                    <li class="small-text"> {{ description | translate }}</li>
+                }
+            </ul>
+            <div class="img-container">
+                <img [ngClass]="{'big-image': !gameTileInfoService.getItem(), 'small-image': gameTileInfoService.getItem()}"  [src]="gameTileInfoService.getTile()?.image" alt="tile image"> 
+                @if(gameTileInfoService.getItem()){
+                    <img class="small-image" [src]="gameTileInfoService.getItem()?.image" alt="item image">
+                }
+            </div> 
+            @if(gameTileInfoService.getItem()){
+                <h4> {{ gameTileInfoService.getItem()?.name | translate }}</h4>
+                <p class="small-text"> {{ gameTileInfoService.getItem()?.description | translate}}</p>
+            }
+        </div>
+    }
+    <button class="close-button" (click)="close()">{{ 'DIALOG.CLOSE' | translate }}</button>
+</div>

@@ -1,0 +1,35 @@
+.global-attribute {
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0.5rem 0;
+
+    overflow: hidden; 
+    position: relative; 
+}
+
+.global-attribute:hover {
+    transform: scale(1.05);
+    color: var(--primary-text);
+    background-color: rgba(255, 240, 152, 0.05);
+}
+
+.global-attribute .label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    color: var(--secondary-light); 
+    text-align: center;
+  }
+  
+.global-attribute .value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    font-size: 1.2rem;
+    color: var(--main-text-color);
+    text-align: center;
+}

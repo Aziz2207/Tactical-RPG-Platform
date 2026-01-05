@@ -1,0 +1,39 @@
+<app-tool-button
+    id="water-tool"
+    (click)="onSelectTile(tileIds.Water)"
+    [translationKey]="'TILES.WATER.NAME'">
+</app-tool-button>
+<label for="water-tool" id="water-tool-description" class="hidden-description-to-show">
+    <img src="./assets/images/tiles/water.jpg" />
+    {{ 'TILES.WATER.DESCRIPTION' | translate }}
+</label>
+
+<app-tool-button
+    id="ice-tool"
+    (click)="onSelectTile(tileIds.Ice)"
+    [translationKey]="'TILES.ICE.NAME'">
+</app-tool-button>
+<label for="ice-tool" id="ice-tool-description" class="hidden-description-to-show">
+    <img src="./assets/images/tiles/ice.jpg" />
+    {{ 'TILES.ICE.DESCRIPTION' | translate }}
+</label>
+
+<app-tool-button
+    id="wall-tool"
+    (click)="onSelectTile(tileIds.Wall)"
+    [translationKey]="'TILES.WALL.NAME'">
+</app-tool-button>
+<label for="wall-tool" id="wall-tool-description" class="hidden-description-to-show">
+    <img src="./assets/images/tiles/wall.jpg" />
+    {{ 'TILES.WALL.DESCRIPTION' | translate }}
+</label>
+
+<app-tool-button
+    id="door-tool"
+    (click)="onSelectTile(tileIds.Door)"
+    [translationKey]="'TILES.DOOR.NAME'">
+</app-tool-button>
+<label for="door-tool" id="door-tool-description" class="hidden-description-to-show">
+    <img src="./assets/images/tiles/closed-door.jpg" />
+    {{ 'TILES.DOOR.DESCRIPTION' | translate }}
+</label>

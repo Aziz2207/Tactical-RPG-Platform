@@ -1,0 +1,207 @@
+@if(isQrPopupVisible){
+<div class="qr-popup-container">
+  <div class="close-button" (click)="toggleQrPopup()">&times;</div>
+  <div class="qr-popup-content">
+    <h2>{{ "WAITING_PAGE.SCAN_TO_JOIN" | translate }}</h2>
+    <div class="qr-popup-code">
+      <qrcode
+        [qrdata]="accessCode"
+        [width]="256"
+        [errorCorrectionLevel]="'M'"
+        [colorDark]="'#000000'"
+        [colorLight]="'#ffffff'"
+      ></qrcode>
+    </div>
+  </div>
+</div>
+} @if(isBotProfileVisible){
+<div class="add-virtual-player-container">
+  <div class="close-button" (click)="toggleBotProfileVisibility()">&times;</div>
+  <div class="bot-title">
+    <p>{{ "WAITING_PAGE.BOT_PROFILE_POPUP_TITLE" | translate }}</p>
+  </div>
+  <div class="bot-options">
+    <div class="defensive" (click)="addBot(false)">
+      <p class="profile-title">
+        {{ "WAITING_PAGE.BOT_PROFILES.DEFENSIVE.TITLE" | translate }}
+      </p>
+      <img
+        class="bot-profile-img"
+        draggable="false"
+        src="./assets/images/icones/defensive.png"
+        alt="passive-img"
+      />
+      <div class="profile-description">
+        <p>
+          {{ "WAITING_PAGE.BOT_PROFILES.DEFENSIVE.DESCRIPTION_1" | translate }}
+        </p>
+        <p>
+          {{ "WAITING_PAGE.BOT_PROFILES.DEFENSIVE.DESCRIPTION_2" | translate }}
+        </p>
+      </div>
+    </div>
+    <div class="aggressive" (click)="addBot(true)">
+      <p class="profile-title">
+        {{ "WAITING_PAGE.BOT_PROFILES.AGGRESSIVE.TITLE" | translate }}
+      </p>
+      <img
+        class="bot-profile-img"
+        draggable="false"
+        src="./assets/images/icones/aggressive.png"
+        alt="passive-img"
+      />
+      <div class="profile-description">
+        <p>
+          {{ "WAITING_PAGE.BOT_PROFILES.AGGRESSIVE.DESCRIPTION_1" | translate }}
+        </p>
+        <p>
+          {{ "WAITING_PAGE.BOT_PROFILES.AGGRESSIVE.DESCRIPTION_2" | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+}
+
+<div
+  id="waiting-page"
+  [ngClass]="{ disabled: isBotProfileVisible || isQrPopupVisible }"
+>
+  <div class="disabled-overlay"></div>
+  <app-header title="{{ accessCode }}" [hasOnlyChat]="true"></app-header>
+  <header>
+    <div id="game-info-container">
+      @if(chosenGame){
+      <p class="elem-title">{{ chosenGame.name }}</p>
+      <span class="dot-separator">•</span>
+      <p class="elem-title">{{ chosenGame.mode | translate }}</p>
+      <span class="dot-separator">•</span>
+      <p class="elem-title">
+        {{
+          isFriendsOnly
+            ? ("GAME_CREATION.FRIENDS_ONLY" | translate)
+            : ("GAME_CREATION.EVERYONE" | translate)
+        }}
+      </p>
+      <span class="dot-separator">•</span>
+      <p class="elem-title">
+        {{ "GAME_CREATION.ENTRY_FEE" | translate }}:
+        {{ gameService.entryFee }} $
+      </p>
+      @if(gameService.isRoomQuickEliminationEnabled){
+      <span class="dot-separator">•</span>
+      <p class="elem-title">
+        {{ "GAME_CREATION.QUICK_ELIMINATION" | translate }}
+      </p>
+      } @if(gameService.isRoomDropInEnabled){
+      <span class="dot-separator">•</span>
+      <p class="elem-title">DropIn/DropOut</p>
+      } }
+    </div>
+    <div class="top-right-container">
+      <div class="qr-button" (click)="toggleQrPopup()">
+        <lucide-icon [img]="QrCode" [size]="24"></lucide-icon>
+        <div class="qr-button-tooltip">
+          {{ "WAITING_PAGE.SCAN_TO_JOIN" | translate }}
+        </div>
+      </div>
+      <div
+        class="add-bot"
+        (click)="toggleBotProfileVisibility()"
+        [ngClass]="{ invisible: !isAdmin }"
+      >
+        <img
+          src="./assets/images/icones/bot-2.png"
+          alt="bot"
+          class="add-bot-img"
+        />
+        <div class="locktooltiptext">
+          {{ "WAITING_PAGE.ADD_BOT" | translate }}
+        </div>
+      </div>
+      <div class="lock-container">
+        <div [ngClass]="{ disabled: !isAdmin }">
+          <label class="switch">
+            @if(isMaxPlayersReached()){
+            <div class="tooltiptext">
+              {{ "WAITING_PAGE.MAX_PLAYERS_CANT_UNLOCK" | translate }}
+            </div>
+            }
+            <input
+              type="checkbox"
+              [(ngModel)]="isLocked"
+              (change)="onLockChange()"
+              [disabled]="isMaxPlayersReached()"
+            />
+            <span class="slider"></span>
+            <div class="locktooltiptext">
+              {{ "WAITING_PAGE.LOCK" | translate }}
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="lock-container">
+        <div [ngClass]="{ disabled: !isAdmin }">
+          <label class="switch">
+            <input
+              type="checkbox"
+              [(ngModel)]="isDropInEnabled"
+              (change)="onDropInChange()"
+            />
+            <span class="drop-in-slider"></span>
+            <div class="locktooltiptext">
+              {{ "WAITING_PAGE.DROP_IN" | translate }}
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div id="players-container">
+      @for (player of players; track player.id) {
+      <app-lobby-player
+        class="medium"
+        [lobbyPlayer]="players[$index]"
+        [isPlayerAdmin]="isAdmin"
+      ></app-lobby-player>
+      }
+    </div>
+  </main>
+  <footer>
+    @if(!isBotProfileVisible){
+    <div id="footer-container">
+      @if(!isFriendsBarOpen) {
+      <div class="chat">
+        <app-chat-box [isToggleable]="false"></app-chat-box>
+      </div>
+      }
+      <div id="start-container">
+        <button
+          id="start"
+          class="big-button"
+          (click)="handleStartGame()"
+          [disabled]="!isAdmin"
+          [ngClass]="{ disabled: !isAdmin }"
+        >
+          {{ "WAITING_PAGE.START_GAME" | translate }}
+        </button>
+        <button
+          id="quit-button"
+          (click)="handleExit(accessCode)"
+          [disabled]="isBotProfileVisible"
+          [ngClass]="{ 'big-button': !isAdmin }"
+        >
+          {{ "FOOTER.QUIT" | translate }}
+        </button>
+      </div>
+      <div class="challenge-card">
+        <app-challenge-card
+          [challenge]="getCurrentChallenge()"
+          [currentValue]="0"
+        ></app-challenge-card>
+      </div>
+    </div>
+    }
+  </footer>
+</div>

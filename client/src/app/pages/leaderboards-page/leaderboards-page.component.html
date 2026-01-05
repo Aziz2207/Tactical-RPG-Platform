@@ -1,0 +1,176 @@
+<div class="leaderboards-page">
+    <app-header title="{{ 'LEADERBOARDS_PAGE.TITLE' | translate }}"></app-header>
+    <div class="leaderboard-container">
+        <div class="leaderboard-header">
+            <p>{{ users.length }} {{ 'LEADERBOARDS_PAGE.TOTAL_USERS' | translate }}</p>
+        </div>
+
+        @if(isLoading) {
+        <div class="loading-container">
+            <div class="spinner"></div>
+            <p>{{ 'LEADERBOARDS_PAGE.LOADING' | translate }}</p>
+        </div>
+        } @else {
+        <div class="table-wrapper">
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th class="rank-col">
+                            <span class="th-content">
+                                {{ 'LEADERBOARDS_PAGE.RANK' | translate }}
+                            </span>
+                        </th>
+                        <th
+                            class="username-col"
+                        >
+                            <span class="th-content">
+                                {{ 'LEADERBOARDS_PAGE.USERNAME' | translate }}
+                            </span>
+                        </th>
+                        <th
+                            class="balance-col sortable"
+                            (click)="sortBy('lifetimeEarnings')"
+                        >
+                            <span class="th-content">
+                                {{ 'LEADERBOARDS_PAGE.LIFETIME_EARNINGS' | translate }} @if(sortColumn === 'lifetimeEarnings') {
+                                <span class="sort-indicator">{{
+                                    sortDirection === "asc" ? "↑" : "↓"
+                                }}</span>
+                                }
+                            </span>
+                        </th>
+                        <th
+                            class="games-col sortable"
+                            (click)="sortBy('gamesPlayed')"
+                        >
+                            <span class="th-content">
+                                {{ 'LEADERBOARDS_PAGE.GAMES_PLAYED' | translate }} @if(sortColumn === 'gamesPlayed') {
+                                <span class="sort-indicator">{{
+                                    sortDirection === "asc" ? "↑" : "↓"
+                                }}</span>
+                                }
+                            </span>
+                        </th>
+                        <th class="wins-col sortable" (click)="sortBy('wins')">
+                            <span class="th-content">
+                                {{ 'LEADERBOARDS_PAGE.WINS' | translate }} @if(sortColumn === 'wins') {
+                                <span class="sort-indicator">{{
+                                    sortDirection === "asc" ? "↑" : "↓"
+                                }}</span>
+                                }
+                            </span>
+                        </th>
+                        <th
+                            class="winrate-col sortable"
+                            (click)="sortBy('winRate')"
+                        >
+                            <span class="th-content">
+                                {{ 'LEADERBOARDS_PAGE.WINRATE' | translate }} @if(sortColumn === 'winRate') {
+                                <span class="sort-indicator">{{
+                                    sortDirection === "asc" ? "↑" : "↓"
+                                }}</span>
+                                }
+                            </span>
+                        </th>
+                        <th
+                            class="total-game-duration sortable"
+                            (click)="sortBy('duration')"
+                        >
+                            <span class="th-content">
+                                {{ 'LEADERBOARDS_PAGE.TOTAL_GAME_DURATION' | translate }} @if(sortColumn ===
+                                'duration') {
+                                <span class="sort-indicator">{{
+                                    sortDirection === "asc" ? "↑" : "↓"
+                                }}</span>
+                                }
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(user of users; track user.uid; let i = $index){
+                    <tr class="user-row" 
+                        [class.top-rank]="user.uid === getCurrentUid()" 
+                        [class.blocked]="isUserBlocked(user.uid) || isUserBlockedByAnother(user.uid)">
+                        <td class="rank-col">
+                            <span
+                            class="rank-badge"
+                            [class.gold]="sortDirection === 'desc' ? i === 0 : i === users.length - 1"
+                            [class.silver]="sortDirection === 'desc' ? i === 1 : i === users.length - 2"
+                            [class.bronze]="sortDirection === 'desc' ? i === 2 : i === users.length - 3"
+                            >
+                                {{ sortDirection === 'desc' ? i + 1 : users.length - i }}
+                            </span>
+                        </td>
+                        <td class="username-col">
+                            @if(isUserBlocked(user.uid)) {
+                                <div class="blocked-avatar-img"></div>
+                                <span>{{ 'LEADERBOARDS_PAGE.BLOCKED_USER' | translate }}</span>
+                            } 
+                            @else if(isUserBlockedByAnother(user.uid)) {
+                                <div class="blocked-avatar-img"></div>
+                                <span>{{ 'LEADERBOARDS_PAGE.BLOCKED_ME' | translate }}</span>
+                            }
+                            @else {
+                                <div class="avatar-wrapper">
+                                    <img
+                                        [src]="user.avatarURL"
+                                        alt="Avatar"
+                                    />
+
+                                    <div 
+                                        *ngIf="isFriend(user.uid)"
+                                        class="status-dot"
+                                        [ngClass]="userService.isUserOnline(user.uid) ? 'online' : 'offline'">
+                                    </div>
+                                </div>
+
+                                <div class="username-wrapper">
+                                    <span class="username">{{ user.username }}</span>
+                                </div>
+                            }
+                        </td>
+                        <td class="balance-col">
+                            <span class="balance">${{ user.lifetimeEarnings || 0 }}</span>
+                        </td>
+                        <td class="games-col">
+                            <span class="stat-value">{{
+                                user.totalGamesPlayed || 0
+                            }}</span>
+                        </td>
+                        <td class="wins-col">
+                            <span class="stat-value wins">{{
+                                user.statistics?.numOfPartiesWon || 0
+                            }}</span>
+                        </td>
+                        <td class="winrate-col">
+                            <div class="winrate-wrapper">
+                                <span class="winrate">
+                                    {{ user.winRate }}%
+                                </span>
+                                <div class="winrate-bar">
+                                    <div
+                                        class="winrate-fill"
+                                        [style.width.%]="user.winRate"
+                                    ></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="total-game-duration">
+                            <span class="email">{{
+                                formatDuration(user.totalGameDuration || 0)
+                            }}</span>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        }
+    </div>
+    <div class="button-group">
+        <p class="button" routerLink="/">
+            {{ "SETTINGS_PAGE.FOOTER_RETURN" | translate }}
+        </p>
+    </div>
+</div>

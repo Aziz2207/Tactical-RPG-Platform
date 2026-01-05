@@ -1,0 +1,7 @@
+# Flutter-related
+**/Flutter/
+**/Pods/
+
+# Xcode-related
+**/dgph
+**/xcuserdata/

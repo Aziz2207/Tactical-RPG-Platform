@@ -1,0 +1,129 @@
+.title {
+    padding: 1rem 0 0 1rem;
+}
+
+.page-container {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+
+.empty {
+    visibility: hidden;
+}
+
+.submit-container {
+    display: grid;
+    height: 40vh;
+    width: 60vh;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20%;
+    background: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+    );
+    font-family: "Papyrus";
+    font-weight: bold;
+    color: var(--main-text-color);
+    overflow: hidden;
+}
+
+.submit-container p {
+    font-size: 130%;
+}
+
+.invalid-code {
+    margin-top: 5%;
+    color: red;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.join-actions {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.join-game,
+.spectate-game {
+    border: none;
+    margin: 0;
+    width: 50%;
+    font-family: "Papyrus";
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    transition: ease 0.2s;
+    background-color: var(--secondary-very-light);
+}
+
+.join-game:hover,
+.spectate-game:hover {
+    transform: scale(1.1);
+    background: var(--primary-gradient);
+}
+
+.spectate-game {
+    background-color: var(--primary-light);
+}
+
+.input-box {
+    background: none;
+    color: var(--main-text-color);
+    border: 0.05rem solid var(--primary-dark);
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+    margin: 0;
+    font-family: Papyrus;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 55%;
+    letter-spacing: 1.5rem;
+    text-align: center;
+}
+
+.input-box:hover {
+    background: linear-gradient(
+        to right,
+        rgba(111, 109, 56, 0.4),
+        rgba(177, 168, 131, 0.1)
+    );
+}
+
+.button {
+    font-size: 2rem;
+    display: inline-block;
+    background-color: transparent;
+    padding: 0 4rem;
+    color: var(--main-text-color);
+    font-family: "Papyrus";
+    border: none;
+    margin-top: 10%;
+}
+
+.button:hover {
+    background: var(--footer-nav-button);
+    color: var(--inverted-text-color);
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.join-game-page {
+    background: var(--background-gradient-down);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+}

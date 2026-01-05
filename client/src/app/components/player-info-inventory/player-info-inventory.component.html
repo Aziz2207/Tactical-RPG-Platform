@@ -1,0 +1,75 @@
+<div class="player-stats">
+  @if(player){
+  <div>
+    <p id="player-name">{{ player.name }}</p>
+  </div>
+  <div id="photo-container">
+    <div id="player-image-container" [ngClass]="player.status">
+      <img id="portrait" src="{{ player.avatar?.src }}" />
+    </div>
+    <div id="player-attributes">
+      <div id="hp-bar-container">
+        <progress
+          id="hp-bar"
+          value="{{ player.attributes.currentHp }}"
+          max="{{ player.attributes.totalHp }}"
+          #hpBar
+        ></progress>
+        <div class="individual-stat" id="hp-value">
+          {{ player.attributes.currentHp }} / {{ player.attributes.totalHp }}
+        </div>
+      </div>
+
+      <div id="stats">
+        <div class="individual-stat" id="speed">
+          {{ "GAME.SPD" | translate }} : {{ player.attributes.speed }}
+        </div>
+        <div class="individual-stat" id="attack">
+          {{ "GAME.ATK" | translate }} : {{ player.attributes.attack }}
+          @if (player.attributes.atkDiceMax === 4) {
+          <img class="stats-dice" src="./assets/images/icones/D4.png" />
+          } @else{
+          <img class="stats-dice" src="./assets/images/icones/D6.png" />
+          }
+        </div>
+        <div class="individual-stat" id="defense">
+          {{ "GAME.DEF" | translate }} : {{ player.attributes.defense }}
+          @if (player.attributes.defDiceMax === 4) {
+          <img class="stats-dice" src="./assets/images/icones/D4.png" />
+          } @else {
+          <img class="stats-dice" src="./assets/images/icones/D6.png" />
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="movement-points">
+    <p class="points-text">{{ "GAME.MOVEMENTS" | translate }}:</p>
+    @for (movementPoint of movementPointsArray; track $index) {
+    <div class="movement-point"></div>
+    }
+  </div>
+  <div id="action-points">
+    <p class="points-text">{{ "GAME.ACTION_POINTS" | translate }}:</p>
+    @for (actions of getActionArray(); track $index) {
+    <div class="action-point"></div>
+    }
+  </div>
+  <div class="player-inventory">
+    <h4 id="inventory-header">{{ "GAME.INVENTORY" | translate }}</h4>
+    <div id="items-container">
+      @for (items of player.inventory; track $index) {
+      <app-game-object
+        class="player-items"
+        [name]="items.name"
+        [imageUrl]="items.image"
+        [description]="items.description"
+        [descriptionPosition]="descriptionPosition"
+      ></app-game-object>
+      } @for (slot of emptySlots; track $index) {
+      <div class="empty-slot player-items"></div>
+      }
+    </div>
+  </div>
+  }
+</div>

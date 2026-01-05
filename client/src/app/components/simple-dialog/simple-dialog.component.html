@@ -1,0 +1,67 @@
+<div id="dialog-box">
+    <h2 mat-dialog-title id="title">{{ data.title | translate }}</h2>
+    <mat-dialog-content class="messages-container">
+        @for (message of data.messages; track message){
+        <app-simple-dialog-message [message]="message"></app-simple-dialog-message>
+        }
+        <div *ngIf="data.isInput" class="input-container">
+            <input 
+                id="dialog-input" 
+                [(ngModel)]="inputValue" 
+                type="text" 
+                [placeholder]="'DIALOG.PLACEHOLDER.INPUT' | translate" 
+                maxlength="30" 
+            />
+            <p *ngIf="showError" class="error-message">
+                {{ 'DIALOG.MESSAGE.REQUIRED_FIELD' | translate }}
+            </p>
+        </div>
+    </mat-dialog-content>
+    @if(data.itemSwap){
+        <div class="swap-item-container">
+            <div class="pickedup-item-container">
+                <app-game-object
+                    class="inventory-object pickedup-item"
+                    [name]="data.itemSwap.pickedUpItem.name"
+                    [imageUrl]="data.itemSwap.pickedUpItem.image"
+                    [description]="data.itemSwap.pickedUpItem.description"
+                    [descriptionPosition]="descriptionPosition"
+                    [isLarge]="true"
+                ></app-game-object>
+            </div>
+            <div class="inventory-item-container">
+                <app-game-object
+                    class="inventory-object"
+                    (click)="swapItems(true, data.itemSwap)"
+                    [name]="data.itemSwap.currentItem1.name"
+                    [imageUrl]="data.itemSwap.currentItem1.image"
+                    [description]="data.itemSwap.currentItem1.description"
+                    [descriptionPosition]="descriptionPosition"
+                ></app-game-object>
+                <app-game-object
+                    class="inventory-object"
+                    (click)="swapItems(false, data.itemSwap)"
+                    [name]="data.itemSwap.currentItem2.name"
+                    [imageUrl]="data.itemSwap.currentItem2.image"
+                    [description]="data.itemSwap.currentItem2.description"
+                    [descriptionPosition]="descriptionPosition"
+                ></app-game-object>
+            </div>
+        </div>
+    }
+    @if(data.image){
+        <div class="winner-image-container">
+            <img class="decoration" src="./assets/images/leaves/leafL_light.webp" alt="left-leaf">
+            <img class="winner-image" [src]="data.image" alt="winner avatar">
+            <img class="decoration" src="./assets/images/leaves/leafR_light.webp" alt="right-leaf">
+        </div>
+    }
+    <mat-dialog-actions class="dialog-actions">
+        <button class="button" mat-button (click)="onClose(); $event.stopPropagation()">
+            {{ data.confirm ? (options[0] | translate) : ('DIALOG.CLOSE' | translate) }}
+        </button>
+        <button *ngIf="data.confirm" class="button" mat-button (click)="onCancel(); $event.stopPropagation()">
+            {{ options[1] | translate }}
+        </button>
+    </mat-dialog-actions>
+</div>

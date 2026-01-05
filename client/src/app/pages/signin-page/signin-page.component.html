@@ -1,0 +1,84 @@
+@if(loading){
+    <div class="fullscreen-spinner">
+  <mat-spinner diameter="60"></mat-spinner>
+</div>
+}
+
+<div class="background-image-wide justified">
+  <header></header>
+  <div class="custom-form sign-in">
+    <h2 class="title">Se connecter</h2>
+
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+        (keydown.enter)="onSubmit()"> 
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Pseudonyme</mat-label>
+          <input
+            placeholder="Pseudonyme"
+            matInput
+            formControlName="username"
+            maxlength="100"
+            required
+          />
+          @if(form.get('username')?.hasError('required')){
+          <mat-error> Pseudonyme est requis </mat-error>}
+          @else if(form.get('username')?.hasError('pattern')){
+          <mat-error> Pseudonyme ne doit pas contenir d’espaces. </mat-error>}
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Mot de passe</mat-label>
+          <input
+            title="Mot de passe"
+            matInput
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            maxlength="100"
+            required
+          />
+          @if(form.get('password')?.hasError('pattern')){
+          <mat-error>
+            Le mot de passe ne doit pas contenir d’espaces. </mat-error
+          >}
+        </mat-form-field>
+        <div class="toggle-password">
+          <mat-slide-toggle
+            class="toggle-control"
+            [checked]="showPassword"
+            (change)="$event && (showPassword = $event.checked)"
+          >
+          </mat-slide-toggle>
+          Afficher le mot de passe
+        </div>
+        @if(error){
+        <div class="error">
+          {{ error }}
+        </div>
+        }  @else{<br/><p></p>}
+      </form>
+
+    <div class="actions">
+      <button
+        mat-flat-button
+        color="primary"
+        (click)="onSubmit()"
+        [disabled]="form.invalid || loading"
+      >
+        Se connecter
+      </button>
+      <div class="goto-btn" (click)="goToSignUp()">
+        Pas de compte ? S'inscrire
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-item">
+    <h4 class="team-name">Équipe 104</h4>
+    <p>
+      <span>Aziz Hidri</span>, <span>Joey Hasrouny</span>,
+      <span>Éloic Côté</span>, <span>Raissa Oumarou Petitot</span>,
+      <span>William Wang</span>, <span>Gabriel Mejia</span>
+    </p>
+  </footer>
+</div>

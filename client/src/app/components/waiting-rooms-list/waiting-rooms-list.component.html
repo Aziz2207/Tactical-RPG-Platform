@@ -1,0 +1,94 @@
+<div class="game-list">
+  @if (isLoading) {
+  <div class="loading">
+    <p>{{ 'WAITING_ROOMS.LOADING' | translate }}</p>
+  </div>
+  } @else if (waitingRooms.length === 0) {
+  <div class="no-rooms">
+    <p>{{ 'WAITING_ROOMS.NO_ROOMS' | translate }}</p>
+  </div>
+  } @else { 
+    @for (room of waitingRooms; track room.roomId) {
+      <div class="game">
+        <div class="tooltip">
+          <img class="game-image" [src]="room.gameImage" [alt]="room.gameName" />
+          @if(room.gameStatus === GameStatus.Started){
+            <div class="started-indicator">
+              <span class="status-text">{{ 'WAITING_ROOMS.GAME_STARTED' | translate }}</span>
+            </div>
+          }
+        </div>
+        <div class="info-container">
+          <p class="game-name">{{ room.gameName }}</p>
+          <p class="roomid">{{ room.roomId }}</p>
+          <div class="game-info">
+            <p>{{ room.gameStatus }}</p>
+            <p>{{ room.gameDimension }} x {{ room.gameDimension }}</p>
+            @if(room.dropInEnabled){
+              <lucide-icon
+                [img]="DoorOpen"
+                [attr.data-tooltip]="'WAITING_ROOMS.DROP_IN_ENABLED' | translate"
+              ></lucide-icon>
+            } @else {
+              <lucide-icon
+                [img]="DoorClosed"
+                [attr.data-tooltip]="'WAITING_ROOMS.DROP_IN_DISABLED' | translate"
+              ></lucide-icon>
+            }
+            <p>{{ room.gameMode | translate }}</p>
+            @if(room.gameAvailability === GameAvailability.Public){
+              <lucide-icon 
+                [img]="Globe" 
+                [attr.data-tooltip]="'WAITING_ROOMS.EVERYONE' | translate"
+              ></lucide-icon>
+            } @else {
+              <lucide-icon 
+                [img]="Users" 
+                [attr.data-tooltip]="'WAITING_ROOMS.FRIENDS_ONLY' | translate"
+              ></lucide-icon>
+            }
+            <p>{{ room.playerCount }}/{{ room.maxPlayers }} {{ 'WAITING_ROOMS.PLAYERS' | translate }}</p>
+            <div>
+              <lucide-icon
+                [img]="CircleDollarSign"
+                [attr.data-tooltip]="'WAITING_ROOMS.ENTRY_FEE' | translate"
+              ></lucide-icon>
+              <p>{{ room.entryFee }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="properties-icons">
+          @if(room.canJoin) {
+            <button
+              class="join-button"
+              (click)="joinRoom(room)"
+              [disabled]="room.playerCount >= room.maxPlayers"
+            >
+              {{ room.playerCount >= room.maxPlayers ? ('WAITING_ROOMS.FULL' | translate) : ('WAITING_ROOMS.JOIN' | translate) }}
+            </button>
+          } 
+          @if(room.gameStatus === GameStatus.Started) {
+            <button class="join-button" (click)="joinRoom(room, true)">
+              {{ 'WAITING_ROOMS.SPECTATE' | translate }}
+            </button>
+          }
+        </div>
+      </div>
+    } 
+  }
+</div>
+
+@if (isCharacterFormVisible) {
+  <div class="overlay"></div>
+  <div class="character-creator">
+    <app-character-creator
+      [selectedGame]="selectedGame"
+      [availableAvatars]="availableAvatars"
+      [showAvailabilityOptions]="false"
+      [roomEntryFee]="roomEntryFee"
+      (confirmCharacterSelection)="joinLobby($event)"
+      (closeCharacterCreator)="leaveGame()"
+      (selectCharacter)="selectedAvatar($event)"
+    ></app-character-creator>
+  </div>
+}

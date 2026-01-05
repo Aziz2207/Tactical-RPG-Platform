@@ -1,0 +1,17 @@
+<div class="object">
+    <div class="image-container" [ngClass]="{ disabled: count === 0, large: isLarge === true }" id="{{ id }}">
+        @if(id === 7 || id === 8) {
+        <div class="object-count" id="count" [ngClass]="{ hidden: count === 0 }">{{ count }}</div>
+        }
+        <img class="object-image" [src]="imageUrl" alt="{{ name }}" />
+    </div>
+    <div class="object-description-container" [ngClass]="{ 
+            'hidden-description': isDragging,
+            'left-description': descriptionPosition === 'left',
+            'bottom-description': descriptionPosition === 'bottom',
+            'top-description': descriptionPosition === 'top',
+        }">
+        <p class="object-name">{{ name | translate}}</p>
+        <p class="object-description">{{ description | translate}}</p>
+    </div>
+</div>

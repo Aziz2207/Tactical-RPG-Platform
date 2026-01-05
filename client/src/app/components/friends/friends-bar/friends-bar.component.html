@@ -1,0 +1,143 @@
+<div class="chat-container" [class.open]="selectedChannel && isOpen" [class.with-friends]="isOpen">   
+  <div class="chat-header">
+    <div class="chat-header-left">       
+      <h3>{{ selectedChannel?.name | translate}}</h3>     
+    </div>     
+    <button class="close-chat-btn" (click)="closeChat()">       
+      <lucide-icon [img]="X"></lucide-icon>     
+    </button>   
+  </div>   
+  <div class="chat">
+  @if (selectedChannel?.type === "global") {
+    <app-global-chat-box />
+  } @else if (selectedChannel?.type === "room") {
+    <app-chat-box
+      [roomCode]="currentRoomId"
+      [isSpectator]="isSpectator"
+      [isToggleable]="false"
+      [isSidebarChannel]="true"
+    />
+  } @else if (selectedChannel?.type === "private") {
+    <app-private-chat-box
+      [roomCode]="selectedChannel?.roomId!"
+      [isToggleable]="false"
+      [isSidebarChannel]="true"
+      [attr.data-key]="selectedChannel?.roomId"
+    />
+  }
+  
+</div>
+</div>  
+<div class="friends-bar" [class.open]="isOpen" [class.with-chat]="selectedChannel">
+  <div class="tabs-container">     
+    @if(!hasChatOnly) {
+        <button
+            class="tab-btn"
+            [class.active]="activeTab === 'friends'"
+            (click)="setActiveTab('friends')"
+        >
+            {{ "FRIENDS.TITLE" | translate }}
+        </button>
+        }
+        <button
+            class="tab-btn"
+            [class.active]="activeTab === 'chatRooms'"
+            (click)="setActiveTab('chatRooms')"
+        >
+            {{ "CHANNELS.TITLE" | translate }}
+        </button>
+        <lucide-icon
+            [img]="X"
+            class="exit-icon"
+            (click)="closeSidebar()"
+        ></lucide-icon>
+  </div>    
+  @if (activeTab === 'friends') {   
+    <div class="friend-requests" (click)="openFriendRequestsDialog()">     
+      <div>Demandes d'amis</div>     
+      <div class="friend-request-length">{{friendRequests.length}}</div>   
+    </div>   
+    <div class="search-user" (click)="openSearchDialog()">     
+      <div>Recherche d'usagers</div>     
+      <lucide-icon [img]="Search" class="search-icon"></lucide-icon>   
+    </div>   
+    <div class="block-user" (click)="openBlockedUsersDialog()">
+            <div>Usagers bloques</div>
+    </div>
+    <div class="friends-list-title">{{'FRIENDS.LIST' | translate }}</div>
+    <app-user-list [users]="friends" [userListType]="UserListType.Friends"/>   
+  }    
+  @if (activeTab === 'chatRooms') {   
+    <div class="chat-rooms-content">     
+      <app-channel-list (channelSelected)="onChannelSelected($event)" />   
+    </div>   
+  } 
+</div>  
+@if(isSearchDialogOpen) {
+<div class="dialog-overlay" (click)="closeSearchDialog()">
+    <div
+        #dialogContainer
+        class="dialog-container"
+        (click)="$event.stopPropagation()"
+    >
+        <div class="dialog-header">
+            <h3 class="title">
+                {{
+                    openDialogType === UserListType.IncomingRequests
+                        ? ("FRIENDS.FRIEND_REQUEST" | translate)
+                        : ("FRIENDS.SEARCH_2" | translate)
+                }}
+            </h3>
+            <button
+                class="close-btn"
+                (click)="closeSearchDialog(); $event.stopPropagation()"
+            >
+                <lucide-icon [img]="X"></lucide-icon>
+            </button>
+        </div>
+        <app-user-search-dialog
+            (close)="closeSearchDialog()"
+            (searchUsers)="searchUsers($event)"
+            [userListType]="openDialogType"
+            [displayedUsers]="
+                openDialogType === UserListType.IncomingRequests
+                    ? friendRequests
+                    : users
+            "
+        >
+        </app-user-search-dialog>
+    </div>
+</div>
+} @if(isBlockedDialogOpen) {
+<div class="dialog-overlay" (click)="closeBlockedDialog()">
+    <div
+        #dialogContainer
+        class="dialog-container"
+        (click)="$event.stopPropagation()"
+    >
+        <div class="dialog-header">
+            <h3 class="title">{{ 'FRIENDS.BLOCKED_USERS' | translate }}</h3>
+            <button
+                class="close-btn"
+                (click)="closeBlockedDialog(); $event.stopPropagation()"
+            >
+                <lucide-icon [img]="X"></lucide-icon>
+            </button>
+        </div>
+
+        <div class="dialog-content">
+            @if(blockedUsers.length === 0) {
+            <div class="empty-state">
+                <p>{{ 'FRIENDS.NO_BLOCKED_USERS' | translate }}</p>
+            </div>
+            } @else {
+            <app-user-list
+                [users]="blockedUsers"
+                [userListType]="UserListType.BlockedUsers"
+            >
+            </app-user-list>
+            }
+        </div>
+    </div>
+</div>
+}

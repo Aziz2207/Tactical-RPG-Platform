@@ -1,0 +1,43 @@
+import { Avatar } from './interfaces/player';
+
+export const DEFAULT_AVATARS: Avatar[] = [
+    { id: 9, src: './assets/images/characters/Hestia.webp', name: 'Hestia', isTaken: false, price: 0 },
+    { id: 10, src: './assets/images/characters/Zeus.webp', name: 'Zeus', isTaken: false, price: 0  },
+    { id: 11, src: './assets/images/characters/Hera.webp', name: 'Hera', isTaken: false, price: 0  },
+    { id: 12, src: './assets/images/characters/Poseidon.webp', name: 'Poseidon', isTaken: false, price: 0  },
+    { id: 13, src: './assets/images/characters/Artemis.webp', name: 'Artemis', isTaken: false, price: 0  },
+    { id: 14, src: './assets/images/characters/Demeter.webp', name: 'Demeter', isTaken: false, price: 0  },
+    { id: 15, src: './assets/images/characters/Hermes.webp', name: 'Hermes', isTaken: false, price: 0  },
+    { id: 16, src: './assets/images/characters/Athena.webp', name: 'Athena', isTaken: false, price: 0  },
+    { id: 17, src: './assets/images/characters/Hephaestus.webp', name: 'Hephaestus', isTaken: false, price: 0  },
+    { id: 18, src: './assets/images/characters/Apollo.webp', name: 'Apollo', isTaken: false, price: 0  },
+    { id: 19, src: './assets/images/characters/Ares.webp', name: 'Ares', isTaken: false, price: 0  },
+    { id: 20, src: './assets/images/characters/Aphrodite.webp', name: 'Aphrodite', isTaken: false, price: 0  },
+];
+
+export enum ObjectType {
+    Trident = 1,
+    Armor = 2,
+    Sandal = 3,
+    Lightning = 4,
+    Xiphos = 5,
+    Kunee = 6,
+    Random = 7,
+    Spawn = 8,
+    Hestia = 9,
+    Zeus = 10,
+    Hera = 11,
+    Poseidon = 12,
+    Artemis = 13,
+    Demeter = 14,
+    Hermes = 15,
+    Athena = 16,
+    Hephaestus = 17,
+    Apollo = 18,
+    Ares = 19,
+    Aphrodite = 20,
+    Flag = 21,
+    Dionysus = 22,
+    Hades = 23,
+    Persephone = 24,
+}

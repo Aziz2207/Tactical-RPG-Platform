@@ -1,0 +1,129 @@
+<div
+  class="background"
+  (dragover)="onDragOver($event)"
+  (drop)="onDropOutside($event)"
+  (dragend)="onDragEnd()"
+>
+  @if(isLoading){
+  <div class="fullscreen-spinner">
+    <mat-spinner diameter="60"></mat-spinner>
+  </div>
+  }
+  <div class="page-element">
+    <div class="header">
+      <app-header title="" [hasOnlyChat]="false" [isHeaderHidden]="true" />
+    </div>
+    <div class="left-container">
+      <form #mapForm="ngForm">
+        <div class="map-input">
+          <label for="mapName">{{ "MANAGE_GAME.MAP_NAME" | translate }}</label>
+          <input
+            class="input-box"
+            id="mapName"
+            type="text"
+            maxlength="{{ maxLenMapTitle }}"
+            placeholder="{{ 'MANAGE_GAME.MAP_NAME_PLACEHOLDER' | translate }}"
+            [(ngModel)]="mapName"
+            (ngModelChange)="updateMapName($event)"
+            name="mapName"
+            #mapNameInput
+          />
+        </div>
+        <div class="map-input">
+          <label for="mapDescription"
+            >{{ "MANAGE_GAME.MAP_DESCRIPTION" | translate }}
+          </label>
+          <textarea
+            class="input-box map-description-box"
+            id="mapDescription"
+            type="text"
+            maxlength="{{ maxLenMapDescription }}"
+            placeholder="{{
+              'MANAGE_GAME.MAP_DESCRIPTION_PLACEHOLDER' | translate
+            }}"
+            [(ngModel)]="mapDescription"
+            (ngModelChange)="updateMapDescription($event)"
+            name="mapDescription"
+            #mapDescriptionInput
+          ></textarea>
+        </div>
+        <div class="map-input">
+          <label for="mapState">{{
+            "MANAGE_GAME.MAP_STATE" | translate
+          }}</label>
+          <div class="input-box">
+            <div
+              class="visibility-option"
+              [class.active]="mapState === gameState.Public"
+              (click)="updateMapState(gameState.Public)"
+            >
+              <lucide-icon [name]="Globe"></lucide-icon>
+              <span class="label">{{ gameState.Public | translate }}</span>
+              @if(mapState === gameState.Public){
+              <lucide-icon [name]="Check" class="check-icon"></lucide-icon>
+              }
+            </div>
+
+            <div
+              class="visibility-option"
+              [class.active]="mapState === gameState.Shared"
+              (click)="updateMapState(gameState.Shared)"
+            >
+              <lucide-icon [name]="Link"></lucide-icon>
+              <span class="label">{{ gameState.Shared | translate }}</span>
+              @if(mapState === gameState.Shared){
+              <lucide-icon [name]="Check" class="check-icon"></lucide-icon>
+              }
+            </div>
+
+            <div
+              class="visibility-option"
+              [class.active]="mapState === gameState.Private"
+              (click)="updateMapState(gameState.Private)"
+            >
+              <lucide-icon [name]="Lock"></lucide-icon>
+              <span class="label">{{ gameState.Private | translate }}</span>
+              @if(mapState === gameState.Private){
+              <lucide-icon [name]="Check" class="check-icon"></lucide-icon>
+              }
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="buttons-container">
+        <button class="button" id="save-button" (click)="handleSave()">
+          {{ "FOOTER.SAVE" | translate }}
+        </button>
+        <button class="button" id="reset-button" (click)="handleReset()">
+          {{ "FOOTER.RESET" | translate }}
+        </button>
+        <button class="button" id="return-button" (click)="handleExit()">
+          {{ "FOOTER.RETURN" | translate }}
+        </button>
+      </div>
+    </div>
+    <div class="grid-element" id="game-grid-and-toolbar-container">
+      <div id="game-grid-background-gradient">
+        <div class="grid-element" id="game-grid-container" #gameGrid>
+          <app-game-grid
+            [selectedSize]="selectedSize"
+            [resetTrigger]="resetTrigger"
+            [saveTrigger]="saveTrigger"
+            [mapName]="mapName"
+            [mapDescription]="mapDescription"
+            (gridChange)="setGrid($event)"
+            (itemsChange)="setItems($event)"
+            (heightChange)="setHeight($event)"
+            [(isLoading)]="isLoading"
+          ></app-game-grid>
+        </div>
+      </div>
+      <div class="grid-element" id="toolbar-container">
+        <app-toolbar></app-toolbar>
+      </div>
+    </div>
+    <div class="right-container">
+      <app-game-objects-container></app-game-objects-container>
+    </div>
+  </div>
+</div>

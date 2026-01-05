@@ -1,0 +1,110 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+@import "themes.scss";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$indigo-pink-theme: mat.m2-define-light-theme(
+    (
+        color: (
+            primary: mat.m2-define-palette(mat.$m2-indigo-palette),
+            accent:
+                mat.m2-define-palette(mat.$m2-pink-palette, A200, A100, A400),
+            warn: mat.m2-define-palette(mat.$m2-red-palette),
+        ),
+    )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($indigo-pink-theme);
+
+/* You can add global styles to this file, and also import other style files */
+.menu {
+    @include mat.menu-overrides(
+        (
+            container-shape: 12px,
+            container-color: var(--secondary-very-light),
+            item-hover-state-layer-color: var(--secondary-light),
+            item-label-text-font: papyrus,
+            item-label-text-color: var(--secondary-dark),
+            item-icon-color: var(--secondary-dark),
+        )
+    );
+}
+
+.custom-form {
+    @include mat.form-field-overrides(
+        (
+            outline-color: var(--main-text-color),
+            focus-outline-color: rgba(252, 211, 135, 0.9),
+            label-text-color: var(--main-text-color),
+            focus-label-text-color: rgba(252, 211, 135, 0.9),
+            label-text-weight: bold,
+            input-text-color: var(--main-text-color),
+            input-text-placeholder-color: rgba(255, 255, 255, 0.6),
+            container-shape: 4rem,
+            hover-label-text-color: rgb(170, 170, 170),
+            hover-outline-color: rgb(170, 170, 170),
+        )
+    );
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-family: papyrus;
+    transition: background 0.3s ease;
+}
+
+.text {
+    font-family: papyrus;
+}
+
+.background-image,
+.background-image-wide {
+    min-height: 100vh;
+    min-width: 100vh;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.background-image {
+    background-image: url("./assets/images/backgrounds/title_page_bgd16.jpg");
+}
+
+.background-image-wide {
+    background-image: url("./assets/images/backgrounds/title_page_bgd17.jpg");
+}
+
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+body {
+    transition: margin-right 0.3s ease;
+    margin-right: 0;
+}
+
+body.friends-open {
+    margin-right: 18rem;
+}
+
+body.chat-open {
+    margin-right: 25rem;
+}
+
+body.both-open {
+    margin-right: 43rem;
+}

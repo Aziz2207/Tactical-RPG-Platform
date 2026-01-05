@@ -1,0 +1,36 @@
+<div
+    class="background-image justified"
+    [style.background-image]="'url(' + backgroundImageUrl + ')'"
+>
+    <app-header></app-header>
+    <img
+        class="game-logo"
+        src="./assets/images/logo/Age_Of_Mythology.png"
+        alt="Logo Projet"
+    />
+    <section id="server-message" class="justified">
+        <nav class="justified title-pg-links">
+            @for(item of menuItems; track item.labelKey) {
+            <div class="button-container">
+                <img
+                    class="hover-arrow"
+                    src="./assets/images/icones/golden-arrow.png"
+                    alt=""
+                    aria-hidden="true"
+                />
+                <div class="button" [routerLink]="item.route" type="button">
+                    {{ item.labelKey | translate}}
+                </div>
+            </div>
+            }
+        </nav>
+    </section>
+    <footer class="footer-item">
+        <h4 class="team-name">{{ 'FOOTER.TEAM' | translate }}</h4>
+        <p>
+            <span>Aziz Hidri</span>, <span>Joey Hasrouny</span>,
+            <span>Éloic Côté</span>, <span>Raissa Oumarou Petitot</span>,
+            <span>William Wang</span>, <span>Gabriel Mejia</span>
+        </p>
+    </footer>
+</div>

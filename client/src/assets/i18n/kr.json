@@ -1,0 +1,507 @@
+{
+    "PAGE_HEADER": {
+        "CREATE_GAME": "게임 생성",
+        "MANAGE_GAME": "게임 관리",
+        "JOIN_GAME": "게임 참가"
+    },
+    "FOOTER": {
+        "TEAM": "팀 104",
+        "CREATE": "생성",
+        "CREATE_NEW_MAP": "맵 생성",
+        "CREATE_NEW_GAME": "게임 생성",
+        "RETURN": "돌아가기",
+        "CONFIRM": "확인",
+        "CANCEL": "취소",
+        "QUIT": "종료",
+        "RESET": "초기화",
+        "SAVE": "저장"
+    },
+    "DIALOG": {
+        "CLOSE": "닫기",
+        "CONFIRM": "확인",
+        "CANCEL": "취소",
+        "QUIT": "종료",
+        "STAY": "머무르기",
+        "TITLE": {
+            "START_GAME": "게임 시작",
+            "GAME_CANCELED": "게임 취소됨",
+            "QUIT_GAME": "게임 포기",
+            "KICKED_OUT": "게임에서 추방되었습니다",
+            "DRAW_GAME": "무승부",
+            "END_TURN": "턴 종료",
+            "END_GAME": "게임 종료",
+            "END_FIGHT": "전투 종료",
+            "DEFAULT_FIGHT_WIN": "게임 포기",
+            "SUCCESS_EVASION": "회피 성공",
+            "MAX_PLAYERS": "최대 플레이어 수 도달",
+            "ADD_BOT_WHEN_LOCKED": "게임 잠김",
+            "ITEM_EXCHANGE": "아이템 교환",
+            "QUIT_POST_GAME_LOBBY": "홈으로 돌아가기",
+            "QUIT_PAGE": "이 페이지에서 나가시겠습니까?",
+            "UNBLOCK_USER": "사용자 차단 해제"
+        },
+        "MESSAGE": {
+            "NOT_ENOUGH_PLAYERS": "게임을 시작하려면 최소 {{min}}명의 플레이어가 필요합니다",
+            "CONFIRM_START_GAME": "게임을 시작하시겠습니까?",
+            "ROOM_LOCKED": "게임을 시작하려면 방을 잠가야 합니다",
+            "QUIT_GAME": "게임을 나가시겠습니까?",
+            "KICKED_OUT": "관리자가 당신을 게임에서 제거했습니다. 홈으로 리디렉션됩니다.",
+            "DRAW_GAME": "모든 플레이어가 포기했습니다. 홈으로 리디렉션됩니다.",
+            "FELL": "얼음에서 미끄러졌습니다. 턴이 종료됩니다.",
+            "END_FIGHT": "전투가 종료되었습니다. 전투 승자는 {{winner}}입니다",
+            "DEFAULT_FIGHT_WIN": "상대가 게임을 포기했습니다. 당신이 전투에서 승리했습니다.",
+            "MAX_PLAYERS": "더 이상 가상 플레이어를 추가할 수 없습니다",
+            "ADD_BOT_WHEN_LOCKED": "가상 플레이어를 추가하기 전에 대기실 잠금을 해제하세요",
+            "QUIT_POST_GAME_LOBBY": "게임 종료 페이지를 나가려고 합니다",
+            "QUIT_MESSAGE_LOST_CHANGES": "저장되지 않은 모든 변경사항이 손실됩니다. 정말 종료하시겠습니까?",
+            "WINNER_ANNOUNCED": "게임 승자는 {{winner}}입니다",
+            "CANCELED_MATCH": "게임이 취소되었습니다. 메인 메뉴로 리디렉션됩니다.",
+            "UNBLOCK_USER": "{{username}} 님의 차단을 해제하시겠습니까?"
+        }
+    },
+    "GAME_CREATION": {
+        "AVAILABILITY": "가용성",
+        "EVERYONE": "모두",
+        "FRIENDS_ONLY": "친구만",
+        "ENTRY_FEE": "입장료",
+        "SELECT_BEFORE_CREATING_GAME": "게임을 생성하기 전에 게임을 선택하세요",
+        "HIDDEN_GAME": "선택한 게임이 존재하지 않거나 숨겨졌습니다"
+    },
+    "ATTRIBUTES": {
+        "HEALTH": "체력",
+        "SPEED": "속도",
+        "ATTACK": "공격력",
+        "DEFENSE": "방어력",
+        "TOOLTIP": {
+            "HEALTH": "캐릭터의 체력 포인트는 이 속성에 해당합니다. 체력 또는 속도 속성 값을 +2 증가시킵니다.",
+            "SPEED": "속도 포인트는 턴 순서를 결정하며 캐릭터의 턴당 이동 포인트에도 해당합니다. 체력 또는 속도 속성 값을 +2 증가시킵니다.",
+            "ATTACK": "공격 포인트는 상대에게 가하는 공격의 힘을 나타냅니다. 공격력 또는 방어력 속성 중 하나를 선택하여 6면 또는 4면 주사위 기반 보너스를 받습니다.",
+            "DEFENSE": "방어 포인트는 상대의 공격을 막는 능력을 나타냅니다. 공격력 또는 방어력 속성 중 하나를 선택하여 6면 또는 4면 주사위 기반 보너스를 받습니다."
+        }
+    },
+    "MANAGE_GAME": {
+        "CHOSE_GAME_MODE": "게임 모드 선택:",
+        "CHOSE_GAME_SIZE": "게임 크기 선택:",
+        "SMALL_PLAYER_RANGE": "(2명)",
+        "MEDIUM_PLAYER_RANGE": "(2~4명)",
+        "LARGE_PLAYER_RANGE": "(2~6명)",
+        "MAP_NAME": "맵 이름",
+        "MAP_NAME_PLACEHOLDER": "맵 이름을 입력하세요",
+        "MAP_DESCRIPTION": "맵 설명",
+        "MAP_DESCRIPTION_PLACEHOLDER": "맵 설명을 입력하세요",
+
+        "OBJECTS": "오브젝트",
+        "MAP_SIZE_AND_MODE_PROMPT": "크기와 게임 모드를 선택하세요",
+        "GAME_ALREADY_DELETED": "다른 사용자가 이미 게임을 삭제했습니다"
+    },
+    "MAP_VALIDATOR": {
+        "INVALID_MAP": "유효하지 않은 맵",
+        "SAVE_SUCCESS": "저장 성공",
+        "REDIRECT_MESSAGE": "관리 페이지로 리디렉션됩니다",
+
+        "ERROR_DUPLICATE_NAME": "같은 이름의 맵이 이미 존재합니다.",
+        "ERROR_TOO_MANY_OBJECTS": "맵에 오브젝트가 너무 많습니다. 최대 {{max}}개인데 {{current}}개가 있습니다.",
+        "ERROR_TOO_FEW_OBJECTS": "맵에 오브젝트가 충분하지 않습니다. 최소 {{min}}개가 필요한데 현재 {{current}}개가 있습니다.",
+
+        "ERROR_INVALID_DOOR": "하나 이상의 문이 유효하지 않습니다.",
+        "ERROR_INVALID_DOOR_DETAILS": "각 문은 한 축에서는 두 벽 사이에 있어야 하고, 다른 축에서는 두 지형 타일 사이에 있어야 합니다.",
+
+        "ERROR_INSUFFICIENT_TERRAIN": "타일의 최소 절반은 지형 타일(잔디, 물, 얼음, 물)로 덮여 있어야 합니다.",
+        "ERROR_INACCESSIBLE_TILES": "모든 지형 타일에 접근할 수 없습니다.",
+
+        "ERROR_MISSING_FLAG": "CTF 모드에서는 깃발이 맵에 배치되어야 합니다.",
+        "ERROR_MISSING_SPAWN_POINTS": "모든 시작 지점이 맵에 배치되어야 합니다.",
+
+        "ERROR_INVALID_TITLE": "맵 제목은 3~30자 사이여야 하며 공백만으로 구성될 수 없습니다.",
+        "ERROR_INVALID_DESCRIPTION": "맵 설명은 10~128자 사이여야 하며 공백만으로 구성될 수 없습니다."
+    },
+    "WAITING_PAGE": {
+        "START_GAME": "게임 시작",
+        "LOCK": "게임 잠금",
+        "MAX_PLAYERS_CANT_UNLOCK": "대기실이 최대 플레이어 수에 도달했습니다. 게임 잠금을 해제할 수 없습니다.",
+        "ADD_BOT": "가상 플레이어 추가",
+        "SCAN_TO_JOIN": "스캔하여 참가",
+        "BOT_PROFILE_POPUP_TITLE": "가상 플레이어 프로필 선택",
+        "BOT_PROFILES": {
+            "DEFENSIVE": {
+                "TITLE": "방어형",
+                "DESCRIPTION_1": "부상 시 전투에서 도망치려는 경향",
+                "DESCRIPTION_2": "전투 참여를 덜하고 방어력과 최대 HP에 이점을 주는 아이템 선호"
+            },
+            "AGGRESSIVE": {
+                "TITLE": "공격형",
+                "DESCRIPTION_1": "전투를 추구하는 경향이 있으며 절대 도망치지 않음",
+                "DESCRIPTION_2": "대결을 선호하고 공격력과 속도에 이점을 주는 아이템 선호"
+            }
+        }
+    },
+    "JOIN_PAGE": {
+        "ENTER_CODE": "게임 코드 입력",
+        "JOIN": "참가",
+        "SPECTATE": "관전",
+        "ERRORS": {
+            "INVALID_FORMAT": "코드는 4자리 숫자여야 합니다",
+            "ROOM_NOT_FOUND": "게임이 존재하지 않습니다",
+            "ROOM_LOCKED": "게임이 잠겨 있습니다",
+            "FRIENDS_ONLY_ACCESS": "이 게임은 호스트의 친구만 참가할 수 있습니다",
+            "INSUFFICIENT_FUNDS": "이 게임에 입장하기에 자금이 부족합니다"
+        }
+    },
+    "CHAT": {
+        "TITLE": "채팅",
+        "UNFILTERED_JOURNAL": "필터링되지 않은 게임 로그",
+        "FILTERED_JOURNAL": "필터링된 게임 로그"
+    },
+    "GAME": {
+        "QUIT_GAME": "게임 포기",
+        "STOP_SPECTATING": "관전을 중단",
+        "SPECTATOR_MODE": "관전자 모드",
+        "PLAYERS": "플레이어",
+        "TURN_START_WARNING": "당신의 턴이 시작됩니다",
+        "TURN_OF": "턴:",
+        "TURN_WILL_START": "시작됩니다",
+        "IN_COMBAT": "전투 중",
+        "DEBUG_MODE": "디버그 모드",
+        "GRID_SIZE": "그리드 크기",
+        "MODE": {
+            "CLASSIC": "클래식",
+            "CTF": "CTF"
+        },
+        "MAP_NAME": "맵 이름",
+        "PLAYER_COUNT": "플레이어 수",
+        "ACTIONS": {
+            "DOOR": "문",
+            "ATTACK": "공격",
+            "END_TURN": "턴 종료"
+        },
+        "CHAT": "채팅",
+        "INVENTORY": "인벤토리",
+        "TIMER": "타이머",
+        "MOVEMENTS": "이동",
+        "ACTION_POINTS": "행동",
+        "SPD": "속도",
+        "ATK": "공격",
+        "DEF": "방어",
+        "COMBAT": {
+            "EVADE_POINTS_REMAINING": "남은 회피 포인트:",
+            "ATTACK": "공격",
+            "EVADE": "회피",
+            "YOUR_TURN_START": "당신의 턴입니다",
+            "OPPONENT_TURN_START": "상대의 턴입니다"
+        },
+        "VICTORIES": "승리",
+        "DISCONNECTED": "연결 끊김",
+        "LOGS": {
+            "DEBUG_START": "디버그 모드 시작.",
+            "DEBUG_END": "디버그 모드 종료.",
+            "START_TURN": "플레이어 {{playerName}}의 턴 시작.",
+            "GIVE_UP": "{{playerName}}이(가) 게임을 포기했습니다.",
+            "OPEN_DOOR": "{{playerName}}이(가) 문을 열었습니다.",
+            "CLOSE_DOOR": "{{playerName}}이(가) 문을 닫았습니다.",
+            "WIN_COMBAT": "{{playerName}}이(가) 전투에서 승리했습니다. 전투 종료!",
+            "EVADE_COMBAT_FAIL": "{{playerName}}의 회피가 실패했습니다.",
+            "EVADE_COMBAT_SUCCESS": "{{playerName}}이(가) 성공적으로 회피했습니다.",
+            "NO_WINNER_COMBAT": "{{playerName}}과(와) {{defenderName}} 간의 전투가 승자 없이 종료되었습니다.",
+            "START_COMBAT": "{{playerName}}과(와) {{defenderName}}이(가) 전투를 시작했습니다.",
+            "ATTACK_FAIL": "{{playerName}}의 공격이 실패했습니다.",
+            "ATTACK_SUCCESS": "{{playerName}}의 공격이 성공했습니다.",
+            "END_GAME": "게임 종료: {{playerNames}}",
+            "ITEM_PICKED_UP": "{{playerName}}이(가) {{itemKey}}을(를) 주웠습니다",
+            "COMBAT_RESULT": "공격 결과: {{attack}} + {{attackDice}} (주사위) = {{attackTotal}}\n방어 결과: {{defense}} + {{defenseDice}} (주사위) = {{defenseTotal}}",
+            "UNKNOWN": "알 수 없는 로그 메시지."
+        }
+    },
+    "CHANNELS": {
+        "TITLE": "채널",
+        "PLACEHOLDER": "전체 채팅",
+        "SEARCH": "채널 검색",
+        "SEARCH_2": "채널 검색",
+        "NAME_PLACEHOLDER": "채널 이름"
+    },
+    "FRIENDS": {
+        "TITLE": "친구",
+        "FRIEND_REQUEST": "친구 요청",
+        "SEARCH": "사용자 검색",
+        "SEARCH_2": "사용자 검색",
+        "NO_FRIENDS": "친구가 없습니다",
+        "NO_FRIEND_REQUESTS": "친구 요청이 없습니다",
+        "REMOVE_FRIEND_TITLE": "친구 제거",
+        "REMOVE_FRIEND_MESSAGE": "{{username}}을(를) 친구 목록에서 제거하시겠습니까?",
+        "REMOVE_FRIEND_CANCEL": "취소",
+        "REMOVE_FRIEND_CONFIRM": "친구 제거",
+        "BLOCK_USER_TITLE": "사용자 차단",
+        "BLOCK_USER_MESSAGE_FRIEND": "{{username}}을(를) 차단하시겠습니까? 이 작업은 친구 목록에서도 제거합니다.",
+        "BLOCK_USER_MESSAGE_OTHER": "{{username}}을(를) 차단하시겠습니까?",
+        "BLOCK_USER_CANCEL": "취소",
+        "BLOCK_USER_CONFIRM": "사용자 차단",
+        "USER_BLOCKED_TITLE": "사용자 차단됨",
+        "USER_BLOCKED_MESSAGE": "{{username}}이(가) 차단되었습니다",
+        "FRIEND_REQUEST_SENT_TITLE": "요청 전송됨",
+        "FRIEND_REQUEST_SENT_MESSAGE": "{{username}}에게 친구 요청을 보냈습니다",
+        "FRIEND_REQUEST_ACCEPTED_TITLE": "친구 요청 수락됨",
+        "FRIEND_REQUEST_ACCEPTED_MESSAGE": "{{username}}이(가) 이제 친구입니다",
+        "FRIEND_REQUEST_REJECTED_TITLE": "친구 요청 거부됨",
+        "FRIEND_REQUEST_REJECTED_MESSAGE": "{{username}}의 친구 요청을 거부했습니다",
+        "NOTIF_REQUEST_RECEIVED": "{{username}}이(가) 친구 요청을 보냈습니다",
+        "NOTIF_REQUEST_ACCEPTED": "{{username}}이(가) 친구 요청을 수락했습니다",
+        "NOTIF_REMOVED": "{{username}}이(가) 친구 목록에서 당신을 제거했습니다",
+        "CLOSE": "닫기",
+        "BLOCKED_USERS": "차단한 사용자",
+        "NO_BLOCKED_USERS": "차단한 사용자가 없습니다",
+        "UNBLOCK": "차단 해제",
+        "BLOCK_SUCCESS": "사용자가 성공적으로 차단되었습니다",
+        "UNBLOCK_SUCCESS": "사용자 차단이 성공적으로 해제되었습니다",
+        "BLOCKED_MESSAGE": "한 사용자가 당신을 차단했습니다"
+    },
+    "USER": {
+        "LOG_OUT": "로그아웃",
+        "LOG_OUT_MESSAGE": "정말 로그아웃하시겠습니까?",
+        "LOG_OUT_CANCEL": "취소",
+        "LOG_OUT_CONFIRM": "로그아웃",
+        "DELETE": "계정 삭제",
+        "DELETE_MESSAGE": "정말 이 계정을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다."
+    },
+    "SHOP_PAGE": {
+        "TITLE": "상점",
+        "AVATARS": "아바타 아이콘",
+        "BACKGROUNDS": "배경화면",
+        "THEMES": "비주얼 테마",
+        "OWNED": "소유 중",
+        "INSUFFICIENT_BALANCE": "잔액 부족",
+        "BUY": "구매",
+        "NO_BACKGROUNDS": "사용 가능한 배경화면이 없습니다"
+    },
+    "SETTINGS_PAGE": {
+        "TITLE": "설정",
+        "TABS": {
+            "VISUAL": "비주얼 및 언어",
+            "ACCOUNT": "계정 설정"
+        },
+        "SECTIONS": {
+            "BACKGROUND": {
+                "TITLE": "배경화면",
+                "SUBTITLE": "소유한 배경화면 중에서 선택하세요",
+                "NO_BACKGROUNDS": "소유한 배경화면이 없습니다.",
+                "VISIT_STORE": "상점을 방문하여 구매하세요!"
+            },
+            "THEME": {
+                "TITLE": "테마"
+            },
+            "LANGUAGE": {
+                "TITLE": "언어"
+            },
+            "PROFILE_PICTURE": {
+                "TITLE": "프로필 사진",
+                "UPLOAD": "이미지 업로드"
+            },
+            "ACCOUNT_INFO": {
+                "USERNAME": "사용자 이름",
+                "USERNAME_PLACEHOLDER": "사용자 이름",
+                "EMAIL": "이메일 주소",
+                "EMAIL_PLACEHOLDER": "your.email@example.com"
+            },
+            "STATS": {
+                "TITLE": "통계",
+                "GAMES_CLASSIC": "플레이한 게임 (클래식)",
+                "GAMES_CTF": "플레이한 게임 (CTF)",
+                "GAMES_WON": "승리한 게임",
+                "AVG_GAME_TIME": "평균 게임 시간"
+            },
+            "DANGER_ZONE": {
+                "TITLE": "위험 구역",
+                "DELETE_ACCOUNT": "계정 삭제"
+            }
+        },
+        "EDIT_BUTTON": "프로필 수정",
+        "SAVE_BUTTON": "저장",
+        "DISCARD_BUTTON": "취소",
+        "FOOTER_RETURN": "돌아가기"
+    },
+    "POST_GAME_LOBBY": {
+        "TITLE": "게임 종료",
+        "CTF": "CTF",
+        "CLASSIC": "클래식",
+        "REWARD": "보상",
+        "STATS": {
+            "COMBATS": "전투",
+            "VICTORIES": "승/회/패",
+            "DMG_DEALT": "가한 피해",
+            "DMG_TAKEN": "받은 피해",
+            "OBJECTS_TAKEN": "주운 오브젝트",
+            "PCT_TILES_VISITED": "% 방문한 타일",
+            "GAME_LENGTH": "게임 시간",
+            "TURNS": "턴 수",
+            "GLOBAL_TILES_VISITED": "% 전체 방문한 타일",
+            "PCT_DOORS_INTEREACTED": "% 상호작용한 문",
+            "NB_FLAG_BEARERS": "깃발 소유자"
+        }
+    },
+    "THEME": {
+        "GOLD": "골드 (기본)",
+        "BLUE": "하늘색",
+        "EMERALD": "에메랄드",
+        "RUBY": "루비",
+        "AMETHYST": "자수정",
+        "OBSIDIAN": "흑요석",
+        "COPPER": "구리",
+        "CYBERPUNK": "사이버펑크",
+        "ARCTIC": "북극",
+        "AQUA": "아쿠아",
+        "MCDONALDS": "맥도날드",
+        "MAGENTA": "마젠타",
+        "MY_EYES_BLEED": "눈이 아파요",
+        "SAPPHIRE": "사파이어",
+        "SAPPHIRE_CRIMSON": "사파이어 크림슨",
+        "VERDANT_AMETHYST": "초록 자수정",
+        "DARK_FLAT": "다크 플랫",
+        "GOLD_FLAT": "골드 플랫",
+        "NAVY_FLAT": "네이비 플랫",
+        "GREEN_FLAT": "그린 플랫",
+        "RED_FLAT": "레드 플랫",
+
+        "TOTAL_DARK": "완전한 어둠",
+        "SILVER": "실버",
+        "CRIMSON": "크림슨",
+        "PINK": "핑크",
+        "GREEN_BLUE": "넵튠",
+        "BLACK_ORANGE": "할로윈"
+    },
+    "BACKGROUND": {
+        "DEFAULT_ATHENA": "기본 아테나 배경화면",
+        "SPARTAN_WARRIOR": "스파르타 전사 배경화면",
+        "DIONYSUS": "디오니소스 배경화면",
+        "HADES": "하데스 배경화면",
+        "PERSEPHONE": "페르세포네 배경화면",
+        "APOLLO": "아폴로 배경화면",
+        "ATHENA": "아테나 배경화면",
+        "HEPHAESTUS": "헤파이스토스 배경화면",
+        "HERMES": "헤르메스 배경화면",
+        "DEMETER": "데메테르 배경화면",
+        "ARTEMIS": "아르테미스 배경화면",
+        "POSEIDON": "포세이돈 배경화면",
+        "HERA": "헤라 배경화면",
+        "ZEUS": "제우스 배경화면",
+        "HESTIA": "헤스티아 배경화면",
+        "ARES": "아레스 배경화면"
+    },
+    "AVATAR": {
+        "DIONYSUS": "디오니소스 아바타",
+        "HADES": "하데스 아바타",
+        "PERSEPHONE": "페르세포네 아바타"
+    },
+    "ITEMS": {
+        "TRIDENT": {
+            "NAME": "포세이돈의 삼지창",
+            "DESCRIPTION": "턴이 끝날 때 행동 포인트가 1 남아있으면 다음 턴에 1을 얻습니다 (최대 2까지)."
+        },
+        "ARMOR": {
+            "NAME": "아킬레스의 갑옷",
+            "DESCRIPTION": "+2 공격력, 공격이 막히면 1 피해를 받습니다."
+        },
+        "SANDAL": {
+            "NAME": "날개 달린 샌들",
+            "DESCRIPTION": "x2 속도, 최대 체력이 1 감소합니다."
+        },
+        "LIGHTNING": {
+            "NAME": "제우스의 번개",
+            "DESCRIPTION": "x2 공격력, 방어력이 2 감소하고 체력이 1 감소합니다."
+        },
+        "XIPHOS": {
+            "NAME": "크시포스",
+            "DESCRIPTION": "체력이 50% 미만일 때 상대의 방어력이 1 감소하고 당신의 공격력이 2 증가합니다."
+        },
+        "KUNEE": {
+            "NAME": "쿠네",
+            "DESCRIPTION": "벽을 통과할 수 있으며, 벽은 비용이 1인 타일로 간주됩니다."
+        },
+        "RANDOM": {
+            "NAME": "랜덤 아이템",
+            "DESCRIPTION": "랜덤 아이템을 추가합니다."
+        },
+        "SPAWN": {
+            "NAME": "시작 지점",
+            "DESCRIPTION": "플레이어의 시작 지점을 지정합니다."
+        },
+        "FLAG": {
+            "NAME": "깃발",
+            "DESCRIPTION": "깃발 뺏기 모드의 깃발. 깃발을 가지고 시작 지점으로 돌아가면 승리합니다!"
+        }
+    },
+    "TILES": {
+        "WATER": {
+            "NAME": "물",
+            "DESCRIPTION": "이동 비용이 2인 물 타일을 배치하는 도구. 기존 타일에 왼쪽 클릭으로 타일을 배치합니다."
+        },
+        "ICE": {
+            "NAME": "얼음",
+            "DESCRIPTION": "이동 비용이 0인 얼음 타일을 배치하는 도구. 기존 타일에 왼쪽 클릭으로 타일을 배치합니다."
+        },
+        "WALL": {
+            "NAME": "벽",
+            "DESCRIPTION": "이동을 막는 벽 타일을 배치하는 도구. 기존 타일에 왼쪽 클릭으로 타일을 배치합니다."
+        },
+        "DOOR": {
+            "NAME": "문",
+            "DESCRIPTION": "열거나 닫을 수 있는 문을 배치하는 도구. 기존 타일에 왼쪽 클릭으로 타일을 배치합니다. 이미 있는 문을 클릭하면 상태가 전환됩니다."
+        }
+    },
+    "TILE_INFO": {
+        "GROUND": {
+            "NAME": "잔디",
+            "DESC1": "게임의 기본 타일 (지형 타일).",
+            "DESC2": "플레이어와 오브젝트를 배치할 수 있습니다.",
+            "DESC3": "비용: 1"
+        },
+        "ICE": {
+            "NAME": "얼음",
+            "DESC1": "플레이어가 걸을 때 10% 확률로 미끄러져 넘어져 즉시 턴이 종료됩니다.",
+            "DESC2": "플레이어가 얼음 위에 있는 동안 '공격력'과 '방어력' 속성이 2 감소합니다.",
+            "DESC3": "비용: 0"
+        },
+        "WATER": {
+            "NAME": "물",
+            "DESC1": "지형 타일.",
+            "DESC2": "비용: 2"
+        },
+        "WALL": {
+            "NAME": "벽",
+            "DESC1": "특수 아이템을 소유하지 않는 한 통과할 수 없는 장애물.",
+            "DESC2": "오브젝트를 배치할 수 없습니다.",
+            "DESC3": "지형 타일로 간주되지 않습니다."
+        },
+               "CLOSED_DOOR": {
+            "NAME": "닫힌 문",
+            "DESC1": "닫힌 문은 통과하기 전에 '문' 버튼을 통해 열어야 합니다.",
+            "DESC2": "그렇지 않으면 특수 아이템을 소유하지 않는 한 통과할 수 없는 벽처럼 작동합니다."
+        },
+        "OPEN_DOOR": {
+            "NAME": "열린 문",
+            "DESC1": "플레이어가 자유롭게 통과할 수 있는 열린 문.",
+            "DESC2": "'문' 버튼을 통해 다시 닫아 통로를 막을 수 있습니다."
+        },
+        "COMBAT_STATS": "전투 기록",
+        "VICTORIES": "승리: ",
+        "EVADES": "회피: ",
+        "DEFEATS": "패배: ",
+        "DMG_DEALT": "가한 피해: ",
+        "DMG_TAKEN": "받은 피해: "
+    },
+    "ERROR": {
+        "MISSING_ATTRIBUTES": "원하는 속성 값을 선택하세요",
+        "MISSING_NAME": "캐릭터 이름을 입력하세요",
+        "MISSING_AVATAR": "아바타를 선택하세요",
+        "NAME_WITH_SPACE": "이름에 공백을 포함할 수 없습니다",
+        "TITLE_INVALID_LENGTH": "- 맵 제목은 3~30자 사이여야 하며 공백만으로 구성될 수 없습니다",
+        "NAME_ALREADY_EXISTS": "- 같은 이름의 맵이 이미 존재합니다",
+        "INVALID_FILE": "- 파일이 유효하지 않습니다",
+        "INVALID_TILES_DIMENSIONS": "- 타일 크기가 유효하지 않습니다",
+        "INVALID_DIMENSION": "- 맵 크기가 유효하지 않습니다",
+        "INVALID_TILE_TYPE": "- 하나 이상의 타일 유형이 유효하지 않습니다",
+        "INVALID_OBJECT_TYPE": "- 하나 이상의 오브젝트 유형이 유효하지 않습니다",
+        "INVALID_NB_FLAGS": "- 맵에 깃발이 정확히 하나 있어야 합니다",
+        "FILE_TOO_LARGE": "- 파일이 너무 큽니다",
+        "INVALID_MODE": "- 게임 모드가 유효하지 않습니다",
+        "INVALID_NB_PLAYERS": "- 선택한 맵 크기에 대한 플레이어 수가 유효하지 않습니다",
+        "INVALID_NB_OBJECTS": "- 선택한 맵 크기에 대한 오브젝트 수가 유효하지 않습니다"
+    }
+}

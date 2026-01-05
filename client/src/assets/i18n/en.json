@@ -1,0 +1,665 @@
+{
+  "PAGE_HEADER": {
+    "CREATE_GAME": "Create Game",
+    "MANAGE_GAME": "Manage Games",
+    "JOIN_GAME": "Join Game"
+  },
+  "FOOTER": {
+    "TEAM": "Team 104",
+    "CREATE": "Create",
+    "CREATE_NEW_MAP": "Create New Map",
+    "CREATE_NEW_GAME": "Create New Game",
+    "RETURN": "Return",
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel",
+    "QUIT": "Quit",
+    "RESET": "Reset",
+    "SAVE": "Save"
+  },
+  "DIALOG": {
+    "CLOSE": "Close",
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel",
+    "QUIT": "Quit",
+    "STAY": "Stay",
+    "TITLE": {
+      "START_GAME": "Start Game",
+      "GAME_CANCELED": "Game Canceled",
+      "QUIT_GAME": "Quit Game",
+      "KICKED_OUT": "You have been kicked from the game",
+      "DRAW_GAME": "Draw Game",
+      "END_TURN": "End of your turn",
+      "END_GAME": "End of Game",
+      "END_FIGHT": "End of Fight",
+      "DEFAULT_FIGHT_WIN": "Game Abandoned",
+      "SUCCESS_EVASION": "Successful Evasion",
+      "MAX_PLAYERS": "Maximum number of players reached",
+      "ADD_BOT_WHEN_LOCKED": "Room Locked",
+      "ITEM_EXCHANGE": "Exchange Item",
+      "QUIT_POST_GAME_LOBBY": "Return to Home",
+      "QUIT_PAGE": "Leave this page?",
+      "UNBLOCK_USER": "Unblock user?"
+    },
+    "MESSAGE": {
+      "NOT_ENOUGH_PLAYERS": "At least {{min}} players are required to start the game",
+      "CONFIRM_START_GAME": "Are you sure you want to start the game?",
+      "ROOM_LOCKED": "You must lock the room to start the game",
+      "QUIT_GAME": "Do you want to quit the game?",
+      "KICKED_OUT": "The administrator has decided to remove you from the game. You will be redirected to the home page.",
+      "DRAW_GAME": "All players have abandoned. You will be redirected to the home page.",
+      "FELL": "You slipped on the ice. Your turn is over.",
+      "END_FIGHT": "The fight is over. The winner of the fight is {{winner}}",
+      "DEFAULT_FIGHT_WIN": "The opponent abandoned the game. You win the fight by default.",
+      "MAX_PLAYERS": "You cannot add more virtual players",
+      "ADD_BOT_WHEN_LOCKED": "Unlock the waiting room before adding a virtual player",
+      "QUIT_POST_GAME_LOBBY": "You would leave the end game page",
+      "QUIT_MESSAGE_LOST_CHANGES": "All unsaved changes will be lost, are you sure you want to leave this page?",
+      "WINNER_ANNOUNCED": "The winner is {{winner}}",
+      "CANCELED_MATCH": "The game has been canceled. You will be redirected to the main menu.",
+      "UNBLOCK_USER": "Do you want to unblock {{username}}?"
+    }
+  },
+  "GAME_CREATION": {
+    "AVAILABILITY": "Lobby Access",
+    "EVERYONE": "Everyone",
+    "FRIENDS_ONLY": "Friends Only",
+    "ENTRY_FEE": "Entry Fee",
+    "SELECT_BEFORE_CREATING_GAME": "Please select a map before creating a new game",
+    "HIDDEN_GAME": "The selected map is hidden or doesn't exist",
+    "INSUFFICIENT_FUNDS": "You do not have enough funds to create a game with this entry fee",
+    "QUICK_ELIMINATION": "Quick Elimination"
+  },
+  "ATTRIBUTES": {
+    "HEALTH": "Health",
+    "SPEED": "Speed",
+    "ATTACK": "Attack",
+    "DEFENSE": "Defense",
+    "TOOLTIP": {
+      "HEALTH": "Character health points correspond to this attribute. Increase the health or speed attribute value by +2.",
+      "SPEED": "Speed points determine turn order and also correspond to movement points per turn for a character. Increase the health or speed attribute value by +2.",
+      "ATTACK": "Attack points represent the force with which an attack is made on the opponent. Choose one of the attack or defense attributes to receive a bonus based on a 6-sided or 4-sided die.",
+      "DEFENSE": "Defense points represent the ability to block an opponent's attack. Choose one of the attack or defense attributes to receive a bonus based on a 6-sided or 4-sided die."
+    }
+  },
+  "WAITING_PAGE": {
+    "START_GAME": "Start Game",
+    "LOCK": "Lock Game",
+    "DROP_IN": "Enable Drop-in/Drop-Out",
+    "MAX_PLAYERS_CANT_UNLOCK": "The waiting room has reached the maximum number of players. You cannot unlock the game.",
+    "ADD_BOT": "Add Virtual Player",
+    "SCAN_TO_JOIN": "Scan to join",
+    "BOT_PROFILE_POPUP_TITLE": "Choose the virtual player's profile",
+    "BOT_PROFILES": {
+      "DEFENSIVE": {
+        "TITLE": "Defensive",
+        "DESCRIPTION_1": "Tends to flee from battle if injured",
+        "DESCRIPTION_2": "Engages less in combat and favors items that provide defense and maximum HP advantages"
+      },
+      "AGGRESSIVE": {
+        "TITLE": "Aggressive",
+        "DESCRIPTION_1": "Tends to seek battle and will never try to flee",
+        "DESCRIPTION_2": "Favors confrontations and items that provide attack and speed advantages"
+      }
+    }
+  },
+  "MANAGE_GAME": {
+    "CHOSE_GAME_MODE": "Chose Game Mode :",
+    "CHOSE_GAME_SIZE": "Chose Game Size :",
+    "SMALL_PLAYER_RANGE": "(2 players)",
+    "MEDIUM_PLAYER_RANGE": "(2 to 4 players)",
+    "LARGE_PLAYER_RANGE": "(2 to 6 players)",
+    "MAP_NAME": "Map Name",
+    "MAP_NAME_PLACEHOLDER": "Please enter map name",
+    "MAP_DESCRIPTION": "Map Description",
+    "MAP_DESCRIPTION_PLACEHOLDER": "Please enter map description",
+    "OBJECTS": "Items",
+    "MAP_SIZE_AND_MODE_PROMPT": "Please choose map size and game mode",
+    "MAP_STATE": "Map Access Level"
+  },
+  "MAP_VALIDATOR": {
+    "INVALID_MAP": "Invalid map",
+    "SAVE_SUCCESS": "Save successful",
+    "REDIRECT_MESSAGE": "You will be redirected to the administration page",
+
+    "ERROR_DUPLICATE_NAME": "A map with the same name already exists.",
+    "ERROR_TOO_MANY_OBJECTS": "There are too many objects on this map. {{current}} objects instead of {{max}}.",
+    "ERROR_TOO_FEW_OBJECTS": "There are not enough objects on the map. The minimum is {{min}}, but there are currently {{current}}.",
+
+    "ERROR_INVALID_DOOR": "At least one door is invalid.",
+    "ERROR_INVALID_DOOR_DETAILS": "Each door must be placed between two walls on one axis and between two terrain tiles on the other.",
+
+    "ERROR_INSUFFICIENT_TERRAIN": "At least half of the tiles must be covered with terrain tiles (grass, water, ice, etc.).",
+    "ERROR_INACCESSIBLE_TILES": "Not all terrain tiles are accessible.",
+
+    "ERROR_MISSING_FLAG": "The flag must be placed on the map when in CTF mode.",
+    "ERROR_MISSING_SPAWN_POINTS": "All spawn points must be placed on the map.",
+
+    "ERROR_INVALID_TITLE": "The map title must be between 3 and 30 characters long and cannot consist of spaces only.",
+    "ERROR_INVALID_DESCRIPTION": "The map description must be between 10 and 128 characters long and cannot consist of spaces only."
+  },
+  "JOIN_PAGE": {
+    "ENTER_CODE": "Please enter room code",
+    "JOIN": "Join",
+    "SPECTATE": "Spectate",
+    "ERRORS": {
+      "INVALID_FORMAT": "The code must consist of 4 digits",
+      "ROOM_NOT_FOUND": "The game does not exist",
+      "ROOM_LOCKED": "The game is locked",
+      "FRIENDS_ONLY_ACCESS": "This game is reserved for the host's friends",
+      "INSUFFICIENT_FUNDS": "Insufficient funds to enter this game"
+    }
+  },
+  "CHAT": {
+    "TITLE": "Chat",
+    "UNFILTERED_JOURNAL": "Unfiltered Game Log",
+    "FILTERED_JOURNAL": "Filtered Game Log",
+    "PLACEHOLDER": "Write a message..."
+  },
+  "GAME": {
+    "QUIT_GAME": "Quit Game",
+    "STOP_SPECTATING": "Stop spectating",
+    "SPECTATOR_MODE": "Spectator mode",
+    "PLAYERS": "Players",
+    "TURN_START_WARNING": "Your turn starts in",
+    "TURN_OF": "The turn of",
+    "TURN_WILL_START": "is about to start",
+    "IN_COMBAT": "Combat in progress",
+    "DEBUG_MODE": "Debug Mode",
+    "GRID_SIZE": "Grid Size",
+    "MODE": {
+      "CLASSIC": "Classic",
+      "CTF": "CTF"
+    },
+    "STATE": {
+      "PRIVATE": "private",
+      "SHARED": "private-shared",
+      "PUBLIC": "public"
+    },
+    "MAP_NAME": "Map Name",
+    "PLAYER_COUNT": "Player Count",
+    "ACTIONS": {
+      "DOOR": "Door",
+      "ATTACK": "Attack",
+      "END_TURN": "End Turn"
+    },
+    "CHAT": "Chat",
+    "INVENTORY": "Inventory",
+    "TIMER": "Timer",
+    "MOVEMENTS": "Movements",
+    "ACTION_POINTS": "Action",
+    "SPD": "Spd",
+    "ATK": "Atk",
+    "DEF": "Def",
+    "COMBAT": {
+      "EVADE_POINTS_REMAINING": "Remaining evasion points:",
+      "ATTACK": "Attack",
+      "EVADE": "Flee",
+      "YOUR_TURN_START": "It's your turn",
+      "OPPONENT_TURN_START": "It's your opponent's turn",
+      "VIEWER_TURN_START_MESSAGE": "It's {{attackerName}}'s turn"
+    },
+    "VICTORIES": "Win(s)",
+    "DISCONNECTED": "Eliminated",
+    "LOGS": {
+      "DEBUG_START": "Debug mode started.",
+      "DEBUG_END": "Debug mode ended.",
+      "START_TURN": "Player {{playerName}}'s turn has started.",
+      "GIVE_UP": "{{playerName}} has abandoned the game.",
+      "OPEN_DOOR": "{{playerName}} opened a door.",
+      "CLOSE_DOOR": "{{playerName}} closed a door.",
+      "WIN_COMBAT": "{{playerName}} won the combat. The combat is over!",
+      "EVADE_COMBAT_FAIL": "{{playerName}} failed to escape.",
+      "EVADE_COMBAT_SUCCESS": "{{playerName}} successfully escaped.",
+      "NO_WINNER_COMBAT": "Combat ended with no winner between {{playerName}} and {{defenderName}}.",
+      "START_COMBAT": "{{playerName}} and {{defenderName}} entered combat.",
+      "ATTACK_FAIL": "{{playerName}} failed their attack.",
+      "ATTACK_SUCCESS": "{{playerName}} succeeded in their attack with {{damage}} damage.",
+      "END_GAME": "Game over: {{playerNames}}",
+      "ITEM_PICKED_UP": "{{playerName}} picked up {{itemKey}}",
+      "COMBAT_RESULT": "Attack result: {{attack}} + {{attackDice}} (dice) = {{attackTotal}}\nDefense result: {{defense}} + {{defenseDice}} (dice) = {{defenseTotal}}",
+      "UNKNOWN": "Unknown log message."
+    },
+    "CREATED_BY": "created by"
+  },
+  "CHANNELS": {
+    "TITLE": "Channels",
+    "PLACEHOLDER": "Global Chat",
+    "SEARCH": "Search a channel",
+    "SEARCH_2": "Channel Search",
+    "NAME_PLACEHOLDER": "Name of channel"
+  },
+  "FRIENDS": {
+    "TITLE": "Friends",
+    "FRIEND_REQUEST": "Friend Requests",
+    "SEARCH": "Search a user",
+    "SEARCH_2": "User Search",
+    "NO_FRIENDS": "You have no friends",
+    "NO_FRIEND_REQUESTS": "You have no friend requests",
+    "REMOVE_FRIEND_TITLE": "Remove a friend",
+    "REMOVE_FRIEND_MESSAGE": "Do you want to remove {{username}} from your friend list ?",
+    "REMOVE_FRIEND_CANCEL": "Cancel",
+    "REMOVE_FRIEND_CONFIRM": "Remove friend",
+    "BLOCK_USER_TITLE": "Block user",
+    "BLOCK_USER_MESSAGE_FRIEND": "Do you want to block {{username}} ? This will remove him from your friend list.",
+    "BLOCK_USER_MESSAGE_OTHER": "Block {{username}} ?",
+    "BLOCK_USER_CANCEL": "Cancel",
+    "BLOCK_USER_CONFIRM": "Block",
+    "USER_BLOCKED_TITLE": "User blocked",
+    "USER_BLOCKED_MESSAGE": "{{username}} has been blocked",
+    "FRIEND_REQUEST_SENT_TITLE": "Friend request sent",
+    "FRIEND_REQUEST_SENT_MESSAGE": "You sent a friend request to {{username}}",
+    "FRIEND_REQUEST_ACCEPTED_TITLE": "Friend request accepted",
+    "FRIEND_REQUEST_ACCEPTED_MESSAGE": "{{username}} is now your friend",
+    "FRIEND_REQUEST_REJECTED_TITLE": "Friend request rejected",
+    "FRIEND_REQUEST_REJECTED_MESSAGE": "You rejected a friend request from {{username}}",
+    "NOTIF_REQUEST_RECEIVED": "{{username}} sent you a friend request",
+    "NOTIF_REQUEST_ACCEPTED": "{{username}} accepted your friend request",
+    "NOTIF_REMOVED": "{{username}} removed you from their friends",
+    "CLOSE": "Close",
+    "BLOCKED_USERS": "Blocked users",
+    "NO_BLOCKED_USERS": "You haven't blocked any users",
+    "UNBLOCK": "Unblock",
+    "BLOCK_SUCCESS": "User successfully blocked",
+    "UNBLOCK_SUCCESS": "User successfully unblocked",
+    "BLOCKED_MESSAGE": "A user has blocked you",
+    "LIST": "Friends List"
+  },
+  "USER": {
+    "LOG_OUT": "Log Out",
+    "LOG_OUT_MESSAGE": "Are you sure you want to log out?",
+    "LOG_OUT_CANCEL": "Cancel",
+    "LOG_OUT_CONFIRM": "Log Out",
+    "DELETE": "Delete Account",
+    "DELETE_MESSAGE": "Are you sure you want to delete your account? This action is irreversible."
+  },
+  "SHOP_PAGE": {
+    "TITLE": "Store",
+    "AVATARS": "Characters",
+    "BACKGROUNDS": "Backgrounds",
+    "THEMES": "Visual Themes",
+    "OWNED": "Owned",
+    "INSUFFICIENT_BALANCE": "Insufficient Balance",
+    "BUY": "Buy",
+    "NO_BACKGROUNDS": "No backgrounds available"
+  },
+  "AVATAR_SELECTOR": {
+    "IMAGE_UPLOAD_ERROR_TITLE": "Error: Image upload",
+    "IMAGE_FILE_TOO_LARGE": "File too large (max 5MB)",
+    "IMAGE_READ_ERROR": "Error reading the file"
+  },
+  "SETTINGS_PAGE": {
+    "TITLE": "Settings",
+    "TABS": {
+      "VISUAL": "Visual & Languages",
+      "ACCOUNT": "Account Settings",
+      "STATS": "Account Statistics"
+    },
+    "DIALOG": {
+      "LOAD_THEMES_FAILED": "Unable to load themes",
+      "CHANGE_THEME_FAILED": "Unable to change theme",
+      "LOAD_BACKGROUNDS_FAILED": "Unable to load backgrounds",
+      "BACKGROUND_NOT_OWNED": "You do not own this background",
+      "SELECT_BACKGROUND_FAILED": "Unable to select this background",
+
+      "DELETE_ACCOUNT_TITLE": "Delete account",
+      "DELETE_ACCOUNT_MESSAGE": "Do you really want to delete this account?",
+      "DELETE_ACCOUNT_CONFIRM": "Delete",
+
+      "NO_CHANGES_TITLE": "No changes",
+      "NO_CHANGES_MESSAGE": "No changes detected. Please modify at least one field.",
+
+      "ERROR_TITLE": "Error",
+      "ACCOUNT_UPDATED_TITLE": "Account Updated",
+      "ACCOUNT_UPDATED_MESSAGE": "Account successfully updated"
+    },
+    "SECTIONS": {
+      "BACKGROUND": {
+        "TITLE": "Background",
+        "SUBTITLE": "Select a background from your owned ones",
+        "NO_BACKGROUNDS": "You do not own any backgrounds.",
+        "VISIT_STORE": "Visit the store to buy some!"
+      },
+      "THEME": {
+        "TITLE": "Theme"
+      },
+      "LANGUAGE": {
+        "TITLE": "Language"
+      },
+      "PROFILE_PICTURE": {
+        "TITLE": "Profile Picture",
+        "UPLOAD": "Upload Image"
+      },
+      "ACCOUNT_INFO": {
+        "TITLE": "Account Information",
+        "USERNAME": "Username",
+        "USERNAME_PLACEHOLDER": "3-20 characters",
+        "USERNAME_REQUIRED": "Username is required",
+        "USERNAME_MIN": "Minimum 3 characters",
+        "USERNAME_NO_SPACES": "Username must not contain spaces",
+        "USERNAME_NO_SPACES_MIN": "Minimum 3 characters, must not contain spaces",
+
+        "EMAIL": "Email Address",
+        "EMAIL_PLACEHOLDER": "your.email@example.com",
+        "EMAIL_REQUIRED": "Email address is required",
+        "EMAIL_INVALID": "Invalid format",
+        "EMAIL_NO_SPACES": "Email address must not contain spaces"
+      },
+      "MODIFY_ACCOUNT_ERRORS": {
+        "EMAIL_REQUIRED": "Email required",
+        "EMAIL_INVALID": "Invalid email address",
+        "USERNAME_REQUIRED": "Username required",
+        "USERNAME_LENGTH": "Username must be between 3 and 20 characters",
+        "EMAIL_EXISTS": "Email already associated with an account",
+        "USERNAME_EXISTS": "Username already exists"
+      },
+
+      "STATS": {
+        "TITLE": "Account Statistics",
+        "GAMES_CLASSIC": "Games Played (Classic)",
+        "GAMES_CTF": "Games Played (CTF)",
+        "GAMES_WON": "Games Won",
+        "AVG_GAME_TIME": "Average Game Time",
+        "CHALLENGES_COMPLETED": "Challenges Completed"
+      },
+      "DANGER_ZONE": {
+        "TITLE": "Danger Zone",
+        "DELETE_ACCOUNT": "Delete Account"
+      }
+    },
+    "EDIT_BUTTON": "Edit Profile",
+    "SAVE_BUTTON": "Save",
+    "DISCARD_BUTTON": "Discard",
+    "FOOTER_RETURN": "Return"
+  },
+  "POST_GAME_LOBBY": {
+    "TITLE": "Post Game Lobby",
+    "CTF": "CTF",
+    "CLASSIC": "Classic",
+    "REWARD": "Reward",
+    "STATS": {
+      "COMBATS": "Combats",
+      "VICTORIES": "W/D/L",
+      "DMG_DEALT": "Damage dealt",
+      "DMG_TAKEN": "Damage received",
+      "OBJECTS_TAKEN": "Objects taken",
+      "PCT_TILES_VISITED": "% Tiles visited",
+      "GAME_LENGTH": "Game Length",
+      "TURNS": "Number of Turns",
+      "GLOBAL_TILES_VISITED": "% Global Tiles Visited",
+      "PCT_DOORS_INTEREACTED": "% Doors Interacted",
+      "NB_FLAG_BEARERS": "Nb of Flag Bearers"
+    },
+    "PRIZE": {
+      "BASE": "Base prize",
+      "POOL": "Pool prize",
+      "CHALLENGE": "Challenge prize",
+      "TOTAL": "Total reward"
+    }
+  },
+  "THEME": {
+    "GOLD": "Gold (Default)",
+    "BLUE": "Sky Blue",
+    "EMERALD": "Emerald",
+    "RUBY": "Ruby",
+    "AMETHYST": "Amethyst",
+    "OBSIDIAN": "Obsidian",
+    "COPPER": "Copper",
+    "CYBERPUNK": "Cyberpunk",
+    "ARCTIC": "Arctic",
+    "AQUA": "Aqua",
+    "MCDONALDS": "McDonalds",
+    "MAGENTA": "Magenta",
+    "MY_EYES_BLEED": "My Eyes Bleed",
+    "SAPPHIRE": "Sapphire",
+    "SAPPHIRE_CRIMSON": "Crimson Sapphire",
+    "VERDANT_AMETHYST": "Verdant Amethyst",
+    "DARK_FLAT": "Dark Flat",
+    "GOLD_FLAT": "Gold Flat",
+    "NAVY_FLAT": "Navy Flat",
+    "GREEN_FLAT": "Green Flat",
+    "RED_FLAT": "Red Flat",
+
+    "TOTAL_DARK": "Total Darkness",
+    "SILVER": "Gray",
+    "CRIMSON": "Crimson",
+    "PINK": "Rose",
+    "GREEN_BLUE": "Neptune",
+    "BLACK_ORANGE": "Halloween"
+  },
+  "BACKGROUND": {
+    "DEFAULT_ATHENA": "Default Athena Background",
+    "SPARTAN_WARRIOR": "Spartan Warrior Background",
+    "DIONYSUS": "Dionysus Background",
+    "HADES": "Hades Background",
+    "PERSEPHONE": "Persephone Background",
+    "APOLLO": "Apollo Background",
+    "ATHENA": "Athena Background",
+    "HEPHAESTUS": "Hephaestus Background",
+    "HERMES": "Hermes Background",
+    "DEMETER": "Demeter Background",
+    "ARTEMIS": "Artemis Background",
+    "POSEIDON": "Poseidon Background",
+    "HERA": "Hera Background",
+    "ZEUS": "Zeus Background",
+    "HESTIA": "Hestia Background",
+    "ARES": "Ares Background"
+  },
+  "AVATAR": {
+    "DIONYSUS": "Dionysus Avatar",
+    "HADES": "Hades Avatar",
+    "PERSEPHONE": "Persephone Avatar"
+  },
+  "ITEMS": {
+    "TRIDENT": {
+      "NAME": "Poseidon's Trident",
+      "DESCRIPTION": "If you have one action point left at the end of your turn, gain one more at the start of your next turn, up to a maximum of 2."
+    },
+    "ARMOR": {
+      "NAME": "Achilles' Armor",
+      "DESCRIPTION": "+2 attack. If your attack is blocked, take 1 damage."
+    },
+    "SANDAL": {
+      "NAME": "Winged Sandals",
+      "DESCRIPTION": "x2 speed but reduces your maximum health by 1."
+    },
+    "LIGHTNING": {
+      "NAME": "Zeus' Lightning",
+      "DESCRIPTION": "x2 attack but reduces defense by 2 and health by 1."
+    },
+    "XIPHOS": {
+      "NAME": "Xiphos",
+      "DESCRIPTION": "If you have less than 50% health, your opponent loses 1 defense and you gain 2 attack."
+    },
+    "KUNEE": {
+      "NAME": "Kunee",
+      "DESCRIPTION": "Allows you to pass through walls, which are considered tiles with a cost of 1. If you end a turn on a wall, you will be placed on a nearby tile."
+    },
+    "RANDOM": {
+      "NAME": "Random Item",
+      "DESCRIPTION": "Adds a random item."
+    },
+    "SPAWN": {
+      "NAME": "Spawn Point",
+      "DESCRIPTION": "Designates the player's starting position."
+    },
+    "FLAG": {
+      "NAME": "Flag",
+      "DESCRIPTION": "Capture the Flag mode item. Return to your spawn with the flag to win!"
+    }
+  },
+  "TILES": {
+    "WATER": {
+      "NAME": "Water",
+      "DESCRIPTION": "Tool used to place a water tile with a movement cost of two. Place the tile with a left click on an existing tile."
+    },
+    "ICE": {
+      "NAME": "Ice",
+      "DESCRIPTION": "Tool used to place an ice tile with a movement cost of zero. Place the tile with a left click on an existing tile."
+    },
+    "WALL": {
+      "NAME": "Wall",
+      "DESCRIPTION": "Tool used to place a wall tile that blocks movement through it. Place the tile with a left click on an existing tile."
+    },
+    "DOOR": {
+      "NAME": "Door",
+      "DESCRIPTION": "Tool used to place a door that can be opened or closed. Place the tile with a left click on an existing tile. Clicking an existing door toggles its state."
+    }
+  },
+  "TILE_INFO": {
+    "GROUND": {
+      "NAME": "Grass",
+      "DESC1": "Default game tile (terrain tile).",
+      "DESC2": "Players and objects can be placed on it.",
+      "DESC3": "Cost: 1"
+    },
+    "ICE": {
+      "NAME": "Ice",
+      "DESC1": "A player stepping on it has a 10% chance to slip and fall, immediately ending their turn.",
+      "DESC2": "While standing on ice, the player's attack and defense attributes suffer a -2 penalty.",
+      "DESC3": "Cost: 0"
+    },
+    "WATER": {
+      "NAME": "Water",
+      "DESC1": "Terrain tile.",
+      "DESC2": "Cost: 2"
+    },
+    "WALL": {
+      "NAME": "Wall",
+      "DESC1": "Impassable obstacle unless the player owns a special item.",
+      "DESC2": "No object can be placed on it.",
+      "DESC3": "Not considered a terrain tile."
+    },
+    "CLOSED_DOOR": {
+      "NAME": "Closed Door",
+      "DESC1": "A closed door must be opened via the 'Door' button before passing through.",
+      "DESC2": "Otherwise, it acts as an impassable wall unless the player has a special item."
+    },
+    "OPEN_DOOR": {
+      "NAME": "Open Door",
+      "DESC1": "An open door allows players to pass through freely.",
+      "DESC2": "It can be closed again via the 'Door' button to block passage."
+    },
+    "COMBAT_STATS": "Combat Summary",
+    "VICTORIES": "Victories: ",
+    "EVADES": "Evades: ",
+    "DEFEATS": "Defeats: ",
+    "DMG_DEALT": "Damage dealt: ",
+    "DMG_TAKEN": "Damage taken: "
+  },
+  "ERROR": {
+    "MISSING_ATTRIBUTES": "Please select the desired attribute values",
+    "MISSING_NAME": "Please enter a character name",
+    "MISSING_AVATAR": "Please select an avatar",
+    "NAME_WITH_SPACE": "The name cannot contain spaces",
+    "TITLE_INVALID_LENGTH": "- The map title must be between 3 and 30 characters long and not contain only spaces",
+    "NAME_ALREADY_EXISTS": "- A map with the same name already exists",
+    "INVALID_FILE": "- The file is invalid",
+    "INVALID_TILES_DIMENSIONS": "- The tile dimensions are invalid",
+    "INVALID_DIMENSION": "- The map dimensions are invalid",
+    "INVALID_TILE_TYPE": "- One or more tile types are invalid",
+    "INVALID_OBJECT_TYPE": "- One or more object types are invalid",
+    "INVALID_NB_FLAGS": "- There must be exactly one flag on the map",
+    "FILE_TOO_LARGE": "- The file is too large",
+    "INVALID_MODE": "- The game mode is invalid",
+    "INVALID_NB_PLAYERS": "- The number of players is invalid for the selected map size",
+    "INVALID_NB_OBJECTS": "- The number of objects is invalid for the selected map size"
+  },
+  "LEADERBOARDS_PAGE": {
+    "TITLE": "Leaderboards",
+    "TOTAL_USERS": "Total Users",
+    "LOADING": "Loading leaderboards...",
+    "USERNAME": "Username",
+    "RANK": "Rank",
+    "LIFETIME_EARNINGS": "Lifetime Earnings",
+    "GAMES_PLAYED": "Games Played",
+    "WINS": "Wins",
+    "WINRATE": "Win Rate",
+    "TOTAL_GAME_DURATION": "Total Game Duration",
+    "BLOCKED_USER": "Blocked User",
+    "BLOCKED_ME": "This user has blocked me"
+  },
+  "CHALLENGES": {
+    "EXPLORER": {
+      "TITLE": "Explorer",
+      "DESCRIPTION": "Visit at least {{goal}} tiles"
+    },
+    "STRATEGIC_RETREAT": {
+      "TITLE": "Strategic Retreat",
+      "DESCRIPTION": "Successfully evade from at least {{goal}} combat duel"
+    },
+    "RELIC_HUNTER": {
+      "TITLE": "Relic Hunter",
+      "DESCRIPTION": "Pick up at least {{goal}} item"
+    },
+    "SPILLED_BLOOD": {
+      "TITLE": "Spilled Blood",
+      "DESCRIPTION": "Win at least {{goal}} combat duel"
+    },
+    "DOOR_MASTER": {
+      "TITLE": "Door Master",
+      "DESCRIPTION": "Interact with at least {{goal}} door"
+    },
+    "REWARD": "Reward",
+    "PROGRESS": "Progress",
+    "ALL": "All Challenges",
+    "GOAL": "Goal"
+  },
+  "LOBBY": {
+    "KICK_PLAYER_TITLE": "Kick Player",
+    "KICK_PLAYER_CONFIRM": "Are you sure you want to kick this player?",
+    "KICK": "Kick",
+    "CANCEL": "Cancel"
+  },
+  "WAITING_ROOMS": {
+    "GAME_STARTED": "onGoing...",
+    "LOADING": "Loading games...",
+    "NO_ROOMS": "No waiting rooms at the moment",
+    "DROP_IN_ENABLED": "Drop-in enabled",
+    "DROP_IN_DISABLED": "Drop-in disabled",
+    "EVERYONE": "Everyone",
+    "FRIENDS_ONLY": "Friends only",
+    "PLAYERS": "players",
+    "ENTRY_FEE": "Entry fee",
+    "FULL": "Full",
+    "JOIN": "Join",
+    "SPECTATE": "Spectate",
+    "PUBLIC": "Public",
+    "PRIVATE": "Private",
+    "UNKNOWN": "Unknown",
+    "BACK": "Back",
+    "JOIN_WITH_CODE": "Join with code",
+    "PAGE_TITLE": "Waiting Rooms",
+    "VIEW_WAITING_ROOMS": "View waiting rooms"
+  },
+  "CHAT_BOX": {
+    "SOMEONE": "Someone",
+    "AND": "and",
+    "OTHERS": "others",
+    "DEFAULT_TITLE": "Messages",
+    "PLACEHOLDER": "Write a message..."
+  },
+  "CHANNEL_LIST": {
+    "SEARCH": "Search a channel",
+    "NEW_PLACEHOLDER": "Channel name",
+    "WAITING_ROOM": "Room",
+    "SPECTATORS": "Spectators",
+
+    "OWNER_CHANGE_TITLE": "Ownership change",
+    "OWNER_CHANGE_MESSAGE": "You are now the owner of the channel \"{{name}}\".",
+
+    "DELETE_TITLE": "Delete channel",
+    "DELETE_MESSAGE": "Do you want to delete the channel \"{{name}}\"?",
+
+    "LEAVE_TITLE": "Leave channel",
+    "LEAVE_MESSAGE": "Do you want to leave the channel \"{{name}}\"?",
+
+    "CREATE_ERROR_TITLE": "Channel creation error",
+    "ALREADY_EXISTS": "Channel \"{{name}}\" already exists.",
+    "NAME_TOO_LONG": "The channel name cannot exceed {{max}} characters.",
+    "PLACEHOLDER": "Channel name",
+    "DELETED_BY_OWNER_TITLE": "Channel deleted",
+    "DELETED_BY_OWNER_MESSAGE": "The channel \"{{name}}\" has been deleted by its owner.",
+    "WAITING_ROOM_NAME": "Room Channel",
+    "INVALID_NAME_ROOM_PATTERN": "This name is reserved because it resembles a game room (e.g., Room 1234)."
+  }
+}

@@ -1,0 +1,336 @@
+.custom-form {
+  // background-color:rgba(12, 8, 27, 0.788);
+  background-color:rgba(181, 162, 100, 0.2);
+  font-family: "Papyrus", serif;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+  //margin-right: 30rem !important;
+  > * {
+    padding: 0 1rem;
+  }
+  .title {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .field {
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    input {
+      width: 97%;
+      background: none;
+      color: white;
+      border: 0.05rem solid rgb(135, 125, 79);
+      border-radius: 0.75rem;
+      padding: 0rem 0.3rem;
+      font-family: Papyrus;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    display: flex;
+  }
+  .error {
+    color: #e74c3c;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    font-family: "Papyrus";
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: white;
+    border: 1px solid black;
+    height: 2.5rem;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 1rem;
+    background: linear-gradient(to right, rgb(122, 119, 107), rgb(85, 84, 76));
+    border-radius: 2rem;
+  }
+  button:hover {
+    background: linear-gradient(to right, rgb(255, 237, 191), #a3893c);
+    color: black;
+  }
+
+  button.select {
+    background: linear-gradient(to right, rgb(255, 237, 191), #a3753c);
+    color: black;
+    border: none;
+  }
+
+  button.link {
+    background: none;
+    border: none;
+    color: #fdf6e3;
+    text-decoration: underline;
+    margin-top: 0.5rem;
+  }
+  .goto-btn {
+    display: inline-block;
+    width: auto;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      color: rgba(252, 211, 135, 0.9);
+    }
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+}
+
+.content {
+  background-color: linear-gradient(
+    to bottom,
+    #0d0d0d 0%,
+  );
+  font-family: "Papyrus", serif;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  border: 10px solid #a3753c;
+  border-radius: 24px;
+  padding: 0;
+  max-width: 600px;
+  margin: auto;
+  .title {
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.8rem;
+  }
+}
+:host ::ng-deep .mat-form-field {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+:host ::ng-deep .mat-form-field-infix,
+.mat-input-element {
+  width: 100%;
+  box-sizing: border-box;
+}
+:host ::ng-deep .mat-error {
+  margin: 0%;
+}
+
+.sign-in{
+  padding: 2rem ;
+}
+
+.signup {
+  background-color: dark;
+  font-family: "Papyrus", serif;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  width: 70%;
+  max-width: 1000px;
+  height: 70vh;
+  margin: auto;
+  padding: 2rem;
+  height: fit-content;
+  form {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    overflow-y: auto;
+
+    .form-section {
+      padding: 0.2rem;
+      flex: 1;
+    }
+    .avatar-section {
+      flex: 1;
+      padding: 0rem;
+      
+      .avatar-label {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .avatar-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        width: 100%;
+      }
+
+      .avatar-option {
+        border: 3px solid transparent;
+        border-radius: 10px;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          border-color 0.2s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1;
+
+        img {
+          width: 6rem;
+          height: 6rem;
+          display: block;
+          border-radius: 10px;
+        }
+
+        &:hover {
+          border-color: #f5e698;
+        }
+
+        &.selected {
+          border-color: white;
+          background: linear-gradient(
+            to right,
+            rgb(245, 230, 152),
+            rgb(255, 244, 122)
+          );
+          box-shadow: 0 0 10px rgba(255, 244, 122, 0.6);
+        }
+      }
+    }
+  }
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.toggle-password {
+  width: 100%;
+  margin-top: -10px;
+  padding-left: 12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-control {
+  font-size: 14px;
+  color: white !important;
+  transform: none;
+  margin: 0;
+  --mat-slide-toggle-margin: 0;
+}
+
+.justified {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.team-name {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  color: white;
+}
+
+.header-item {
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.footer-item {
+  text-align: center;
+  height: 8vh;
+  margin: 0;
+}
+
+.footer-item p {
+  color: white;
+  margin: 0;
+}
+.fullscreen-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(12, 7, 27, 0.144);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  margin-right: 200px;
+}
+
+header {
+  display: flex;
+  height: 8vh;
+}
+
+.sign-up-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(186, 173, 111, 0.8);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Override Material input hover states */
+:host ::ng-deep .mat-mdc-form-field:hover .mat-mdc-input-element {
+  color: white !important;
+}
+
+:host ::ng-deep .mat-mdc-form-field:hover .mat-mdc-text-field-wrapper {
+  border-color: rgb(135, 125, 79) !important;
+}
+
+:host ::ng-deep .mat-mdc-form-field:hover .mdc-notched-outline .mdc-notched-outline__leading,
+:host ::ng-deep .mat-mdc-form-field:hover .mdc-notched-outline .mdc-notched-outline__notch,
+:host ::ng-deep .mat-mdc-form-field:hover .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-color: rgb(135, 125, 79) !important;
+}
+
+/* Override Material label hover state */
+:host ::ng-deep .mat-mdc-form-field:hover .mat-mdc-floating-label {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Override focused state as well if needed */
+:host ::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline .mdc-notched-outline__leading,
+:host ::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline .mdc-notched-outline__notch,
+:host ::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-color: rgb(255, 237, 191) !important;
+}
+
+:host ::ng-deep .mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+  color: rgb(255, 237, 191) !important;
+}
+
+

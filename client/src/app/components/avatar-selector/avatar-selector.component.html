@@ -1,0 +1,54 @@
+<div class="avatar-section">
+  <h3 class="avatar-title">
+    {{ "SETTINGS_PAGE.SECTIONS.PROFILE_PICTURE.TITLE" | translate }}
+  </h3>
+  <div class="upload-top-right">
+    <input
+      type="file"
+      accept="image/*"
+      (change)="onCustomUpload($event)"
+      class="file-input"
+      #fileInput
+      id="customUpload"
+      [disabled]="!isEditing"
+    />
+    <label
+      for="customUpload"
+      class="upload-button"
+      [class.disabled]="!isEditing"
+    >
+      <lucide-icon [name]="Camera" class="icon"></lucide-icon
+      >{{ "SETTINGS_PAGE.SECTIONS.PROFILE_PICTURE.UPLOAD" | translate }}
+    </label>
+  </div>
+
+  <div class="preview-section" [class.disabled]="!isEditing">
+    <div class="preview-wrapper" [class.has-selection]="selectedAvatar">
+      @if (selectedAvatar) {
+      <img [src]="selectedAvatar" alt="{{ selectedAvatar }}" />
+      } @else {
+      <span class="preview-placeholder">👤</span>
+      }
+    </div>
+    <span class="preview-label">
+      {{ selectedAvatar ? "" : "Aucun avatar sélectionné" }}
+    </span>
+  </div>
+
+  <div class="avatar-grid" [class.disabled]="!isEditing">
+    @for (avatarURL of avatars; track avatarURL) {
+    <div
+      class="avatar-option"
+      [class.selected]="selectedAvatar === avatarURL"
+      (click)="isEditing && selectAvatar(avatarURL)"
+      [class.disabled]="!isEditing"
+    >
+      <img
+        [src]="avatarURL"
+        alt="{{ avatarURL }}"
+        [class.disabled]="!isEditing"
+      />
+    </div>
+    }
+  </div>
+</div>

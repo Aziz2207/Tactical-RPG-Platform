@@ -1,0 +1,18 @@
+<body class="background-image admin-page">
+    <div class="create-game-page">
+    <app-header title="{{ 'PAGE_HEADER.MANAGE_GAME' | translate }}"></app-header>
+        <app-game-list [usingPage]="'administration-page'"></app-game-list>
+        <div class="button-group">
+            <p class="button" routerLink="/">{{'FOOTER.RETURN' | translate}}</p>
+            <p class="button" (click)="openPopUp()">{{'FOOTER.CREATE_NEW_MAP' | translate}}</p>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+button {
+    font-family: "Franklin Gothic Medium";
+    font-weight: 500;
+    font-size: 1.1rem;
+    width: 100%;
+    border-radius: 1.2rem;
+    height: 2.25rem;
+
+    border: none;
+    border-bottom: 0.3rem solid var(--inverted-text-color);
+    border-right: 0.3rem solid var(--inverted-text-color);
+}
+
+.water {
+    background: linear-gradient(
+        to right,
+        rgb(37, 54, 118),
+        rgb(74, 98, 170) 35%,
+        rgb(73, 134, 175) 65%,
+        rgb(52, 59, 162) 100%
+    );
+    color: var(--main-text-color);
+}
+
+.ice {
+    background: linear-gradient(
+        to right,
+        rgb(132, 175, 228),
+        rgb(158, 193, 232) 35%,
+        rgb(197, 229, 250) 65%,
+        rgb(186, 194, 244) 100%
+    );
+    color: var(--inverted-text-color);
+}
+
+.wall {
+    background: linear-gradient(
+        to right,
+        rgb(55, 37, 38),
+        rgb(88, 65, 77) 35%,
+        rgb(99, 74, 80) 65%,
+        rgb(62, 48, 50) 100%
+    );
+    color: var(--main-text-color);
+}
+
+.door {
+    background: linear-gradient(
+        to right,
+        rgb(30, 30, 30),
+        rgb(59, 59, 59) 35%,
+        rgb(66, 66, 66) 65%,
+        rgb(30, 30, 30)
+    );
+    color: var(--main-text-color);
+}
+
+.active {
+    border: 0.1rem solid white;
+    background: linear-gradient(
+        to right,
+        rgb(114, 2, 2),
+        rgb(151, 1, 1) 35%,
+        rgb(185, 19, 19) 65%,
+        rgb(98, 1, 1) 100%
+    );
+    color: var(--main-text-color);
+    font-weight: bold;
+    box-shadow: 0px 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    transition: all 0.1s ease-in-out;
+}

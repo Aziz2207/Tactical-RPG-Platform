@@ -1,0 +1,37 @@
+<div #entireMap id="map-grid" [style.grid-template-columns]="'repeat(' + gridSize + ', 1fr)'" (mouseleave)="onMouseUp()">
+    @for (row of tilesGrid; let rowIndex = $index; track $index) { @for (col of row; let colIndex = $index; track $index) {
+    <div
+        class="tile"
+        [id]="'tile-' + rowIndex + '-' + colIndex"
+        (mousedown)="onMouseDown($event, rowIndex, colIndex)"
+        (mouseup)="onMouseUp()"
+        (mousemove)="onMouseMove(rowIndex, colIndex)"
+        (contextmenu)="removeOnRightClick($event, rowIndex, colIndex)"
+        (drop)="onDrop($event, rowIndex, colIndex)"
+        (dragover)="onDragOver($event)"
+        (click)="handleTileClick(rowIndex, colIndex)"
+        (contextmenu)="handleRightClick($event, rowIndex, colIndex)"
+    >
+        <img class="tile-image" [src]="getTileImage(col)" (mouseover)="findPath(rowIndex, colIndex)" draggable="false" />
+        @if(objectsArray[rowIndex][colIndex] > ObjectType.Spawn && objectsArray[rowIndex][colIndex] !== ObjectType.Flag) {
+        <img class="player-on-spawn-points" [src]="getObjectImage(objectsArray[rowIndex][colIndex])" draggable="false" />
+        } @else if(objectsArray[rowIndex][colIndex] <= ObjectType.Spawn  || objectsArray[rowIndex][colIndex] === ObjectType.Flag) {
+        <img
+            class="overlay-object"
+            [src]="getObjectImage(objectsArray[rowIndex][colIndex])"
+            draggable="true"
+            (dragstart)="onDragStart(rowIndex, colIndex)"
+        />
+        } @if(isActivePlayer && hasStarted && !isActionSelected()) { @if (navigationService.isReachableTile({ row: rowIndex, col: colIndex })) {
+        <div class="reachable-tile" (mouseover)="findPath(rowIndex, colIndex)"></div>
+        } @if (isOnFastestPath(rowIndex, colIndex)) {
+        <div class="fastest-path-tile" (click)="handleTileClick(rowIndex, colIndex)"></div>
+        } } @if(isTarget(rowIndex, colIndex)){
+        <div class="targets"></div>
+        }
+    </div>
+    } }
+</div>
+@if(tileInfoVisible){
+<app-tile-player-info></app-tile-player-info>
+}

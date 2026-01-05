@@ -1,0 +1,218 @@
+.player {
+    height: 110%;
+    max-height: 60vh;
+    color: black;
+    background: linear-gradient(
+        to bottom,
+        rgb(165, 165, 165),
+        rgba(242, 242, 242, 0.9) 33%,
+        rgba(226, 226, 226, 0.6) 67%,
+        rgb(117, 108, 66, 0)
+    );
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 1%;
+    border-top: 0.1rem solid rgb(141, 133, 75);
+}
+
+.player::before {
+    content: "";
+    position: absolute;
+    top: -3%;
+    left: 0;
+    width: 100%;
+    height: 1%;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgb(0, 0, 0) 10%,
+        rgba(22, 22, 22, 0.8) 90%,
+        rgba(0, 0, 0, 0)
+    );
+}
+
+.admin::before {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(255, 228, 94, 1) 10%,
+        rgba(255, 228, 94, 0.8) 90%,
+        rgba(0, 0, 0, 0)
+    );
+}
+
+.bot::before {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(255, 255, 255, 1) 10%,
+        rgba(255, 255, 255, 0.8) 90%,
+        rgba(0, 0, 0, 0)
+    );
+}
+
+.player-name {
+    background: linear-gradient(
+        to right,
+        rgb(12, 12, 12),
+        rgb(36, 36, 36) 20%,
+        rgb(48, 48, 48) 80%,
+        rgb(12, 12, 12)
+    );
+    width: 100%;
+    text-align: center;
+    padding: 2%;
+    color: white;
+    border-right: 0.15rem solid var(--inverted-text-color);
+    border-bottom: 0.15rem solid var(--inverted-text-color);
+    font-family: papyrus;
+    font-weight: 900;
+
+    font-size: 0.9rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.bot .player-name {
+    color: var(--inverted-text-color);
+    background: linear-gradient(
+        to right,
+        rgb(123, 123, 123),
+        rgb(204, 204, 204) 20%,
+        rgb(227, 227, 227) 80%,
+        rgb(132, 132, 132)
+    );
+}
+
+.admin .player-name {
+    color: var(--inverted-text-color);
+    background: linear-gradient(
+        to right,
+        rgba(135, 130, 82, 1),
+        rgb(255, 235, 137) 10%,
+        rgba(255, 234, 130, 0.8) 90%,
+        rgb(117, 108, 66)
+    );
+}
+
+.admin {
+    background: linear-gradient(
+        to bottom,
+        rgba(73, 14, 14, 1),
+        rgba(142, 19, 19, 1) 33%,
+        rgba(129, 26, 26, 0.25) 67%,
+        rgba(0, 0, 0, 0)
+    );
+    color: var(--main-text-color);
+}
+
+.attribute {
+    font-family: papyrus;
+    font-weight: 900;
+    font-size: 0.9rem;
+    margin-bottom: 5%;
+}
+
+img {
+    width: 90%;
+    border-radius: 2rem;
+    background-color: none;
+}
+
+.motif {
+    margin-top: 10%;
+    width: 100%;
+    height: 8%;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 10%;
+}
+
+.player > .motif {
+    background-image: url("../../../../assets/images/motifs/squared-motif-black.png");
+    background-size: cover;
+}
+
+.admin > .motif {
+    background-image: url("../../../../assets/images/motifs/squared-motif-gold.png");
+    background-size: cover;
+}
+
+.bot > .motif {
+    background-image: url("../../../../assets/images/motifs/squared-motif-white.png");
+    background-size: cover;
+}
+
+.kick {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0;
+}
+
+.admin .kick {
+    display: none;
+}
+
+.kick img {
+    background-size: cover;
+    border-radius: 50%;
+    transition: ease 0.1s;
+}
+
+.kick:hover {
+    transform: scale(1.2);
+}
+
+.status {
+    height: 1.6rem;
+    width: 1.6rem;
+    margin: 0;
+}
+
+.player-img {
+    margin-bottom: 10%;
+    border: 2px solid var(--inverted-text-color);
+}
+
+.player-img img {
+    border: 2px solid var(--inverted-text-color);
+}
+
+.bot {
+    background: linear-gradient(
+        to bottom,
+        rgb(15, 49, 71),
+        rgba(36, 115, 152, 0.9) 33%,
+        rgba(75, 152, 185, 0.6) 67%,
+        rgba(75, 85, 116, 0)
+    );
+    color: var(--main-text-color);
+}
+
+.bot-logo {
+    background-image: url("../../../../assets/images/icones/dark-bot.png");
+    height: 1.6rem;
+    width: 1.6rem;
+    margin: 0;
+    border-radius: 0;
+    margin-top: -0.4rem;
+}
+
+.behavior {
+    margin: 0;
+    text-align: center;
+}
+
+.aggressive {
+    border: 3px solid rgb(159, 0, 0);
+}
+
+.defensive {
+    border: 3px solid rgb(0, 17, 169);
+}

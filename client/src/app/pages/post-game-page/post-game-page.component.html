@@ -1,0 +1,71 @@
+<div class="post-game-lobby">
+    <app-header 
+        [title]="titre()"
+        [hasOnlyChat]="true"    
+    ></app-header>
+    <div class="middle-container">
+        @if(!isFriendsBarOpen) {
+            <div class="left-container">
+                @if(!isSpectator()) {
+                    <div class="balance-variation" 
+                        (mouseenter)="showBalanceBreakdown = true"
+                        (mouseleave)="showBalanceBreakdown = false">
+                        {{ 'POST_GAME_LOBBY.REWARD' | translate }}: {{ balanceUpdate }} $
+                    </div>
+                    
+                    @if(!showBalanceBreakdown) {
+                        <div class="global-stats">
+                            @for(globalStat of globalStats; track globalStat.id){
+                                <app-single-global-stat [globalStat]="globalStat"></app-single-global-stat>
+                            }
+                        </div>
+                    } @else {
+                        <div class="global-stats balance-breakdown">
+                            <div class="global-attribute">
+                                <span class="label">{{ 'POST_GAME_LOBBY.PRIZE.BASE' | translate }}:</span>
+                                <span class="value">{{ postGameService.isCurrentPlayerWinner() ? winnerPrize : loserPrize }}$</span>
+                            </div>
+                            <div class="global-attribute">
+                                <span class="label">{{ 'POST_GAME_LOBBY.PRIZE.POOL' | translate }}:</span>
+                                <span class="value">{{ calculatePoolShare(postGameService.isCurrentPlayerWinner()) }}$</span>
+                            </div>
+                            <div class="global-attribute">
+                                <span class="label">{{ 'POST_GAME_LOBBY.PRIZE.CHALLENGE' | translate }}:</span>
+                                <span class="value">{{ rewardChallenge() }}$</span>
+                            </div>
+                            <div class="global-attribute total-reward">
+                                <span class="label">{{ 'POST_GAME_LOBBY.PRIZE.TOTAL' | translate }}:</span>
+                                <span class="value">{{ balanceUpdate }}$</span>
+                            </div>
+                        </div>
+                    }
+                } @else {
+                    <div class="global-stats">
+                        @for(globalStat of globalStats; track globalStat.id){
+                            <app-single-global-stat [globalStat]="globalStat"></app-single-global-stat>
+                        }
+                    </div>
+                }
+                <div class="chat">
+                    <app-chat-box [isToggleable]="false" [isSpectator]="isSpectator()"></app-chat-box>
+                </div>
+            </div>
+        }
+        <div class="right-container">
+            <div class="attributes">
+                @for(attribute of getPostGameStatTypes(); track attribute.id){
+                <app-post-game-attribute
+                    [attribute]="getPostGameStatTypes()[$index].key"
+                    [displayText]="getPostGameStatTypes()[$index].displayText"
+                ></app-post-game-attribute>
+                }
+            </div>
+            @for(player of getPlayers(); track player.uid){
+            <app-player-statistics [player]="player" [selectedAttribute]="getSelectedAttribute()"></app-player-statistics>
+            }
+        </div>
+    </div>
+    <div class="bottom-container">
+        <button class="quit" (click)="quitPostGameLobby()">{{ 'FOOTER.QUIT' | translate }}</button>
+    </div>
+</div>

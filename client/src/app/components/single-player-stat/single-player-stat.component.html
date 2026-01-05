@@ -1,0 +1,19 @@
+@if(postGameService.isAttributeVictories(getAttribute())){
+    <div class="stat record"> 
+        <p class="txt attr-value" [ngClass]="{'highlight': selectedAttribute === 'victories'}"> {{player.postGameStats.victories}} </p>
+        <p class="txt">/</p>
+        <p class="txt attr-value" [ngClass]="{'highlight': selectedAttribute === 'draws'}"> {{player.postGameStats.draws}} </p>
+        <p class="txt" >/</p>
+        <p class="txt attr-value" [ngClass]="{'highlight': selectedAttribute === 'defeats'}"> {{player.postGameStats.defeats}} </p>
+    </div>
+}
+@else{
+    <p class="stat attr-value" [ngClass]="{'highlight': selectedAttribute === attribute}"> {{ formatStatValue() }} </p>
+}
+@if (hasBar()){
+    <div class="bar-container">
+        <div class="full-bar"></div>
+        <div class="bar" [ngClass]="{'highlight': selectedAttribute === attribute}" [style.width.%]="getBarWidth(getStatValue(), getAttrKey(), isPercent())"></div>
+    </div>
+}
+

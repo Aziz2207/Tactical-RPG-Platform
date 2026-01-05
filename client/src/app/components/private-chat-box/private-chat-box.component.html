@@ -1,0 +1,40 @@
+<div class="chat-box">
+    <div class="past-messages" #messageContainer (scroll)="onScroll()">
+        @for (message of messages; track message.id;) {
+            <app-chat-message
+                [timestamp]="message.timestamp"
+                [username]="message.username"
+                [avatarUrl]="message.avatarURL"
+                [message]="message.message">
+            </app-chat-message>
+        }
+    </div>
+    <div class="typing-indicator" *ngIf="currentTypingUser">
+        {{ currentTypingUser }}
+    </div>
+
+    <div class="input-container chat-active">
+        
+
+        <label for="chatInput"></label>
+        <input
+            type="text"
+            id="chat-input"
+            [(ngModel)]="newMessage"
+            (keyup.enter)="sendPrivateMessage()"
+            (input)="onInputChange()"
+            name="chatInput"
+            [placeholder]="'CHAT.PLACEHOLDER' | translate"
+            maxlength="200"
+            (focus)="onFocus()"
+            (blur)="onBlur()"
+        />
+
+        <img
+            src="./assets/images/icones/send-horizontal.png"
+            class="send-icon"
+            alt="send"
+            (click)="sendPrivateMessage()"
+        />
+    </div>
+</div>

@@ -1,0 +1,165 @@
+<div class="page-element" #pageElement>
+    @if (shouldDisplayCombatModal()){
+        <app-combat-modal [isInCombat]="isCombatStarted()"></app-combat-modal>
+    }
+    <div class="header">
+        <app-header
+            title=""
+            [hasOnlyChat]="true"
+            [isHeaderHidden]="true"
+        />
+    </div>
+    @if (isSpectator()) {
+        <div class="spectator-indicator">
+            <span class="flashing-text">{{ 'GAME.SPECTATOR_MODE' | translate }}</span>
+        </div>
+    }
+    <div class="left-container">
+        @if (!isSpectator()) {
+            <div class="player-bar">
+                <app-player-info-inventory
+                    class="player-bar"
+                    [playerId]="getUserId()"
+                    [activePlayer]="activePlayer">
+                </app-player-info-inventory>
+            </div>
+        }
+
+        @if(!isChannelsBarOpen){
+            <div class="chat">
+                <app-chat-box [isToggleable]="false" [isSpectator]="isSpectator()"></app-chat-box>
+            </div>
+        } @else {
+            <div class="timer-container">
+                @if (combatInProgress){
+                    <div class="combat">
+                        <span class="flashing-text">{{ 'GAME.IN_COMBAT' | translate }}</span>
+                    </div>
+                }
+                <app-timer
+                    [totalTime]="turnTotalTime"
+                    [timeRemaining]="timeRemainingStartTurn"
+                    #turnTimer>
+                </app-timer>
+            </div>
+        }
+
+        <div class="quit" (click)="handleExit()">
+            @if (isSpectator()) {
+                <p>{{ 'GAME.STOP_SPECTATING' | translate }}</p>
+            } @else {
+                <p>{{ 'GAME.QUIT_GAME' | translate }}</p>
+            }
+        </div>
+    </div>
+
+    <div class="middle-container">
+        <div class="game-info">
+            <p id="grid-size">{{ mapDimensions }}</p>
+            <p id="map-name">{{ mapName }}</p>
+            <p id="player-count">
+                {{ getPlayerCount() }} {{ 'GAME.PLAYERS' | translate }}
+            </p>
+             @if (isQuickEliminationEnabled()){
+                <p id="debug-mode">{{ 'GAME_CREATION.QUICK_ELIMINATION' | translate }}</p>
+            }
+             @if (isDropInEnabled()){
+                <p id="debug-mode">DropIn/DropOut</p>
+            }
+        </div>
+
+        @if (isTurnStartShowed && !combatInProgress) {
+            <div class="turn-start" [class.channels-open]="isChannelsBarOpen">
+                <p>{{ 'GAME.TURN_START_WARNING' | translate }}</p>
+                <app-timer
+                    [totalTime]="beforeTurnTotalTime"
+                    [timeRemaining]="timeRemainingBeforeStartTurn"
+                    (startTimer)="onBeforeStartTurn()"
+                    (closeTimer)="closeTurnStartPopUp()">
+                </app-timer>
+            </div>
+        }
+
+        @if (activePlayerName && !isTurnStartShowed && !combatInProgress){
+            <div class="turn-start" [class.channels-open]="isChannelsBarOpen">
+                <p>{{ 'GAME.TURN_OF' | translate }}</p>
+                <p class="player-name-modal">{{ activePlayerName }}</p>
+                <p>{{ 'GAME.TURN_WILL_START' | translate }}</p>
+            </div>
+        }
+
+        <div id="game-grid-background-gradient">
+            <div class="grid-element" id="game-grid-container" #gameGrid>
+                <app-game-grid [hasStarted]="!isTurnStartShowed"></app-game-grid>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-container">
+        <div class="timer-container">
+            @if (combatInProgress){
+                <div class="combat">
+                    <span class="flashing-text">{{ 'GAME.IN_COMBAT' | translate }}</span>
+                </div>
+            }
+            <app-timer
+                [totalTime]="turnTotalTime"
+                [timeRemaining]="timeRemainingStartTurn"
+                #turnTimer>
+            </app-timer>
+        </div>
+        @if (!isSpectator()) {
+            <div class="challenge-card">
+                @if (getCurrentPlayer(); as currentPlayer) {
+                    <app-challenge-card
+                        [challenge]="currentPlayer.assignedChallenge"
+                        [currentValue]="getChallengeValue(currentPlayer)"
+                    ></app-challenge-card>
+                }
+            </div>
+        }
+        
+        @if (allPlayers.length > 0) {
+            <div class="players">
+                @for (player of allPlayers; track player.uid;){
+                    <app-ingame-players-sidebar [sidebarPlayer]="player"></app-ingame-players-sidebar>
+                }
+            </div>
+        }
+
+        @if (!isSpectator()) {
+            <div class="action-container">
+                <div class="center-button">
+                    <p class="action-text">{{ 'GAME.ACTIONS.DOOR' | translate }}</p>
+                    <div
+                        class="button-outer action-outer"
+                        [class.selected]="isActionDoorSelected()"
+                        [class.disabled]="!isActivePlayer || isTurnStartShowed || !doorAround || !hasActionPoints()"
+                        (click)="toggleActionDoorSelected()">
+                        <div class="action-button door-button"></div>
+                    </div>
+                </div>
+
+                <div class="center-button">
+                    <p class="action-text">{{ 'GAME.ACTIONS.ATTACK' | translate }}</p>
+                    <div
+                        class="button-outer action-outer"
+                        [class.selected]="isActionCombatSelected()"
+                        [class.disabled]="!isActivePlayer || isTurnStartShowed || !attackAround || !hasActionPoints()"
+                        (click)="toggleActionCombatSelected()">
+                        <div class="action-button attack-button"></div>
+                    </div>
+                </div>
+
+                <div class="center-button">
+                    <p class="action-text">{{ 'GAME.ACTIONS.END_TURN' | translate }}</p>
+                    <div
+                        class="button-outer end-outer"
+                        [class.disabled]="!isActivePlayer || isTurnStartShowed || isCombatStarted()">
+                        <div class="end-turn-button-inner" (click)="onEndTurn()"></div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

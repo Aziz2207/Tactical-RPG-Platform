@@ -1,0 +1,492 @@
+{
+    "PAGE_HEADER": {
+        "CREATE_GAME": "Spiel erstellen",
+        "MANAGE_GAME": "Spiele verwalten",
+        "JOIN_GAME": "Spiel beitreten"
+    },
+    "FOOTER": {
+        "TEAM": "Team 104",
+        "CREATE": "Erstellen",
+        "CREATE_NEW_MAP": "Karte erstellen",
+        "CREATE_NEW_GAME": "Spiel erstellen",
+        "RETURN": "Zurück",
+        "CONFIRM": "Bestätigen",
+        "CANCEL": "Abbrechen",
+        "QUIT": "Beenden",
+        "RESET": "Zurücksetzen",
+        "SAVE": "Speichern"
+    },
+    "DIALOG": {
+        "CLOSE": "Schließen",
+        "CONFIRM": "Bestätigen",
+        "CANCEL": "Abbrechen",
+        "QUIT": "Beenden",
+        "STAY": "Bleiben",
+        "TITLE": {
+            "START_GAME": "Spiel starten",
+            "GAME_CANCELED": "Spiel abgebrochen",
+            "QUIT_GAME": "Spiel aufgeben",
+            "KICKED_OUT": "Sie wurden aus dem Spiel entfernt",
+            "DRAW_GAME": "Unentschieden",
+            "END_TURN": "Ende Ihres Zuges",
+            "END_GAME": "Spielende",
+            "END_FIGHT": "Ende des Kampfes",
+            "DEFAULT_FIGHT_WIN": "Spielaufgabe",
+            "SUCCESS_EVASION": "Erfolgreiche Flucht",
+            "MAX_PLAYERS": "Maximale Spieleranzahl erreicht",
+            "ADD_BOT_WHEN_LOCKED": "Spiel gesperrt",
+            "ITEM_EXCHANGE": "Gegenstand tauschen",
+            "QUIT_POST_GAME_LOBBY": "Zur Startseite zurückkehren",
+            "QUIT_PAGE": "Diese Seite verlassen?"
+        },
+        "MESSAGE": {
+            "NOT_ENOUGH_PLAYERS": "Es werden mindestens {{min}} Spieler benötigt, um das Spiel zu starten",
+            "CONFIRM_START_GAME": "Sind Sie sicher, dass Sie das Spiel starten möchten?",
+            "ROOM_LOCKED": "Sie müssen den Raum sperren, um das Spiel zu starten",
+            "QUIT_GAME": "Möchten Sie das Spiel verlassen?",
+            "KICKED_OUT": "Der Administrator hat entschieden, Sie aus dem Spiel zu entfernen. Sie werden zur Startseite weitergeleitet.",
+            "DRAW_GAME": "Alle Spieler haben aufgegeben. Sie werden zur Startseite weitergeleitet.",
+            "FELL": "Sie sind auf dem Eis ausgerutscht. Ihr Zug ist beendet.",
+            "END_FIGHT": "Der Kampf ist beendet. Der Gewinner des Kampfes ist {{winner}}",
+            "DEFAULT_FIGHT_WIN": "Der Gegner hat das Spiel aufgegeben. Sie gewinnen den Kampf standardmäßig.",
+            "MAX_PLAYERS": "Sie können keine weiteren virtuellen Spieler hinzufügen",
+            "ADD_BOT_WHEN_LOCKED": "Entsperren Sie den Warteraum, bevor Sie einen virtuellen Spieler hinzufügen",
+            "QUIT_POST_GAME_LOBBY": "Sie werden die Spielende-Seite verlassen",
+            "QUIT_MESSAGE_LOST_CHANGES": "Alle nicht gespeicherten Änderungen gehen verloren. Sind Sie sicher, dass Sie beenden möchten?",
+            "WINNER_ANNOUNCED": "Der Gewinner des Spiels ist {{winner}}",
+            "CANCELED_MATCH": "Das Spiel wurde abgebrochen. Sie werden zum Hauptmenü weitergeleitet."
+        }
+    },
+    "GAME_CREATION": {
+        "AVAILABILITY": "Verfügbarkeit",
+        "EVERYONE": "Jeder",
+        "FRIENDS_ONLY": "Nur Freunde",
+        "ENTRY_FEE": "Eintrittspreis",
+        "SELECT_BEFORE_CREATING_GAME": "Bitte wählen Sie ein Spiel aus, bevor Sie das Match erstellen",
+        "HIDDEN_GAME": "Das ausgewählte Spiel existiert nicht oder wurde ausgeblendet"
+    },
+    "ATTRIBUTES": {
+        "HEALTH": "Leben",
+        "SPEED": "Geschwindigkeit",
+        "ATTACK": "Angriff",
+        "DEFENSE": "Verteidigung",
+        "TOOLTIP": {
+            "HEALTH": "Die Lebenspunkte des Charakters entsprechen diesem Attribut. Erhöhen Sie den Wert des Attributs Leben oder Geschwindigkeit um +2.",
+            "SPEED": "Geschwindigkeitspunkte dienen zur Bestimmung der Zugreihenfolge und entsprechen auch den Bewegungspunkten pro Runde eines Charakters. Erhöhen Sie den Wert des Attributs Leben oder Geschwindigkeit um +2.",
+            "ATTACK": "Angriffspunkte repräsentieren die Kraft, mit der ein Angriff auf den Gegner ausgeführt wird. Wählen Sie eines der Attribute Angriff oder Verteidigung, um einen Bonus basierend auf einem 6-seitigen oder 4-seitigen Würfel zu erhalten.",
+            "DEFENSE": "Verteidigungspunkte repräsentieren die Fähigkeit, den Angriff eines Gegners zu blocken. Wählen Sie eines der Attribute Angriff oder Verteidigung, um einen Bonus basierend auf einem 6-seitigen oder 4-seitigen Würfel zu erhalten."
+        }
+    },
+    "MANAGE_GAME": {
+        "CHOSE_GAME_MODE": "Spielmodus wählen:",
+        "CHOSE_GAME_SIZE": "Spielgröße wählen:",
+        "SMALL_PLAYER_RANGE": "(2 Spieler)",
+        "MEDIUM_PLAYER_RANGE": "(2 bis 4 Spieler)",
+        "LARGE_PLAYER_RANGE": "(2 bis 6 Spieler)",
+        "MAP_NAME": "Kartenname",
+        "MAP_NAME_PLACEHOLDER": "Geben Sie den Namen Ihrer Karte ein",
+        "MAP_DESCRIPTION": "Kartenbeschreibung",
+        "MAP_DESCRIPTION_PLACEHOLDER": "Geben Sie die Beschreibung Ihrer Karte ein",
+        "OBJECTS": "Gegenstände",
+        "MAP_SIZE_AND_MODE_PROMPT": "Bitte wählen Sie die Größe und den Spielmodus",
+        "GAME_ALREADY_DELETED": "Spiel wurde bereits von einem anderen Benutzer gelöscht"
+    },
+    "MAP_VALIDATOR": {
+        "INVALID_MAP": "Ungültige Karte",
+        "SAVE_SUCCESS": "Erfolgreich gespeichert",
+        "REDIRECT_MESSAGE": "Sie werden zur Verwaltungsseite weitergeleitet",
+        "ERROR_DUPLICATE_NAME": "Eine Karte mit demselben Namen existiert bereits.",
+        "ERROR_TOO_MANY_OBJECTS": "Es gibt zu viele Objekte auf dieser Karte. {{current}} Objekte statt {{max}}.",
+        "ERROR_TOO_FEW_OBJECTS": "Es gibt nicht genug Objekte auf der Karte. Das Minimum ist {{min}} und es gibt derzeit {{current}}.",
+        "ERROR_INVALID_DOOR": "Mindestens eine Tür ist nicht gültig.",
+        "ERROR_INVALID_DOOR_DETAILS": "Jede muss sich zwischen zwei Wänden auf einer Achse und zwischen zwei Geländekacheln auf der anderen befinden.",
+        "ERROR_INSUFFICIENT_TERRAIN": "Mindestens die Hälfte der Kacheln muss mit Geländekacheln (Gras, Wasser, Eis) bedeckt sein.",
+        "ERROR_INACCESSIBLE_TILES": "Nicht alle Geländekacheln sind zugänglich.",
+        "ERROR_MISSING_FLAG": "Die Flagge muss im CTF-Modus auf der Karte platziert werden.",
+        "ERROR_MISSING_SPAWN_POINTS": "Alle Startpunkte müssen auf der Karte platziert werden.",
+        "ERROR_INVALID_TITLE": "Der Kartentitel muss eine Länge zwischen 3 und 30 Zeichen haben und darf nicht nur aus Leerzeichen bestehen.",
+        "ERROR_INVALID_DESCRIPTION": "Die Kartenbeschreibung muss eine Länge zwischen 10 und 128 Zeichen haben und darf nicht nur aus Leerzeichen bestehen."
+    },
+    "WAITING_PAGE": {
+        "START_GAME": "Spiel starten",
+        "LOCK": "Spiel sperren",
+        "MAX_PLAYERS_CANT_UNLOCK": "Der Warteraum hat die maximale Spieleranzahl erreicht. Sie können das Spiel nicht entsperren.",
+        "ADD_BOT": "Virtuellen Spieler hinzufügen",
+        "SCAN_TO_JOIN": "Scannen um beizutreten",
+        "BOT_PROFILE_POPUP_TITLE": "Wählen Sie das Profil des virtuellen Spielers",
+        "BOT_PROFILES": {
+            "DEFENSIVE": {
+                "TITLE": "Defensiv",
+                "DESCRIPTION_1": "Neigt dazu, aus einem Kampf zu fliehen, wenn er verletzt ist",
+                "DESCRIPTION_2": "Beteiligt sich weniger an Kämpfen und bevorzugt Gegenstände, die einen Vorteil in Verteidigung und maximaler LP geben"
+            },
+            "AGGRESSIVE": {
+                "TITLE": "Aggressiv",
+                "DESCRIPTION_1": "Neigt dazu, den Kampf zu suchen und wird niemals versuchen zu fliehen",
+                "DESCRIPTION_2": "Bevorzugt Konfrontationen sowie Gegenstände, die einen Vorteil in Angriff und Geschwindigkeit geben"
+            }
+        }
+    },
+    "JOIN_PAGE": {
+        "ENTER_CODE": "Spielcode eingeben",
+        "JOIN": "Beitreten",
+        "SPECTATE": "Zusehen",
+        "ERRORS": {
+            "INVALID_FORMAT": "Der Code muss aus 4 Ziffern bestehen",
+            "ROOM_NOT_FOUND": "Das Spiel existiert nicht",
+            "ROOM_LOCKED": "Das Spiel ist gesperrt",
+            "FRIENDS_ONLY_ACCESS": "Dieses Spiel ist auf Freunde des Gastgebers beschränkt",
+            "INSUFFICIENT_FUNDS": "Unzureichende Mittel, um diesem Spiel beizutreten"
+        }
+    },
+    "CHAT": {
+        "TITLE": "Nachrichten",
+        "UNFILTERED_JOURNAL": "Ungefiltertes Spielprotokoll",
+        "FILTERED_JOURNAL": "Gefiltertes Spielprotokoll"
+    },
+    "GAME": {
+        "QUIT_GAME": "Spiel aufgeben",
+        "STOP_SPECTATING": "Beobachtung beenden",
+        "SPECTATOR_MODE": "Zuschauermodus",
+        "PLAYERS": "Spieler",
+        "TURN_START_WARNING": "Ihr Zug beginnt in",
+        "TURN_OF": "Der Zug von",
+        "TURN_WILL_START": "wird beginnen",
+        "IN_COMBAT": "Im Kampf",
+        "DEBUG_MODE": "Debug-Modus",
+        "GRID_SIZE": "Rastergröße",
+        "MODE": {
+            "CLASSIC": "Klassisch",
+            "CTF": "CTF"
+        },
+        "MAP_NAME": "Kartenname",
+        "PLAYER_COUNT": "Spieleranzahl",
+        "ACTIONS": {
+            "DOOR": "Tür",
+            "ATTACK": "Angreifen",
+            "END_TURN": "Zug beenden"
+        },
+        "CHAT": "Nachrichten",
+        "INVENTORY": "Inventar",
+        "TIMER": "Timer",
+        "MOVEMENTS": "Bewegungen",
+        "ACTION_POINTS": "Aktion",
+        "SPD": "Ges",
+        "ATK": "Ang",
+        "DEF": "Ver",
+        "COMBAT": {
+            "EVADE_POINTS_REMAINING": "Verbleibende Fluchtpunkte:",
+            "ATTACK": "Angreifen",
+            "EVADE": "Fliehen",
+            "YOUR_TURN_START": "Sie sind am Zug",
+            "OPPONENT_TURN_START": "Ihr Gegner ist am Zug"
+        },
+        "VICTORIES": "Sieg(e)",
+        "DISCONNECTED": "Getrennt",
+        "LOGS": {
+            "DEBUG_START": "Debug-Modus gestartet.",
+            "DEBUG_END": "Debug-Modus beendet.",
+            "START_TURN": "Beginn des Zuges von Spieler {{playerName}}.",
+            "GIVE_UP": "{{playerName}} hat das Spiel aufgegeben.",
+            "OPEN_DOOR": "{{playerName}} hat eine Tür geöffnet.",
+            "CLOSE_DOOR": "{{playerName}} hat eine Tür geschlossen.",
+            "WIN_COMBAT": "{{playerName}} hat den Kampf gewonnen. Der Kampf ist beendet!",
+            "EVADE_COMBAT_FAIL": "{{playerName}} ist die Flucht nicht gelungen.",
+            "EVADE_COMBAT_SUCCESS": "{{playerName}} ist erfolgreich geflohen.",
+            "NO_WINNER_COMBAT": "Kampf ohne Sieger zwischen {{playerName}} und {{defenderName}} beendet.",
+            "START_COMBAT": "{{playerName}} und {{defenderName}} sind in den Kampf eingetreten.",
+            "ATTACK_FAIL": "{{playerName}} hat seinen Angriff verfehlt.",
+            "ATTACK_SUCCESS": "{{playerName}} hat seinen Angriff erfolgreich ausgeführt.",
+            "END_GAME": "Spielende: {{playerNames}}",
+            "ITEM_PICKED_UP": "{{playerName}} hat {{itemKey}} aufgehoben",
+            "COMBAT_RESULT": "Angriffsergebnis: {{attack}} + {{attackDice}} (Würfel) = {{attackTotal}}\nVerteidigungsergebnis: {{defense}} + {{defenseDice}} (Würfel) = {{defenseTotal}}",
+            "UNKNOWN": "Unbekannte Protokollnachricht."
+        }
+    },
+    "CHANNELS": {
+        "TITLE": "Kanäle",
+        "PLACEHOLDER": "Globale Nachrichten",
+        "SEARCH": "Kanal suchen",
+        "SEARCH_2": "Kanalsuche",
+        "NAME_PLACEHOLDER": "Kanalname"
+    },
+    "FRIENDS": {
+        "TITLE": "Freunde",
+        "FRIEND_REQUEST": "Freundschaftsanfragen",
+        "SEARCH": "Benutzer suchen",
+        "SEARCH_2": "Benutzersuche",
+        "NO_FRIENDS": "Sie haben keine Freunde",
+        "NO_FRIEND_REQUESTS": "Sie haben keine Freundschaftsanfragen",
+        "REMOVE_FRIEND_TITLE": "Freund entfernen",
+        "REMOVE_FRIEND_MESSAGE": "Möchten Sie {{username}} aus Ihrer Freundesliste entfernen?",
+        "REMOVE_FRIEND_CANCEL": "Abbrechen",
+        "REMOVE_FRIEND_CONFIRM": "Freund entfernen",
+        "BLOCK_USER_TITLE": "Benutzer blockieren",
+        "BLOCK_USER_MESSAGE_FRIEND": "{{username}} blockieren? Diese Aktion entfernt ihn auch aus Ihren Freunden.",
+        "BLOCK_USER_MESSAGE_OTHER": "{{username}} blockieren?",
+        "BLOCK_USER_CANCEL": "Abbrechen",
+        "BLOCK_USER_CONFIRM": "Benutzer blockieren",
+        "USER_BLOCKED_TITLE": "Benutzer blockiert",
+        "USER_BLOCKED_MESSAGE": "{{username}} wurde blockiert",
+        "FRIEND_REQUEST_SENT_TITLE": "Anfrage gesendet",
+        "FRIEND_REQUEST_SENT_MESSAGE": "Sie haben eine Freundschaftsanfrage an {{username}} gesendet",
+        "FRIEND_REQUEST_ACCEPTED_TITLE": "Freundschaftsanfrage akzeptiert",
+        "FRIEND_REQUEST_ACCEPTED_MESSAGE": "{{username}} ist jetzt Ihr Freund",
+        "FRIEND_REQUEST_REJECTED_TITLE": "Freundschaftsanfrage abgelehnt",
+        "FRIEND_REQUEST_REJECTED_MESSAGE": "Sie haben die Freundschaftsanfrage von {{username}} abgelehnt",
+        "NOTIF_REQUEST_RECEIVED": "{{username}} hat Ihnen eine Freundschaftsanfrage gesendet",
+        "NOTIF_REQUEST_ACCEPTED": "{{username}} hat Ihre Freundschaftsanfrage akzeptiert",
+        "NOTIF_REMOVED": "{{username}} hat Sie aus seinen Freunden entfernt",
+        "CLOSE": "Schließen"
+    },
+    "USER": {
+        "LOG_OUT": "Abmelden",
+        "LOG_OUT_MESSAGE": "Möchten Sie sich wirklich abmelden?",
+        "LOG_OUT_CANCEL": "Abbrechen",
+        "LOG_OUT_CONFIRM": "Abmelden",
+        "DELETE": "Konto löschen",
+        "DELETE_MESSAGE": "Möchten Sie dieses Konto wirklich löschen? Diese Aktion ist unwiderruflich."
+    },
+    "SHOP_PAGE": {
+        "TITLE": "Shop",
+        "AVATARS": "Avatar-Symbole",
+        "BACKGROUNDS": "Hintergründe",
+        "THEMES": "Visuelle Themen",
+        "OWNED": "Im Besitz",
+        "INSUFFICIENT_BALANCE": "Unzureichendes Guthaben",
+        "BUY": "Kaufen",
+        "NO_BACKGROUNDS": "Keine Hintergründe verfügbar"
+    },
+    "SETTINGS_PAGE": {
+        "TITLE": "Einstellungen",
+        "TABS": {
+            "VISUAL": "Visuelle Elemente und Sprachen",
+            "ACCOUNT": "Kontoeinstellungen"
+        },
+        "SECTIONS": {
+            "BACKGROUND": {
+                "TITLE": "Hintergründe",
+                "SUBTITLE": "Wählen Sie einen Hintergrund aus Ihren vorhandenen Hintergründen",
+                "NO_BACKGROUNDS": "Sie besitzen keine Hintergründe.",
+                "VISIT_STORE": "Besuchen Sie den Shop, um einen zu kaufen!"
+            },
+            "THEME": {
+                "TITLE": "Theme"
+            },
+            "LANGUAGE": {
+                "TITLE": "Sprache"
+            },
+            "PROFILE_PICTURE": {
+                "TITLE": "Profilbild",
+                "UPLOAD": "Bild hochladen"
+            },
+            "ACCOUNT_INFO": {
+                "USERNAME": "Benutzername",
+                "USERNAME_PLACEHOLDER": "Ihr Benutzername",
+                "EMAIL": "E-Mail-Adresse",
+                "EMAIL_PLACEHOLDER": "ihre.email@beispiel.com"
+            },
+            "STATS": {
+                "TITLE": "Statistiken",
+                "GAMES_CLASSIC": "Gespielte Spiele (Klassisch)",
+                "GAMES_CTF": "Gespielte Spiele (CTF)",
+                "GAMES_WON": "Gewonnene Spiele",
+                "AVG_GAME_TIME": "Durchschnittliche Spielzeit"
+            },
+            "DANGER_ZONE": {
+                "TITLE": "Gefahrenzone",
+                "DELETE_ACCOUNT": "Konto löschen"
+            }
+        },
+        "EDIT_BUTTON": "Profil bearbeiten",
+        "SAVE_BUTTON": "Speichern",
+        "DISCARD_BUTTON": "Abbrechen",
+        "FOOTER_RETURN": "Zurück"
+    },
+    "POST_GAME_LOBBY": {
+        "TITLE": "Spielende",
+        "CTF": "CTF",
+        "CLASSIC": "Klassisch",
+        "REWARD": "Belohnung",
+        "STATS": {
+            "COMBATS": "Kämpfe",
+            "VICTORIES": "S/F/N",
+            "DMG_DEALT": "Verursachter Schaden",
+            "DMG_TAKEN": "Erlittener Schaden",
+            "OBJECTS_TAKEN": "Aufgesammelte Gegenstände",
+            "PCT_TILES_VISITED": "% Besuchte Kacheln",
+            "GAME_LENGTH": "Spieldauer",
+            "TURNS": "Anzahl der Züge",
+            "GLOBAL_TILES_VISITED": "% Gesamt besuchte Kacheln",
+            "PCT_DOORS_INTEREACTED": "% Interagierte Türen",
+            "NB_FLAG_BEARERS": "Flaggenträger"
+        }
+    },
+    "THEME": {
+        "GOLD": "Gold (Standard)",
+        "BLUE": "Himmelblau",
+        "EMERALD": "Smaragd",
+        "RUBY": "Rubin",
+        "AMETHYST": "Amethyst",
+        "OBSIDIAN": "Obsidian",
+        "COPPER": "Kupfer",
+        "CYBERPUNK": "Cyberpunk",
+        "ARCTIC": "Arktisch",
+        "AQUA": "Aqua",
+        "MCDONALDS": "McDonalds",
+        "MAGENTA": "Magenta",
+        "MY_EYES_BLEED": "Meine Augen bluten",
+        "SAPPHIRE": "Saphir",
+        "SAPPHIRE_CRIMSON": "Saphir Karmesin",
+        "VERDANT_AMETHYST": "Grüner Amethyst",
+        "DARK_FLAT": "Dunkel Flach",
+        "GOLD_FLAT": "Gold Flach",
+        "NAVY_FLAT": "Marine Flach",
+        "GREEN_FLAT": "Grün Flach",
+        "RED_FLAT": "Rot Flach",
+        "TOTAL_DARK": "Totale Dunkelheit",
+        "SILVER": "Grau",
+        "CRIMSON": "Karmesin",
+        "PINK": "Rosa",
+        "GREEN_BLUE": "Neptun",
+        "BLACK_ORANGE": "Halloween"
+    },
+    "BACKGROUND": {
+        "DEFAULT_ATHENA": "Standard Athena Hintergrund",
+        "SPARTAN_WARRIOR": "Spartanischer Krieger Hintergrund",
+        "DIONYSUS": "Dionysos Hintergrund",
+        "HADES": "Hades Hintergrund",
+        "PERSEPHONE": "Persephone Hintergrund",
+        "APOLLO": "Apollo Hintergrund",
+        "ATHENA": "Athena Hintergrund",
+        "HEPHAESTUS": "Hephaistos Hintergrund",
+        "HERMES": "Hermes Hintergrund",
+        "DEMETER": "Demeter Hintergrund",
+        "ARTEMIS": "Artemis Hintergrund",
+        "POSEIDON": "Poseidon Hintergrund",
+        "HERA": "Hera Hintergrund",
+        "ZEUS": "Zeus Hintergrund",
+        "HESTIA": "Hestia Hintergrund",
+        "ARES": "Ares Hintergrund"
+    },
+    "AVATAR": {
+        "DIONYSUS": "Dionysos Avatar",
+        "HADES": "Hades Avatar",
+        "PERSEPHONE": "Persephone Avatar"
+    },
+    "ITEMS": {
+        "TRIDENT": {
+            "NAME": "Dreizack des Poseidon",
+            "DESCRIPTION": "Wenn Ihnen am Ende Ihres Zuges ein Aktionspunkt übrig bleibt, erhalten Sie einen in Ihrem nächsten Zug, bis zu maximal 2."
+        },
+        "ARMOR": {
+            "NAME": "Rüstung des Achilles",
+            "DESCRIPTION": "+2 Angriff, wenn Ihr Angriff geblockt wird, erleiden Sie 1 Schaden."
+        },
+        "SANDAL": {
+            "NAME": "Geflügelte Sandalen",
+            "DESCRIPTION": "x2 Geschwindigkeit und reduziert die maximalen Lebenspunkte um 1."
+        },
+        "LIGHTNING": {
+            "NAME": "Blitz des Zeus",
+            "DESCRIPTION": "x2 Angriff und reduziert die Verteidigung um 2 und das Leben um 1."
+        },
+        "XIPHOS": {
+            "NAME": "Xiphos",
+            "DESCRIPTION": "Wenn Sie weniger als 50% Lebenspunkte haben, verliert Ihr Gegner 1 Verteidigung und Sie erhalten 2 Angriff."
+        },
+        "KUNEE": {
+            "NAME": "Kunee",
+            "DESCRIPTION": "Ermöglicht das Durchqueren von Wänden, sie werden als Kacheln mit Kosten 1 betrachtet."
+        },
+        "RANDOM": {
+            "NAME": "Zufälliger Gegenstand",
+            "DESCRIPTION": "Fügt einen zufälligen Gegenstand hinzu."
+        },
+        "SPAWN": {
+            "NAME": "Startpunkt",
+            "DESCRIPTION": "Bezeichnet den Startpunkt des Spielers."
+        },
+        "FLAG": {
+            "NAME": "Flagge",
+            "DESCRIPTION": "Flagge des Capture-the-Flag-Modus. Kehren Sie mit der Flagge zu Ihrem Startpunkt zurück, um zu gewinnen!"
+        }
+    },
+    "TILES": {
+        "WATER": {
+            "NAME": "Wasser",
+            "DESCRIPTION": "Werkzeug zum Platzieren einer Wasserkachel mit Bewegungskosten von zwei. Platzieren Sie die Kachel mit einem Linksklick auf eine vorhandene Kachel."
+        },
+        "ICE": {
+            "NAME": "Eis",
+            "DESCRIPTION": "Werkzeug zum Platzieren einer Eiskachel mit Bewegungskosten von null. Platzieren Sie die Kachel mit einem Linksklick auf eine vorhandene Kachel."
+        },
+        "WALL": {
+            "NAME": "Wand",
+            "DESCRIPTION": "Werkzeug zum Platzieren einer Wandkachel, die die Bewegung durch diesen Kacheltyp verhindert. Platzieren Sie die Kachel mit einem Linksklick auf eine vorhandene Kachel."
+        },
+        "DOOR": {
+            "NAME": "Tür",
+            "DESCRIPTION": "Werkzeug zum Platzieren einer Tür, die geöffnet oder geschlossen werden kann. Platzieren Sie die Kachel mit einem Linksklick auf eine vorhandene Kachel. Wenn Sie auf eine bereits vorhandene Tür drücken, wird ihr Zustand umgekehrt."
+        }
+    },
+    "TILE_INFO": {
+        "GROUND": {
+            "NAME": "Gras",
+            "DESC1": "Standard-Spielkachel (Geländekachel).",
+            "DESC2": "Spieler und Gegenstände können darauf platziert werden.",
+            "DESC3": "Kosten: 1"
+        },
+        "ICE": {
+            "NAME": "Eis",
+            "DESC1": "Ein Spieler, der darauf läuft, hat eine 10%ige Chance, das Gleichgewicht zu verlieren und zu fallen, was seinen Zug sofort beendet.",
+            "DESC2": "Solange sich der Spieler auf Eis befindet, erleiden die Attribute «Angriff» und «Verteidigung» einen Malus von 2.",
+            "DESC3": "Kosten: 0"
+        },
+        "WATER": {
+            "NAME": "Wasser",
+            "DESC1": "Geländekachel.",
+            "DESC2": "Kosten: 2"
+        },
+        "WALL": {
+            "NAME": "Wand",
+            "DESC1": "Unüberwindbares Hindernis, es sei denn, Sie besitzen einen speziellen Gegenstand.",
+            "DESC2": "Es können keine Gegenstände darauf platziert werden.",
+            "DESC3": "Gilt nicht als Geländekachel."
+        },
+        "CLOSED_DOOR": {
+            "NAME": "Geschlossene Tür",
+            "DESC1": "Eine geschlossene Tür muss über die Schaltfläche «Tür» geöffnet werden, bevor sie durchquert werden kann.",
+            "DESC2": "Andernfalls fungiert sie als unüberwindbare Wand, es sei denn, Sie besitzen einen speziellen Gegenstand."
+        },
+        "OPEN_DOOR": {
+            "NAME": "Offene Tür",
+            "DESC1": "Offene Tür, die es Spielern ermöglicht, frei durchzugehen.",
+            "DESC2": "Kann über die Schaltfläche «Tür» wieder geschlossen werden, um den Durchgang erneut zu blockieren."
+        },
+        "COMBAT_STATS": "Kampfstatistik",
+        "VICTORIES": "Siege: ",
+        "EVADES": "Fluchten: ",
+        "DEFEATS": "Niederlagen: ",
+        "DMG_DEALT": "Verursachter Schaden: ",
+        "DMG_TAKEN": "Erlittener Schaden: "
+    },
+    "ERROR": {
+        "MISSING_ATTRIBUTES": "Bitte wählen Sie die gewünschten Attributwerte aus",
+        "MISSING_NAME": "Bitte geben Sie einen Charakternamen ein",
+        "MISSING_AVATAR": "Bitte wählen Sie einen Avatar aus",
+        "NAME_WITH_SPACE": "Der Name darf keine Leerzeichen enthalten",
+        "TITLE_INVALID_LENGTH": "- Der Kartentitel muss eine Länge zwischen 3 und 30 Zeichen haben und darf nicht nur aus Leerzeichen bestehen",
+        "NAME_ALREADY_EXISTS": "- Eine Karte mit demselben Namen existiert bereits",
+        "INVALID_FILE": "- Die Datei ist ungültig",
+        "INVALID_TILES_DIMENSIONS": "- Die Abmessungen der Kacheln sind ungültig",
+        "INVALID_DIMENSION": "- Die Abmessungen der Karte sind ungültig",
+        "INVALID_TILE_TYPE": "- Ein odermehrere Kacheltypen sind ungültig",
+        "INVALID_OBJECT_TYPE": "- Ein oder mehrere Objekttypen sind ungültig",
+        "INVALID_NB_FLAGS": "- Es muss genau eine Flagge auf der Karte vorhanden sein",
+        "FILE_TOO_LARGE": "- Die Datei ist zu groß",
+        "INVALID_MODE": "- Der Spielmodus ist ungültig",
+        "INVALID_NB_PLAYERS": "- Die Spieleranzahl ist für die ausgewählte Kartengröße ungültig",
+        "INVALID_NB_OBJECTS": "- Die Anzahl der Objekte ist für die ausgewählte Kartengröße ungültig"
+    }
+}

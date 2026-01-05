@@ -1,0 +1,49 @@
+<div class="background-image join-game-page">
+    <app-header title="{{ 'PAGE_HEADER.JOIN_GAME' | translate }}"></app-header>
+    <div class="page-container">
+        <div class="submit-container">
+            <p>{{'JOIN_PAGE.ENTER_CODE' | translate}}</p>
+            <input
+                class="input-box"
+                type="text"
+                placeholder="XXXX"
+                [(ngModel)]="accessCode"
+                maxlength="4"
+                (keyup.enter)="joinGame(accessCode)"
+                autofocus
+            />
+
+            <div class="invalid-code">
+                @if(submitForm && errorMessage){
+                {{ errorMessage }}
+                } @else {
+                <div class="empty">.</div>
+                }
+            </div>
+            <div class="join-actions">
+                <button class="join-game" (click)="joinGame(accessCode)">
+                    {{'JOIN_PAGE.JOIN' | translate}}
+                </button>
+                <button class="spectate-game" (click)="joinGame(accessCode, true)">
+                    {{'JOIN_PAGE.SPECTATE' | translate}}
+                </button>
+            </div>
+        </div>
+        <div>
+        <button class="button" routerLink="/home">{{'FOOTER.RETURN' | translate}}</button>
+        <button class="button" routerLink="/waiting-rooms">{{ 'WAITING_ROOMS.VIEW_WAITING_ROOMS' | translate }}</button>
+        </div>
+    </div>
+    @if (isCharacterFormVisible) {
+    <div class="overlay"></div>
+    <app-character-creator
+        [selectedGame]="selectedGame"
+        [availableAvatars]="availableAvatars"
+        [showAvailabilityOptions]="false"
+        [roomEntryFee]="roomEntryFee"
+        (confirmCharacterSelection)="joinLobby($event)"
+        (closeCharacterCreator)="leaveGame(accessCode)"
+        (selectCharacter)="selectedAvatar($event)"
+    ></app-character-creator>
+    }
+</div>

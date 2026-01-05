@@ -1,0 +1,190 @@
+<div class="popup">
+  <div class="choice-info">
+    <div class="choices">
+      <div class="icons-container">
+        @for( avatar of availableAvatars; track avatar.name){
+        <div
+          class="icon"
+          [ngClass]="{
+            selected: avatar.isSelected,
+            'avatar-taken': avatar.isTaken
+          }"
+        >
+          <img [src]="avatar.src" (click)="getClickedImage(avatar)" />
+        </div>
+        }
+      </div>
+    </div>
+    <div class="character-info">
+      <div class="name-container">
+        <div class="character-name">{{ this.characterName }}</div>
+      </div>
+      <div class="image-wrapper">
+        <img
+          class="decoration"
+          [src]="'./assets/images/leaves/leafL_light.webp'"
+        />
+        @if(clickedAvatar) {
+        <img class="selected-avatar" [src]="clickedAvatar.src" />
+        } @else {
+        <img
+          class="no-avatar"
+          [src]="'./assets/images/characters/default-avatar.png'"
+          alt="default-avatar"
+        />
+        }
+        <img
+          class="decoration"
+          [src]="'./assets/images/leaves/leafR_light.webp'"
+        />
+      </div>
+      @if (showAvailabilityOptions) {
+      <div class="availability-container">
+        <div>{{ "GAME_CREATION.AVAILABILITY" | translate }}</div>
+        <div class="availability-buttons-container">
+          <button
+            (click)="setAvailability(GameAvailability.Public)"
+            [ngClass]="{
+              'button-selected': isAvailabilitySelected(GameAvailability.Public)
+            }"
+          >
+            {{ "GAME_CREATION.EVERYONE" | translate }}
+          </button>
+          <button
+            (click)="setAvailability(GameAvailability.FriendsOnly)"
+            [ngClass]="{
+              'button-selected': isAvailabilitySelected(
+                GameAvailability.FriendsOnly
+              )
+            }"
+          >
+            {{ "GAME_CREATION.FRIENDS_ONLY" | translate }}
+          </button>
+        </div>
+      </div>
+      <div class="availability-container entry-fee-slider-container">
+        <div class="entry-fee-header">
+          <span>{{ "GAME_CREATION.ENTRY_FEE" | translate }}</span>
+          <span class="entry-fee-value">{{ entryFee }}$</span>
+        </div>
+        <div class="slider-wrapper">
+          <input
+            type="range"
+            class="entry-fee-slider"
+            [min]="0"
+            [max]="maxEntryFee"
+            [step]="5"
+            [(ngModel)]="entryFee"
+            (input)="onEntryFeeChange($event)"
+          />
+        </div>
+
+        <div class="insufficient-funds-warning">
+          {{
+            entryFee > userBalance
+              ? ("GAME_CREATION.INSUFFICIENT_FUNDS" | translate)
+              : ""
+          }}
+        </div>
+      </div>
+      <div class="availability-container">
+        {{ "GAME_CREATION.QUICK_ELIMINATION" | translate }}
+        <mat-slide-toggle
+          class="custom-slide-toggle"
+          [checked]="quickEliminationEnabled"
+          (change)="$event && (quickEliminationEnabled = $event.checked)"
+        >
+        </mat-slide-toggle>
+      </div>
+      } @else if(roomEntryFee && roomEntryFee> 0){
+      <div class="entry-fee-warning">
+        {{ "GAME_CREATION.ENTRY_FEE" | translate }}: {{ roomEntryFee }}$
+      </div>
+      }
+      <div class="attributes-box">
+        <div class="arrows-container">
+          <div class="attribute">
+            {{ "ATTRIBUTES.HEALTH" | translate }}
+            <div id="health-attribut" class="tooltiptext">
+              {{ "ATTRIBUTES.TOOLTIP.HEALTH" | translate }}
+            </div>
+          </div>
+          <div class="initial-value">
+            {{ getAttributeValue("totalHp") }}
+          </div>
+          <button (click)="addHealth()" [disabled]="isButtonSelected('health')">
+            +2
+          </button>
+        </div>
+        <div class="arrows-container">
+          <div class="attribute">
+            {{ "ATTRIBUTES.SPEED" | translate }}
+            <div class="tooltiptext">
+              {{ "ATTRIBUTES.TOOLTIP.SPEED" | translate }}
+            </div>
+          </div>
+          <div class="initial-value">
+            {{ getAttributeValue("speed") }}
+          </div>
+          <button (click)="addSpeed()" [disabled]="isButtonSelected('speed')">
+            +2
+          </button>
+        </div>
+        <div class="arrows-container">
+          <div class="attribute">
+            {{ "ATTRIBUTES.ATTACK" | translate }}
+            <div class="tooltiptext">
+              {{ "ATTRIBUTES.TOOLTIP.ATTACK" | translate }}
+            </div>
+          </div>
+          <div class="initial-value">
+            {{ getAttributeValue("atkDiceMax") }}
+          </div>
+          <button
+            (click)="setAttack('attack4')"
+            [disabled]="isButtonSelected('attack4')"
+          >
+            +D4
+          </button>
+          <button
+            (click)="setAttack('attack6')"
+            [disabled]="isButtonSelected('attack6')"
+          >
+            +D6
+          </button>
+        </div>
+        <div class="arrows-container">
+          <div class="attribute">
+            {{ "ATTRIBUTES.DEFENSE" | translate }}
+            <div class="tooltiptext">
+              {{ "ATTRIBUTES.TOOLTIP.DEFENSE" | translate }}
+            </div>
+          </div>
+          <div class="initial-value">
+            {{ getAttributeValue("defDiceMax") }}
+          </div>
+          <button
+            (click)="setDefense('defense4')"
+            [disabled]="isButtonSelected('defense4')"
+          >
+            +D4
+          </button>
+          <button
+            (click)="setDefense('defense6')"
+            [disabled]="isButtonSelected('defense6')"
+          >
+            +D6
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="button-container">
+    <button (click)="closeComponent()">
+      {{ "FOOTER.RETURN" | translate }}
+    </button>
+    <button (click)="saveChoices()">
+      {{ "FOOTER.CONFIRM" | translate }}
+    </button>
+  </div>
+</div>

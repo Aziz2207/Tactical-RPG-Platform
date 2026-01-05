@@ -1,0 +1,139 @@
+@if (userListType === 'friends') {
+  <div class="friends-list">
+    @if (users.length === 0) {
+      <div class="no-friends-text">
+        {{ 'FRIENDS.NO_FRIENDS' | translate }}
+      </div>
+    }
+    @for (friend of users; track friend.uid) {
+      <div class="friend">
+        <div class="avatar-wrapper">
+          <img
+            [src]="friend?.avatarURL"
+            alt="{{ friend?.username || 'User' }}"
+          />
+
+          <div
+            class="status-dot"
+            [style.backgroundColor]="isUserOnline(friend) ? '#39c64a' : '#ff0000'"
+          ></div>
+        </div>
+
+        <span class="username">
+          {{ friend?.username || 'Unknown User' }}
+        </span>
+
+        <lucide-icon
+          (click)="unfriendPlayer(friend); $event.stopPropagation()"
+          class="action-icon"
+          [img]="UserRoundMinus"
+          stroke="white"
+          title="Remove friend"
+        ></lucide-icon>
+
+        <lucide-icon
+          (click)="blockPlayer(true, friend); $event.stopPropagation()"
+          class="action-icon"
+          [img]="Ban"
+          stroke="white"
+          title="Block user"
+        ></lucide-icon>
+      </div>
+    }
+  </div>
+}
+@else if(userListType === 'searchResults'){
+<div class="search-results">
+    <div class="search-results-grid">
+        @for(user of users; track user.uid){
+        <div class="search-result-item">
+            <img [src]="user?.avatarURL" alt="{{ user?.username || 'User' }}" />
+
+            <span class="username">
+                {{ user?.username || 'Unknown User' }}
+                <i
+                    class="fa-solid fa-circle status-dot"
+                    [style.color]="isUserOnline(user) ? '#39c64a' : '#ff0000'"
+                ></i>
+            </span>
+
+            <lucide-icon
+                (click)="openFriendRequestDialog(user); $event.stopPropagation()"
+                class="action-icon"
+                [img]="UserRoundPlus"
+                stroke="white"
+                title="Send friend request"
+            ></lucide-icon>
+
+            <lucide-icon
+                (click)="blockPlayer(false, user); $event.stopPropagation()"
+                class="action-icon"
+                [img]="Ban"
+                stroke="white"
+                title="Block user"
+            ></lucide-icon>
+        </div>
+        }
+    </div>
+</div>
+}
+@else if(userListType === 'incomingRequests'){
+<div class="friend-requests">
+    @for(friendRequest of users; track friendRequest.uid){
+    <div class="friend-request">
+
+        <img [src]="friendRequest?.avatarURL" alt="{{ friendRequest?.username || 'User' }}" />
+
+        <span class="username">
+            {{ friendRequest?.username || 'Unknown User' }}
+            <i
+                class="fa-solid fa-circle status-dot"
+                [style.color]="isUserOnline(friendRequest) ? '#39c64a' : '#ff0000'"
+            ></i>
+        </span>
+
+        <lucide-icon
+            (click)="acceptFriendRequest(friendRequest); $event.stopPropagation()"
+            class="action-icon"
+            [img]="Check"
+            stroke="white"
+            title="Accept friend request"
+        ></lucide-icon>
+
+        <lucide-icon
+            (click)="rejectFriendRequest(friendRequest); $event.stopPropagation()"
+            class="action-icon"
+            [img]="X"
+            stroke="white"
+            title="Reject friend request"
+        ></lucide-icon>
+    </div>
+    }
+</div>
+}
+@else if(userListType === 'blockedUsers'){
+<div class="blocked-users-list">
+    @if(users.length === 0){
+        <div class="no-blocked-text">{{ 'FRIENDS.NO_BLOCKED_USERS' | translate }}</div>
+    }
+    @for(blockedUser of users; track blockedUser.uid){
+    <div class="blocked-user">
+        <img [src]="blockedUser?.avatarURL" alt="{{ blockedUser?.username || 'User' }}" />
+
+        <span class="username">
+            {{ blockedUser?.username || 'Unknown User' }}
+
+            <!-- PUISQU'ILS SONT BLOQUÉS → PAS DE POINT -->
+        </span>
+
+        <button 
+            class="unblock-button"
+            (click)="unblockPlayer(blockedUser); $event.stopPropagation()"
+            title="Débloquer cet utilisateur"
+        >
+            {{ 'FRIENDS.UNBLOCK' | translate }}
+        </button>
+    </div>
+    }
+</div>
+}

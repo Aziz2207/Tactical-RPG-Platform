@@ -1,0 +1,5 @@
+.env
+/client-lourd/
+/node_modules
+LOG3900.bat
+LOG3900-helper.ps1

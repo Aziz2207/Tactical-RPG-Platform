@@ -1,0 +1,22 @@
+<body class="background-image create-game-page">
+    <div class="create-game-page">
+    <app-header title="{{ 'PAGE_HEADER.CREATE_GAME' | translate }}"></app-header>
+        <app-game-list [usingPage]="'game-list'"> </app-game-list>
+        <div class="button-group">
+        @if (isCharacterFormVisible) {
+            <div class="overlay"></div>
+            <app-character-creator
+                [selectedGame]="selectedGame"
+                [availableAvatars]="availableAvatars"
+                [showAvailabilityOptions]="true"
+                (confirmCharacterSelection)="joinLobby($event)"
+                (closeCharacterCreator)="hideCharacterForm()"
+            ></app-character-creator>
+            } 
+            @else {
+                <p class="button" routerLink="/">{{'FOOTER.RETURN' | translate}}</p>
+                <p class="button" (click)="showCharacterForm()">{{'FOOTER.CREATE_NEW_GAME' | translate}}</p>
+            }
+        </div>
+    </div>
+</body>

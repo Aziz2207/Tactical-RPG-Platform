@@ -1,0 +1,512 @@
+{
+    "PAGE_HEADER": {
+        "CREATE_GAME": "ゲームを作成",
+        "MANAGE_GAME": "ゲームを管理",
+        "JOIN_GAME": "ゲームに参加"
+    },
+    "FOOTER": {
+        "TEAM": "チーム104",
+        "CREATE": "作成",
+        "CREATE_NEW_MAP": "マップを作成",
+        "CREATE_NEW_GAME": "ゲームを作成",
+        "RETURN": "戻る",
+        "CONFIRM": "確認",
+        "CANCEL": "キャンセル",
+        "QUIT": "終了",
+        "RESET": "リセット",
+        "SAVE": "保存"
+    },
+    "DIALOG": {
+        "CLOSE": "閉じる",
+        "CONFIRM": "確認",
+        "CANCEL": "キャンセル",
+        "QUIT": "終了",
+        "STAY": "残る",
+        "TITLE": {
+            "START_GAME": "ゲームを開始",
+            "GAME_CANCELED": "ゲームがキャンセルされました",
+            "QUIT_GAME": "ゲームを放棄",
+            "KICKED_OUT": "ゲームから除外されました",
+            "DRAW_GAME": "引き分け",
+            "END_TURN": "ターン終了",
+            "END_GAME": "ゲーム終了",
+            "END_FIGHT": "戦闘終了",
+            "DEFAULT_FIGHT_WIN": "ゲーム放棄",
+            "SUCCESS_EVASION": "回避成功",
+            "MAX_PLAYERS": "最大プレイヤー数に達しました",
+            "ADD_BOT_WHEN_LOCKED": "ゲームがロックされています",
+            "ITEM_EXCHANGE": "アイテムを交換",
+            "QUIT_POST_GAME_LOBBY": "ホームページに戻る",
+            "QUIT_PAGE": "このページを終了しますか？"
+        },
+        "MESSAGE": {
+            "NOT_ENOUGH_PLAYERS": "ゲームを開始するには最低{{min}}人のプレイヤーが必要です",
+            "CONFIRM_START_GAME": "ゲームを開始してもよろしいですか？",
+            "ROOM_LOCKED": "ゲームを開始するには部屋をロックする必要があります",
+            "QUIT_GAME": "ゲームを終了しますか？",
+            "KICKED_OUT": "管理者があなたをゲームから除外しました。ホームにリダイレクトされます。",
+            "DRAW_GAME": "全てのプレイヤーが放棄しました。ホームにリダイレクトされます。",
+            "FELL": "氷の上で滑りました。ターンが終了しました。",
+            "END_FIGHT": "戦闘が終了しました。戦闘の勝者は{{winner}}です",
+            "DEFAULT_FIGHT_WIN": "相手がゲームを放棄しました。デフォルトで戦闘に勝利しました。",
+            "MAX_PLAYERS": "これ以上仮想プレイヤーを追加できません",
+            "ADD_BOT_WHEN_LOCKED": "仮想プレイヤーを追加する前に待機室のロックを解除してください",
+            "QUIT_POST_GAME_LOBBY": "ゲーム終了ページを終了します",
+            "QUIT_MESSAGE_LOST_CHANGES": "保存されていない変更は全て失われます。終了してもよろしいですか？",
+            "WINNER_ANNOUNCED": "ゲームの勝者は{{winner}}です",
+            "CANCELED_MATCH": "ゲームがキャンセルされました。メインメニューにリダイレクトされます。"
+        }
+    },
+    "GAME_CREATION": {
+        "AVAILABILITY": "可用性",
+        "EVERYONE": "全員",
+        "FRIENDS_ONLY": "友達のみ",
+        "ENTRY_FEE": "参加費",
+        "SELECT_BEFORE_CREATING_GAME": "ゲームを作成する前にゲームを選択してください",
+        "HIDDEN_GAME": "選択されたゲームは存在しないか、非表示になっています"
+    },
+    "ATTRIBUTES": {
+        "HEALTH": "体力",
+        "SPEED": "素早さ",
+        "ATTACK": "攻撃",
+        "DEFENSE": "防御",
+        "TOOLTIP": {
+            "HEALTH": "キャラクターの体力ポイントはこの属性に対応します。体力または素早さの属性値を+2増加させます。",
+            "SPEED": "素早さポイントはターン順を決定し、キャラクターのターンごとの移動ポイントにも対応します。体力または素早さの属性値を+2増加させます。",
+            "ATTACK": "攻撃ポイントは相手への攻撃の強さを表します。攻撃または防御の属性のいずれかを選択して、6面または4面のダイスに基づくボーナスを受け取ります。",
+            "DEFENSE": "防御ポイントは相手の攻撃をブロックする能力を表します。攻撃または防御の属性のいずれかを選択して、6面または4面のダイスに基づくボーナスを受け取ります。"
+        }
+    },
+    "MANAGE_GAME": {
+        "CHOSE_GAME_MODE": "ゲームモードを選択：",
+        "CHOSE_GAME_SIZE": "ゲームサイズを選択：",
+        "SMALL_PLAYER_RANGE": "（2人プレイヤー）",
+        "MEDIUM_PLAYER_RANGE": "（2〜4人プレイヤー）",
+        "LARGE_PLAYER_RANGE": "（2〜6人プレイヤー）",
+        "MAP_NAME": "マップ名",
+        "MAP_NAME_PLACEHOLDER": "マップ名を入力してください",
+        "MAP_DESCRIPTION": "マップの説明",
+        "MAP_DESCRIPTION_PLACEHOLDER": "マップの説明を入力してください",
+        "OBJECTS": "オブジェクト",
+        "MAP_SIZE_AND_MODE_PROMPT": "サイズとゲームモードを選択してください",
+        "GAME_ALREADY_DELETED": "ゲームは既に他のユーザーによって削除されています"
+    },
+    "MAP_VALIDATOR": {
+        "INVALID_MAP": "無効なマップ",
+        "SAVE_SUCCESS": "保存成功",
+        "REDIRECT_MESSAGE": "管理ページにリダイレクトされます",
+        "ERROR_DUPLICATE_NAME": "同じ名前のマップが既に存在します。",
+        "ERROR_TOO_MANY_OBJECTS": "このマップにはオブジェクトが多すぎます。{{max}}個ではなく{{current}}個あります。",
+        "ERROR_TOO_FEW_OBJECTS": "マップにオブジェクトが不足しています。最小は{{min}}個ですが、現在{{current}}個あります。",
+        "ERROR_INVALID_DOOR": "少なくとも1つのドアが無効です。",
+        "ERROR_INVALID_DOOR_DETAILS": "それぞれが一つの軸で2つの壁の間に、もう一つの軸で2つの地形タイルの間に位置する必要があります。",
+        "ERROR_INSUFFICIENT_TERRAIN": "タイルの少なくとも半分が地形タイル（草、水、氷）で覆われている必要があります。",
+        "ERROR_INACCESSIBLE_TILES": "全ての地形タイルがアクセス可能ではありません。",
+        "ERROR_MISSING_FLAG": "CTFモードではフラグをマップに配置する必要があります。",
+        "ERROR_MISSING_SPAWN_POINTS": "全てのスタート地点をマップに配置する必要があります。",
+        "ERROR_INVALID_TITLE": "マップのタイトルは3〜30文字の長さで、スペースのみを含んではいけません。",
+        "ERROR_INVALID_DESCRIPTION": "マップの説明は10〜128文字の長さで、スペースのみを含んではいけません。"
+    },
+    "WAITING_PAGE": {
+        "START_GAME": "ゲームを開始",
+        "LOCK": "ゲームをロック",
+        "MAX_PLAYERS_CANT_UNLOCK": "待機室は最大プレイヤー数に達しました。ゲームのロックを解除できません。",
+        "ADD_BOT": "仮想プレイヤーを追加",
+        "SCAN_TO_JOIN": "スキャンして参加",
+        "BOT_PROFILE_POPUP_TITLE": "仮想プレイヤーのプロフィールを選択してください",
+        "BOT_PROFILES": {
+            "DEFENSIVE": {
+                "TITLE": "防御的",
+                "DESCRIPTION_1": "負傷している場合、戦闘から逃げる傾向がある",
+                "DESCRIPTION_2": "戦闘への関与が少なく、防御と最大HPに有利なアイテムを好む"
+            },
+            "AGGRESSIVE": {
+                "TITLE": "攻撃的",
+                "DESCRIPTION_1": "戦いを求める傾向があり、決して逃げようとしない",
+                "DESCRIPTION_2": "対決を好み、攻撃と素早さに有利なアイテムを好む"
+            }
+        }
+    },
+    "JOIN_PAGE": {
+        "ENTER_CODE": "ゲームコードを入力",
+        "JOIN": "参加",
+        "SPECTATE": "観戦",
+        "ERRORS": {
+            "INVALID_FORMAT": "コードは4桁の数字で構成される必要があります",
+            "ROOM_NOT_FOUND": "ゲームが存在しません",
+            "ROOM_LOCKED": "ゲームがロックされています",
+            "FRIENDS_ONLY_ACCESS": "このゲームはホストの友達のみに制限されています",
+            "INSUFFICIENT_FUNDS": "このゲームに参加するための資金が不足しています"
+        }
+    },
+    "CHAT": {
+        "TITLE": "メッセージ",
+        "UNFILTERED_JOURNAL": "フィルターなしゲームログ",
+        "FILTERED_JOURNAL": "フィルター付きゲームログ"
+    },
+    "GAME": {
+        "QUIT_GAME": "ゲームを放棄",
+        "STOP_SPECTATING": "観戦をやめる",
+        "SPECTATOR_MODE": "観戦モード",
+        "PLAYERS": "プレイヤー",
+        "TURN_START_WARNING": "あなたのターンが始まります",
+        "TURN_OF": "のターン",
+        "TURN_WILL_START": "が始まります",
+        "IN_COMBAT": "戦闘中",
+        "DEBUG_MODE": "デバッグモード",
+        "GRID_SIZE": "グリッドサイズ",
+        "MODE": {
+            "CLASSIC": "クラシック",
+            "CTF": "CTF"
+        },
+        "MAP_NAME": "マップ名",
+        "PLAYER_COUNT": "プレイヤー数",
+        "ACTIONS": {
+            "DOOR": "ドア",
+            "ATTACK": "攻撃",
+            "END_TURN": "ターン終了"
+        },
+        "CHAT": "メッセージ",
+        "INVENTORY": "インベントリ",
+        "TIMER": "タイマー",
+        "MOVEMENTS": "移動",
+        "ACTION_POINTS": "アクション",
+        "SPD": "素早",
+        "ATK": "攻撃",
+        "DEF": "防御",
+        "COMBAT": {
+            "EVADE_POINTS_REMAINING": "残りの回避ポイント：",
+            "ATTACK": "攻撃",
+            "EVADE": "回避",
+            "YOUR_TURN_START": "あなたのターンです",
+            "OPPONENT_TURN_START": "相手のターンです"
+        },
+        "VICTORIES": "勝利",
+        "DISCONNECTED": "切断されました",
+        "LOGS": {
+            "DEBUG_START": "デバッグモード開始。",
+            "DEBUG_END": "デバッグモード終了。",
+            "START_TURN": "プレイヤー{{playerName}}のターン開始。",
+            "GIVE_UP": "{{playerName}}がゲームを放棄しました。",
+            "OPEN_DOOR": "{{playerName}}がドアを開けました。",
+            "CLOSE_DOOR": "{{playerName}}がドアを閉めました。",
+            "WIN_COMBAT": "{{playerName}}が戦闘に勝利しました。戦闘終了！",
+            "EVADE_COMBAT_FAIL": "{{playerName}}の回避が失敗しました。",
+            "EVADE_COMBAT_SUCCESS": "{{playerName}}は正常に回避しました。",
+            "NO_WINNER_COMBAT": "{{playerName}}と{{defenderName}}の間で勝者なしで戦闘終了。",
+            "START_COMBAT": "{{playerName}}と{{defenderName}}が戦闘に入りました。",
+            "ATTACK_FAIL": "{{playerName}}の攻撃が失敗しました。",
+            "ATTACK_SUCCESS": "{{playerName}}の攻撃が成功しました。",
+            "END_GAME": "ゲーム終了：{{playerNames}}",
+            "ITEM_PICKED_UP": "{{playerName}}が{{itemKey}}を拾いました",
+            "COMBAT_RESULT": "攻撃結果：{{attack}} + {{attackDice}}（ダイス）= {{attackTotal}}\n防御結果：{{defense}} + {{defenseDice}}（ダイス）= {{defenseTotal}}",
+            "UNKNOWN": "不明なログメッセージ。"
+        }
+    },
+    "CHANNELS": {
+        "TITLE": "チャンネル",
+        "PLACEHOLDER": "グローバルメッセージ",
+        "SEARCH": "チャンネルを検索",
+        "SEARCH_2": "チャンネル検索",
+        "NAME_PLACEHOLDER": "チャンネル名"
+    },
+    "FRIENDS": {
+        "TITLE": "友達",
+        "FRIEND_REQUEST": "友達リクエスト",
+        "SEARCH": "ユーザーを検索",
+        "SEARCH_2": "ユーザー検索",
+        "NO_FRIENDS": "友達がいません",
+        "NO_FRIEND_REQUESTS": "友達リクエストがありません",
+        "REMOVE_FRIEND_TITLE": "友達を削除",
+        "REMOVE_FRIEND_MESSAGE": "{{username}}を友達リストから削除しますか？",
+        "REMOVE_FRIEND_CANCEL": "キャンセル",
+        "REMOVE_FRIEND_CONFIRM": "友達を削除",
+        "BLOCK_USER_TITLE": "ユーザーをブロック",
+        "BLOCK_USER_MESSAGE_FRIEND": "{{username}}をブロックしますか？このアクションはあなたの友達からも削除します。",
+        "BLOCK_USER_MESSAGE_OTHER": "{{username}}をブロックしますか？",
+        "BLOCK_USER_CANCEL": "キャンセル",
+        "BLOCK_USER_CONFIRM": "ユーザーをブロック",
+        "USER_BLOCKED_TITLE": "ユーザーがブロックされました",
+        "USER_BLOCKED_MESSAGE": "{{username}}がブロックされました",
+        "FRIEND_REQUEST_SENT_TITLE": "リクエストが送信されました",
+        "FRIEND_REQUEST_SENT_MESSAGE": "{{username}}に友達リクエストを送信しました",
+        "FRIEND_REQUEST_ACCEPTED_TITLE": "友達リクエストが承認されました",
+        "FRIEND_REQUEST_ACCEPTED_MESSAGE": "{{username}}があなたの友達になりました",
+        "FRIEND_REQUEST_REJECTED_TITLE": "友達リクエストが拒否されました",
+        "FRIEND_REQUEST_REJECTED_MESSAGE": "{{username}}からの友達リクエストを拒否しました",
+        "NOTIF_REQUEST_RECEIVED": "{{username}}があなたに友達リクエストを送信しました",
+        "NOTIF_REQUEST_ACCEPTED": "{{username}}があなたの友達リクエストを承認しました",
+        "NOTIF_REMOVED": "{{username}}があなたを友達から削除しました",
+        "CLOSE": "閉じる",
+        "BLOCKED_USERS": "ブロックしたユーザー",
+        "NO_BLOCKED_USERS": "ブロックしているユーザーはいません",
+        "UNBLOCK": "ブロック解除",
+        "BLOCK_SUCCESS": "ユーザーを正常にブロックしました",
+        "UNBLOCK_SUCCESS": "ユーザーのブロックを解除しました",
+        "BLOCKED_MESSAGE": "ユーザーにブロックされています"
+    },
+    "USER": {
+        "LOG_OUT": "ログアウト",
+        "LOG_OUT_MESSAGE": "本当にログアウトしますか？",
+        "LOG_OUT_CANCEL": "キャンセル",
+        "LOG_OUT_CONFIRM": "ログアウト",
+        "DELETE": "アカウントを削除",
+        "DELETE_MESSAGE": "本当にこのアカウントを削除しますか？この操作は元に戻せません。"
+    },
+    "SHOP_PAGE": {
+        "TITLE": "ショップ",
+        "AVATARS": "アバターアイコン",
+        "BACKGROUNDS": "背景",
+        "THEMES": "ビジュアルテーマ",
+        "OWNED": "所有済み",
+        "INSUFFICIENT_BALANCE": "残高不足",
+        "BUY": "購入",
+        "NO_BACKGROUNDS": "利用可能な背景はありません"
+    },
+    "SETTINGS_PAGE": {
+        "TITLE": "設定",
+        "TABS": {
+            "VISUAL": "ビジュアルと言語",
+            "ACCOUNT": "アカウント設定"
+        },
+        "SECTIONS": {
+            "BACKGROUND": {
+                "TITLE": "背景",
+                "SUBTITLE": "所有している背景から背景を選択してください",
+                "NO_BACKGROUNDS": "背景を所有していません。",
+                "VISIT_STORE": "ショップで購入してください！"
+            },
+            "THEME": {
+                "TITLE": "テーマ"
+            },
+            "LANGUAGE": {
+                "TITLE": "言語"
+            },
+            "PROFILE_PICTURE": {
+                "TITLE": "プロフィール写真",
+                "UPLOAD": "画像をアップロード"
+            },
+            "ACCOUNT_INFO": {
+                "USERNAME": "ユーザー名",
+                "USERNAME_PLACEHOLDER": "あなたのユーザー名",
+                "EMAIL": "メールアドレス",
+                "EMAIL_PLACEHOLDER": "your.email@example.com"
+            },
+            "STATS": {
+                "TITLE": "統計",
+                "GAMES_CLASSIC": "プレイしたゲーム（クラシック）",
+                "GAMES_CTF": "プレイしたゲーム（CTF）",
+                "GAMES_WON": "勝利したゲーム",
+                "AVG_GAME_TIME": "平均ゲーム時間"
+            },
+            "DANGER_ZONE": {
+                "TITLE": "危険ゾーン",
+                "DELETE_ACCOUNT": "アカウントを削除"
+            }
+        },
+        "EDIT_BUTTON": "プロフィールを編集",
+        "SAVE_BUTTON": "保存",
+        "DISCARD_BUTTON": "キャンセル",
+        "FOOTER_RETURN": "戻る"
+    },
+    "POST_GAME_LOBBY": {
+        "TITLE": "ゲーム終了",
+        "CTF": "CTF",
+        "CLASSIC": "クラシック",
+        "REWARD": "報酬",
+        "STATS": {
+            "COMBATS": "戦闘",
+            "VICTORIES": "勝/回/敗",
+            "DMG_DEALT": "与えたダメージ",
+            "DMG_TAKEN": "受けたダメージ",
+            "OBJECTS_TAKEN": "拾ったオブジェクト",
+            "PCT_TILES_VISITED": "訪問したタイル％",
+            "GAME_LENGTH": "ゲーム時間",
+            "TURNS": "ターン数",
+            "GLOBAL_TILES_VISITED": "全体の訪問したタイル％",
+            "PCT_DOORS_INTEREACTED": "相互作用したドア％",
+            "NB_FLAG_BEARERS": "フラグ保持者"
+        }
+    },
+    "THEME": {
+        "GOLD": "ゴールド（デフォルト）",
+        "BLUE": "スカイブルー",
+        "EMERALD": "エメラルド",
+        "RUBY": "ルビー",
+        "AMETHYST": "アメジスト",
+        "OBSIDIAN": "オブシディアン",
+        "COPPER": "銅",
+        "CYBERPUNK": "サイバーパンク",
+        "ARCTIC": "北極",
+        "AQUA": "アクア",
+        "MCDONALDS": "マクドナルド",
+        "MAGENTA": "マゼンタ",
+        "MY_EYES_BLEED": "目が出血する",
+        "SAPPHIRE": "サファイア",
+        "SAPPHIRE_CRIMSON": "サファイアクリムゾン",
+        "VERDANT_AMETHYST": "緑豊かなアメジスト",
+        "DARK_FLAT": "ダークフラット",
+        "GOLD_FLAT": "ゴールドフラット",
+        "NAVY_FLAT": "ネイビーフラット",
+        "GREEN_FLAT": "グリーンフラット",
+        "RED_FLAT": "レッドフラット",
+        "TOTAL_DARK": "完全な暗闇",
+        "SILVER": "グレー",
+        "CRIMSON": "クリムゾン",
+        "PINK": "ピンク",
+        "GREEN_BLUE": "ネプチューン",
+        "BLACK_ORANGE": "ハロウィン"
+    },
+    "BACKGROUND": {
+        "DEFAULT_ATHENA": "デフォルトのアテナ背景",
+        "SPARTAN_WARRIOR": "スパルタ戦士背景",
+        "DIONYSUS": "ディオニュソス背景",
+        "HADES": "ハデス背景",
+        "PERSEPHONE": "ペルセポネ背景",
+        "APOLLO": "アポロ背景",
+        "ATHENA": "アテナ背景",
+        "HEPHAESTUS": "ヘファイストス背景",
+        "HERMES": "ヘルメス背景",
+        "DEMETER": "デメテル背景",
+        "ARTEMIS": "アルテミス背景",
+        "POSEIDON": "ポセイドン背景",
+        "HERA": "ヘラ背景",
+        "ZEUS": "ゼウス背景",
+        "HESTIA": "ヘスティア背景",
+        "ARES": "アレス背景"
+    },
+    "AVATAR": {
+        "DIONYSUS": "ディオニュソスアバター",
+        "HADES": "ハデスアバター",
+        "PERSEPHONE": "ペルセポネアバター"
+    },
+    "ITEMS": {
+        "TRIDENT": {
+            "NAME": "ポセイドンのトライデント",
+            "DESCRIPTION": "ターン終了時にアクションポイントが1残っている場合、次のターンで1獲得し、最大2まで。"
+        },
+        "ARMOR": {
+            "NAME": "アキレスの鎧",
+            "DESCRIPTION": "+2攻撃、攻撃がブロックされた場合、1ダメージを受ける。"
+        },
+        "SANDAL": {
+            "NAME": "翼のあるサンダル",
+            "DESCRIPTION": "素早さx2、最大体力が1減少。"
+        },
+        "LIGHTNING": {
+            "NAME": "ゼウスの稲妻",
+            "DESCRIPTION": "攻撃x2、防御が2減少、体力が1減少。"
+        },
+        "XIPHOS": {
+            "NAME": "クシフォス",
+            "DESCRIPTION": "体力が50%未満の場合、相手の防御が1減少し、攻撃が2増加。"
+        },
+        "KUNEE": {
+            "NAME": "クネー",
+            "DESCRIPTION": "壁を通過でき、コスト1のタイルとして扱われる。"
+        },
+        "RANDOM": {
+            "NAME": "ランダムアイテム",
+            "DESCRIPTION": "ランダムアイテムを追加。"
+        },
+        "SPAWN": {
+            "NAME": "スタート地点",
+            "DESCRIPTION": "プレイヤーのスタート地点を指定。"
+        },
+        "FLAG": {
+            "NAME": "フラグ",
+            "DESCRIPTION": "旗取りモードのフラグ。フラグを持ってスタート地点に戻ると勝利！"
+        }
+    },
+    "TILES": {
+        "WATER": {
+            "NAME": "水",
+            "DESCRIPTION": "移動コスト2の水タイルを配置するツール。既存のタイルを左クリックしてタイルを配置。"
+        },
+        "ICE": {
+            "NAME": "氷",
+            "DESCRIPTION": "移動コスト0の氷タイルを配置するツール。既存のタイルを左クリックしてタイルを配置。"
+        },
+        "WALL": {
+            "NAME": "壁",
+            "DESCRIPTION": "このタイプのタイルを通過する移動を防ぐ壁タイルを配置するツール。既存のタイルを左クリックしてタイルを配置。"
+        },
+        "DOOR": {
+            "NAME": "ドア",
+            "DESCRIPTION": "開閉可能なドアを配置するツール。既存のタイルを左クリックしてタイルを配置。既存のドアを押すと、その状態が反転します。"
+        }
+    },
+    "TILE_INFO": {
+        "GROUND": {
+            "NAME": "草",
+            "DESC1": "ゲームのデフォルトタイル（地形タイル）。",
+            "DESC2": "プレイヤーとオブジェクトを配置できる。",
+            "DESC3": "コスト：1"
+        },
+        "ICE": {
+            "NAME": "氷",
+            "DESC1": "その上を歩くプレイヤーは10%の確率でバランスを失って転倒し、即座にターンが終了する。",
+            "DESC2": "プレイヤーが氷の上にいる限り、「攻撃」と「防御」の属性は2のペナルティを受ける。",
+            "DESC3": "コスト：0"
+        },
+        "WATER": {
+            "NAME": "水",
+            "DESC1": "地形タイル。",
+            "DESC2": "コスト：2"
+        },
+        "WALL": {
+            "NAME": "壁",
+            "DESC1": "特別なアイテムを所有していない限り通過できない障害物。",
+            "DESC2": "オブジェクトを配置できない。",
+            "DESC3": "地形タイルとは見なされない。"
+        },
+        "CLOSED_DOOR": {
+            "NAME": "閉じたドア",
+            "DESC1": "閉じたドアは通過する前に「ドア」ボタンで開く必要がある。",
+            "DESC2": "それ以外は、特別なアイテムを所有していない限り通過できない壁として機能する。"
+        },
+        "OPEN_DOOR": {
+            "NAME": "開いたドア",
+            "DESC1": "プレイヤーが自由に通過できる開いたドア。",
+            "DESC2": "「ドア」ボタンで再び閉じて通路を再度ブロックできる。"
+        },
+        "COMBAT_STATS": "戦闘統計",
+        "VICTORIES": "勝利：",
+        "EVADES": "回避：",
+        "DEFEATS": "敗北：",
+        "DMG_DEALT": "与えたダメージ：",
+        "DMG_TAKEN": "受けたダメージ："
+    },
+    "ERROR": {
+        "MISSING_ATTRIBUTES": "希望する属性値を選択してください",
+        "MISSING_NAME": "キャラクター名を入力してください",
+        "MISSING_AVATAR": "アバターを選択してください",
+        "NAME_WITH_SPACE": "名前にスペースを含めることはできません",
+        "TITLE_INVALID_LENGTH": "- マップのタイトルは3〜30文字の長さで、スペースのみを含んではいけません",
+        "NAME_ALREADY_EXISTS": "- 同じ名前のマップが既に存在します",
+        "INVALID_FILE": "- ファイルが無効です",
+        "INVALID_TILES_DIMENSIONS": "- タイルの寸法が無効です",
+        "INVALID_DIMENSION": "- マップの寸法が無効です",
+        "INVALID_TILE_TYPE": "- 1つ以上のタイルタイプが無効です",
+        "INVALID_OBJECT_TYPE": "- 1つ以上のオブジェクトタイプが無効です",
+        "INVALID_NB_FLAGS": "- マップには正確に1つのフラグが必要です",
+        "FILE_TOO_LARGE": "- ファイルが大きすぎます",
+        "INVALID_MODE": "- ゲームモードが無効です",
+        "INVALID_NB_PLAYERS": "- 選択されたマップサイズに対してプレイヤー数が無効です",
+        "INVALID_NB_OBJECTS": "- 選択されたマップサイズに対してオブジェクト数が無効です"
+    },
+    "LEADERBOARDS_PAGE": {
+        "TITLE": "リーダーボード",
+        "TOTAL_USERS": "総ユーザー数",
+        "LOADING": "リーダーボードを読み込み中...",
+        "USERNAME": "ユーザー名",
+        "RANK": "順位",
+        "LIFETIME_EARNINGS": "累計収益",
+        "GAMES_PLAYED": "プレイした試合数",
+        "WINS": "勝利数",
+        "WINRATE": "勝率",
+        "TOTAL_GAME_DURATION": "総プレイ時間",
+        "BLOCKED_USER": "ブロックしたユーザー",
+        "BLOCKED_ME": "このユーザーにブロックされています"
+    }
+}

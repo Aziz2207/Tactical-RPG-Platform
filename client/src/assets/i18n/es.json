@@ -1,0 +1,514 @@
+{
+    "PAGE_HEADER": {
+        "CREATE_GAME": "Crear una partida",
+        "MANAGE_GAME": "Administrar juegos",
+        "JOIN_GAME": "Unirse a una partida"
+    },
+    "FOOTER": {
+        "TEAM": "Equipo 104",
+        "CREATE": "Crear",
+        "CREATE_NEW_MAP": "Crear un mapa",
+        "CREATE_NEW_GAME": "Crear una partida",
+        "RETURN": "Volver",
+        "CONFIRM": "Confirmar",
+        "CANCEL": "Cancelar",
+        "QUIT": "Salir",
+        "RESET": "Reiniciar",
+        "SAVE": "Guardar"
+    },
+    "DIALOG": {
+        "CLOSE": "Cerrar",
+        "CONFIRM": "Confirmar",
+        "CANCEL": "Cancelar",
+        "QUIT": "Salir",
+        "STAY": "Quedarse",
+        "TITLE": {
+            "START_GAME": "Iniciar la partida",
+            "GAME_CANCELED": "Partida cancelada",
+            "QUIT_GAME": "Abandonar la partida",
+            "KICKED_OUT": "Has sido expulsado de la partida",
+            "DRAW_GAME": "Partida empatada",
+            "END_TURN": "Fin de tu turno",
+            "END_GAME": "Fin de la partida",
+            "END_FIGHT": "Fin del combate",
+            "DEFAULT_FIGHT_WIN": "Abandono de partida",
+            "SUCCESS_EVASION": "Evasión exitosa",
+            "MAX_PLAYERS": "Número máximo de jugadores alcanzado",
+            "ADD_BOT_WHEN_LOCKED": "Partida bloqueada",
+            "ITEM_EXCHANGE": "Intercambiar un objeto",
+            "QUIT_POST_GAME_LOBBY": "Volver a la página de inicio",
+            "QUIT_PAGE": "¿Salir de esta página?",
+            "UNBLOCK_USER": "Desbloquear a un usuario"
+        },
+        "MESSAGE": {
+            "NOT_ENOUGH_PLAYERS": "Se necesitan al menos {{min}} jugadores para comenzar la partida",
+            "CONFIRM_START_GAME": "¿Estás seguro de que quieres iniciar la partida?",
+            "ROOM_LOCKED": "Debes bloquear la sala para comenzar la partida",
+            "QUIT_GAME": "¿Quieres salir de la partida?",
+            "KICKED_OUT": "El administrador ha decidido sacarte de la partida. Serás redirigido al inicio.",
+            "DRAW_GAME": "Todos los jugadores han abandonado. Serás redirigido al inicio.",
+            "FELL": "Te has resbalado en el hielo. Tu turno ha terminado.",
+            "END_FIGHT": "El combate ha terminado. El ganador del combate es {{winner}}",
+            "DEFAULT_FIGHT_WIN": "El adversario ha abandonado la partida. Ganas el combate por defecto.",
+            "MAX_PLAYERS": "No puedes añadir más jugadores virtuales",
+            "ADD_BOT_WHEN_LOCKED": "Desbloquea la sala de espera antes de añadir un jugador virtual",
+            "QUIT_POST_GAME_LOBBY": "Vas a salir de la página de fin de partida",
+            "QUIT_MESSAGE_LOST_CHANGES": "Todas las modificaciones no guardadas se perderán, ¿estás seguro de que quieres salir?",
+            "WINNER_ANNOUNCED": "El ganador de la partida es {{winner}}",
+            "CANCELED_MATCH": "La partida ha sido cancelada. Serás redirigido al menú principal.",
+            "UNBLOCK_USER": "¿Quieres desbloquear a {{username}}?"
+        }
+    },
+    "GAME_CREATION": {
+        "AVAILABILITY": "Disponibilidad",
+        "EVERYONE": "Todo el mundo",
+        "FRIENDS_ONLY": "Solo amigos",
+        "ENTRY_FEE": "Precio de entrada",
+        "SELECT_BEFORE_CREATING_GAME": "Por favor selecciona un juego antes de crear la partida",
+        "HIDDEN_GAME": "El juego seleccionado no existe o ha sido ocultado"
+    },
+    "ATTRIBUTES": {
+        "HEALTH": "Vida",
+        "SPEED": "Rapidez",
+        "ATTACK": "Ataque",
+        "DEFENSE": "Defensa",
+        "TOOLTIP": {
+            "HEALTH": "Los puntos de vida del personaje corresponden a este atributo. Aumenta el valor del atributo vida o rapidez en +2.",
+            "SPEED": "Los puntos de rapidez sirven para determinar el orden de los turnos y corresponden también a los puntos de movimiento por turno de un personaje. Aumenta el valor del atributo vida o rapidez en +2.",
+            "ATTACK": "Los puntos de ataque representan la fuerza con la que se realiza un ataque sobre el adversario. Elige uno de los atributos ataque o defensa para recibir un bono basado en un dado de 6 caras o de 4 caras.",
+            "DEFENSE": "Los puntos de defensa representan la capacidad de bloquear el ataque de un adversario. Elige uno de los atributos ataque o defensa para recibir un bono basado en un dado de 6 caras o de 4 caras."
+        }
+    },
+    "MANAGE_GAME": {
+        "CHOSE_GAME_MODE": "Elegir un modo de juego:",
+        "CHOSE_GAME_SIZE": "Elegir el tamaño del juego:",
+        "SMALL_PLAYER_RANGE": "(2 jugadores)",
+        "MEDIUM_PLAYER_RANGE": "(2 a 4 jugadores)",
+        "LARGE_PLAYER_RANGE": "(2 a 6 jugadores)",
+        "MAP_NAME": "Nombre del mapa",
+        "MAP_NAME_PLACEHOLDER": "Introduce el nombre de tu mapa",
+        "MAP_DESCRIPTION": "Descripción del mapa",
+        "MAP_DESCRIPTION_PLACEHOLDER": "Introduce la descripción de tu mapa",
+        "OBJECTS": "Objetos",
+        "MAP_SIZE_AND_MODE_PROMPT": "Por favor elige el tamaño y el modo de juego",
+        "GAME_ALREADY_DELETED": "Juego ya eliminado por otro usuario"
+    },
+    "MAP_VALIDATOR": {
+        "INVALID_MAP": "Mapa inválido",
+        "SAVE_SUCCESS": "Guardado exitoso",
+        "REDIRECT_MESSAGE": "Serás redirigido a la página de administración",
+        "ERROR_DUPLICATE_NAME": "Ya existe un mapa con el mismo nombre.",
+        "ERROR_TOO_MANY_OBJECTS": "Hay demasiados objetos en este mapa. {{current}} objetos en lugar de {{max}}.",
+        "ERROR_TOO_FEW_OBJECTS": "No hay suficientes objetos en el mapa. El mínimo es {{min}} y actualmente hay {{current}}.",
+        "ERROR_INVALID_DOOR": "Al menos una puerta no es válida.",
+        "ERROR_INVALID_DOOR_DETAILS": "Cada una debe estar situada entre dos muros en un eje, y entre dos casillas de terreno en el otro.",
+        "ERROR_INSUFFICIENT_TERRAIN": "Al menos la mitad de las casillas deben estar cubiertas de casillas de terreno (césped, agua, hielo).",
+        "ERROR_INACCESSIBLE_TILES": "No todas las casillas de terreno son accesibles.",
+        "ERROR_MISSING_FLAG": "La bandera debe colocarse en el mapa durante el modo CTF.",
+        "ERROR_MISSING_SPAWN_POINTS": "Todos los puntos de inicio deben colocarse en el mapa.",
+        "ERROR_INVALID_TITLE": "El título del mapa debe tener una longitud entre 3 y 30 caracteres y no contener únicamente espacios.",
+        "ERROR_INVALID_DESCRIPTION": "La descripción del mapa debe tener una longitud entre 10 y 128 caracteres y no contener únicamente espacios."
+    },
+    "WAITING_PAGE": {
+        "START_GAME": "Iniciar una partida",
+        "LOCK": "Bloquear la partida",
+        "MAX_PLAYERS_CANT_UNLOCK": "La sala de espera ha alcanzado el número máximo de jugadores. No puedes desbloquear la partida.",
+        "ADD_BOT": "Añadir un jugador virtual",
+        "SCAN_TO_JOIN": "Escanea para unirte",
+        "BOT_PROFILE_POPUP_TITLE": "Elige el perfil del jugador virtual",
+        "BOT_PROFILES": {
+            "DEFENSIVE": {
+                "TITLE": "Defensivo",
+                "DESCRIPTION_1": "Tendencia a huir de un combate si está herido",
+                "DESCRIPTION_2": "Se involucra menos en los combates y favorece los objetos que dan ventaja en defensa y PV máximo"
+            },
+            "AGGRESSIVE": {
+                "TITLE": "Agresivo",
+                "DESCRIPTION_1": "Tendencia a buscar la batalla y nunca intentará huir",
+                "DESCRIPTION_2": "Favorece las confrontaciones así como los objetos que dan ventaja en ataque y rapidez"
+            }
+        }
+    },
+    "JOIN_PAGE": {
+        "ENTER_CODE": "Introduce el código de la partida",
+        "JOIN": "Unirse",
+        "SPECTATE": "Observar",
+        "ERRORS": {
+            "INVALID_FORMAT": "El código debe estar compuesto de 4 dígitos",
+            "ROOM_NOT_FOUND": "La partida no existe",
+            "ROOM_LOCKED": "La partida está bloqueada",
+            "FRIENDS_ONLY_ACCESS": "Esta partida está reservada para amigos del anfitrión",
+            "INSUFFICIENT_FUNDS": "Fondos insuficientes para entrar en esta partida"
+        }
+    },
+    "CHAT": {
+        "TITLE": "Mensajería",
+        "UNFILTERED_JOURNAL": "Registro de juego sin filtrar",
+        "FILTERED_JOURNAL": "Registro de juego filtrado"
+    },
+    "GAME": {
+        "QUIT_GAME": "Abandonar la partida",
+        "STOP_SPECTATING": "Dejar de observar",
+        "SPECTATOR_MODE": "Modo espectador",
+        "PLAYERS": "Jugadores",
+        "TURN_START_WARNING": "Tu turno comienza en",
+        "TURN_OF": "El turno de",
+        "TURN_WILL_START": "va a comenzar",
+        "IN_COMBAT": "Combate en curso",
+        "DEBUG_MODE": "Modo depuración",
+        "GRID_SIZE": "Tamaño de la cuadrícula",
+        "MODE": {
+            "CLASSIC": "Clásico",
+            "CTF": "CTF"
+        },
+        "MAP_NAME": "Nombre del mapa",
+        "PLAYER_COUNT": "Número de jugadores",
+        "ACTIONS": {
+            "DOOR": "Puerta",
+            "ATTACK": "Atacar",
+            "END_TURN": "Fin de turno"
+        },
+        "CHAT": "Mensajería",
+        "INVENTORY": "Inventario",
+        "TIMER": "Temporizador",
+        "MOVEMENTS": "Movimientos",
+        "ACTION_POINTS": "Acción",
+        "SPD": "Rap",
+        "ATK": "Atq",
+        "DEF": "Def",
+        "COMBAT": {
+            "EVADE_POINTS_REMAINING": "Puntos de evasión restantes:",
+            "ATTACK": "Atacar",
+            "EVADE": "Evadir",
+            "YOUR_TURN_START": "Es tu turno",
+            "OPPONENT_TURN_START": "Es el turno de tu adversario"
+        },
+        "VICTORIES": "Victoria(s)",
+        "DISCONNECTED": "Desconectado",
+        "LOGS": {
+            "DEBUG_START": "Inicio del modo depuración.",
+            "DEBUG_END": "Fin del modo depuración.",
+            "START_TURN": "Inicio del turno del jugador {{playerName}}.",
+            "GIVE_UP": "{{playerName}} ha abandonado la partida.",
+            "OPEN_DOOR": "{{playerName}} ha abierto una puerta.",
+            "CLOSE_DOOR": "{{playerName}} ha cerrado una puerta.",
+            "WIN_COMBAT": "{{playerName}} ha ganado el combate. ¡El combate ha terminado!",
+            "EVADE_COMBAT_FAIL": "{{playerName}} ha fallado su evasión.",
+            "EVADE_COMBAT_SUCCESS": "{{playerName}} se ha evadido con éxito.",
+            "NO_WINNER_COMBAT": "Combate terminado sin ganador entre {{playerName}} y {{defenderName}}.",
+            "START_COMBAT": "{{playerName}} y {{defenderName}} han entrado en combate.",
+            "ATTACK_FAIL": "{{playerName}} ha fallado su ataque.",
+            "ATTACK_SUCCESS": "{{playerName}} ha logrado su ataque.",
+            "END_GAME": "Fin de partida: {{playerNames}}",
+            "ITEM_PICKED_UP": "{{playerName}} ha recogido {{itemKey}}",
+            "COMBAT_RESULT": "Resultado del ataque: {{attack}} + {{attackDice}} (dado) = {{attackTotal}}\nResultado de la defensa: {{defense}} + {{defenseDice}} (dado) = {{defenseTotal}}",
+            "UNKNOWN": "Mensaje de registro desconocido."
+        }
+    },
+    "CHANNELS": {
+        "TITLE": "Canales",
+        "PLACEHOLDER": "Mensajería global",
+        "SEARCH": "Buscar un canal",
+        "SEARCH_2": "Búsqueda de canal",
+        "NAME_PLACEHOLDER": "Nombre del canal"
+    },
+    "FRIENDS": {
+        "TITLE": "Amigos",
+        "FRIEND_REQUEST": "Solicitudes de amistad",
+        "SEARCH": "Buscar un usuario",
+        "SEARCH_2": "Búsqueda de usuarios",
+        "NO_FRIENDS": "No tienes amigos",
+        "NO_FRIEND_REQUESTS": "No tienes ninguna solicitud de amistad",
+        "REMOVE_FRIEND_TITLE": "Eliminar un amigo",
+        "REMOVE_FRIEND_MESSAGE": "¿Quieres eliminar a {{username}} de tu lista de amigos?",
+        "REMOVE_FRIEND_CANCEL": "Cancelar",
+        "REMOVE_FRIEND_CONFIRM": "Eliminar amigo",
+        "BLOCK_USER_TITLE": "Bloquear un usuario",
+        "BLOCK_USER_MESSAGE_FRIEND": "¿Bloquear a {{username}}? Esta acción también lo eliminará de tus amigos.",
+        "BLOCK_USER_MESSAGE_OTHER": "¿Bloquear a {{username}}?",
+        "BLOCK_USER_CANCEL": "Cancelar",
+        "BLOCK_USER_CONFIRM": "Bloquear usuario",
+        "USER_BLOCKED_TITLE": "Usuario bloqueado",
+        "USER_BLOCKED_MESSAGE": "{{username}} ha sido bloqueado",
+        "FRIEND_REQUEST_SENT_TITLE": "Solicitud enviada",
+        "FRIEND_REQUEST_SENT_MESSAGE": "Has enviado una solicitud de amistad a {{username}}",
+        "FRIEND_REQUEST_ACCEPTED_TITLE": "Solicitud de amistad aceptada",
+        "FRIEND_REQUEST_ACCEPTED_MESSAGE": "{{username}} es ahora tu amigo",
+        "FRIEND_REQUEST_REJECTED_TITLE": "Solicitud de amistad rechazada",
+        "FRIEND_REQUEST_REJECTED_MESSAGE": "Has rechazado la solicitud de amistad de {{username}}",
+        "NOTIF_REQUEST_RECEIVED": "{{username}} te ha enviado una solicitud de amistad",
+        "NOTIF_REQUEST_ACCEPTED": "{{username}} ha aceptado tu solicitud de amistad",
+        "NOTIF_REMOVED": "{{username}} te ha eliminado de sus amigos",
+        "CLOSE": "Cerrar",
+        "BLOCKED_USERS": "Usuarios bloqueados",
+        "NO_BLOCKED_USERS": "No has bloqueado a ningún usuario",
+        "UNBLOCK": "Desbloquear",
+        "BLOCK_SUCCESS": "Usuario bloqueado con éxito",
+        "UNBLOCK_SUCCESS": "Usuario desbloqueado con éxito",
+        "BLOCKED_MESSAGE": "Un usuario te ha bloqueado"
+    },
+    "USER": {
+        "LOG_OUT": "Cerrar sesión",
+        "LOG_OUT_MESSAGE": "¿Realmente quieres cerrar sesión?",
+        "LOG_OUT_CANCEL": "Cancelar",
+        "LOG_OUT_CONFIRM": "Cerrar sesión",
+        "DELETE": "Eliminar la cuenta",
+        "DELETE_MESSAGE": "¿Realmente quieres eliminar esta cuenta? Esta acción es irreversible."
+    },
+    "SHOP_PAGE": {
+        "TITLE": "Tienda",
+        "AVATARS": "Iconos de Avatar",
+        "BACKGROUNDS": "Fondos de pantalla",
+        "THEMES": "Temas visuales",
+        "OWNED": "Poseído",
+        "INSUFFICIENT_BALANCE": "Saldo insuficiente",
+        "BUY": "Comprar",
+        "NO_BACKGROUNDS": "Ningún fondo de pantalla disponible"
+    },
+    "SETTINGS_PAGE": {
+        "TITLE": "Ajustes",
+        "TABS": {
+            "VISUAL": "Visual e idiomas",
+            "ACCOUNT": "Parámetros de cuenta"
+        },
+        "SECTIONS": {
+            "BACKGROUND": {
+                "TITLE": "Fondos de pantalla",
+                "SUBTITLE": "Selecciona un fondo de pantalla entre tus fondos poseídos",
+                "NO_BACKGROUNDS": "No posees ningún fondo de pantalla.",
+                "VISIT_STORE": "¡Visita la tienda para comprar uno!"
+            },
+            "THEME": {
+                "TITLE": "Tema"
+            },
+            "LANGUAGE": {
+                "TITLE": "Idioma"
+            },
+            "PROFILE_PICTURE": {
+                "TITLE": "Foto de perfil",
+                "UPLOAD": "Subir una imagen"
+            },
+            "ACCOUNT_INFO": {
+                "USERNAME": "Nombre de usuario",
+                "USERNAME_PLACEHOLDER": "Tu nombre de usuario",
+                "EMAIL": "Dirección de correo electrónico",
+                "EMAIL_PLACEHOLDER": "tu.email@ejemplo.com"
+            },
+            "STATS": {
+                "TITLE": "Estadísticas",
+                "GAMES_CLASSIC": "Partidas jugadas (Clásico)",
+                "GAMES_CTF": "Partidas jugadas (CTF)",
+                "GAMES_WON": "Partidas ganadas",
+                "AVG_GAME_TIME": "Tiempo promedio de una partida"
+            },
+            "DANGER_ZONE": {
+                "TITLE": "Zona peligrosa",
+                "DELETE_ACCOUNT": "Eliminar la cuenta"
+            }
+        },
+        "EDIT_BUTTON": "Modificar el perfil",
+        "SAVE_BUTTON": "Guardar",
+        "DISCARD_BUTTON": "Cancelar",
+        "FOOTER_RETURN": "Volver"
+    },
+    "POST_GAME_LOBBY": {
+        "TITLE": "Fin de partida",
+        "CTF": "CTF",
+        "CLASSIC": "Clásico",
+        "REWARD": "Recompensa",
+        "STATS": {
+            "COMBATS": "Combates",
+            "VICTORIES": "V/E/D",
+            "DMG_DEALT": "Daño infligido",
+            "DMG_TAKEN": "Daño sufrido",
+            "OBJECTS_TAKEN": "Objetos recogidos",
+            "PCT_TILES_VISITED": "% Casillas visitadas",
+            "GAME_LENGTH": "Duración de la partida",
+            "TURNS": "Número de turnos",
+            "GLOBAL_TILES_VISITED": "% Casillas visitadas global",
+            "PCT_DOORS_INTEREACTED": "% Puertas interactuadas",
+            "NB_FLAG_BEARERS": "portadores de bandera"
+        }
+    },
+    "THEME": {
+        "GOLD": "Oro (Por defecto)",
+        "BLUE": "Azul cielo",
+        "EMERALD": "Esmeralda",
+        "RUBY": "Rubí",
+        "AMETHYST": "Amatista",
+        "OBSIDIAN": "Obsidiana",
+        "COPPER": "Cobre",
+        "CYBERPUNK": "Cyberpunk",
+        "ARCTIC": "Ártico",
+        "AQUA": "Aqua",
+        "MCDONALDS": "McDonalds",
+        "MAGENTA": "Magenta",
+        "MY_EYES_BLEED": "Mis ojos sangran",
+        "SAPPHIRE": "Zafiro",
+        "SAPPHIRE_CRIMSON": "Zafiro Carmesí",
+        "VERDANT_AMETHYST": "Amatista verdosa",
+        "DARK_FLAT": "Oscuro Plano",
+        "GOLD_FLAT": "Oro Plano",
+        "NAVY_FLAT": "Azul Marino Plano",
+        "GREEN_FLAT": "Verde Plano",
+        "RED_FLAT": "Rojo Plano",
+        "TOTAL_DARK": "Oscuridad Total",
+        "SILVER": "Gris",
+        "CRIMSON": "Carmesí",
+        "PINK": "Rosa",
+        "GREEN_BLUE": "Neptuno",
+        "BLACK_ORANGE": "Halloween"
+    },
+    "BACKGROUND": {
+        "DEFAULT_ATHENA": "Fondo de pantalla Athena por defecto",
+        "SPARTAN_WARRIOR": "Fondo de pantalla Guerrero Espartano",
+        "DIONYSUS": "Fondo de pantalla Dionisio",
+        "HADES": "Fondo de pantalla Hades",
+        "PERSEPHONE": "Fondo de pantalla Perséfone",
+        "APOLLO": "Fondo de pantalla Apolo",
+        "ATHENA": "Fondo de pantalla Atenea",
+        "HEPHAESTUS": "Fondo de pantalla Hefesto",
+        "HERMES": "Fondo de pantalla Hermes",
+        "DEMETER": "Fondo de pantalla Deméter",
+        "ARTEMIS": "Fondo de pantalla Artemisa",
+        "POSEIDON": "Fondo de pantalla Poseidón",
+        "HERA": "Fondo de pantalla Hera",
+        "ZEUS": "Fondo de pantalla Zeus",
+        "HESTIA": "Fondo de pantalla Hestia",
+        "ARES": "Fondo de pantalla Ares"
+    },
+    "AVATAR": {
+        "DIONYSUS": "Avatar Dionisio",
+        "HADES": "Avatar Hades",
+        "PERSEPHONE": "Avatar Perséfone"
+    },
+    "ITEMS": {
+        "TRIDENT": {
+            "NAME": "Tridente de Poseidón",
+            "DESCRIPTION": "Si te queda un punto de acción al final de tu turno, gana uno en tu próximo turno, hasta un máximo de 2."
+        },
+        "ARMOR": {
+            "NAME": "Armadura de Aquiles",
+            "DESCRIPTION": "+2 ataque, si tu ataque es bloqueado, recibe 1 de daño."
+        },
+        "SANDAL": {
+            "NAME": "Sandalias aladas",
+            "DESCRIPTION": "x2 rapidez y reduce los puntos de vida máximos en 1."
+        },
+        "LIGHTNING": {
+            "NAME": "Rayo de Zeus",
+            "DESCRIPTION": "x2 ataque y reduce la defensa en 2 y la vida en 1."
+        },
+        "XIPHOS": {
+            "NAME": "Xiphos",
+            "DESCRIPTION": "Si tienes menos del 50% de puntos de vida, tu adversario pierde 1 de defensa y tú ganas 2 de ataque."
+        },
+        "KUNEE": {
+            "NAME": "Kunée",
+            "DESCRIPTION": "Permite atravesar los muros, se consideran como casillas con un costo de 1."
+        },
+        "RANDOM": {
+            "NAME": "Objeto aleatorio",
+            "DESCRIPTION": "Añade un objeto aleatorio."
+        },
+        "SPAWN": {
+            "NAME": "Punto de inicio",
+            "DESCRIPTION": "Designa el punto de inicio del jugador."
+        },
+        "FLAG": {
+            "NAME": "Bandera",
+            "DESCRIPTION": "Bandera del modo Captura la Bandera. ¡Regresa a tu punto de inicio con la bandera para ganar!"
+        }
+    },
+    "TILES": {
+        "WATER": {
+            "NAME": "Agua",
+            "DESCRIPTION": "Herramienta para colocar una casilla de agua que tiene un costo de movimiento de dos. Coloca la casilla con un clic izquierdo sobre una casilla existente."
+        },
+        "ICE": {
+            "NAME": "Hielo",
+            "DESCRIPTION": "Herramienta para colocar una casilla de hielo que tiene un costo de movimiento de cero. Coloca la casilla con un clic izquierdo sobre una casilla existente."
+        },
+        "WALL": {
+            "NAME": "Muro",
+            "DESCRIPTION": "Herramienta para colocar una casilla de muro que impide el movimiento a través de este tipo de casilla. Coloca la casilla con un clic izquierdo sobre una casilla existente."
+        },
+        "DOOR": {
+            "NAME": "Puerta",
+            "DESCRIPTION": "Herramienta para colocar una puerta que puede abrirse o cerrarse. Coloca la casilla con un clic izquierdo sobre una casilla existente. Si presionas sobre una puerta ya existente, su estado se invertirá."
+        }
+    },
+    "TILE_INFO": {
+        "GROUND": {
+            "NAME": "Césped",
+            "DESC1": "Casilla por defecto del juego (casilla de terreno).",
+            "DESC2": "Los jugadores y los objetos pueden colocarse en ella.",
+            "DESC3": "Costo: 1"
+        },
+        "ICE": {
+            "NAME": "Hielo",
+            "DESC1": "Un jugador que camine sobre ella tiene un 10% de probabilidad de perder el equilibrio y caer, terminando instantáneamente su turno.",
+            "DESC2": "Mientras el jugador se encuentre sobre hielo, sus atributos «ataque» y «defensa» sufren una penalización de 2.",
+            "DESC3": "Costo: 0"
+        },
+        "WATER": {
+            "NAME": "Agua",
+            "DESC1": "Casilla de terreno.",
+            "DESC2": "Costo: 2"
+        },
+        "WALL": {
+            "NAME": "Muro",
+            "DESC1": "Obstáculo infranqueable a menos que poseas un objeto especial.",
+            "DESC2": "Ningún objeto puede colocarse en él.",
+            "DESC3": "No se considera una casilla de terreno."
+        },
+        "CLOSED_DOOR": {
+            "NAME": "Puerta cerrada",
+            "DESC1": "Una puerta cerrada debe abrirse mediante el botón «Puerta» antes de poder atravesarla.",
+            "DESC2": "De lo contrario, actúa como un muro infranqueable a menos que poseas un objeto especial."
+        },
+        "OPEN_DOOR": {
+            "NAME": "Puerta abierta",
+            "DESC1": "Puerta abierta que permite a los jugadores pasar a través libremente.",
+            "DESC2": "Puede cerrarse mediante el botón «Puerta» para bloquear nuevamente el paso."
+        },
+        "COMBAT_STATS": "Balance de combate",
+        "VICTORIES": "Victorias: ",
+        "EVADES": "Evasiones: ",
+        "DEFEATS": "Derrotas: ",
+        "DMG_DEALT": "Daño infligido: ",
+        "DMG_TAKEN": "Daño sufrido: "
+    },
+    "ERROR": {
+        "MISSING_ATTRIBUTES": "Por favor selecciona los valores de los atributos deseados",
+        "MISSING_NAME": "Por favor introduce un nombre de personaje",
+        "MISSING_AVATAR": "Por favor selecciona un avatar",
+        "NAME_WITH_SPACE": "El nombre no puede contener espacios",
+        "TITLE_INVALID_LENGTH": "- El título del mapa debe tener una longitud entre 3 y 30 caracteres y no contener únicamente espacios",
+        "NAME_ALREADY_EXISTS": "- Ya existe un mapa con el mismo nombre",
+        "INVALID_FILE": "- El archivo es inválido",
+        "INVALID_TILES_DIMENSIONS": "- Las dimensiones de las casillas son inválidas",
+        "INVALID_DIMENSION": "- Las dimensiones del mapa son inválidas",
+        "INVALID_TILE_TYPE": "- Uno o varios tipos de casillas son inválidos",
+        "INVALID_OBJECT_TYPE": "- Uno o varios tipos de objetos son inválidos",
+        "INVALID_NB_FLAGS": "- Debe haber exactamente una bandera en el mapa",
+        "FILE_TOO_LARGE": "- El archivo es demasiado grande",
+        "INVALID_MODE": "- El modo de juego es inválido",
+        "INVALID_NB_PLAYERS": "- El número de jugadores es inválido para el tamaño del mapa seleccionado",
+        "INVALID_NB_OBJECTS": "- El número de objetos es inválido para el tamaño del mapa seleccionado"
+    },
+    "LEADERBOARDS_PAGE": {
+        "TITLE": "Clasificaciones",
+        "TOTAL_USERS": "Usuarios totales",
+        "LOADING": "Cargando clasificaciones...",
+        "USERNAME": "Nombre de usuario",
+        "RANK": "Rango",
+        "LIFETIME_EARNINGS": "Ganancias de por vida",
+        "GAMES_PLAYED": "Juegos jugados",
+        "WINS": "Victorias",
+        "WINRATE": "Tasa de victorias",
+        "TOTAL_GAME_DURATION": "Duración total del juego",
+        "BLOCKED_USER": "Usuario bloqueado",
+        "BLOCKED_ME": "Este usuario me ha bloqueado"
+    }
+}

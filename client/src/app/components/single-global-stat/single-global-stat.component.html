@@ -1,0 +1,9 @@
+@if(globalStat.key !== globalStatType.NbFlagBearers || postGameService.isFlagMode){
+<div
+    class="global-attribute"
+    (mouseenter)="postGameService.updateExplanationsGlobal(globalStat)"
+    (mouseleave)="postGameService.updateExplanations('')">
+        <span class="label"> {{ globalStat.displayText | translate }}: </span>
+        <span class="value">{{ " " + formatStatValue() }}</span>
+</div>
+}

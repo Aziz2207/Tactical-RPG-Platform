@@ -1,0 +1,30 @@
+<div [ngClass]="['player', this.lobbyPlayer.status]">
+    <div class="motif"></div>
+    <div class="player-name">
+        @if(isPlayerAdmin) {
+        <div class="kick" (click)="kickOutPlayer()">
+            @if(lobbyPlayer.status === status.Bot){
+                <img src="./assets/images/icones/kick.png" />
+            }
+            @else {
+                <img src="./assets/images/icones/white-kick.png" />
+            }
+        </div>
+        }
+        {{ lobbyPlayer.name }}
+        @if(this.lobbyPlayer.behavior === behavior.Defensive){
+            <img class="bot-logo" src="./assets/images/icones/dark-bot.png" />
+        }
+        @else if (this.lobbyPlayer.behavior === behavior.Aggressive) {
+            <img class="bot-logo" src="./assets/images/icones/red-bot.png" />
+        }
+    </div>
+    <img [ngClass]="['player-img', this.lobbyPlayer.behavior]" [src]="lobbyPlayer.avatar?.src" alt="{{ lobbyPlayer.name }}-avatar" />
+
+    <!-- uncomment to check if bot stats are correctly assigned -->
+    <!-- @if(lobbyPlayer.status === Status.Bot){
+        <p>Att: {{ lobbyPlayer.attributes.attack }} Def: {{ lobbyPlayer.attributes.defense }}</p>
+        <p>AttDice: {{ lobbyPlayer.attributes.atkDiceMax }} DefDice: {{ lobbyPlayer.attributes.defDiceMax }}</p>
+    } -->
+    <div class="motif"></div>
+</div>

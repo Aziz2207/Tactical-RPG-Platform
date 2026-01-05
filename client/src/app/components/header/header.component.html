@@ -1,0 +1,86 @@
+<header class="header">
+    @if(!isHeaderHidden){
+    <div class="left-section">
+        <div class="user">
+            <div class="menu-trigger">
+                <img [src]="photoURL()" alt="User Avatar" class="avatar" />
+            </div>
+            <div className="username">
+                {{ username() }}
+            </div>
+            <div class="balance">{{ balance() }} $</div>
+        </div>
+    </div>
+    @if(title) {
+    <h1 class="title">{{ title | translate}}</h1>
+    }
+    <div class="top-right-icons">
+        @if(!hasOnlyChat){
+        <lucide-icon
+            routerLink="/leaderboards-page"
+            class="store-icon"
+            [img]="Trophy"
+            stroke="white"
+            title="See leaderboards"
+        >
+        </lucide-icon>
+        <lucide-icon
+            routerLink="/store-page"
+            class="store-icon"
+            [img]="Store"
+            stroke="white"
+            title="Navigate to store"
+        >
+        </lucide-icon>
+        <lucide-icon
+            routerLink="/settings-page"
+            class="settings-icon"
+            [img]="Settings"
+            stroke="white"
+            title="Navigate to settings"
+        >
+        </lucide-icon>
+        <lucide-icon
+            (click)="signOut()"
+            class="logout-icon"
+            [img]="LogOut"
+            stroke="white"
+            title="Navigate to settings"
+        >
+        </lucide-icon>
+        } 
+    </div>
+    }
+     @if(accountDetails) {
+    <div class="right-section">
+        @if(!friendsBarOpen){
+            @if(!hasOnlyChat){
+            <button
+                class="sidebar-button friends-button"
+                (click)="toggleFriends()"
+                [class.active]="friendsBarOpen && friendsBarActiveTab === 'friends'"
+            >
+                <mat-icon>people</mat-icon>
+            </button>
+            }
+            <button
+                class="sidebar-button chat-button"
+                (click)="toggleChat()"
+                [class.active]="
+                    friendsBarOpen && friendsBarActiveTab === 'chatRooms'
+                "
+            >
+                <mat-icon>chat</mat-icon>
+            </button>
+        }
+        <app-friends-bar
+            #friendsBar
+            [isOpen]="friendsBarOpen"
+            [activeTab]="friendsBarActiveTab"
+            [hasChatOnly]="hasOnlyChat"
+            (tabChanged)="onTabChanged($event)"
+            (barClosed)="onBarClosed()"
+        />
+    </div>
+    }
+</header>

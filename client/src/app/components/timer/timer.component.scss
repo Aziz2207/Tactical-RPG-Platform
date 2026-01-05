@@ -1,0 +1,41 @@
+.timer-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 22.5%;
+}
+
+.circle-timer {
+    position: absolute;
+    transform: rotate(-90deg);
+    width: 35%;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-circle {
+    fill: none;
+    stroke: none;
+}
+
+.foreground-circle {
+    fill: none;
+    stroke: var(--primary);
+    stroke-linecap: round;
+}
+
+.time-remaining {
+    position: absolute;
+    font-size: 2rem;
+    font-family: Verdana;
+    font-weight: bold;
+}
+
+.red-text {
+    color: var(--warning-color);
+}
+
+.red-circle {
+    stroke: var(--warning-color);
+}

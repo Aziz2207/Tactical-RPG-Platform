@@ -1,0 +1,99 @@
+.hp-value {
+    margin-left: 2%;
+}
+
+.player-attributes {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+}
+
+.player-name {
+    font-family: papyrus;
+    font-weight: 900;
+    font-size: 0.95rem;
+    margin: 0;
+
+    transition: transform 0.2s ease;
+}
+
+.player-info {
+    padding: 0;
+    margin: 0;
+}
+
+.hp-bar-container {
+    display: flex;
+}
+
+.hp-bar {
+    border: 1px solid rgb(197, 197, 197);
+    width: 80%;
+    border-radius: 0.5rem;
+}
+
+.right-player .hp-bar-container {
+    transform: scaleX(-1);
+}
+
+.right-player .hp-value {
+    transform: scaleX(-1);
+}
+
+.right-player .stats {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.right-player .player-name {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.15rem;
+    width: 100%;
+    gap: 10%;
+}
+.individual-stat {
+    height: 33%;
+    color: var(--primary-text);
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--secondary-very-light);
+    border-radius: 0.5rem;
+}
+
+progress::-moz-progress-bar {
+    transition: width 1s ease;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, rgb(51, 16, 16), rgb(93, 20, 20) 33%, rgb(142, 24, 24) 67%, rgb(175, 16, 16) 100%);
+}
+
+progress::-webkit-progress-value {
+    transition: width 1s ease;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, rgb(51, 16, 16), rgb(93, 20, 20) 33%, rgb(142, 24, 24) 67%, rgb(175, 16, 16) 100%);
+}
+
+.player-name.damaged {
+    color: var(--warning-color);
+    transform: scale(1);
+}
+
+.hp-value.damaged {
+    color: var(--warning-color);
+}
+
+.stats-dice {
+    display: block;
+    margin-left: -2rem;
+    margin-right: 0;
+    padding: 0;
+    height: 1.4rem;
+    width: 1.4rem;
+}

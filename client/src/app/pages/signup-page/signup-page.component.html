@@ -1,0 +1,133 @@
+<div class="background-image-wide justified signup-page">
+    @if(loading){
+    <div class="fullscreen-spinner">
+  <mat-spinner diameter="60" ></mat-spinner>
+</div>
+}
+  <header></header>
+  <div class="custom-form signup">
+    <h2 class="title">Créer un compte</h2>
+
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+      (keydown.enter)="onSubmit()"
+    >
+      <div class="form-section">
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Adresse courriel</mat-label>
+          <input
+            placeholder="Adresse courriel"
+            matInput
+            type="email"
+            formControlName="email"
+            maxlength="100"
+            required
+          />
+          @if(form.get('email')?.hasError('required')){
+          <mat-error> L'adresse courriel est requis </mat-error>}
+          @if(form.get('email')?.hasError('email')){
+          <mat-error> Format invalide </mat-error>}
+          @if(form.get('email')?.hasError('pattern')){
+          <mat-error>
+            L'adresse courriel ne doit pas contenir d’espaces. </mat-error
+          >}
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Pseudonyme</mat-label>
+          <input
+            placeholder="3-20 caractères"
+            matInput
+            formControlName="username"
+            minlength="3"
+            maxlength="20"
+            required
+          />
+          @if(form.get('username')?.hasError('required')){
+          <mat-error> Pseudonyme est requis </mat-error>}
+          @else if(form.get('username')?.hasError('minlength') &&
+          form.get('username')?.hasError('pattern')){
+          <mat-error> Minimum 3 caractères, sans contenir d’espaces  </mat-error>}
+          @else if(form.get('username')?.hasError('pattern')){
+          <mat-error> Pseudonyme ne doit pas contenir d’espaces. </mat-error>}
+          @else if(form.get('username')?.hasError('minlength')){
+          <mat-error> Minimum 3 caractères</mat-error>}
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Mot de passe</mat-label>
+          <input
+            placeholder="8-20 caractères"
+            matInput
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            minlength="8"
+            maxlength="20"
+            required
+          />
+
+          @if(form.get('password')?.hasError('required')){
+          <mat-error> Le mot de passe est requis </mat-error>}
+          @else if(form.get('password')?.hasError('minlength') &&
+          form.get('password')?.hasError('pattern')){
+          <mat-error> Minimum 8 caractères, sans contenir d’espaces </mat-error>}
+           @else if(form.get('password')?.hasError('pattern')){
+          <mat-error> Le mot de passe ne doit pas contenir d’espaces. </mat-error>}
+            @else if(form.get('password')?.hasError('minlength')){
+          <mat-error> Minimum 8 caractères </mat-error>}
+        </mat-form-field>
+        <div class="toggle-password">
+          <mat-slide-toggle
+            class="toggle-control"
+            [checked]="showPassword"
+            (change)="$event && (showPassword = $event.checked)"
+          >
+          </mat-slide-toggle>
+          Afficher le mot de passe
+        </div>
+        @if(error){
+        <div class="error">
+          {{ error }}
+        </div>
+        } @else{<br/><p></p>}
+        <div class="actions">
+          <button
+            type="submit"
+            mat-flat-button
+            color="primary"
+            (click)="onSubmit()"
+            [disabled]="form.invalid || loading"
+          >
+            Créer le compte
+          </button>
+          <div class="goto-btn" (click)="goToSignIn()">
+            Déjà un compte ? Connexion
+          </div>
+        </div>
+      </div>
+      <div class="avatar-section">
+        <p class="avatar-label">Choisissez votre avatar</p>
+        <div class="avatar-grid">
+          @for(avatar of avatars; track avatar) {
+          <div
+            class="avatar-option"
+            [class.selected]="form.get('avatarURL')?.value === avatar"
+            (click)="form.get('avatarURL')?.setValue(avatar)"
+          >
+            <img [src]="avatar" alt="Avatar" />
+          </div>
+          }
+        </div>
+      </div>
+    </form>
+  </div>
+  <footer class="footer-item">
+    <h4 class="team-name">Équipe 104</h4>
+    <p>
+      <span>Aziz Hidri</span>, <span>Joey Hasrouny</span>,
+      <span>Éloic Côté</span>, <span>Raissa Oumarou Petitot</span>,
+      <span>William Wang</span>, <span>Gabriel Mejia</span>
+    </p>
+  </footer>
+</div>

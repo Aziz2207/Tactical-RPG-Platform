@@ -1,0 +1,132 @@
+.image-container {
+    position: relative;
+    padding: 5%;
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.large {
+    width: 10rem;
+    height: 10rem;
+}
+
+.image-container img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: none;
+    border-bottom: 0.25rem solid var(--inverted-text-color);
+    border-right: 0.25rem solid var(--inverted-text-color);
+    z-index: 1;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.image-container img {
+    &:hover {
+        transform: scale(1.05);
+        box-shadow:
+            0 0 0.2rem rgba(255, 251, 196, 0.9),
+            0 0 0.2rem rgba(255, 243, 150, 0.9);
+        cursor: pointer;
+    }
+}
+
+.image-container:hover + .object-description-container {
+    opacity: 1;
+    display: inline-block;
+    z-index: 100;
+}
+
+.object-count {
+    position: absolute;
+    background-color: var(--main-text-color);
+    border: 2px solid;
+    border-radius: 50%;
+    bottom: 5%;
+    right: 5%;
+    font-family: Papyrus;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28%;
+    height: 28%;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.left-description {
+    top: 3%;
+    right: 110%;
+    width: 12rem;
+    height: 7rem;
+}
+
+.bottom-description {
+    top: 110%;
+    left: 15%;
+    width: 12rem;
+    height: 7rem;
+    background: yellow;
+}
+
+.top-description {
+    bottom: 105%;
+    left: 50%; /* Align horizontally to the center */
+    transform: translateX(-50%); /* Adjust to center */
+    width: 20rem;
+    height: 5rem;
+    background: yellow;
+}
+
+.object-description {
+    font-size: 0.8rem;
+    margin: 0.5rem;
+}
+
+.object-description-container {
+    position: absolute;
+    font-family: "Franklin Gothic Medium";
+    transition: opacity 0.3s ease;
+    display: none;
+    border-bottom: solid 6px var(--inverted-text-color);
+    border-right: solid 6px var(--inverted-text-color);
+    border-radius: 0.75rem;
+    color: var(--inverted-text-color);
+    padding: 10%;
+    background: var(--primary-light);
+    z-index: 10;
+}
+
+.object-name {
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+
+.object {
+    position: relative;
+}
+
+.disabled {
+    filter: grayscale(100%) brightness(50%);
+    cursor: default;
+}
+
+.disabled img:hover {
+    transform: none;
+    border-bottom: 0.25rem solid var(--inverted-text-color);
+    border-right: 0.25rem solid var(--inverted-text-color);
+    box-shadow: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.image-container:hover + .hidden-description {
+    display: none;
+}

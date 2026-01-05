@@ -1,0 +1,27 @@
+<div id="pop-up">
+  <div class="dialog-content">
+    <h2  mat-dialog-title class="title">{{ data.title }}</h2>
+    <div class="dialog-content">{{ data.message }}</div>
+    <div class="options">
+        <div>
+      <button
+        mat-button
+        mat-dialog-close
+        (click)="onRefused()"
+        class="option-button cancel-button"
+      >
+        Non
+      </button>
+      <button
+        mat-button
+        mat-dialog-close
+        cdkFocusInitial
+        (click)="onAgreed()"
+        class="option-button confirm-button"
+      >
+        Oui
+      </button>
+    </div>
+    </div>
+  </div>
+</div>
